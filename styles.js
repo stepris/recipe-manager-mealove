@@ -133,5 +133,9 @@ export default createGlobalStyle`
     /* Gaps */
     --gap-s: 1.5625rem;
 
+    /* Border Radius */
+    --border-radius-s: 5px;
+    --border-radius-m: 10px;
+
   }
 `;
