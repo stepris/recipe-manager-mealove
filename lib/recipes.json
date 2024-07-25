@@ -2,7 +2,7 @@
   {
     "id": "1",
     "title": "Grilled Chicken",
-    "imageUrl": "https://unsplash.com/de/fotos/zwei-geschnittene-brote-mit-avocado-oben-drauf-QcUJLRMDryQ",
+    "imageUrl": "https://images.unsplash.com/photo-1515041761709-f9fc96e04cd3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "description": "Juicy grilled chicken breast marinated in a blend of herbs.",
     "ingredients": [
       {
@@ -51,7 +51,7 @@
   {
     "id": "2",
     "title": "Baked Salmon",
-    "imageUrl": "https://unsplash.com/de/fotos/gekochtes-essen-in-schwarzer-kochpfanne-lJLXlh7KT38",
+    "imageUrl": "https://images.unsplash.com/photo-1612477491914-a2f46ef8586e?q=80&w=1782&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "description": "Delicious baked salmon with a hint of lemon and dill.",
     "ingredients": [
       {
@@ -94,7 +94,7 @@
   {
     "id": "3",
     "title": "Veggie Stir-fry",
-    "imageUrl": "https://unsplash.com/de/fotos/ei-mit-der-sonnenseite-nach-oben-und-brot-neben-der-gabel-QaGDmf5tMiE",
+    "imageUrl": "https://images.unsplash.com/photo-1465014925804-7b9ede58d0d7?q=80&w=1676&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "description": "Quick and easy vegetable stir-fry with a mix of colorful veggies.",
     "ingredients": [
       {
@@ -143,7 +143,7 @@
   {
     "id": "4",
     "title": "Chocolate Cake",
-    "imageUrl": "https://unsplash.com/de/fotos/nahaufnahme-foto-von-nudeln-mit-belagen-caKJ7PwqFBQ",
+    "imageUrl": "https://images.unsplash.com/photo-1523218345414-cd47aea19ba6?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "description": "Rich and moist chocolate cake perfect for any occasion.",
     "ingredients": [
       {
@@ -198,7 +198,7 @@
   {
     "id": "5",
     "title": "Pancakes",
-    "imageUrl": "https://unsplash.com/de/fotos/gekochte-nudeln-mit-grunzeug-h0tTG5eosAQ",
+    "imageUrl": "https://images.unsplash.com/photo-1529042355636-0f06afe127a9?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "description": "Fluffy and light pancakes perfect for a brunch.",
     "ingredients": [
       {
@@ -247,7 +247,7 @@
   {
     "id": "6",
     "title": "Spicy Chili",
-    "imageUrl": "https://unsplash.com/de/fotos/speckstreifen-und-geschmolzener-kase-belegten-pommes-frites-auf-ovaler-weiss-blauer-platte-mit-grauen-edelstahlgabeln-R18ecx07b3c",
+    "imageUrl": "https://images.unsplash.com/photo-1485962398705-ef6a13c41e8f?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "description": "Hot and spicy chili perfect for a cold night.",
     "ingredients": [
       {
@@ -302,7 +302,7 @@
   {
     "id": "7",
     "title": "Greek Salad",
-    "imageUrl": "https://unsplash.com/de/fotos/pesto-nudeln-mit-tomatenscheiben-serviert-auf-weissem-keramikteller-12eHC6FxPyg",
+    "imageUrl": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "description": "Refreshing cold salad with cucumbers, tomatoes, and feta cheese.",
     "ingredients": [
       {
@@ -351,7 +351,7 @@
   {
     "id": "8",
     "title": "Fruit Salad",
-    "imageUrl": "https://unsplash.com/de/fotos/draufsicht-salat-mit-guacamole-oaz0raysASk",
+    "imageUrl": "https://images.unsplash.com/photo-1484980972926-edee96e0960d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "description": "A mix of fresh fruits perfect for a healthy snack.",
     "ingredients": [
       {
@@ -400,7 +400,7 @@
   {
     "id": "9",
     "title": "Lemonade",
-    "imageUrl": "https://unsplash.com/de/fotos/grunes-gemuse-auf-weissem-keramikteller-PqsImnjuElM",
+    "imageUrl": "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=1884&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "description": "Refreshing homemade lemonade with fresh lemons.",
     "ingredients": [
       {
@@ -443,7 +443,7 @@
   {
     "id": "10",
     "title": "Energy Balls",
-    "imageUrl": "https://unsplash.com/de/fotos/braune-holzkelle-auf-schwarzer-runder-platte-tbTZcLUqtrs",
+    "imageUrl": "https://images.unsplash.com/photo-1619683548293-c74defe8d5d2?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "description": "Healthy and easy-to-make energy balls with oats and honey.",
     "ingredients": [
       {

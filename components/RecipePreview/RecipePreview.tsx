@@ -1,9 +1,11 @@
 import styled from 'styled-components';
+import Image from 'next/image';
 
 export default function RecipePreview({ recipe }) {
   const { title, imageUrl } = recipe;
   return (
     <StyledRecipePreview>
+      <Image src={imageUrl} width={150} height={150} />
       <StyledRecipeTitle>{title}</StyledRecipeTitle>
     </StyledRecipePreview>
   );
