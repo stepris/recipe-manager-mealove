@@ -15,4 +15,10 @@ export default function RecipeList() {
   );
 }
 
-const StyledRecipeList = styled.ul``;
+const StyledRecipeList = styled.ul`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--gap-s);
+  padding: var(--gap-s) 0;
+`;

@@ -15,7 +15,8 @@ export default createGlobalStyle`
   body {
     font-family: ${openSans.style.fontFamily};
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
+    max-width: 375px;
   }
 
   h1,
@@ -32,6 +33,10 @@ export default createGlobalStyle`
   color: inherit;
   text-decoration: inherit;
 }
+
+  p {
+    margin: 0;
+  }
 
   button,
   input,
@@ -103,6 +108,14 @@ export default createGlobalStyle`
     --color-cat6-slate: #e2e8f0;
     --color-cat7-orange: #fed7aa;
 
+    --color-cat1-red-alpha: #fecacacc;
+    --color-cat2-blue-alpha: #bfdbfecc;
+    --color-cat3-purple-alpha: #e9d5ffcc;
+    --color-cat4-lime-alpha: #d9f99dcc;
+    --color-cat5-yellow-alpha: #fef08acc;
+    --color-cat6-slate-alpha: #e2e8f0cc;
+    --color-cat7-orange-alpha: #fed7aacc;
+    
     /* Font Styles */
     --font-family: ${openSans.style.fontFamily};
 
@@ -115,7 +128,10 @@ export default createGlobalStyle`
     --font-base: normal 400 0.875rem/1.143 var(--font-family);
     --font-base-special-1: normal 400 1.125rem/1.167 var(--font-family);  
 
-    --font-caption: normal 600 0.688rem/1.182 var(--font-family);
+    --font-caption: normal 600 0.8rem/1.182 var(--font-family);
+
+    /* Gaps */
+    --gap-s: 1.5625rem;
 
   }
 `;
