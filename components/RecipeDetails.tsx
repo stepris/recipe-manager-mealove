@@ -18,5 +18,5 @@ export default function RecipeDetails({ recipe }: RecipeDetailsProps) {
     instructions,
   } = recipe;
 
-  return <>]</>;
+  return <></>;
 }

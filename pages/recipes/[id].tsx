@@ -1,7 +1,6 @@
 import RecipeDetails from '@/components/RecipeDetails';
 import { useRouter } from 'next/router';
 import recipes from '@/lib/recipes.json';
-import { useEffect } from 'react';
 
 export default function RecipeDetailsPage() {
   const router = useRouter();
