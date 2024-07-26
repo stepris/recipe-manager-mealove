@@ -27,14 +27,14 @@ const ImageWrapper = styled.div`
   overflow: hidden;
   width: 150px;
   height: 150px;
-  border-radius: var(--border-radius-m);
+  border-radius: var(--radius-m);
 `;
 
 const StyledRecipePreview = styled.li`
   background-color: grey;
   width: 150px;
   height: 150px;
-  border-radius: var(--border-radius-m);
+  border-radius: var(--radius-m);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,9 +47,9 @@ const StyledRecipeTitle = styled.p`
   position: absolute;
   text-transform: uppercase;
   background-color: var(--color-cat4-lime-alpha);
-  padding: 5px;
-  border-radius: var(--border-radius-s);
+  padding: var(--spacing-1);
+  border-radius: var(--radius-s);
   text-align: center;
   width: 90%;
-  bottom: 0.4rem;
+  bottom: var(--spacing-1);
 `;

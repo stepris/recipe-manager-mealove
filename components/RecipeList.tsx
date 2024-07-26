@@ -18,6 +18,6 @@ const StyledRecipeList = styled.ul`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: var(--gap-s);
-  padding: var(--gap-s) 0;
+  gap: var(--spacing-5);
+  padding: var(--spacing-5) 0;
 `;

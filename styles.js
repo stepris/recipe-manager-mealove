@@ -119,23 +119,40 @@ export default createGlobalStyle`
     /* Font Styles */
     --font-family: ${openSans.style.fontFamily};
 
-    --font-nav: normal 900 1.5rem/1 var(--font-family);  
+    --font-size-small: 0.875rem;
+    --font-size-base: 1rem; 
 
-    --font-headline-1: normal 700 1.5rem/1 var(--font-family);  
-    --font-headline-2: normal 700 1.125rem/1.167 var(--font-family);  
-    --font-headline-3: normal 700 0.875rem/1.143 var(--font-family);  
+    --font-scaler: 1.125
 
-    --font-base: normal 400 0.875rem/1.143 var(--font-family);
-    --font-base-special-1: normal 400 1.125rem/1.167 var(--font-family);  
+    --font-size-l: calc(var(--font-size-base) * var(--font-scaler))
+    --font-size-xl: calc(var(--font-size-l) * var(--font-scaler))
+    --font-size-xxl: calc(var(--font-size-xl) * var(--font-scaler))
+    --font-size-xxxl: calc(var(--font-size-xxl) * var(--font-scaler))
+    --font-size-xxxxl: calc(var(--font-size-xxxl) * var(--font-scaler))
+    --font-size-xxxxxl: calc(var(--font-size-xxxxl) * var(--font-scaler))
 
-    --font-caption: normal 600 0.8rem/1.182 var(--font-family);
+    --font-nav: normal 900 var(--font-size-xl) var(--font-family);  
+    --font-headline-1: normal 700 var(--font-size-xl) var(--font-family);  
+    --font-headline-2: normal 700 var(--font-size-l) var(--font-family);  
+    --font-headline-3: normal 700 var(--font-size-small) var(--font-family);  
+    --font-base: normal 400 var(--font-size-base) var(--font-family);
+    --font-caption: normal 600 var(--font-size-small) var(--font-family);
 
-    /* Gaps */
-    --gap-s: 1.5625rem;
+    /* Radius */
+    --radius-s: 5px;
+    --radius-m: 10px;
+    --radius-l: 15px;
 
-    /* Border Radius */
-    --border-radius-s: 5px;
-    --border-radius-m: 10px;
-
+    /* Spacing */
+    --spacing-1: 5px;
+    --spacing-2: 10px;
+    --spacing-3: 15px;
+    --spacing-4: 20px;
+    --spacing-5: 25px;
+    --spacing-6: 30px;
+    --spacing-7: 35px;
+    --spacing-8: 40px;
+    --spacing-9: 45px;
+    --spacing-10: 50px;
   }
 `;
