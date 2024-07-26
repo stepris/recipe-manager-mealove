@@ -6,18 +6,21 @@ export default function RecipePreview({ recipe }) {
   return (
     <StyledRecipePreview>
       <ImageWrapper>
-        <Image
+        <StyledImage
           src={imageUrl}
           alt={`picture of ${title}`}
           quality={80}
           fill
-          style={{ objectFit: 'cover' }}
         />
       </ImageWrapper>
       <StyledRecipeTitle>{title}</StyledRecipeTitle>
     </StyledRecipePreview>
   );
 }
+
+const StyledImage = styled(Image)`
+  object-fit: cover;
+`;
 
 const ImageWrapper = styled.div`
   position: relative;
