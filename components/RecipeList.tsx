@@ -1,5 +1,5 @@
 import recipes from '@/lib/recipes.json';
-import RecipePreview from '../RecipePreview/RecipePreview';
+import RecipePreview from '@/components/RecipePreview';
 import styled from 'styled-components';
 
 export default function RecipeList() {
