@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 import Image from 'next/image';
+import { Recipe } from '@/types';
 
-export default function RecipePreview({ recipe }) {
+type RecipePreviewProps = {
+  recipe: Recipe;
+};
+
+export default function RecipePreview({ recipe }: RecipePreviewProps) {
   const { title, imageUrl } = recipe;
   return (
     <StyledRecipePreview>
