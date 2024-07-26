@@ -1,0 +1,33 @@
+[
+  {
+    "id": "1",
+    "title": "",
+    "imageUrl": "",
+    "description": "",
+    "ingredients": [
+      {
+        "id": "1",
+        "quantity": 1,
+        "unit": "",
+        "name": ""
+      }
+    ],
+    "prepTime": {
+      "h": 0,
+      "min": 0
+    },
+    "cookingTime": {
+      "h": 0,
+      "min": 0
+    },
+    "servings": 1,
+    "category": "3",
+    "tags": [],
+    "instructions": [
+      {
+        "id": "1",
+        "description": ""
+      }
+    ]
+  }
+]

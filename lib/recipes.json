@@ -1,0 +1,492 @@
+[
+  {
+    "id": "1",
+    "title": "Grilled Chicken",
+    "imageUrl": "https://images.unsplash.com/photo-1515041761709-f9fc96e04cd3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description": "Juicy grilled chicken breast marinated in a blend of herbs.",
+    "ingredients": [
+      {
+        "id": "1",
+        "quantity": 200,
+        "unit": "g",
+        "name": "chicken breast"
+      },
+      {
+        "id": "2",
+        "quantity": 2,
+        "unit": "pieces",
+        "name": "garlic cloves"
+      },
+      {
+        "id": "3",
+        "quantity": 1,
+        "unit": "pieces",
+        "name": "lemon"
+      },
+      {
+        "id": "4",
+        "quantity": 30,
+        "unit": "ml",
+        "name": "olive oil"
+      }
+    ],
+    "prepTime": {
+      "h": 0,
+      "min": 15
+    },
+    "cookingTime": {
+      "h": 0,
+      "min": 20
+    },
+    "servings": 2,
+    "category": "1",
+    "tags": ["meat", "grilled"],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Marinate the chicken breast with garlic, lemon juice, and olive oil. Grill for 20 minutes."
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Baked Salmon",
+    "imageUrl": "https://images.unsplash.com/photo-1612477491914-a2f46ef8586e?q=80&w=1782&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description": "Delicious baked salmon with a hint of lemon and dill.",
+    "ingredients": [
+      {
+        "id": "1",
+        "quantity": 300,
+        "unit": "g",
+        "name": "salmon fillet"
+      },
+      {
+        "id": "2",
+        "quantity": 1,
+        "unit": "pieces",
+        "name": "lemon"
+      },
+      {
+        "id": "3",
+        "quantity": 10,
+        "unit": "g",
+        "name": "dill"
+      }
+    ],
+    "prepTime": {
+      "h": 0,
+      "min": 10
+    },
+    "cookingTime": {
+      "h": 0,
+      "min": 25
+    },
+    "servings": 2,
+    "category": "2",
+    "tags": ["fish", "baked"],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Season the salmon with lemon and dill. Bake at 180°C for 25 minutes."
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Veggie Stir-fry",
+    "imageUrl": "https://images.unsplash.com/photo-1465014925804-7b9ede58d0d7?q=80&w=1676&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description": "Quick and easy vegetable stir-fry with a mix of colorful veggies.",
+    "ingredients": [
+      {
+        "id": "1",
+        "quantity": 150,
+        "unit": "g",
+        "name": "broccoli"
+      },
+      {
+        "id": "2",
+        "quantity": 100,
+        "unit": "g",
+        "name": "bell pepper"
+      },
+      {
+        "id": "3",
+        "quantity": 100,
+        "unit": "g",
+        "name": "carrot"
+      },
+      {
+        "id": "4",
+        "quantity": 50,
+        "unit": "ml",
+        "name": "soy sauce"
+      }
+    ],
+    "prepTime": {
+      "h": 0,
+      "min": 10
+    },
+    "cookingTime": {
+      "h": 0,
+      "min": 15
+    },
+    "servings": 2,
+    "category": "3",
+    "tags": ["veggy", "stir-fry"],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Stir-fry the veggies with soy sauce in a hot pan for 15 minutes."
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Chocolate Cake",
+    "imageUrl": "https://images.unsplash.com/photo-1523218345414-cd47aea19ba6?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description": "Rich and moist chocolate cake perfect for any occasion.",
+    "ingredients": [
+      {
+        "id": "1",
+        "quantity": 200,
+        "unit": "g",
+        "name": "flour"
+      },
+      {
+        "id": "2",
+        "quantity": 100,
+        "unit": "g",
+        "name": "cocoa powder"
+      },
+      {
+        "id": "3",
+        "quantity": 200,
+        "unit": "g",
+        "name": "sugar"
+      },
+      {
+        "id": "4",
+        "quantity": 100,
+        "unit": "g",
+        "name": "butter"
+      },
+      {
+        "id": "5",
+        "quantity": 2,
+        "unit": "pieces",
+        "name": "eggs"
+      }
+    ],
+    "prepTime": {
+      "h": 0,
+      "min": 20
+    },
+    "cookingTime": {
+      "h": 0,
+      "min": 40
+    },
+    "servings": 8,
+    "category": "4",
+    "tags": ["sweet", "dessert"],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Mix all ingredients and bake at 180°C for 40 minutes."
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Pancakes",
+    "imageUrl": "https://images.unsplash.com/photo-1529042355636-0f06afe127a9?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description": "Fluffy and light pancakes perfect for a brunch.",
+    "ingredients": [
+      {
+        "id": "1",
+        "quantity": 200,
+        "unit": "g",
+        "name": "flour"
+      },
+      {
+        "id": "2",
+        "quantity": 300,
+        "unit": "ml",
+        "name": "milk"
+      },
+      {
+        "id": "3",
+        "quantity": 2,
+        "unit": "pieces",
+        "name": "eggs"
+      },
+      {
+        "id": "4",
+        "quantity": 50,
+        "unit": "g",
+        "name": "sugar"
+      }
+    ],
+    "prepTime": {
+      "h": 0,
+      "min": 10
+    },
+    "cookingTime": {
+      "h": 0,
+      "min": 20
+    },
+    "servings": 4,
+    "category": "5",
+    "tags": ["brunch", "breakfast"],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Mix all ingredients and cook pancakes on a hot griddle until golden brown."
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Spicy Chili",
+    "imageUrl": "https://images.unsplash.com/photo-1485962398705-ef6a13c41e8f?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description": "Hot and spicy chili perfect for a cold night.",
+    "ingredients": [
+      {
+        "id": "1",
+        "quantity": 500,
+        "unit": "g",
+        "name": "ground beef"
+      },
+      {
+        "id": "2",
+        "quantity": 1,
+        "unit": "pieces",
+        "name": "onion"
+      },
+      {
+        "id": "3",
+        "quantity": 400,
+        "unit": "g",
+        "name": "tomatoes"
+      },
+      {
+        "id": "4",
+        "quantity": 200,
+        "unit": "g",
+        "name": "kidney beans"
+      },
+      {
+        "id": "5",
+        "quantity": 10,
+        "unit": "g",
+        "name": "chili powder"
+      }
+    ],
+    "prepTime": {
+      "h": 0,
+      "min": 15
+    },
+    "cookingTime": {
+      "h": 1,
+      "min": 30
+    },
+    "servings": 6,
+    "category": "6",
+    "tags": ["hot", "spicy"],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Cook the ground beef with onions, then add tomatoes, beans, and chili powder. Simmer for 1.5 hours."
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "title": "Greek Salad",
+    "imageUrl": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description": "Refreshing cold salad with cucumbers, tomatoes, and feta cheese.",
+    "ingredients": [
+      {
+        "id": "1",
+        "quantity": 200,
+        "unit": "g",
+        "name": "cucumber"
+      },
+      {
+        "id": "2",
+        "quantity": 150,
+        "unit": "g",
+        "name": "tomatoes"
+      },
+      {
+        "id": "3",
+        "quantity": 100,
+        "unit": "g",
+        "name": "feta cheese"
+      },
+      {
+        "id": "4",
+        "quantity": 50,
+        "unit": "ml",
+        "name": "olive oil"
+      }
+    ],
+    "prepTime": {
+      "h": 0,
+      "min": 10
+    },
+    "cookingTime": {
+      "h": 0,
+      "min": 0
+    },
+    "servings": 2,
+    "category": "7",
+    "tags": ["cold", "salad"],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Chop the vegetables and mix with olive oil and feta cheese."
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "title": "Fruit Salad",
+    "imageUrl": "https://images.unsplash.com/photo-1484980972926-edee96e0960d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description": "A mix of fresh fruits perfect for a healthy snack.",
+    "ingredients": [
+      {
+        "id": "1",
+        "quantity": 100,
+        "unit": "g",
+        "name": "strawberries"
+      },
+      {
+        "id": "2",
+        "quantity": 100,
+        "unit": "g",
+        "name": "blueberries"
+      },
+      {
+        "id": "3",
+        "quantity": 100,
+        "unit": "g",
+        "name": "kiwi"
+      },
+      {
+        "id": "4",
+        "quantity": 100,
+        "unit": "g",
+        "name": "mango"
+      }
+    ],
+    "prepTime": {
+      "h": 0,
+      "min": 10
+    },
+    "cookingTime": {
+      "h": 0,
+      "min": 0
+    },
+    "servings": 2,
+    "category": "8",
+    "tags": ["fruits", "healthy"],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Chop all fruits and mix together."
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "title": "Lemonade",
+    "imageUrl": "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=1884&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description": "Refreshing homemade lemonade with fresh lemons.",
+    "ingredients": [
+      {
+        "id": "1",
+        "quantity": 4,
+        "unit": "pieces",
+        "name": "lemons"
+      },
+      {
+        "id": "2",
+        "quantity": 100,
+        "unit": "g",
+        "name": "sugar"
+      },
+      {
+        "id": "3",
+        "quantity": 1,
+        "unit": "l",
+        "name": "water"
+      }
+    ],
+    "prepTime": {
+      "h": 0,
+      "min": 10
+    },
+    "cookingTime": {
+      "h": 0,
+      "min": 0
+    },
+    "servings": 4,
+    "category": "9",
+    "tags": ["drinks", "refreshing"],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Mix lemon juice with water and sugar. Serve chilled."
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "title": "Energy Balls",
+    "imageUrl": "https://images.unsplash.com/photo-1619683548293-c74defe8d5d2?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description": "Healthy and easy-to-make energy balls with oats and honey.",
+    "ingredients": [
+      {
+        "id": "1",
+        "quantity": 200,
+        "unit": "g",
+        "name": "oats"
+      },
+      {
+        "id": "2",
+        "quantity": 100,
+        "unit": "g",
+        "name": "peanut butter"
+      },
+      {
+        "id": "3",
+        "quantity": 50,
+        "unit": "g",
+        "name": "honey"
+      },
+      {
+        "id": "4",
+        "quantity": 50,
+        "unit": "g",
+        "name": "chocolate chips"
+      }
+    ],
+    "prepTime": {
+      "h": 0,
+      "min": 10
+    },
+    "cookingTime": {
+      "h": 0,
+      "min": 0
+    },
+    "servings": 12,
+    "category": "10",
+    "tags": ["snacks", "healthy"],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Mix all ingredients and form into balls. Chill in the refrigerator."
+      }
+    ]
+  }
+]

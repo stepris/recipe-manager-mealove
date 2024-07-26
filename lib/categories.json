@@ -1,0 +1,12 @@
+[
+  { "id": "1", "name": "Meat", "isCategory": true },
+  { "id": "2", "name": "Fish", "isCategory": true },
+  { "id": "3", "name": "Veggy", "isCategory": true },
+  { "id": "4", "name": "Sweet", "isCategory": true },
+  { "id": "5", "name": "Brunch", "isCategory": true },
+  { "id": "6", "name": "Hot", "isCategory": true },
+  { "id": "7", "name": "Cold", "isCategory": true },
+  { "id": "8", "name": "Fruits", "isCategory": true },
+  { "id": "9", "name": "Drinks", "isCategory": true },
+  { "id": "10", "name": "Snacks", "isCategory": true }
+]
