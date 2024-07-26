@@ -34,6 +34,7 @@ body {
   line-height: inherit; /* 2 */
   padding: 0;
   max-width: 375px;
+  background-color: var(--color-neutral-1);
 }
 
 hr {
@@ -260,6 +261,10 @@ video {
     --color-primary-1: #F43F5E;
     --color-primary-2: #881337;
 
+    --color-row-1: #ffe4e6;
+    --color-row-2: #fda4af;
+
+
     --color-neutral-1: #f5f5f4;
     --color-neutral-2: #d6d3d1;
     --color-neutral-3: #1C1917;
@@ -295,14 +300,14 @@ video {
     --font-size-small: 0.875rem;
     --font-size-base: 1rem; 
 
-    --font-scaler: 1.125
+    --font-scaler: 1.125;
 
-    --font-size-l: calc(var(--font-size-base) * var(--font-scaler))
-    --font-size-xl: calc(var(--font-size-l) * var(--font-scaler))
-    --font-size-xxl: calc(var(--font-size-xl) * var(--font-scaler))
-    --font-size-xxxl: calc(var(--font-size-xxl) * var(--font-scaler))
-    --font-size-xxxxl: calc(var(--font-size-xxxl) * var(--font-scaler))
-    --font-size-xxxxxl: calc(var(--font-size-xxxxl) * var(--font-scaler))
+    --font-size-l: calc(var(--font-size-base) * var(--font-scaler));
+    --font-size-xl: calc(var(--font-size-l) * var(--font-scaler));
+    --font-size-xxl: calc(var(--font-size-xl) * var(--font-scaler));
+    --font-size-xxxl: calc(var(--font-size-xxl) * var(--font-scaler));
+    --font-size-xxxxl: calc(var(--font-size-xxxl) * var(--font-scaler));
+    --font-size-xxxxxl: calc(var(--font-size-xxxxl) * var(--font-scaler));
 
     --font-nav: normal 900 var(--font-size-xl) var(--font-family);  
     --font-headline-1: normal 700 var(--font-size-xl) var(--font-family);  
