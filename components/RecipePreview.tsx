@@ -1,27 +1,32 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import { Recipe } from '@/types';
+import Link from 'next/link';
 
 type RecipePreviewProps = {
   recipe: Recipe;
 };
 
 export default function RecipePreview({ recipe }: RecipePreviewProps) {
-  const { title, imageUrl } = recipe;
+  const { id, title, imageUrl } = recipe;
   return (
-    <StyledRecipePreview>
-      <ImageWrapper>
-        <StyledImage
-          src={imageUrl}
-          alt={`picture of ${title}`}
-          quality={80}
-          fill
-        />
-      </ImageWrapper>
-      <StyledRecipeTitle>{title}</StyledRecipeTitle>
-    </StyledRecipePreview>
+    <StyledLink href={`/recipes/${id}`}>
+      <StyledRecipePreview>
+        <ImageWrapper>
+          <StyledImage
+            src={imageUrl}
+            alt={`picture of ${title}`}
+            quality={80}
+            fill
+          />
+        </ImageWrapper>
+        <StyledRecipeTitle>{title}</StyledRecipeTitle>
+      </StyledRecipePreview>
+    </StyledLink>
   );
 }
+
+const StyledLink = styled(Link)``;
 
 const StyledImage = styled(Image)`
   object-fit: cover;
