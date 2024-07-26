@@ -7,8 +7,7 @@ export default function RecipeList() {
     <section>
       <StyledRecipeList>
         {recipes.map((recipe) => {
-          const { id } = recipe;
-          return <RecipePreview key={id} recipe={recipe} />;
+          return <RecipePreview key={recipe.id} recipe={recipe} />;
         })}
       </StyledRecipeList>
     </section>
