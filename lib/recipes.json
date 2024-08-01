@@ -39,7 +39,6 @@
       "min": 20
     },
     "servings": 2,
-    "category": "1",
     "tags": ["meat", "grilled"],
     "instructions": [
       {
@@ -82,7 +81,6 @@
       "min": 25
     },
     "servings": 2,
-    "category": "2",
     "tags": ["fish", "baked"],
     "instructions": [
       {
@@ -131,7 +129,6 @@
       "min": 15
     },
     "servings": 2,
-    "category": "3",
     "tags": ["veggy", "stir-fry"],
     "instructions": [
       {
@@ -186,7 +183,6 @@
       "min": 40
     },
     "servings": 8,
-    "category": "4",
     "tags": ["sweet", "dessert"],
     "instructions": [
       {
@@ -235,7 +231,6 @@
       "min": 20
     },
     "servings": 4,
-    "category": "5",
     "tags": ["brunch", "breakfast"],
     "instructions": [
       {
@@ -290,7 +285,6 @@
       "min": 30
     },
     "servings": 6,
-    "category": "6",
     "tags": ["hot", "spicy"],
     "instructions": [
       {
@@ -339,7 +333,6 @@
       "min": 0
     },
     "servings": 2,
-    "category": "7",
     "tags": ["cold", "salad"],
     "instructions": [
       {
@@ -388,7 +381,6 @@
       "min": 0
     },
     "servings": 2,
-    "category": "8",
     "tags": ["fruits", "healthy"],
     "instructions": [
       {
@@ -431,7 +423,6 @@
       "min": 0
     },
     "servings": 4,
-    "category": "9",
     "tags": ["drinks", "refreshing"],
     "instructions": [
       {
@@ -480,7 +471,6 @@
       "min": 0
     },
     "servings": 12,
-    "category": "10",
     "tags": ["snacks", "healthy"],
     "instructions": [
       {
