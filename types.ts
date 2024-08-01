@@ -25,4 +25,8 @@ type Recipe = {
   }[];
 };
 
-export type { Recipe };
+type FavoriteButtonProps = {
+  $isDetailPage?: boolean;
+};
+
+export type { Recipe, FavoriteButtonProps };
