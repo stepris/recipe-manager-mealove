@@ -1,10 +1,10 @@
 import FilledHeart from '@/public/icons/ic_fluent_heart_24_filled.svg';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export default function FavoriteButton() {
+export default function FavoriteButton({ $isDetailPage }) {
   return (
     <>
-      <StyledButton>
+      <StyledButton $isDetailPage={$isDetailPage}>
         <FilledHeart />
       </StyledButton>
     </>
@@ -27,4 +27,11 @@ const StyledButton = styled.button`
       stroke: var(--color-primary-1);
     }
   }
+  ${({ $isDetailPage }: any) =>
+    $isDetailPage &&
+    css`
+      position: static;
+      height: 50px;
+      width: 50px;
+    `}
 `;
