@@ -1,4 +1,3 @@
-/* import recipes from '@/lib/recipes.json'; */
 import RecipePreview from '@/components/RecipePreview';
 import styled from 'styled-components';
 import { Recipe } from '@/types';
@@ -11,6 +10,7 @@ type RecipeListProps = {
 export default function RecipeList({
   recipes,
   onToggleFavorite,
+  favoriteRecipesList,
 }: RecipeListProps) {
   return (
     <section>
@@ -21,6 +21,7 @@ export default function RecipeList({
               key={recipe.id}
               recipe={recipe}
               onToggleFavorite={onToggleFavorite}
+              isFavorite={favoriteRecipesList.includes(recipe.id)}
             />
           );
         })}

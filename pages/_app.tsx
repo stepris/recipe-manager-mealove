@@ -35,6 +35,7 @@ export default function App({ Component, pageProps }: AppProps) {
         recipes={recipes}
         onToggleFavorite={handleToggleFavorite}
         favoriteRecipes={favoriteRecipes}
+        favoriteRecipesList={favoriteRecipesList}
       />
     </>
   );

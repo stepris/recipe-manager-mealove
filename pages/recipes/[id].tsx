@@ -4,16 +4,25 @@ import recipes from '@/lib/recipes.json';
 import Link from 'next/link';
 import styled from 'styled-components';
 
-export default function RecipeDetailsPage({ onToggleFavorite }) {
+export default function RecipeDetailsPage({
+  onToggleFavorite,
+  favoriteRecipesList,
+}) {
   const router = useRouter();
   const { id } = router.query;
 
   const recipe = recipes.find((recipe) => recipe.id === id);
 
+  if (!recipe) return;
+
   return (
     <>
       <StyledLink href='/'>Back to recipe list</StyledLink>
-      <RecipeDetails recipe={recipe} onToggleFavorite={onToggleFavorite} />
+      <RecipeDetails
+        recipe={recipe}
+        onToggleFavorite={onToggleFavorite}
+        isFavorite={favoriteRecipesList.includes(recipe.id)}
+      />
     </>
   );
 }

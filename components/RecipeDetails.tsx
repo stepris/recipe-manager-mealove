@@ -12,6 +12,7 @@ type RecipeDetailsProps = {
 export default function RecipeDetails({
   recipe,
   onToggleFavorite,
+  isFavorite,
 }: RecipeDetailsProps) {
   if (!recipe) return null;
 
@@ -42,6 +43,7 @@ export default function RecipeDetails({
           <FavoriteButton
             $isDetailPage
             onToggleFavorite={() => onToggleFavorite(id)}
+            isFavorite={isFavorite}
           />
         </StyledHeader>
         <ImageWrapper>

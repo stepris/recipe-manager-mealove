@@ -5,10 +5,15 @@ import styled, { css } from 'styled-components';
 export default function FavoriteButton({
   $isDetailPage,
   onToggleFavorite,
+  isFavorite,
 }: FavoriteButtonProps) {
   return (
     <>
-      <StyledButton $isDetailPage={$isDetailPage} onClick={onToggleFavorite}>
+      <StyledButton
+        $isDetailPage={$isDetailPage}
+        onClick={onToggleFavorite}
+        $isFavorite={isFavorite}
+      >
         <FilledHeart />
       </StyledButton>
     </>
@@ -27,7 +32,8 @@ const StyledButton = styled.button`
   top: var(--spacing-1);
   svg {
     path {
-      fill: var(--color-primary-1);
+      fill: ${(props) =>
+        props.$isFavorite ? 'var(--color-primary-1)' : 'none'};
       stroke: var(--color-primary-1);
     }
   }

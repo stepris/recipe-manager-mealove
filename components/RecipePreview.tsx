@@ -11,11 +11,15 @@ type RecipePreviewProps = {
 export default function RecipePreview({
   recipe,
   onToggleFavorite,
+  isFavorite,
 }: RecipePreviewProps) {
   const { id, title, imageUrl } = recipe;
   return (
     <StyledWrapper>
-      <FavoriteButton onToggleFavorite={() => onToggleFavorite(id)} />
+      <FavoriteButton
+        onToggleFavorite={() => onToggleFavorite(id)}
+        isFavorite={isFavorite}
+      />
       <Link href={`/recipes/${id}`}>
         <StyledRecipePreview>
           <ImageWrapper>
