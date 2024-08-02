@@ -2,10 +2,13 @@ import { FavoriteButtonProps } from '@/types';
 import FilledHeart from '@/public/icons/ic_fluent_heart_24_filled.svg';
 import styled, { css } from 'styled-components';
 
-export default function FavoriteButton({ $isDetailPage }: FavoriteButtonProps) {
+export default function FavoriteButton({
+  $isDetailPage,
+  onToggleFavorite,
+}: FavoriteButtonProps) {
   return (
     <>
-      <StyledButton $isDetailPage={$isDetailPage}>
+      <StyledButton $isDetailPage={$isDetailPage} onClick={onToggleFavorite}>
         <FilledHeart />
       </StyledButton>
     </>
