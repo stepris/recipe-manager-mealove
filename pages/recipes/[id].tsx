@@ -4,7 +4,7 @@ import recipes from '@/lib/recipes.json';
 import Link from 'next/link';
 import styled from 'styled-components';
 
-export default function RecipeDetailsPage() {
+export default function RecipeDetailsPage({ onToggleFavorite }) {
   const router = useRouter();
   const { id } = router.query;
 
@@ -13,7 +13,7 @@ export default function RecipeDetailsPage() {
   return (
     <>
       <StyledLink href='/'>Back to recipe list</StyledLink>
-      <RecipeDetails recipe={recipe} />
+      <RecipeDetails recipe={recipe} onToggleFavorite={onToggleFavorite} />
     </>
   );
 }

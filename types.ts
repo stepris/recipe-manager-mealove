@@ -27,6 +27,7 @@ type Recipe = {
 
 type FavoriteButtonProps = {
   $isDetailPage?: boolean;
+  onToggleFavorite: string[];
 };
 
 export type { Recipe, FavoriteButtonProps };

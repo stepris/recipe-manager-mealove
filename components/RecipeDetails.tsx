@@ -6,12 +6,17 @@ import FavoriteButton from './FavoriteButton';
 
 type RecipeDetailsProps = {
   recipe: Recipe;
+  onToggleFavorite: string[];
 };
 
-export default function RecipeDetails({ recipe }: RecipeDetailsProps) {
+export default function RecipeDetails({
+  recipe,
+  onToggleFavorite,
+}: RecipeDetailsProps) {
   if (!recipe) return null;
 
   const {
+    id,
     title,
     imageUrl,
     ingredients,
@@ -27,12 +32,17 @@ export default function RecipeDetails({ recipe }: RecipeDetailsProps) {
     return ingredientItem.name;
   });
 
+  console.log(id);
+
   return (
     <>
       <StyledSection>
         <StyledHeader>
           <StyledTitle>{title}</StyledTitle>
-          <FavoriteButton $isDetailPage />
+          <FavoriteButton
+            $isDetailPage
+            onToggleFavorite={() => onToggleFavorite(id)}
+          />
         </StyledHeader>
         <ImageWrapper>
           <StyledImage
