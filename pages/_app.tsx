@@ -9,8 +9,17 @@ export default function App({ Component, pageProps }: AppProps) {
   );
 
   const handleToggleFavorite = (id) => {
-    /* const currentRecipe = favoriteRecipes.find((recipe) => recipe.id === id); */
-    console.log(id);
+    const favoriteSet = new Set(favoriteRecipes);
+    if (!id) {
+      return;
+    } else {
+      if (favoriteSet.has(id)) {
+        favoriteSet.delete(id);
+      } else {
+        favoriteSet.add(id);
+      }
+      setFavoriteRecipes(Array.from(favoriteSet));
+    }
   };
 
   return (
