@@ -1,6 +1,5 @@
 import RecipePreview from '@/components/RecipePreview';
 import styled from 'styled-components';
-import { Recipe } from '@/types';
 
 export default function RecipeList({
   recipes,
