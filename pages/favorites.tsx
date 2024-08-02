@@ -9,11 +9,21 @@ export default function Favorites({
   return (
     <>
       <QuickLinks $isFavorites />
-      <RecipeList
-        recipes={favoriteRecipes}
-        onToggleFavorite={onToggleFavorite}
-        favoriteRecipesList={favoriteRecipesList}
-      />
+      {favoriteRecipesList.length !== 0 ? (
+        <RecipeList
+          recipes={favoriteRecipes}
+          onToggleFavorite={onToggleFavorite}
+          favoriteRecipesList={favoriteRecipesList}
+        />
+      ) : (
+        <>
+          <p>Sorry :( There are no recipes in your favorite-list.</p>
+          <p>
+            You can add recipes by clicking the heart icon in the right upper
+            corner.
+          </p>
+        </>
+      )}
     </>
   );
 }
