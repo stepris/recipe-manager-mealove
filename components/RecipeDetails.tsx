@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import { Recipe } from '@/types';
 import styled from 'styled-components';
 import Image from 'next/image';
@@ -32,8 +31,6 @@ export default function RecipeDetails({
   const ingredientList = ingredients.map((ingredientItem) => {
     return ingredientItem.name;
   });
-
-  console.log(id);
 
   return (
     <>
