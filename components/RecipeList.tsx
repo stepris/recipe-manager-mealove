@@ -1,9 +1,17 @@
-import recipes from '@/lib/recipes.json';
+/* import recipes from '@/lib/recipes.json'; */
 import RecipePreview from '@/components/RecipePreview';
 import styled from 'styled-components';
+import { Recipe } from '@/types';
 
-export default function RecipeList({ onToggleFavorite }) {
-  onToggleFavorite();
+type RecipeListProps = {
+  recipes: Recipe[];
+  onToggleFavorite: string[];
+};
+
+export default function RecipeList({
+  recipes,
+  onToggleFavorite,
+}: RecipeListProps) {
   return (
     <section>
       <StyledRecipeList>

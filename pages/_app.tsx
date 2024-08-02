@@ -1,15 +1,16 @@
 import useLocalStorageState from 'use-local-storage-state';
 import GlobalStyle from '../styles';
 import type { AppProps } from 'next/app';
+import recipes from '@/lib/recipes.json';
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [favoriteRecipes, setFavoriteRecipes] = useLocalStorageState(
-    'favoriteRecipes',
+  const [favoriteRecipesList, setFavoriteRecipesList] = useLocalStorageState(
+    'favoriteRecipesList',
     { defaultValue: [] }
   );
 
   const handleToggleFavorite = (id) => {
-    const favoriteSet = new Set(favoriteRecipes);
+    const favoriteSet = new Set(favoriteRecipesList);
     if (!id) {
       return;
     } else {
@@ -18,14 +19,23 @@ export default function App({ Component, pageProps }: AppProps) {
       } else {
         favoriteSet.add(id);
       }
-      setFavoriteRecipes(Array.from(favoriteSet));
+      setFavoriteRecipesList(Array.from(favoriteSet));
     }
   };
+
+  const favoriteRecipes = recipes.filter((recipe) => {
+    return favoriteRecipesList.includes(recipe.id);
+  });
 
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} onToggleFavorite={handleToggleFavorite} />
+      <Component
+        {...pageProps}
+        recipes={recipes}
+        onToggleFavorite={handleToggleFavorite}
+        favoriteRecipes={favoriteRecipes}
+      />
     </>
   );
 }
