@@ -16,7 +16,7 @@ export default function RecipePreview({
   return (
     <StyledWrapper>
       <FavoriteButton onToggleFavorite={() => onToggleFavorite(id)} />
-      <StyledLink href={`/recipes/${id}`}>
+      <Link href={`/recipes/${id}`}>
         <StyledRecipePreview>
           <ImageWrapper>
             <StyledImage
@@ -28,7 +28,7 @@ export default function RecipePreview({
           </ImageWrapper>
           <StyledRecipeTitle>{title}</StyledRecipeTitle>
         </StyledRecipePreview>
-      </StyledLink>
+      </Link>
     </StyledWrapper>
   );
 }
@@ -36,8 +36,6 @@ export default function RecipePreview({
 const StyledWrapper = styled.div`
   position: relative;
 `;
-
-const StyledLink = styled(Link)``;
 
 const StyledImage = styled(Image)`
   object-fit: cover;
