@@ -1,4 +1,4 @@
-type Recipe = {
+export type Recipe = {
   id: string;
   title: string;
   imageUrl: string;
@@ -25,4 +25,12 @@ type Recipe = {
   }[];
 };
 
-export type { Recipe };
+export type QuickLinksProps = {
+  $isExplore?: boolean;
+  $isFavorites?: boolean;
+};
+
+export interface LinkProps {
+  readonly $isExplore?: boolean;
+  readonly $isFavorite?: boolean;
+}
