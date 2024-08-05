@@ -1,32 +1,41 @@
 import styled from 'styled-components';
 import Image from 'next/image';
-import { Recipe } from '@/types';
+import { Recipe, RecipePreviewProps } from '@/types';
 import Link from 'next/link';
+import FavoriteButton from './FavoriteButton';
 
-type RecipePreviewProps = {
-  recipe: Recipe;
-};
-
-export default function RecipePreview({ recipe }: RecipePreviewProps) {
+export default function RecipePreview({
+  recipe,
+  onToggleFavorite,
+  isFavorite,
+}: RecipePreviewProps) {
   const { id, title, imageUrl } = recipe;
   return (
-    <StyledLink href={`/recipes/${id}`}>
-      <StyledRecipePreview>
-        <ImageWrapper>
-          <StyledImage
-            src={imageUrl}
-            alt={`picture of ${title}`}
-            quality={80}
-            fill
-          />
-        </ImageWrapper>
-        <StyledRecipeTitle>{title}</StyledRecipeTitle>
-      </StyledRecipePreview>
-    </StyledLink>
+    <StyledWrapper>
+      <FavoriteButton
+        onToggleFavorite={() => onToggleFavorite(id)}
+        isFavorite={isFavorite}
+      />
+      <Link href={`/recipes/${id}`}>
+        <StyledRecipePreview>
+          <ImageWrapper>
+            <StyledImage
+              src={imageUrl}
+              alt={`picture of ${title}`}
+              quality={80}
+              fill
+            />
+          </ImageWrapper>
+          <StyledRecipeTitle>{title}</StyledRecipeTitle>
+        </StyledRecipePreview>
+      </Link>
+    </StyledWrapper>
   );
 }
 
-const StyledLink = styled(Link)``;
+const StyledWrapper = styled.div`
+  position: relative;
+`;
 
 const StyledImage = styled(Image)`
   object-fit: cover;

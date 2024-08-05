@@ -1,13 +1,23 @@
-import recipes from '@/lib/recipes.json';
 import RecipePreview from '@/components/RecipePreview';
 import styled from 'styled-components';
 
-export default function RecipeList() {
+export default function RecipeList({
+  recipes,
+  onToggleFavorite,
+  favoriteRecipesList,
+}) {
   return (
     <section>
       <StyledRecipeList>
         {recipes.map((recipe) => {
-          return <RecipePreview key={recipe.id} recipe={recipe} />;
+          return (
+            <RecipePreview
+              key={recipe.id}
+              recipe={recipe}
+              onToggleFavorite={onToggleFavorite}
+              isFavorite={favoriteRecipesList.includes(recipe.id)}
+            />
+          );
         })}
       </StyledRecipeList>
     </section>

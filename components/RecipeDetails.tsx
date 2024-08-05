@@ -1,16 +1,17 @@
-import { useRouter } from 'next/router';
-import { Recipe } from '@/types';
+import { Recipe, RecipeDetailsProps } from '@/types';
 import styled from 'styled-components';
 import Image from 'next/image';
+import FavoriteButton from './FavoriteButton';
 
-type RecipeDetailsProps = {
-  recipe: Recipe;
-};
-
-export default function RecipeDetails({ recipe }: RecipeDetailsProps) {
+export default function RecipeDetails({
+  recipe,
+  onToggleFavorite,
+  isFavorite,
+}: RecipeDetailsProps) {
   if (!recipe) return null;
 
   const {
+    id,
     title,
     imageUrl,
     ingredients,
@@ -29,7 +30,14 @@ export default function RecipeDetails({ recipe }: RecipeDetailsProps) {
   return (
     <>
       <StyledSection>
-        <StyledTitle>{title}</StyledTitle>
+        <StyledHeader>
+          <StyledTitle>{title}</StyledTitle>
+          <FavoriteButton
+            $isDetailPage
+            onToggleFavorite={() => onToggleFavorite(id)}
+            isFavorite={isFavorite}
+          />
+        </StyledHeader>
         <ImageWrapper>
           <StyledImage
             src={imageUrl}
@@ -65,6 +73,13 @@ export default function RecipeDetails({ recipe }: RecipeDetailsProps) {
 
 const StyledSection = styled.section`
   padding-bottom: var(--spacing-5);
+`;
+
+const StyledHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const StyledTitle = styled.h1`

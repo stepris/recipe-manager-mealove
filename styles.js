@@ -332,5 +332,8 @@ video {
     --spacing-8: 40px;
     --spacing-9: 45px;
     --spacing-10: 50px;
+
+    /*Debug*/
+    --debug: 1px solid green;
   }
 `;

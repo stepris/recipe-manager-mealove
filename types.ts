@@ -1,4 +1,4 @@
-type Recipe = {
+export type Recipe = {
   id: string;
   title: string;
   imageUrl: string;
@@ -25,4 +25,37 @@ type Recipe = {
   }[];
 };
 
-export type { Recipe };
+export type QuickLinksProps = {
+  $isExplorePage?: boolean;
+  $isFavoritesPage?: boolean;
+};
+
+export interface LinkProps {
+  readonly $isExplorePage?: boolean;
+  readonly $isFavoritesPage?: boolean;
+}
+
+export type FavoriteButtonProps = {
+  $isDetailPage?: boolean;
+  onToggleFavorite: () => {};
+  isFavorite: boolean;
+};
+
+export interface FavoriteButtonLinkProps {
+  readonly $isDetailPage?: boolean;
+  readonly $isFavorite?: boolean;
+}
+
+export type RecipeDetailsProps = {
+  recipe: Recipe;
+  onToggleFavorite: (id: string) => {};
+  isFavorite: boolean;
+};
+
+export type RecipePreviewProps = {
+  recipe: Recipe;
+  onToggleFavorite: (id: string) => {};
+  isFavorite: boolean;
+};
+
+export type handleToggleFavoriteFunction = (id: string) => void;
