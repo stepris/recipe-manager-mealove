@@ -3,18 +3,18 @@ import styled, { css } from 'styled-components';
 import { QuickLinksProps, LinkProps } from '@/types';
 
 export default function QuickLinks({
-  $isExplore,
-  $isFavorites,
+  $isExplorePage,
+  $isFavoritesPage,
 }: QuickLinksProps) {
   return (
     <LinkWrapper>
-      <StyledLinkContainer $isExplore={$isExplore}>
-        <StyledLink href={'/'} $isExplore={$isExplore}>
+      <StyledLinkContainer $isExplorePage={$isExplorePage}>
+        <StyledLink href={'/'} $isExplorePage={$isExplorePage}>
           Explore
         </StyledLink>
       </StyledLinkContainer>
-      <StyledLinkContainer $isFavorites={$isFavorites}>
-        <StyledLink href={'/favorites'} $isFavorites={$isFavorites}>
+      <StyledLinkContainer $isFavoritesPage={$isFavoritesPage}>
+        <StyledLink href={'/favorites'} $isFavoritesPage={$isFavoritesPage}>
           Favorites
         </StyledLink>
       </StyledLinkContainer>
@@ -34,8 +34,8 @@ const StyledLinkContainer = styled.div<LinkProps>`
   text-align: center;
   flex-basis: 50%;
 
-  ${({ $isExplore, $isFavorites }) =>
-    ($isExplore || $isFavorites) &&
+  ${({ $isExplorePage, $isFavoritesPage }) =>
+    ($isExplorePage || $isFavoritesPage) &&
     css`
       border-color: var(--color-primary-1);
     `}
@@ -47,8 +47,8 @@ const StyledLink = styled(Link)<LinkProps>`
   color: var(--color-neutral-3-alpha50);
   padding-top: var(--spacing-1);
 
-  ${({ $isExplore, $isFavorites }) =>
-    ($isExplore || $isFavorites) &&
+  ${({ $isExplorePage, $isFavoritesPage }) =>
+    ($isExplorePage || $isFavoritesPage) &&
     css`
       color: var(--color-primary-1);
     `}

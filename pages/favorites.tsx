@@ -8,7 +8,7 @@ export default function Favorites({
 }) {
   return (
     <>
-      <QuickLinks $isFavorites />
+      <QuickLinks $isFavoritesPage />
       {favoriteRecipesList.length !== 0 ? (
         <RecipeList
           recipes={favoriteRecipes}

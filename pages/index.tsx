@@ -8,7 +8,7 @@ export default function HomePage({
 }) {
   return (
     <main>
-      <QuickLinks $isExplore />
+      <QuickLinks $isExplorePage />
       <RecipeList
         onToggleFavorite={onToggleFavorite}
         recipes={recipes}
