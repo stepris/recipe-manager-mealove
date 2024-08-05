@@ -26,12 +26,12 @@ export type Recipe = {
 };
 
 export type QuickLinksProps = {
-  $isExplore?: boolean;
+  $isExplorePage?: boolean;
   $isFavoritesPage?: boolean;
 };
 
 export interface LinkProps {
-  readonly $isExplore?: boolean;
+  readonly $isExplorePage?: boolean;
   readonly $isFavoritesPage?: boolean;
 }
 
@@ -45,3 +45,17 @@ export interface FavoriteButtonLinkProps {
   readonly $isDetailPage?: boolean;
   readonly $isFavorite?: boolean;
 }
+
+export type RecipeDetailsProps = {
+  recipe: Recipe;
+  onToggleFavorite: (id: string) => {};
+  isFavorite: boolean;
+};
+
+export type RecipePreviewProps = {
+  recipe: Recipe;
+  onToggleFavorite: (id: string) => {};
+  isFavorite: boolean;
+};
+
+export type handleToggleFavoriteFunction = (id: string) => void;

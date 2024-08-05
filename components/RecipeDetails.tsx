@@ -1,12 +1,7 @@
-import { Recipe } from '@/types';
+import { Recipe, RecipeDetailsProps } from '@/types';
 import styled from 'styled-components';
 import Image from 'next/image';
 import FavoriteButton from './FavoriteButton';
-
-type RecipeDetailsProps = {
-  recipe: Recipe;
-  onToggleFavorite: string[];
-};
 
 export default function RecipeDetails({
   recipe,

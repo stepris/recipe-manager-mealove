@@ -1,12 +1,8 @@
 import styled from 'styled-components';
 import Image from 'next/image';
-import { Recipe } from '@/types';
+import { Recipe, RecipePreviewProps } from '@/types';
 import Link from 'next/link';
 import FavoriteButton from './FavoriteButton';
-
-type RecipePreviewProps = {
-  recipe: Recipe;
-};
 
 export default function RecipePreview({
   recipe,
