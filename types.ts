@@ -34,3 +34,14 @@ export interface LinkProps {
   readonly $isExplore?: boolean;
   readonly $isFavorite?: boolean;
 }
+
+export type FavoriteButtonProps = {
+  $isDetailPage?: boolean;
+  onToggleFavorite: () => {};
+  isFavorite: boolean;
+};
+
+export interface FavoriteButtonLinkProps {
+  readonly $isDetailPage?: boolean;
+  readonly $isFavorite?: boolean;
+}

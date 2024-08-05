@@ -1,25 +1,24 @@
 import FilledHeart from '@/public/icons/ic_fluent_heart_24_filled.svg';
 import styled, { css } from 'styled-components';
+import { FavoriteButtonProps, FavoriteButtonLinkProps } from '@/types';
 
 export default function FavoriteButton({
   $isDetailPage,
   onToggleFavorite,
   isFavorite,
-}) {
+}: FavoriteButtonProps) {
   return (
-    <>
-      <StyledButton
-        $isDetailPage={$isDetailPage}
-        onClick={onToggleFavorite}
-        $isFavorite={isFavorite}
-      >
-        <FilledHeart />
-      </StyledButton>
-    </>
+    <StyledButton
+      $isDetailPage={$isDetailPage}
+      onClick={onToggleFavorite}
+      $isFavorite={isFavorite}
+    >
+      <FilledHeart />
+    </StyledButton>
   );
 }
 
-const StyledButton = styled.button`
+const StyledButton = styled.button<FavoriteButtonLinkProps>`
   background-color: var(--color-neutral-1-alpha90);
   border-radius: var(--radius-s);
   height: 40px;
