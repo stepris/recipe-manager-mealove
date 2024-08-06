@@ -1,11 +1,14 @@
 import NavigationMenu from './NavigationMenu';
 import styled from 'styled-components';
+import Link from 'next/link';
 
 export default function Navigation() {
   return (
     <StyledHeader>
       <NavigationMenu />
-      <StyledAppTitle>meaLove</StyledAppTitle>
+      <Link href={'/'}>
+        <StyledAppTitle>meaLove</StyledAppTitle>
+      </Link>
     </StyledHeader>
   );
 }
@@ -18,6 +21,7 @@ const StyledHeader = styled.header`
   align-items: center;
   gap: var(--spacing-3);
   padding-inline: var(--spacing-5);
+  margin-bottom: var(--spacing-2);
 `;
 
 const StyledAppTitle = styled.h2`
