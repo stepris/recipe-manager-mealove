@@ -316,6 +316,9 @@ video {
     --font-base: normal 400 var(--font-size-base) var(--font-family);
     --font-caption: normal 600 var(--font-size-small) var(--font-family);
 
+    /* Letter Spacing */
+    --letter-spacing-s: 0.1rem;
+
     /* Radius */
     --radius-s: 5px;
     --radius-m: 10px;

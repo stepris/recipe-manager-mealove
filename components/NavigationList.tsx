@@ -12,10 +12,8 @@ export default function NavigationList() {
 const StyledList = styled.ul`
   display: flex;
   flex-direction: column;
-  align-items: stretch;
   gap: var(--spacing-1);
-  outline: var(--debug);
-  height: 100dvw;
+  height: calc(100vh - 55px);
 `;
 
 const StyledListElement = styled.li`
@@ -23,6 +21,8 @@ const StyledListElement = styled.li`
   font: var(--font-nav);
   background-color: var(--color-primary-1);
   color: var(--color-neutral-1);
-  outline: var(--debug);
-  height: 100%;
+  flex-grow: 1;
+  align-content: center;
+  text-align: center;
+  letter-spacing: var(--letter-spacing-s);
 `;

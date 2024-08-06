@@ -21,10 +21,10 @@ const StyledHeader = styled.header`
   align-items: center;
   gap: var(--spacing-3);
   padding-inline: var(--spacing-5);
-  margin-bottom: var(--spacing-2);
+  margin-bottom: var(--spacing-1);
 `;
 
 const StyledAppTitle = styled.h2`
   font: var(--font-nav);
-  letter-spacing: 0.1rem;
+  letter-spacing: var(--letter-spacing-s);
 `;
