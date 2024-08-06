@@ -37,6 +37,10 @@ body {
   background-color: var(--color-neutral-1);
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 hr {
   height: 0; /* 1 */
   color: inherit; /* 2 */
