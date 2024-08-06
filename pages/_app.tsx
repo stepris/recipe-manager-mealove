@@ -1,7 +1,8 @@
 import useLocalStorageState from 'use-local-storage-state';
 import GlobalStyle from '../styles';
-import type { AppProps } from 'next/app';
+import Layout from '@/components/Layout';
 import recipes from '@/lib/recipes.json';
+import type { AppProps } from 'next/app';
 import { handleToggleFavoriteFunction } from '@/types';
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -31,13 +32,15 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <GlobalStyle />
-      <Component
-        {...pageProps}
-        recipes={recipes}
-        onToggleFavorite={handleToggleFavorite}
-        favoriteRecipes={favoriteRecipes}
-        favoriteRecipesList={favoriteRecipesList}
-      />
+      <Layout>
+        <Component
+          {...pageProps}
+          recipes={recipes}
+          onToggleFavorite={handleToggleFavorite}
+          favoriteRecipes={favoriteRecipes}
+          favoriteRecipesList={favoriteRecipesList}
+        />
+      </Layout>
     </>
   );
 }

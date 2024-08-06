@@ -4,7 +4,7 @@ export default function Navigation() {
   return (
     <>
       <NavigationMenu />
-      <h2>meaLove</h2>;
+      <h2>meaLove</h2>
     </>
   );
 }
