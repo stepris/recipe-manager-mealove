@@ -20,7 +20,8 @@ const StyledList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: var(--spacing-1);
-  height: calc(100vh - 55px);
+  /* This is the calculated navigation height, referecned from Navigation.tsx */
+  height: calc(100vh - (var(--spacing-10) + var(--spacing-1)));
 `;
 const StyledListElement = styled.li`
   flex-grow: 1;
