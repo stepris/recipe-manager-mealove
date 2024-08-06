@@ -34,7 +34,7 @@ body {
   line-height: inherit; /* 2 */
   padding: 0;
   max-width: 375px;
-  background-color: var(--color-neutral-1);
+  background-color: var(--color-neutral-2);
 }
 
 ::-webkit-scrollbar {
