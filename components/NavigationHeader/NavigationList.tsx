@@ -24,7 +24,7 @@ const StyledList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: var(--spacing-1);
-  /* This is the calculated navigation height, referecned from Navigation.tsx */
+  /* This is the calculated navigation height, referenced from Header Component */
   height: calc(100vh - (var(--spacing-10) + var(--spacing-1)));
 `;
 const StyledListElement = styled.li`
@@ -35,6 +35,9 @@ const StyledListElement = styled.li`
   color: var(--color-neutral-1);
   text-align: center;
   letter-spacing: var(--letter-spacing-s);
+  &:hover {
+    background-color: var(--color-primary-2);
+  }
 `;
 
 const StyledLink = styled(Link)`
