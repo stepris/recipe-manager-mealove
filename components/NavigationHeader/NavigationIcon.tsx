@@ -4,7 +4,7 @@ import { HeaderProps } from '@/types';
 
 export default function NavigationIcon({ onToggleNav }: HeaderProps) {
   return (
-    <button type='button' onClick={onToggleNav}>
+    <button type='button' onClick={onToggleNav} aria-label='Toggle Navigation'>
       <StyledFilledNavigationIcon />
     </button>
   );
