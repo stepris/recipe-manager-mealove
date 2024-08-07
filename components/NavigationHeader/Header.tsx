@@ -6,7 +6,7 @@ export default function Header({ onToggleNav }) {
   return (
     <StyledHeader>
       <NavigationIcon onToggleNav={onToggleNav} />
-      <Link href={'/'}>
+      <Link href='/'>
         <StyledAppTitle>meaLove</StyledAppTitle>
       </Link>
     </StyledHeader>

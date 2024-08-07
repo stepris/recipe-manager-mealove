@@ -6,12 +6,12 @@ export default function NavigationList({ onToggleNav }) {
     <nav>
       <StyledList>
         <StyledListElement>
-          <StyledLink href={'/'} onClick={onToggleNav}>
+          <StyledLink href='/' onClick={onToggleNav}>
             Explore
           </StyledLink>
         </StyledListElement>
         <StyledListElement>
-          <StyledLink href={'/favorites'} onClick={onToggleNav}>
+          <StyledLink href='/favorites' onClick={onToggleNav}>
             Favorites
           </StyledLink>
         </StyledListElement>

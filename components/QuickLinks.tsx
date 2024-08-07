@@ -11,12 +11,12 @@ export default function QuickLinks() {
   return (
     <LinkWrapper>
       <StyledLinkContainer $isActive={isExplorePage}>
-        <StyledLink href={'/'} $isActive={isExplorePage}>
+        <StyledLink href='/' $isActive={isExplorePage}>
           Explore
         </StyledLink>
       </StyledLinkContainer>
       <StyledLinkContainer $isActive={isFavoritesPage}>
-        <StyledLink href={'/favorites'} $isActive={isFavoritesPage}>
+        <StyledLink href='/favorites' $isActive={isFavoritesPage}>
           Favorites
         </StyledLink>
       </StyledLinkContainer>
