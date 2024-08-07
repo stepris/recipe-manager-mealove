@@ -1,11 +1,23 @@
-import Navigation from '@/components/Navigation';
+import Header from '@/components/NavigationHeader/Header';
 import styled from 'styled-components';
+import NavigationList from './NavigationHeader/NavigationList';
+import { useState } from 'react';
 
 export default function Layout({ children }) {
+  const [showNav, setShowNav] = useState(false);
+
+  const handleToggleNav = () => {
+    setShowNav(!showNav);
+  };
+
   return (
     <StyledWrapper>
-      <Navigation />
-      <div>{children}</div>
+      <Header onToggleNav={handleToggleNav} />
+      {showNav ? (
+        <NavigationList onToggleNav={handleToggleNav} />
+      ) : (
+        <div>{children}</div>
+      )}
     </StyledWrapper>
   );
 }

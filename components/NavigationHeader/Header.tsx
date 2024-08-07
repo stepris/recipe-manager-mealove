@@ -1,11 +1,11 @@
-import NavigationMenu from './NavigationMenu';
+import NavigationIcon from '@/components/NavigationHeader/NavigationIcon';
 import styled from 'styled-components';
 import Link from 'next/link';
 
-export default function Navigation() {
+export default function Header({ onToggleNav }) {
   return (
     <StyledHeader>
-      <NavigationMenu />
+      <NavigationIcon onToggleNav={onToggleNav} />
       <Link href={'/'}>
         <StyledAppTitle>meaLove</StyledAppTitle>
       </Link>

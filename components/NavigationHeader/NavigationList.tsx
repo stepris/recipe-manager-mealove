@@ -1,15 +1,19 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 
-export default function NavigationList() {
+export default function NavigationList({ onToggleNav }) {
   return (
     <nav>
       <StyledList>
         <StyledListElement>
-          <StyledLink href={'/'}>Explore</StyledLink>
+          <StyledLink href={'/'} onClick={onToggleNav}>
+            Explore
+          </StyledLink>
         </StyledListElement>
         <StyledListElement>
-          <StyledLink href={'/favorites'}>Favorites</StyledLink>
+          <StyledLink href={'/favorites'} onClick={onToggleNav}>
+            Favorites
+          </StyledLink>
         </StyledListElement>
       </StyledList>
     </nav>
