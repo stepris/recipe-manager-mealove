@@ -1,8 +1,9 @@
 import NavigationIcon from '@/components/NavigationHeader/NavigationIcon';
 import styled from 'styled-components';
 import Link from 'next/link';
+import { HeaderProps } from '@/types';
 
-export default function Header({ onToggleNav }) {
+export default function Header({ onToggleNav }: HeaderProps) {
   return (
     <StyledHeader>
       <NavigationIcon onToggleNav={onToggleNav} />

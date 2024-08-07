@@ -2,8 +2,9 @@ import Header from '@/components/NavigationHeader/Header';
 import styled from 'styled-components';
 import NavigationList from './NavigationHeader/NavigationList';
 import { useState } from 'react';
+import { ChildrenLayoutProps } from '@/types';
 
-export default function Layout({ children }) {
+export default function Layout({ children }: ChildrenLayoutProps) {
   const [showNav, setShowNav] = useState(false);
 
   const handleToggleNav = () => {

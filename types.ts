@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export type Recipe = {
   id: string;
   title: string;
@@ -52,4 +54,18 @@ export type RecipePreviewProps = {
   isFavorite: boolean;
 };
 
-export type handleToggleFavoriteFunction = (id: string) => void;
+export type HandleToggleFavoriteFunction = (id: string) => void;
+
+export type HeaderProps = {
+  onToggleNav: () => void;
+};
+
+export type HomePageProps = {
+  recipes: Recipe[];
+  onToggleFavorite: (id: string) => {};
+  favoriteRecipesList: Recipe[];
+};
+
+export interface ChildrenLayoutProps {
+  children?: ReactNode;
+}
