@@ -1,17 +1,26 @@
 import styled from 'styled-components';
+import tags from '@/lib/tags.json';
 
 export default function RecipeForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+
+    console.log(data);
+  };
+
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit}>
         {/* Title */}
         <StyledLabel htmlFor='title'>Recipe Name</StyledLabel>
-        <StyledInput type='text' id='title' name='title' />
+        <StyledInput type='text' id='title' name='title' required />
 
         {/* Portions */}
-        <StyledLabel htmlFor='portions'>Portions</StyledLabel>
+        <StyledLabel htmlFor='servings'>Servings</StyledLabel>
         <p>This recipe is for</p>
-        <StyledInput type='text' id='portions' name='portions' />
+        <StyledInput type='text' id='servings' name='servings' />
         <p>person(s).</p>
 
         {/* Ingredients and quantities */}
@@ -82,12 +91,29 @@ export default function RecipeForm() {
         </StyledDropdown>
 
         {/* Main Category */}
+        <StyledLabel htmlFor='categories'>Main Categories</StyledLabel>
+        {tags.map((tag) => {
+          return (
+            <div key={tag.id}>
+              <label htmlFor={tag.name}>{tag.name}</label>
+              <input
+                type='radio'
+                name='categories'
+                id={tag.name}
+                value={tag.name}
+              />
+            </div>
+          );
+        })}
+        <StyledSubmitButton aria-label='submit new recipe'>
+          Submit
+        </StyledSubmitButton>
       </form>
     </>
   );
 }
 
-const StyledForm = styled.form``;
+/* const StyledForm = styled.form``; */
 
 const StyledLabel = styled.label`
   font: var(--font-headline-2);
@@ -101,4 +127,9 @@ const StyledInput = styled.input`
 
 const StyledDropdown = styled.select`
   font: var(--font-base);
+`;
+
+const StyledSubmitButton = styled.button`
+  outline: var(--debug);
+  display: block;
 `;
