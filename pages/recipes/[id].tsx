@@ -3,14 +3,14 @@ import { useRouter } from 'next/router';
 import recipes from '@/lib/recipes.json';
 import Link from 'next/link';
 import styled from 'styled-components';
+import { RecipeDetailsPageProps } from '@/types';
 
 export default function RecipeDetailsPage({
   onToggleFavorite,
   favoriteRecipesList,
-}) {
+}: RecipeDetailsPageProps) {
   const router = useRouter();
   const { id } = router.query;
-
   const recipe = recipes.find((recipe) => recipe.id === id);
 
   if (!recipe) return;

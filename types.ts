@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export type Recipe = {
   id: string;
   title: string;
@@ -25,14 +27,8 @@ export type Recipe = {
   }[];
 };
 
-export type QuickLinksProps = {
-  $isExplorePage?: boolean;
-  $isFavoritesPage?: boolean;
-};
-
 export interface LinkProps {
-  readonly $isExplorePage?: boolean;
-  readonly $isFavoritesPage?: boolean;
+  readonly $isActive?: boolean;
 }
 
 export type FavoriteButtonProps = {
@@ -58,4 +54,25 @@ export type RecipePreviewProps = {
   isFavorite: boolean;
 };
 
-export type handleToggleFavoriteFunction = (id: string) => void;
+export type HandleToggleFavoriteFunction = (id: string) => void;
+
+export type HeaderProps = {
+  onToggleNav: () => void;
+};
+
+export type AppBaseProps = {
+  favoriteRecipes?: Recipe[];
+  recipes?: Recipe[];
+  onToggleFavorite?: (id: string) => {};
+  favoriteRecipesList?: string[];
+};
+
+export interface ChildrenLayoutProps {
+  children?: ReactNode;
+}
+
+export type RecipeDetailsPageProps = {
+  recipes: Recipe[];
+  onToggleFavorite: (id: string) => {};
+  favoriteRecipesList: string[];
+};

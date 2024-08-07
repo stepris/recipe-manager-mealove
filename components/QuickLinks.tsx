@@ -1,20 +1,22 @@
 import Link from 'next/link';
-import styled, { css } from 'styled-components';
-import { QuickLinksProps, LinkProps } from '@/types';
+import styled from 'styled-components';
+import { LinkProps } from '@/types';
+import { useRouter } from 'next/router';
 
-export default function QuickLinks({
-  $isExplorePage,
-  $isFavoritesPage,
-}: QuickLinksProps) {
+export default function QuickLinks() {
+  const router = useRouter();
+  const isExplorePage = router.pathname === '/';
+  const isFavoritesPage = router.pathname === '/favorites';
+
   return (
     <LinkWrapper>
-      <StyledLinkContainer $isExplorePage={$isExplorePage}>
-        <StyledLink href={'/'} $isExplorePage={$isExplorePage}>
+      <StyledLinkContainer $isActive={isExplorePage}>
+        <StyledLink href='/' $isActive={isExplorePage}>
           Explore
         </StyledLink>
       </StyledLinkContainer>
-      <StyledLinkContainer $isFavoritesPage={$isFavoritesPage}>
-        <StyledLink href={'/favorites'} $isFavoritesPage={$isFavoritesPage}>
+      <StyledLinkContainer $isActive={isFavoritesPage}>
+        <StyledLink href='/favorites' $isActive={isFavoritesPage}>
           Favorites
         </StyledLink>
       </StyledLinkContainer>
@@ -33,12 +35,7 @@ const StyledLinkContainer = styled.div<LinkProps>`
   border-bottom: solid 2px var(--color-neutral-3-alpha50);
   text-align: center;
   flex-basis: 50%;
-
-  ${({ $isExplorePage, $isFavoritesPage }) =>
-    ($isExplorePage || $isFavoritesPage) &&
-    css`
-      border-color: var(--color-primary-1);
-    `}
+  border-color: ${(props) => (props.$isActive ? 'var(--color-primary-1)' : '')};
 `;
 
 const StyledLink = styled(Link)<LinkProps>`
@@ -46,10 +43,5 @@ const StyledLink = styled(Link)<LinkProps>`
   font: var(--font-headline-1);
   color: var(--color-neutral-3-alpha50);
   padding-top: var(--spacing-1);
-
-  ${({ $isExplorePage, $isFavoritesPage }) =>
-    ($isExplorePage || $isFavoritesPage) &&
-    css`
-      color: var(--color-primary-1);
-    `}
+  color: ${(props) => (props.$isActive ? 'var(--color-primary-1)' : '')};
 `;
