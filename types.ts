@@ -25,14 +25,8 @@ export type Recipe = {
   }[];
 };
 
-export type QuickLinksProps = {
-  $isExplorePage?: boolean;
-  $isFavoritesPage?: boolean;
-};
-
 export interface LinkProps {
-  readonly $isExplorePage?: boolean;
-  readonly $isFavoritesPage?: boolean;
+  readonly $isActive?: boolean;
 }
 
 export type FavoriteButtonProps = {
