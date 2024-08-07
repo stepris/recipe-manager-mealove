@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { LinkProps } from '@/types';
 import { useRouter } from 'next/router';
 
