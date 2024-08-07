@@ -60,12 +60,19 @@ export type HeaderProps = {
   onToggleNav: () => void;
 };
 
-export type HomePageProps = {
-  recipes: Recipe[];
-  onToggleFavorite: (id: string) => {};
-  favoriteRecipesList: Recipe[];
+export type AppBaseProps = {
+  favoriteRecipes?: Recipe[];
+  recipes?: Recipe[];
+  onToggleFavorite?: (id: string) => {};
+  favoriteRecipesList?: string[];
 };
 
 export interface ChildrenLayoutProps {
   children?: ReactNode;
 }
+
+export type RecipeDetailsPageProps = {
+  recipes: Recipe[];
+  onToggleFavorite: (id: string) => {};
+  favoriteRecipesList: string[];
+};

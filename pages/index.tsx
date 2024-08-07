@@ -1,12 +1,12 @@
 import QuickLinks from '@/components/QuickLinks';
 import RecipeList from '@/components/RecipeList';
-import { HomePageProps } from '@/types';
+import { AppBaseProps } from '@/types';
 
 export default function HomePage({
   recipes,
   onToggleFavorite,
   favoriteRecipesList,
-}: HomePageProps) {
+}: AppBaseProps) {
   return (
     <main>
       <QuickLinks />

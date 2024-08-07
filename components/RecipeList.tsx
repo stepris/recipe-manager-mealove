@@ -1,11 +1,12 @@
 import RecipePreview from '@/components/RecipePreview';
 import styled from 'styled-components';
+import { RecipeDetailsPageProps } from '@/types';
 
 export default function RecipeList({
   recipes,
   onToggleFavorite,
   favoriteRecipesList,
-}) {
+}: RecipeDetailsPageProps) {
   return (
     <section>
       <StyledRecipeList>
