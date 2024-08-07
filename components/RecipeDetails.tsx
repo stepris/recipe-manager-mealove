@@ -1,4 +1,4 @@
-import { Recipe, RecipeDetailsProps } from '@/types';
+import { RecipeDetailsProps } from '@/types';
 import styled from 'styled-components';
 import Image from 'next/image';
 import FavoriteButton from './FavoriteButton';
@@ -17,15 +17,10 @@ export default function RecipeDetails({
     ingredients,
     prepTime,
     cookingTime,
-    servings,
     instructions,
   } = recipe;
 
   const description = instructions[0].description;
-
-  const ingredientList = ingredients.map((ingredientItem) => {
-    return ingredientItem.name;
-  });
 
   return (
     <>
