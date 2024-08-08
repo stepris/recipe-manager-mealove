@@ -113,12 +113,12 @@ export default function RecipeForm() {
 
 const StyledLabel = styled.label`
   font: var(--font-headline-2);
-  outline: var(--debug);
+  outline: var(--debug-1);
 `;
 
 const StyledInput = styled.input`
   font: var(--font-base);
-  outline: var(--debug);
+  outline: var(--debug-2);
 `;
 
 const StyledDropdown = styled.select`
@@ -126,6 +126,6 @@ const StyledDropdown = styled.select`
 `;
 
 const StyledSubmitButton = styled.button`
-  outline: var(--debug);
+  outline: var(--debug-3);
   display: block;
 `;
