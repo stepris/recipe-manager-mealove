@@ -17,16 +17,27 @@ export default function RecipeForm() {
         {/* Title */}
         <StyledInputElement>
           <StyledLabel htmlFor='title'>Recipe Name</StyledLabel>
-          <StyledInput type='text' id='title' name='title' required />
+          <StyledInput
+            type='text'
+            id='title'
+            name='title'
+            required
+            $leftAlign
+          />
         </StyledInputElement>
 
         {/* Portions */}
         <StyledInputElement>
           <StyledLabel htmlFor='servings'>Servings</StyledLabel>
           <StyledElementGroup>
-            <p>This recipe is for</p>
-            <StyledInput type='text' id='servings' name='servings' />
-            <p>person(s).</p>
+            <StyledFormText>This recipe is for</StyledFormText>
+            <StyledInput
+              type='number'
+              id='servings'
+              name='servings'
+              $isMedium
+            />
+            <StyledFormText>person(s).</StyledFormText>
           </StyledElementGroup>
         </StyledInputElement>
 
@@ -48,7 +59,7 @@ export default function RecipeForm() {
                       </option>
                     ))}
                   </StyledDropdown>
-                  <StyledTableCell name='name' $isLarge />
+                  <StyledTableCell name='name' $isLarge $leftAlign />
                 </>
               );
             })}
@@ -58,11 +69,11 @@ export default function RecipeForm() {
         {/* Recipe preparation */}
         <StyledInputElement>
           <StyledLabel htmlFor='instructions'>Recipe preparation</StyledLabel>
-          <textarea
+          <StyledTextArea
             id='instructions'
             name='instructions'
-            rows={10}
-            cols={38}
+            rows={4}
+            cols={10}
             minLength={1}
             required
           />
@@ -76,11 +87,17 @@ export default function RecipeForm() {
               type='number'
               id='prepTimeHours'
               name='prepTimeHours'
+              $isMedium
             />
-            <p>h</p>
+            <StyledH3>h</StyledH3>
             <StyledLabel htmlFor='prepTimeMins'></StyledLabel>
-            <StyledInput type='number' id='prepTimeMins' name='prepTimeMins' />
-            <p>min</p>
+            <StyledInput
+              type='number'
+              id='prepTimeMins'
+              name='prepTimeMins'
+              $isMedium
+            />
+            <StyledH3>min</StyledH3>
           </StyledElementGroup>
         </StyledInputElement>
 
@@ -92,15 +109,17 @@ export default function RecipeForm() {
               type='number'
               id='cookingTimeHours'
               name='cookingTimeHours'
+              $isMedium
             />
-            <p>h</p>
+            <StyledH3>h</StyledH3>
             <StyledLabel htmlFor='cookingTimeMins'></StyledLabel>
             <StyledInput
               type='number'
               id='cookingTimeMins'
               name='cookingTimeMins'
+              $isMedium
             />
-            <p>min</p>
+            <StyledH3>min</StyledH3>
           </StyledElementGroup>
         </StyledInputElement>
 
@@ -118,19 +137,21 @@ export default function RecipeForm() {
         {/* Main Category */}
         <StyledInputElement>
           <StyledLabel htmlFor='categories'>Main Categories</StyledLabel>
-          {tags.map((tag) => {
-            return (
-              <div key={tag.id}>
-                <label htmlFor={tag.name}>{tag.name}</label>
-                <input
-                  type='radio'
-                  name='categories'
-                  id={tag.name}
-                  value={tag.name}
-                />
-              </div>
-            );
-          })}
+          <StyledCategoryContainer>
+            {tags.map((tag) => {
+              return (
+                <StyledCategoryElement key={tag.id}>
+                  <label htmlFor={tag.name}>{tag.name}</label>
+                  <input
+                    type='radio'
+                    name='categories'
+                    id={tag.name}
+                    value={tag.name}
+                  />
+                </StyledCategoryElement>
+              );
+            })}
+          </StyledCategoryContainer>
         </StyledInputElement>
         <StyledSubmitButton aria-label='submit new recipe'>
           Submit
@@ -143,31 +164,75 @@ export default function RecipeForm() {
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 25px;
+  gap: var(--spacing-5);
+  padding: var(--spacing-5);
 `;
 
 const StyledInputElement = styled.div`
   display: flex;
   flex-direction: column;
-  /* outline: var(--debug-1); */
 `;
 
 const StyledElementGroup = styled.div`
   display: flex;
   flex-direction: row;
-  outline: var(--debug-2);
+  align-items: center;
+  gap: var(--spacing-2);
+`;
+
+const StyledH2 = styled.h2`
+  font: var(--font-headline-2);
+  padding-bottom: var(--spacing-2);
+`;
+
+const StyledH3 = styled.h3`
+  font: var(--font-headline-3);
+`;
+
+const StyledFormText = styled.p`
+  font: var(--font-input);
+`;
+
+const StyledLabel = styled.label`
+  font: var(--font-headline-2);
+  padding-bottom: var(--spacing-2);
+`;
+
+const StyledInput = styled.input`
+  height: 2rem;
+  border: 1px solid var(--color-neutral-4-alpha25);
+  border-radius: var(--radius-s);
+  text-align: center;
+  font: var(--font-input);
+  ${({ $isMedium }) =>
+    $isMedium &&
+    css`
+      width: 60px;
+    `}
+  ${({ $leftAlign }) =>
+    $leftAlign &&
+    css`
+      text-align: left;
+    `}
+`;
+
+const StyledTextArea = styled.textarea`
+  border: 1px solid var(--color-neutral-4-alpha25);
+  border-radius: var(--radius-s);
 `;
 
 const StyledTable = styled.div`
   display: grid;
   grid-template-columns: 2fr 2fr 4fr;
-  outline: var(--debug-3);
 `;
 
 const StyledTableCell = styled.input`
   font: var(--font-input);
-  outline: var(--debug-2);
+  height: 2rem;
+  border: 1px solid var(--color-neutral-4-alpha25);
+  border-radius: var(--radius-s);
+  margin-top: var(--spacing-1);
+  text-align: center;
   ${({ $isMedium }) =>
     $isMedium &&
     css`
@@ -178,32 +243,40 @@ const StyledTableCell = styled.input`
     css`
       width: 100%;
     `}
-`;
-
-const StyledH2 = styled.h2`
-  font: var(--font-headline-2);
-`;
-
-const StyledH3 = styled.h3`
-  font: var(--font-headline-3);
-`;
-
-const StyledLabel = styled.label`
-  font: var(--font-headline-2);
-`;
-
-const StyledInput = styled.input`
-  font: var(--font-input);
-  max-width: 100px;
+      ${({ $leftAlign }) =>
+    $leftAlign &&
+    css`
+      text-align: left;
+    `}
 `;
 
 const StyledDropdown = styled.select`
   font: var(--font-input);
+  height: 2rem;
+  border: 1px solid var(--color-neutral-4-alpha25);
+  border-radius: var(--radius-s);
+  margin-top: var(--spacing-1);
   width: 70px;
-  outline: var(--debug-3);
+`;
+
+const StyledCategoryContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--spacing-1);
+`;
+
+const StyledCategoryElement = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: center;
+  font: var(--font-headline-3);
+  background-color: var(--color-neutral-2);
+  border-radius: var(--radius-m);
+  height: 60px;
+  width: 60px;
 `;
 
 const StyledSubmitButton = styled.button`
-  outline: var(--debug-3);
   display: block;
 `;
