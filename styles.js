@@ -319,6 +319,7 @@ video {
     --font-headline-3: normal 700 var(--font-size-small) var(--font-family);  
     --font-base: normal 400 var(--font-size-base) var(--font-family);
     --font-caption: normal 600 var(--font-size-small) var(--font-family);
+    --font-input: normal 400 var(--font-size-small) var(--font-family);
 
     /* Letter Spacing */
     --letter-spacing-s: 0.1rem;
