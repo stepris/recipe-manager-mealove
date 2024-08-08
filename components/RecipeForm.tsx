@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import tags from '@/lib/tags.json';
+import units from '@/lib/units.json';
 
 export default function RecipeForm() {
   const handleSubmit = (event) => {
@@ -31,16 +32,11 @@ export default function RecipeForm() {
         {/* Unit */}
         <StyledLabel htmlFor='unit'>Unit</StyledLabel>
         <StyledDropdown id='unit' name='unit'>
-          <option value=''></option>
-          <option value='g'>g</option>
-          <option value='kg'>kg</option>
-          <option value='ml'>ml</option>
-          <option value='l'>l</option>
-          <option value='tsp'>tsp</option>
-          <option value='tbsp'>tbsp</option>
-          <option value='piece(s)'>piece(s)</option>
-          <option value='cup'>cup</option>
-          <option value='bottle'>bottle</option>
+          {units.map((unit) => (
+            <option key={unit.id} value={unit.unit}>
+              {unit.unit}
+            </option>
+          ))}
         </StyledDropdown>
         {/* Ingredient */}
         <StyledLabel htmlFor='ingredient'>Ingredient</StyledLabel>

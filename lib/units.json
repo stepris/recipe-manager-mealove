@@ -1,0 +1,12 @@
+[
+  { "id": "1", "unit": "" },
+  { "id": "2", "unit": "g" },
+  { "id": "3", "unit": "kg" },
+  { "id": "4", "unit": "ml" },
+  { "id": "5", "unit": "l" },
+  { "id": "6", "unit": "tsp" },
+  { "id": "7", "unit": "tbsp" },
+  { "id": "8", "unit": "piece(s)" },
+  { "id": "9", "unit": "cub" },
+  { "id": "10", "unit": "bottle" }
+]
