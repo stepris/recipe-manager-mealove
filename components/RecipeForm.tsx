@@ -2,23 +2,66 @@ import styled, { css } from 'styled-components';
 import tags from '@/lib/tags.json';
 import units from '@/lib/units.json';
 import { useState } from 'react';
+import recipes from '@/lib/recipes.json';
+import { useEffect } from 'react';
 
 export default function RecipeForm() {
   const [inputRow, setInputRow] = useState([{ id: crypto.randomUUID() }]);
 
+  const [formData, setFormData] = useState({
+    id: '',
+    title: 'Test',
+    imageUrl: '',
+    description: '',
+    ingredients: [
+      {
+        id: '1',
+        quantity: 1,
+        unit: '',
+        name: '',
+      },
+    ],
+    prepTime: {
+      h: 0,
+      min: 0,
+    },
+    cookingTime: {
+      h: 0,
+      min: 0,
+    },
+    servings: 1,
+    tags: [],
+    instructions: [
+      {
+        id: '1',
+        description: '',
+      },
+    ],
+  });
+
   const handleInputRow = () => {
     const array = [...inputRow, { id: crypto.randomUUID() }];
     setInputRow(array);
-    console.log(array);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-
-    console.log(data);
   };
+
+  const handleChange = (event) => {
+    const changeField = event.target.name;
+    const newValue = event.target.value;
+    setFormData((currData) => {
+      currData[changeField] = newValue;
+      return { ...currData };
+    });
+  };
+  console.log(formData);
+  useEffect(() => {
+    setFormData(recipes[0]);
+  }, []);
 
   return (
     <>
@@ -32,6 +75,8 @@ export default function RecipeForm() {
             name='title'
             required
             $leftAlign
+            value={formData.title}
+            onChange={handleChange}
           />
         </StyledInputElement>
 
@@ -45,6 +90,8 @@ export default function RecipeForm() {
               id='servings'
               name='servings'
               $isMedium
+              value={formData.servings}
+              onChange={handleChange}
             />
             <StyledFormText>person(s).</StyledFormText>
           </StyledElementGroup>
@@ -88,18 +135,22 @@ export default function RecipeForm() {
             cols={10}
             minLength={1}
             required
+            value={formData.instructions[0].description}
+            onChange={handleChange}
           />
         </StyledInputElement>
 
-        {/* Working hours */}
+        {/* Prep Time */}
         <StyledInputElement>
-          <StyledLabel htmlFor='prepTimeHours'>Working hours</StyledLabel>
+          <StyledLabel htmlFor='prepTimeHours'>Prep Time</StyledLabel>
           <StyledElementGroup>
             <StyledInput
               type='number'
               id='prepTimeHours'
               name='prepTimeHours'
               $isMedium
+              value={formData.prepTime.h}
+              onChange={handleChange}
             />
             <StyledH3>h</StyledH3>
             <StyledLabel htmlFor='prepTimeMins'></StyledLabel>
@@ -108,6 +159,8 @@ export default function RecipeForm() {
               id='prepTimeMins'
               name='prepTimeMins'
               $isMedium
+              value={formData.prepTime.min}
+              onChange={handleChange}
             />
             <StyledH3>min</StyledH3>
           </StyledElementGroup>
@@ -122,6 +175,8 @@ export default function RecipeForm() {
               id='cookingTimeHours'
               name='cookingTimeHours'
               $isMedium
+              value={formData.cookingTime.h}
+              onChange={handleChange}
             />
             <StyledH3>h</StyledH3>
             <StyledLabel htmlFor='cookingTimeMins'></StyledLabel>
@@ -130,6 +185,8 @@ export default function RecipeForm() {
               id='cookingTimeMins'
               name='cookingTimeMins'
               $isMedium
+              value={formData.cookingTime.min}
+              onChange={handleChange}
             />
             <StyledH3>min</StyledH3>
           </StyledElementGroup>
