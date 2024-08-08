@@ -1,8 +1,17 @@
 import styled, { css } from 'styled-components';
 import tags from '@/lib/tags.json';
 import units from '@/lib/units.json';
+import { useState } from 'react';
 
 export default function RecipeForm() {
+  const [inputRow, setInputRow] = useState([{ id: crypto.randomUUID() }]);
+
+  const handleInputRow = () => {
+    const array = [...inputRow, { id: crypto.randomUUID() }];
+    setInputRow(array);
+    console.log(array);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -44,26 +53,29 @@ export default function RecipeForm() {
         {/* Ingredients and quantities */}
         <StyledInputElement>
           <StyledH2>Ingredients and quantities</StyledH2>
-          <StyledTable>
+          <StyledCellWrapper>
             <StyledH3>Quantity</StyledH3>
             <StyledH3>Unit</StyledH3>
             <StyledH3>Ingredient</StyledH3>
-            {Array.from({ length: 3 }).map((num) => {
-              return (
-                <>
-                  <StyledTableCell type='number' name='quantity' $isMedium />
-                  <StyledDropdown id='unit' name='unit'>
-                    {units.map((unit) => (
-                      <option key={unit.id} value={unit.unit}>
-                        {unit.unit}
-                      </option>
-                    ))}
-                  </StyledDropdown>
-                  <StyledTableCell name='name' $isLarge $leftAlign />
-                </>
-              );
-            })}
-          </StyledTable>
+          </StyledCellWrapper>
+          {inputRow.map((row) => {
+            return (
+              <StyledCellWrapper key={row.id}>
+                <StyledTableCell type='number' name='quantity' $isMedium />
+                <StyledDropdown id='unit' name='unit'>
+                  {units.map((unit) => (
+                    <option key={unit.id} value={unit.unit}>
+                      {unit.unit}
+                    </option>
+                  ))}
+                </StyledDropdown>
+                <StyledTableCell name='name' $isLarge $leftAlign />
+              </StyledCellWrapper>
+            );
+          })}
+          <button type='button' onClick={handleInputRow}>
+            +
+          </button>
         </StyledInputElement>
 
         {/* Recipe preparation */}
@@ -221,9 +233,9 @@ const StyledTextArea = styled.textarea`
   border-radius: var(--radius-s);
 `;
 
-const StyledTable = styled.div`
+const StyledCellWrapper = styled.div`
   display: grid;
-  grid-template-columns: 2fr 2fr 4fr;
+  grid-template-columns: 1.8fr 2fr 4fr;
 `;
 
 const StyledTableCell = styled.input`
