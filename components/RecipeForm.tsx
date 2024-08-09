@@ -6,8 +6,6 @@ import recipes from '@/lib/recipes.json';
 import { useEffect } from 'react';
 
 export default function RecipeForm() {
-  const [inputRow, setInputRow] = useState([{ id: crypto.randomUUID() }]);
-
   const [formData, setFormData] = useState({
     id: crypto.randomUUID(),
     title: '',
@@ -39,14 +37,9 @@ export default function RecipeForm() {
     ],
   });
 
-  // const handleInputRow = () => {
-  //   const array = [...inputRow, { id: crypto.randomUUID() }];
-  //   setInputRow(array);
-  // };
-
   const handleInputRow = () => {
     setFormData((currData) => {
-      currData.ingredients = [
+      const newIngredients = [
         ...currData.ingredients,
         {
           id: crypto.randomUUID(),
@@ -55,7 +48,7 @@ export default function RecipeForm() {
           name: '',
         },
       ];
-      return { ...currData };
+      return { ...currData, ingredients: newIngredients };
     });
   };
 
@@ -68,12 +61,11 @@ export default function RecipeForm() {
     });
   };
 
-  console.log(formData);
-
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData);
   };
+
+  // This is for Edit-Recipe-Feature, later!
 
   // useEffect(() => {
   //   setFormData(recipes[0]);
