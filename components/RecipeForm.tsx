@@ -9,13 +9,13 @@ export default function RecipeForm() {
   const [inputRow, setInputRow] = useState([{ id: crypto.randomUUID() }]);
 
   const [formData, setFormData] = useState({
-    id: '',
-    title: 'Test',
+    id: crypto.randomUUID(),
+    title: '',
     imageUrl: '',
     description: '',
     ingredients: [
       {
-        id: '1',
+        id: crypto.randomUUID(),
         quantity: 1,
         unit: '',
         name: '',
@@ -39,15 +39,24 @@ export default function RecipeForm() {
     ],
   });
 
-  const handleInputRow = () => {
-    const array = [...inputRow, { id: crypto.randomUUID() }];
-    setInputRow(array);
-  };
+  // const handleInputRow = () => {
+  //   const array = [...inputRow, { id: crypto.randomUUID() }];
+  //   setInputRow(array);
+  // };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData);
+  const handleInputRow = () => {
+    setFormData((currData) => {
+      currData.ingredients = [
+        ...currData.ingredients,
+        {
+          id: crypto.randomUUID(),
+          quantity: 1,
+          unit: '',
+          name: '',
+        },
+      ];
+      return { ...currData };
+    });
   };
 
   const handleChange = (event) => {
@@ -58,10 +67,17 @@ export default function RecipeForm() {
       return { ...currData };
     });
   };
+
   console.log(formData);
-  useEffect(() => {
-    setFormData(recipes[0]);
-  }, []);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(formData);
+  };
+
+  // useEffect(() => {
+  //   setFormData(recipes[0]);
+  // }, []);
 
   return (
     <>
@@ -105,9 +121,9 @@ export default function RecipeForm() {
             <StyledH3>Unit</StyledH3>
             <StyledH3>Ingredient</StyledH3>
           </StyledCellWrapper>
-          {inputRow.map((row) => {
+          {formData.ingredients.map((ingredient) => {
             return (
-              <StyledCellWrapper key={row.id}>
+              <StyledCellWrapper key={ingredient.id}>
                 <StyledTableCell type='number' name='quantity' $isMedium />
                 <StyledDropdown id='unit' name='unit'>
                   {units.map((unit) => (
