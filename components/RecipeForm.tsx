@@ -80,8 +80,8 @@ export default function RecipeForm() {
       const newIngredient = { ...currentIngredient, quantity: newValue };
 
       setFormData((currData) => {
-        const newIngredients = currData.ingredients.map((ingr) =>
-          ingr.id === currentIngredient.id ? newIngredient : ingr
+        const newIngredients = currData.ingredients.map((ingredient) =>
+          ingredient.id === currentIngredient.id ? newIngredient : ingredient
         );
         console.log(newIngredients);
         return { ...currData, ingredients: newIngredients };
