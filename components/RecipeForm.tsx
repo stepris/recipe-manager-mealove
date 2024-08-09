@@ -55,14 +55,24 @@ export default function RecipeForm() {
   const handleChange = (event) => {
     const changeField = event.target.name;
     const newValue = event.target.value;
-    setFormData((currData) => {
-      currData[changeField] = newValue;
-      return { ...currData };
-    });
+    if (changeField === 'instructions') {
+      setFormData((currData) => {
+        const newInstructions = [
+          { ...currData.instructions[0], description: event.target.value },
+        ];
+        return { ...currData, instructions: newInstructions };
+      });
+    } else {
+      setFormData((currData) => {
+        currData[changeField] = newValue;
+        return { ...currData };
+      });
+    }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(formData);
   };
 
   // This is for Edit-Recipe-Feature, later!
@@ -85,6 +95,7 @@ export default function RecipeForm() {
             $leftAlign
             value={formData.title}
             onChange={handleChange}
+            placeholder='Type your Recipe Name here'
           />
         </StyledInputElement>
 
@@ -116,7 +127,13 @@ export default function RecipeForm() {
           {formData.ingredients.map((ingredient) => {
             return (
               <StyledCellWrapper key={ingredient.id}>
-                <StyledTableCell type='number' name='quantity' $isMedium />
+                <StyledTableCell
+                  type='number'
+                  name='quantity'
+                  $isMedium
+                  value={formData.ingredients[0].quantity}
+                  onChange={handleChange}
+                />
                 <StyledDropdown id='unit' name='unit'>
                   {units.map((unit) => (
                     <option key={unit.id} value={unit.unit}>
@@ -124,7 +141,12 @@ export default function RecipeForm() {
                     </option>
                   ))}
                 </StyledDropdown>
-                <StyledTableCell name='name' $isLarge $leftAlign />
+                <StyledTableCell
+                  name='name'
+                  $isLarge
+                  $leftAlign
+                  placeholder='Ingredient Name'
+                />
               </StyledCellWrapper>
             );
           })}
