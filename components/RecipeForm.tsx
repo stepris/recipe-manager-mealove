@@ -51,7 +51,7 @@ export default function RecipeForm() {
         ...currData.ingredients,
         {
           id: generateID(),
-          quantity: 1,
+          quantity: '',
           unit: '',
           name: '',
         },
@@ -79,14 +79,13 @@ export default function RecipeForm() {
       );
       const newIngredient = { ...currentIngredient, quantity: newValue };
 
-      // setFormData((currData) => {
-      //   const newIngredients = [
-      //     ...currData.ingredients, currData.ingredients: currData.ingredients.find(
-      //       (ingredient) => ingredient.id === currentIngredient
-      //     ),
-      //   ];
-      //   return { ...currData };
-      // });
+      setFormData((currData) => {
+        const newIngredients = currData.ingredients.map((ingr) =>
+          ingr.id === currentIngredient.id ? newIngredient : ingr
+        );
+        console.log(newIngredients);
+        return { ...currData, ingredients: newIngredients };
+      });
     } else {
       setFormData((currData) => {
         currData[changeField] = newValue;
@@ -153,14 +152,14 @@ export default function RecipeForm() {
             <StyledH3>Unit</StyledH3>
             <StyledH3>Ingredient</StyledH3>
           </StyledCellWrapper>
-          {formData.ingredients.map((ingredient, index) => {
+          {formData.ingredients.map((ingredient) => {
             return (
-              <StyledCellWrapper id={ingredient.id} key={index}>
+              <StyledCellWrapper id={ingredient.id} key={ingredient.id}>
                 <StyledTableCell
                   type='number'
                   name={`quantity${ingredient.id}`}
                   $isMedium
-                  value={formData.ingredients[0].quantity}
+                  value={ingredient.quantity}
                   onChange={handleChange}
                 />
                 <StyledDropdown id='unit' name='unit'>
