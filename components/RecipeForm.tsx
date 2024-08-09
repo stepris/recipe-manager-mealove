@@ -41,7 +41,8 @@ export default function RecipeForm() {
     ],
   };
 
-  console.log(emptyObject.ingredients[0].id);
+  // console.log(emptyObject.ingredients[0].id);
+
   const [formData, setFormData] = useState(emptyObject);
 
   const handleAddIngredient = () => {
@@ -62,7 +63,6 @@ export default function RecipeForm() {
   const handleChange = (event) => {
     const changeField = event.target.name;
     const newValue = event.target.value;
-    console.dir(changeField);
     // for instructions field
     if (changeField === 'instructions') {
       setFormData((currData) => {
@@ -73,8 +73,20 @@ export default function RecipeForm() {
       });
     }
     // for quantity in ingredients
-    else if (changeField === 'quantity') {
-      console.log(event.target.id);
+    else if (changeField.startsWith('quantity')) {
+      const currentIngredient = formData.ingredients.find(
+        (ingredient) => ingredient.id === event.target.parentElement.id
+      );
+      const newIngredient = { ...currentIngredient, quantity: newValue };
+
+      // setFormData((currData) => {
+      //   const newIngredients = [
+      //     ...currData.ingredients, currData.ingredients: currData.ingredients.find(
+      //       (ingredient) => ingredient.id === currentIngredient
+      //     ),
+      //   ];
+      //   return { ...currData };
+      // });
     } else {
       setFormData((currData) => {
         currData[changeField] = newValue;
@@ -141,9 +153,9 @@ export default function RecipeForm() {
             <StyledH3>Unit</StyledH3>
             <StyledH3>Ingredient</StyledH3>
           </StyledCellWrapper>
-          {formData.ingredients.map((ingredient) => {
+          {formData.ingredients.map((ingredient, index) => {
             return (
-              <StyledCellWrapper key={ingredient.id}>
+              <StyledCellWrapper id={ingredient.id} key={index}>
                 <StyledTableCell
                   type='number'
                   name={`quantity${ingredient.id}`}
