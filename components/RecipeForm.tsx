@@ -5,16 +5,20 @@ import { useState } from 'react';
 import recipes from '@/lib/recipes.json';
 import { useEffect } from 'react';
 
+const generateID = () => {
+  return crypto.randomUUID();
+};
+
 export default function RecipeForm() {
-  const [formData, setFormData] = useState({
-    id: crypto.randomUUID(),
+  const emptyObject = {
+    id: '',
     title: '',
     imageUrl: '',
     description: '',
     ingredients: [
       {
-        id: crypto.randomUUID(),
-        quantity: 1,
+        id: '1',
+        quantity: '',
         unit: '',
         name: '',
       },
@@ -35,14 +39,17 @@ export default function RecipeForm() {
         description: '',
       },
     ],
-  });
+  };
 
-  const handleInputRow = () => {
+  console.log(emptyObject.ingredients[0].id);
+  const [formData, setFormData] = useState(emptyObject);
+
+  const handleAddIngredient = () => {
     setFormData((currData) => {
       const newIngredients = [
         ...currData.ingredients,
         {
-          id: crypto.randomUUID(),
+          id: generateID(),
           quantity: 1,
           unit: '',
           name: '',
@@ -55,6 +62,8 @@ export default function RecipeForm() {
   const handleChange = (event) => {
     const changeField = event.target.name;
     const newValue = event.target.value;
+    console.dir(changeField);
+    // for instructions field
     if (changeField === 'instructions') {
       setFormData((currData) => {
         const newInstructions = [
@@ -62,6 +71,10 @@ export default function RecipeForm() {
         ];
         return { ...currData, instructions: newInstructions };
       });
+    }
+    // for quantity in ingredients
+    else if (changeField === 'quantity') {
+      console.log(event.target.id);
     } else {
       setFormData((currData) => {
         currData[changeField] = newValue;
@@ -72,11 +85,15 @@ export default function RecipeForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData);
+
+    const newRecipe = {
+      ...formData,
+      id: generateID(),
+    };
+    console.log(newRecipe);
   };
 
   // This is for Edit-Recipe-Feature, later!
-
   // useEffect(() => {
   //   setFormData(recipes[0]);
   // }, []);
@@ -129,7 +146,7 @@ export default function RecipeForm() {
               <StyledCellWrapper key={ingredient.id}>
                 <StyledTableCell
                   type='number'
-                  name='quantity'
+                  name={`quantity${ingredient.id}`}
                   $isMedium
                   value={formData.ingredients[0].quantity}
                   onChange={handleChange}
@@ -150,7 +167,7 @@ export default function RecipeForm() {
               </StyledCellWrapper>
             );
           })}
-          <button type='button' onClick={handleInputRow}>
+          <button type='button' onClick={handleAddIngredient}>
             +
           </button>
         </StyledInputElement>
