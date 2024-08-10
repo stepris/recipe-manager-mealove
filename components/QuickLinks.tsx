@@ -36,6 +36,9 @@ const StyledLinkContainer = styled.div<LinkProps>`
   text-align: center;
   flex-basis: 50%;
   border-color: ${(props) => (props.$isActive ? 'var(--color-primary-1)' : '')};
+  &:hover {
+    border-color: var(--color-primary-1);
+  }
 `;
 
 const StyledLink = styled(Link)<LinkProps>`
@@ -44,4 +47,7 @@ const StyledLink = styled(Link)<LinkProps>`
   color: var(--color-neutral-3-alpha50);
   padding-top: var(--spacing-1);
   color: ${(props) => (props.$isActive ? 'var(--color-primary-1)' : '')};
+  &:hover {
+    color: var(--color-primary-1);
+  }
 `;
