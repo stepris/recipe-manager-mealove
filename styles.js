@@ -344,6 +344,6 @@ video {
     --debug: 1px solid green;
 
     /* Effects */
-    --trans-color-1: color 0.2s ease-in;
+    --trans-1: 0.2s ease-in;
   }
 `;

@@ -38,6 +38,7 @@ const StyledLinkContainer = styled.div<LinkProps>`
   border-color: ${(props) => (props.$isActive ? 'var(--color-primary-1)' : '')};
   &:hover {
     border-color: var(--color-primary-1);
+    transition: border-color var(--trans-1);
   }
 `;
 
@@ -49,5 +50,6 @@ const StyledLink = styled(Link)<LinkProps>`
   color: ${(props) => (props.$isActive ? 'var(--color-primary-1)' : '')};
   &:hover {
     color: var(--color-primary-1);
+    transition: color var(--trans-1);
   }
 `;
