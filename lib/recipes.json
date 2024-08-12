@@ -5,7 +5,7 @@
     "description": "Classic spaghetti with a rich tomato sauce and herbs.",
     "difficulty": "medium",
     "id": "1",
-    "imageUrl": "https://images.unsplash.com/photo-1515041761709-f9fc96e04cd3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "/recipe-default-imgs/super-snapper-efJu9SKIjLA-unsplash.jpg",
     "ingredients": [
       {
         "id": "1",
@@ -49,7 +49,7 @@
     "description": "Quick and easy avocado toast with a sprinkle of sea salt.",
     "difficulty": "easy",
     "id": "2",
-    "imageUrl": "https://images.unsplash.com/photo-1612477491914-a2f46ef8586e?q=80&w=1782&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "/recipe-default-imgs/augustine-fou-caKJ7PwqFBQ-unsplash.jpg",
     "ingredients": [
       {
         "id": "1",
@@ -87,7 +87,7 @@
     "description": "Tender roast beef with a savory herb crust.",
     "difficulty": "hard",
     "id": "3",
-    "imageUrl": "https://images.unsplash.com/photo-1465014925804-7b9ede58d0d7?q=80&w=1676&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "/recipe-default-imgs/brooke-lark-HjWzkqW1dgI-unsplash.jpg",
     "ingredients": [
       {
         "id": "1",
@@ -131,7 +131,7 @@
     "description": "Creamy mushroom risotto with a touch of white wine.",
     "difficulty": "medium",
     "id": "4",
-    "imageUrl": "https://images.unsplash.com/photo-1523218345414-cd47aea19ba6?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "/recipe-default-imgs/brooke-lark-IDTEXXXfS44-unsplash.jpg",
     "ingredients": [
       {
         "id": "1",
@@ -175,7 +175,7 @@
     "description": "A fresh and tangy Greek salad with olives and feta cheese.",
     "difficulty": "easy",
     "id": "5",
-    "imageUrl": "https://images.unsplash.com/photo-1529042355636-0f06afe127a9?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "/recipe-default-imgs/brooke-lark-R18ecx07b3c-unsplash.jpg",
     "ingredients": [
       {
         "id": "1",
@@ -219,7 +219,7 @@
     "description": "Spicy chicken curry with coconut milk and a blend of spices.",
     "difficulty": "hard",
     "id": "6",
-    "imageUrl": "https://images.unsplash.com/photo-1485962398705-ef6a13c41e8f?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "/recipe-default-imgs/cathal-mac-an-bheatha-TC-hOoD6EOY-unsplash.jpg",
     "ingredients": [
       {
         "id": "1",
@@ -263,7 +263,7 @@
     "description": "Sweet and savory glazed salmon fillets with sesame seeds.",
     "difficulty": "medium",
     "id": "7",
-    "imageUrl": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "/recipe-default-imgs/charlesdeluvio-PqsImnjuElM-unsplash.jpg",
     "ingredients": [
       {
         "id": "1",
@@ -307,7 +307,7 @@
     "description": "Rich and creamy lasagna with layers of cheese and meat sauce.",
     "difficulty": "godlike",
     "id": "8",
-    "imageUrl": "https://images.unsplash.com/photo-1484980972926-edee96e0960d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "/recipe-default-imgs/charlesdeluvio-hQckRlItq4c-unsplash.jpg",
     "ingredients": [
       {
         "id": "1",
@@ -351,7 +351,7 @@
     "description": "Refreshing fruit smoothie with a blend of tropical flavors.",
     "difficulty": "easy",
     "id": "9",
-    "imageUrl": "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=1884&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "/recipe-default-imgs/eaters-collective-12eHC6FxPyg-unsplash.jpg",
     "ingredients": [
       {
         "id": "1",
@@ -389,7 +389,7 @@
     "description": "Decadent chocolate cake with a rich fudge frosting.",
     "difficulty": "godlike",
     "id": "10",
-    "imageUrl": "https://images.unsplash.com/photo-1619683548293-c74defe8d5d2?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "/recipe-default-imgs/vita-marija-murenaite-gNfZVRZOdlY-unsplash.jpg",
     "ingredients": [
       {
         "id": "1",

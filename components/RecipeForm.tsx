@@ -15,8 +15,7 @@ export default function RecipeForm() {
     description: '',
     difficulty: '',
     id: '1',
-    imageUrl:
-      'https://images.unsplash.com/photo-1515041761709-f9fc96e04cd3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    imageUrl: '/recipe-default-imgs/alexander-mils-pPhN8HFzkDE-unsplash',
     ingredients: [
       {
         id: '1',
@@ -39,6 +38,15 @@ export default function RecipeForm() {
 
   const [formData, setFormData] = useState(emptyRecipe);
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormData((currData) => ({
+      ...currData,
+      [name]: value,
+    }));
+  };
+
   const handleAddIngredient = () => {
     setFormData((currData) => {
       const newIngredients = [
@@ -54,27 +62,23 @@ export default function RecipeForm() {
     });
   };
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-
-    setFormData((currData) => ({
-      ...currData,
-      [name]: value,
-    }));
-  };
-
   const handleIngredientChange = (newIngredient) => {
-    /* 
-    const index = formData.ingredients.findIndex(
-      (ingredient) => ingredient.id === newIngredient.id
-    ); */
-
     setFormData((currData) => {
       const newIngredients = currData.ingredients.map((ingredient) =>
         ingredient.id === newIngredient.id ? newIngredient : ingredient
       );
       return { ...currData, ingredients: newIngredients };
     });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const newRecipe = {
+      ...formData,
+      id: generateID(),
+    };
+    console.log(newRecipe);
   };
 
   console.log(formData);
@@ -112,16 +116,6 @@ export default function RecipeForm() {
       });
     }
   }; */
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    const newRecipe = {
-      ...formData,
-      id: generateID(),
-    };
-    console.log(newRecipe);
-  };
 
   // This is for Edit-Recipe-Feature, later!
   // useEffect(() => {
