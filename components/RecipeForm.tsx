@@ -8,7 +8,7 @@ import TimeInput from '@/components/TimeInput';
 export default function RecipeForm() {
   const emptyRecipe: EmptyRecipeType = {
     category: '',
-    cookingTime: 90,
+    cookingTime: 0,
     description: '',
     difficulty: 'easy',
     id: '1',
@@ -44,13 +44,26 @@ export default function RecipeForm() {
     }));
   };
 
+  const handleInstructionsChange = (event) => {
+    const { value } = event.target;
+
+    setFormData((currData) => {
+      const newInstructions = [...currData.instructions];
+      newInstructions[0] = { ...newInstructions[0], description: value };
+      return {
+        ...currData,
+        instructions: newInstructions,
+      };
+    });
+  };
+
   const handleAddIngredient = () => {
     setFormData((currData) => {
       const newIngredients = [
         ...currData.ingredients,
         {
           id: crypto.randomUUID(),
-          quantity: '',
+          quantity: 0,
           unit: '',
           name: '',
         },
@@ -72,6 +85,10 @@ export default function RecipeForm() {
     setFormData((currData) => ({ ...currData, prepTime: newPrepTime }));
   };
 
+  const handleCookingTimeChange = (newCookingTime) => {
+    setFormData((currData) => ({ ...currData, cookingTime: newCookingTime }));
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -83,40 +100,6 @@ export default function RecipeForm() {
   };
 
   console.log(formData);
-
-  /*   const handleChange = (event) => {
-    const changeField = event.target.name;
-    const newValue = event.target.value;
-    // for instructions field
-    if (changeField === 'instructions') {
-      setFormData((currData) => {
-        const newInstructions = [
-          { ...currData.instructions[0], description: event.target.value },
-        ];
-        return { ...currData, instructions: newInstructions };
-      });
-    }
-    // for quantity in ingredients
-    else if (changeField.startsWith('quantity')) {
-      const currentIngredient = formData.ingredients.find(
-        (ingredient) => ingredient.id === event.target.parentElement.id
-      );
-      const newIngredient = { ...currentIngredient, quantity: newValue };
-
-      setFormData((currData) => {
-        const newIngredients = currData.ingredients.map((ingredient) =>
-          ingredient.id === currentIngredient.id ? newIngredient : ingredient
-        );
-        console.log(newIngredients);
-        return { ...currData, ingredients: newIngredients };
-      });
-    } else {
-      setFormData((currData) => {
-        currData[changeField] = newValue;
-        return { ...currData };
-      });
-    }
-  }; */
 
   // This is for Edit-Recipe-Feature, later!
   // useEffect(() => {
@@ -191,7 +174,7 @@ export default function RecipeForm() {
             minLength={1}
             required
             value={formData.instructions[0].description}
-            onChange={handleChange}
+            onChange={handleInstructionsChange}
           />
         </StyledInputElement>
 
@@ -203,33 +186,11 @@ export default function RecipeForm() {
         />
 
         {/* Cooking time */}
-        <StyledInputElement>
-          <StyledH2>Cooking Time</StyledH2>
-          <StyledElementGroup>
-            <StyledInput
-              type='number'
-              id='cookingTimeHours'
-              name='cookingTimeHours'
-              $isMedium
-              value={formData.cookingTime.h}
-              onChange={handleChange}
-              min={0}
-            />
-            <StyledLabelSmall htmlFor='cookingTimeHours'>h</StyledLabelSmall>
-
-            <StyledInput
-              type='number'
-              id='cookingTimeMins'
-              name='cookingTimeMins'
-              $isMedium
-              value={formData.cookingTime.min}
-              onChange={handleChange}
-              min={0}
-              max={59}
-            />
-            <StyledLabelSmall htmlFor='cookingTimeMins'>min</StyledLabelSmall>
-          </StyledElementGroup>
-        </StyledInputElement>
+        <TimeInput
+          time={formData.cookingTime}
+          onTimeChange={handleCookingTimeChange}
+          what='cooking'
+        />
 
         {/* Difficulty */}
         <StyledInputElement>
@@ -259,6 +220,7 @@ export default function RecipeForm() {
                     name='categories'
                     id={tag.name}
                     value={tag.name}
+                    required
                     onChange={handleChange}
                   />
                 </StyledCategoryElement>
