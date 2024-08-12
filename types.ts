@@ -1,30 +1,26 @@
 import { ReactNode } from 'react';
 
 export type Recipe = {
-  id: string;
-  title: string;
-  imageUrl: string;
+  category: string;
+  cookingTime: number;
   description: string;
+  difficulty: string;
+  id: string;
+  imageUrl: string;
   ingredients: {
     id: string;
+    name: string;
     quantity: number;
     unit: string;
-    name: string;
   }[];
-  prepTime: {
-    h: number;
-    min: number;
-  };
-  cookingTime: {
-    h: number;
-    min: number;
-  };
-  servings: number;
-  tags: string[];
   instructions: {
     id: string;
     description: string;
   }[];
+  prepTime: number;
+  servings: number;
+  tags: string[];
+  title: string;
 };
 
 export interface LinkProps {
