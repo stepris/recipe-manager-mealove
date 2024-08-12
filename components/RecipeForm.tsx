@@ -2,19 +2,21 @@ import styled, { css } from 'styled-components';
 import tags from '@/lib/tags.json';
 import units from '@/lib/units.json';
 import { useState } from 'react';
-import recipes from '@/lib/recipes.json';
-import { useEffect } from 'react';
+import { EmptyRecipeType } from '@/types';
 
-const generateID = () => {
+/* const generateID = () => {
   return crypto.randomUUID();
-};
+}; */
 
 export default function RecipeForm() {
-  const emptyObject = {
-    id: '',
-    title: '',
-    imageUrl: '',
+  const emptyRecipe: EmptyRecipeType = {
+    category: '',
+    cookingTime: 0,
     description: '',
+    difficulty: '',
+    id: '1',
+    imageUrl:
+      'https://images.unsplash.com/photo-1515041761709-f9fc96e04cd3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     ingredients: [
       {
         id: '1',
@@ -23,27 +25,19 @@ export default function RecipeForm() {
         name: '',
       },
     ],
-    prepTime: {
-      h: 0,
-      min: 0,
-    },
-    cookingTime: {
-      h: 0,
-      min: 0,
-    },
-    servings: 1,
-    tags: [],
     instructions: [
       {
         id: '1',
         description: '',
       },
     ],
+    prepTime: 0,
+    servings: 1,
+    tags: [],
+    title: '',
   };
 
-  // console.log(emptyObject.ingredients[0].id);
-
-  const [formData, setFormData] = useState(emptyObject);
+  const [formData, setFormData] = useState(emptyRecipe);
 
   const handleAddIngredient = () => {
     setFormData((currData) => {
