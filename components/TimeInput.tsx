@@ -1,25 +1,24 @@
 import styled, { css } from 'styled-components';
 
-export default function PrepTime({ prepTime, onPrepTimeChange }) {
+export default function TimeInput({ time, onTimeChange, what }) {
   let hours;
   let minutes;
-  if (prepTime <= 59) {
+  if (time <= 59) {
     hours = 0;
-    minutes = prepTime;
+    minutes = time;
   } else {
-    hours = Math.floor(prepTime / 60);
-    minutes = prepTime % 60;
+    hours = Math.floor(time / 60);
+    minutes = time % 60;
   }
 
   const handleChangeHours = (event) => {
     const { value } = event.target;
-    console.log(typeof value, value);
     if (value === '') {
       const sum = 0 * 60 + minutes;
-      onPrepTimeChange(sum);
+      onTimeChange(sum);
     } else {
       const sum = parseInt(value) * 60 + minutes;
-      onPrepTimeChange(sum);
+      onTimeChange(sum);
     }
   };
 
@@ -27,24 +26,24 @@ export default function PrepTime({ prepTime, onPrepTimeChange }) {
     const { value } = event.target;
     if (value === '') {
       const sum = hours * 60;
-      onPrepTimeChange(sum);
+      onTimeChange(sum);
     } else if (value > 59) {
       const sum = hours * 60;
-      onPrepTimeChange(sum);
+      onTimeChange(sum);
     } else {
       const sum = hours * 60 + parseInt(value);
-      onPrepTimeChange(sum);
+      onTimeChange(sum);
     }
   };
 
   return (
     <StyledInputElement>
-      <StyledH2>Prep Time</StyledH2>
+      <StyledH2>{what} Time</StyledH2>
       <StyledElementGroup>
         <StyledInput
           type='number'
-          id='prepTimeHours'
-          name='prepTimeHours'
+          id={`${what}TimeHours`}
+          name={`${what}TimeHours`}
           $isMedium
           value={hours}
           onChange={handleChangeHours}
@@ -52,12 +51,12 @@ export default function PrepTime({ prepTime, onPrepTimeChange }) {
           max={99}
           maxLength={2}
         />
-        <StyledLabelSmall htmlFor='prepTimeHours'>h</StyledLabelSmall>
+        <StyledLabelSmall htmlFor={`${what}TimeHours`}>h</StyledLabelSmall>
 
         <StyledInput
           type='number'
-          id='prepTimeMins'
-          name='prepTimeMins'
+          id={`${what}TimeMins`}
+          name={`${what}TimeMins`}
           $isMedium
           value={minutes}
           onChange={handleChangeMinutes}
@@ -65,7 +64,7 @@ export default function PrepTime({ prepTime, onPrepTimeChange }) {
           max={59}
           maxLength={2}
         />
-        <StyledLabelSmall htmlFor='prepTimeMins'>min</StyledLabelSmall>
+        <StyledLabelSmall htmlFor={`${what}TimeMins`}>min</StyledLabelSmall>
       </StyledElementGroup>
     </StyledInputElement>
   );
@@ -79,6 +78,7 @@ const StyledInputElement = styled.div`
 const StyledH2 = styled.h2`
   font: var(--font-headline-2);
   padding-bottom: var(--spacing-2);
+  text-transform: capitalize;
 `;
 
 const StyledElementGroup = styled.div`

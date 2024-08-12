@@ -3,7 +3,7 @@ import tags from '@/lib/tags.json';
 import { useState } from 'react';
 import { EmptyRecipeType } from '@/types';
 import UpdateIngredient from '@/components/UpdateIngredient';
-import PrepTime from '@/components/PrepTime';
+import TimeInput from '@/components/TimeInput';
 
 export default function RecipeForm() {
   const emptyRecipe: EmptyRecipeType = {
@@ -196,9 +196,10 @@ export default function RecipeForm() {
         </StyledInputElement>
 
         {/* Prep Time */}
-        <PrepTime
-          prepTime={formData.prepTime}
-          onPrepTimeChange={handlePrepTimeChange}
+        <TimeInput
+          time={formData.prepTime}
+          onTimeChange={handlePrepTimeChange}
+          what='prep'
         />
 
         {/* Cooking time */}
