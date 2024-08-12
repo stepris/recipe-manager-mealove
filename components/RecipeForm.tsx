@@ -63,6 +63,20 @@ export default function RecipeForm() {
     }));
   };
 
+  const handleIngredientChange = (newIngredient) => {
+    /* 
+    const index = formData.ingredients.findIndex(
+      (ingredient) => ingredient.id === newIngredient.id
+    ); */
+
+    setFormData((currData) => {
+      const newIngredients = currData.ingredients.map((ingredient) =>
+        ingredient.id === newIngredient.id ? newIngredient : ingredient
+      );
+      return { ...currData, ingredients: newIngredients };
+    });
+  };
+
   console.log(formData);
 
   /*   const handleChange = (event) => {
@@ -159,7 +173,11 @@ export default function RecipeForm() {
           </StyledCellWrapper>
           {formData.ingredients.map((ingredient) => {
             return (
-              <UpdateIngredient key={ingredient.id} ingredient={ingredient} />
+              <UpdateIngredient
+                key={ingredient.id}
+                ingredient={ingredient}
+                onIngredientChange={handleIngredientChange}
+              />
             );
           })}
           <button type='button' onClick={handleAddIngredient}>

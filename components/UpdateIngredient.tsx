@@ -1,16 +1,27 @@
 import units from '@/lib/units.json';
 import styled, { css } from 'styled-components';
 
-export default function UpdateIngredient({ ingredient }) {
+export default function UpdateIngredient({ ingredient, onIngredientChange }) {
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    const newIngredient = {
+      ...ingredient,
+      [name]: value,
+    };
+    onIngredientChange(newIngredient);
+  };
+
   return (
     <StyledCellWrapper id={ingredient.id} key={ingredient.id}>
       <StyledTableCell
         type='number'
-        name={`quantity${ingredient.id}`}
+        /* name={`quantity${ingredient.id}`} */
+        name='quantity'
         $isMedium
         value={ingredient.quantity}
+        onChange={handleChange}
       />
-      <StyledDropdown id='unit' name='unit'>
+      <StyledDropdown id='unit' name='unit' onChange={handleChange}>
         {units.map((unit) => (
           <option key={unit.id} value={unit.unit}>
             {unit.unit}
@@ -22,6 +33,7 @@ export default function UpdateIngredient({ ingredient }) {
         $isLarge
         $leftAlign
         placeholder='Ingredient Name'
+        onChange={handleChange}
       />
     </StyledCellWrapper>
   );
