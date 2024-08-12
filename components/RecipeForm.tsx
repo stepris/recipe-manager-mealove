@@ -7,7 +7,7 @@ import UpdateIngredient from '@/components/UpdateIngredient';
 export default function RecipeForm() {
   const emptyRecipe: EmptyRecipeType = {
     category: '',
-    cookingTime: 0,
+    cookingTime: 90,
     description: '',
     difficulty: '',
     id: '1',
@@ -26,7 +26,7 @@ export default function RecipeForm() {
         description: '',
       },
     ],
-    prepTime: 0,
+    prepTime: 90,
     servings: 1,
     tags: [],
     title: '',
@@ -201,6 +201,7 @@ export default function RecipeForm() {
               $isMedium
               value={formData.prepTime.h}
               onChange={handleChange}
+              min={0}
             />
             <StyledLabelSmall htmlFor='prepTimeHours'>h</StyledLabelSmall>
 
@@ -211,6 +212,8 @@ export default function RecipeForm() {
               $isMedium
               value={formData.prepTime.min}
               onChange={handleChange}
+              min={0}
+              max={59}
             />
             <StyledLabelSmall htmlFor='prepTimeMins'>min</StyledLabelSmall>
           </StyledElementGroup>
