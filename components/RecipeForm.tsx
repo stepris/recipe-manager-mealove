@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 import tags from '@/lib/tags.json';
-import units from '@/lib/units.json';
 import { useState } from 'react';
 import { EmptyRecipeType } from '@/types';
+import UpdateIngredient from '@/components/UpdateIngredient';
 
 /* const generateID = () => {
   return crypto.randomUUID();
@@ -44,7 +44,7 @@ export default function RecipeForm() {
       const newIngredients = [
         ...currData.ingredients,
         {
-          id: generateID(),
+          id: crypto.randomUUID(),
           quantity: '',
           unit: '',
           name: '',
@@ -148,28 +148,7 @@ export default function RecipeForm() {
           </StyledCellWrapper>
           {formData.ingredients.map((ingredient) => {
             return (
-              <StyledCellWrapper id={ingredient.id} key={ingredient.id}>
-                <StyledTableCell
-                  type='number'
-                  name={`quantity${ingredient.id}`}
-                  $isMedium
-                  value={ingredient.quantity}
-                  onChange={handleChange}
-                />
-                <StyledDropdown id='unit' name='unit'>
-                  {units.map((unit) => (
-                    <option key={unit.id} value={unit.unit}>
-                      {unit.unit}
-                    </option>
-                  ))}
-                </StyledDropdown>
-                <StyledTableCell
-                  name='name'
-                  $isLarge
-                  $leftAlign
-                  placeholder='Ingredient Name'
-                />
-              </StyledCellWrapper>
+              <UpdateIngredient key={ingredient.id} ingredient={ingredient} />
             );
           })}
           <button type='button' onClick={handleAddIngredient}>
@@ -345,30 +324,6 @@ const StyledTextArea = styled.textarea`
 const StyledCellWrapper = styled.div`
   display: grid;
   grid-template-columns: 1.8fr 2fr 4fr;
-`;
-
-const StyledTableCell = styled.input`
-  font: var(--font-input);
-  height: 2rem;
-  border: 1px solid var(--color-neutral-4-alpha25);
-  border-radius: var(--radius-s);
-  margin-top: var(--spacing-1);
-  text-align: center;
-  ${({ $isMedium }) =>
-    $isMedium &&
-    css`
-      width: 60px;
-    `}
-  ${({ $isLarge }) =>
-    $isLarge &&
-    css`
-      width: 100%;
-    `}
-      ${({ $leftAlign }) =>
-    $leftAlign &&
-    css`
-      text-align: left;
-    `}
 `;
 
 const StyledDropdown = styled.select`
