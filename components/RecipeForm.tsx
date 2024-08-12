@@ -9,7 +9,7 @@ export default function RecipeForm() {
     category: '',
     cookingTime: 90,
     description: '',
-    difficulty: '',
+    difficulty: 'easy',
     id: '1',
     imageUrl: '/recipe-default-imgs/alexander-mils-pPhN8HFzkDE-unsplash',
     ingredients: [
@@ -230,6 +230,7 @@ export default function RecipeForm() {
               $isMedium
               value={formData.cookingTime.h}
               onChange={handleChange}
+              min={0}
             />
             <StyledLabelSmall htmlFor='cookingTimeHours'>h</StyledLabelSmall>
 
@@ -240,6 +241,8 @@ export default function RecipeForm() {
               $isMedium
               value={formData.cookingTime.min}
               onChange={handleChange}
+              min={0}
+              max={59}
             />
             <StyledLabelSmall htmlFor='cookingTimeMins'>min</StyledLabelSmall>
           </StyledElementGroup>
