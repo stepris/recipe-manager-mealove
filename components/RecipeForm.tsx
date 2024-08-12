@@ -3,6 +3,7 @@ import tags from '@/lib/tags.json';
 import { useState } from 'react';
 import { EmptyRecipeType } from '@/types';
 import UpdateIngredient from '@/components/UpdateIngredient';
+import PrepTime from '@/components/PrepTime';
 
 export default function RecipeForm() {
   const emptyRecipe: EmptyRecipeType = {
@@ -26,7 +27,7 @@ export default function RecipeForm() {
         description: '',
       },
     ],
-    prepTime: 90,
+    prepTime: 135,
     servings: 1,
     tags: [],
     title: '',
@@ -191,33 +192,7 @@ export default function RecipeForm() {
         </StyledInputElement>
 
         {/* Prep Time */}
-        <StyledInputElement>
-          <StyledH2>Prep Time</StyledH2>
-          <StyledElementGroup>
-            <StyledInput
-              type='number'
-              id='prepTimeHours'
-              name='prepTimeHours'
-              $isMedium
-              value={formData.prepTime.h}
-              onChange={handleChange}
-              min={0}
-            />
-            <StyledLabelSmall htmlFor='prepTimeHours'>h</StyledLabelSmall>
-
-            <StyledInput
-              type='number'
-              id='prepTimeMins'
-              name='prepTimeMins'
-              $isMedium
-              value={formData.prepTime.min}
-              onChange={handleChange}
-              min={0}
-              max={59}
-            />
-            <StyledLabelSmall htmlFor='prepTimeMins'>min</StyledLabelSmall>
-          </StyledElementGroup>
-        </StyledInputElement>
+        <PrepTime prepTime={formData.prepTime} />
 
         {/* Cooking time */}
         <StyledInputElement>
