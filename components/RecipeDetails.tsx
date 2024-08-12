@@ -55,10 +55,10 @@ export default function RecipeDetails({
       <StyledArticle>
         <StyledH2>Instructions</StyledH2>
         <StyledH3>
-          Preparation Time: <StyledSpan>{prepTime.min} Minutes</StyledSpan>
+          Preparation Time: <StyledSpan>{prepTime} Minutes</StyledSpan>
         </StyledH3>
         <StyledH3>
-          Cooking Time: <StyledSpan>{cookingTime.min} Minutes</StyledSpan>
+          Cooking Time: <StyledSpan>{cookingTime} Minutes</StyledSpan>
         </StyledH3>
         <StyledInstructions>{description}</StyledInstructions>
       </StyledArticle>
