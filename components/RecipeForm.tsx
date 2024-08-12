@@ -55,6 +55,17 @@ export default function RecipeForm() {
   };
 
   const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormData((currData) => ({
+      ...currData,
+      [name]: value,
+    }));
+  };
+
+  console.log(formData);
+
+  /*   const handleChange = (event) => {
     const changeField = event.target.name;
     const newValue = event.target.value;
     // for instructions field
@@ -86,7 +97,7 @@ export default function RecipeForm() {
         return { ...currData };
       });
     }
-  };
+  }; */
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -226,7 +237,11 @@ export default function RecipeForm() {
         {/* Difficulty */}
         <StyledInputElement>
           <StyledLabel htmlFor='difficulty'>Difficulty</StyledLabel>
-          <StyledDropdown id='difficulty' name='difficulty'>
+          <StyledDropdown
+            id='difficulty'
+            name='difficulty'
+            onChange={handleChange}
+          >
             <option value='easy'>easy</option>
             <option value='medium'>medium</option>
             <option value='hard'>hard</option>
@@ -247,6 +262,7 @@ export default function RecipeForm() {
                     name='categories'
                     id={tag.name}
                     value={tag.name}
+                    onChange={handleChange}
                   />
                 </StyledCategoryElement>
               );
