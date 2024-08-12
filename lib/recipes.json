@@ -1,482 +1,430 @@
 [
   {
+    "category": "1",
+    "cookingTime": 25,
+    "description": "Classic spaghetti with a rich tomato sauce and herbs.",
+    "difficulty": "medium",
     "id": "1",
-    "title": "Grilled Chicken",
     "imageUrl": "https://images.unsplash.com/photo-1515041761709-f9fc96e04cd3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "description": "Juicy grilled chicken breast marinated in a blend of herbs.",
     "ingredients": [
       {
         "id": "1",
-        "quantity": 200,
-        "unit": "g",
-        "name": "chicken breast"
+        "name": "spaghetti",
+        "quantity": 250,
+        "unit": "g"
       },
       {
         "id": "2",
-        "quantity": 2,
-        "unit": "pieces",
-        "name": "garlic cloves"
-      },
-      {
-        "id": "3",
-        "quantity": 1,
-        "unit": "pieces",
-        "name": "lemon"
-      },
-      {
-        "id": "4",
-        "quantity": 30,
-        "unit": "ml",
-        "name": "olive oil"
-      }
-    ],
-    "prepTime": {
-      "h": 0,
-      "min": 15
-    },
-    "cookingTime": {
-      "h": 0,
-      "min": 20
-    },
-    "servings": 2,
-    "tags": ["meat", "grilled"],
-    "instructions": [
-      {
-        "id": "1",
-        "description": "Marinate the chicken breast with garlic, lemon juice, and olive oil. Grill for 20 minutes."
-      }
-    ]
-  },
-  {
-    "id": "2",
-    "title": "Baked Salmon",
-    "imageUrl": "https://images.unsplash.com/photo-1612477491914-a2f46ef8586e?q=80&w=1782&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "description": "Delicious baked salmon with a hint of lemon and dill.",
-    "ingredients": [
-      {
-        "id": "1",
-        "quantity": 300,
-        "unit": "g",
-        "name": "salmon fillet"
-      },
-      {
-        "id": "2",
-        "quantity": 1,
-        "unit": "pieces",
-        "name": "lemon"
-      },
-      {
-        "id": "3",
-        "quantity": 10,
-        "unit": "g",
-        "name": "dill"
-      }
-    ],
-    "prepTime": {
-      "h": 0,
-      "min": 10
-    },
-    "cookingTime": {
-      "h": 0,
-      "min": 25
-    },
-    "servings": 2,
-    "tags": ["fish", "baked"],
-    "instructions": [
-      {
-        "id": "1",
-        "description": "Season the salmon with lemon and dill. Bake at 180°C for 25 minutes."
-      }
-    ]
-  },
-  {
-    "id": "3",
-    "title": "Veggie Stir-fry",
-    "imageUrl": "https://images.unsplash.com/photo-1465014925804-7b9ede58d0d7?q=80&w=1676&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "description": "Quick and easy vegetable stir-fry with a mix of colorful veggies.",
-    "ingredients": [
-      {
-        "id": "1",
-        "quantity": 150,
-        "unit": "g",
-        "name": "broccoli"
-      },
-      {
-        "id": "2",
-        "quantity": 100,
-        "unit": "g",
-        "name": "bell pepper"
-      },
-      {
-        "id": "3",
-        "quantity": 100,
-        "unit": "g",
-        "name": "carrot"
-      },
-      {
-        "id": "4",
-        "quantity": 50,
-        "unit": "ml",
-        "name": "soy sauce"
-      }
-    ],
-    "prepTime": {
-      "h": 0,
-      "min": 10
-    },
-    "cookingTime": {
-      "h": 0,
-      "min": 15
-    },
-    "servings": 2,
-    "tags": ["veggy", "stir-fry"],
-    "instructions": [
-      {
-        "id": "1",
-        "description": "Stir-fry the veggies with soy sauce in a hot pan for 15 minutes."
-      }
-    ]
-  },
-  {
-    "id": "4",
-    "title": "Chocolate Cake",
-    "imageUrl": "https://images.unsplash.com/photo-1523218345414-cd47aea19ba6?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "description": "Rich and moist chocolate cake perfect for any occasion.",
-    "ingredients": [
-      {
-        "id": "1",
-        "quantity": 200,
-        "unit": "g",
-        "name": "flour"
-      },
-      {
-        "id": "2",
-        "quantity": 100,
-        "unit": "g",
-        "name": "cocoa powder"
-      },
-      {
-        "id": "3",
-        "quantity": 200,
-        "unit": "g",
-        "name": "sugar"
-      },
-      {
-        "id": "4",
-        "quantity": 100,
-        "unit": "g",
-        "name": "butter"
-      },
-      {
-        "id": "5",
-        "quantity": 2,
-        "unit": "pieces",
-        "name": "eggs"
-      }
-    ],
-    "prepTime": {
-      "h": 0,
-      "min": 20
-    },
-    "cookingTime": {
-      "h": 0,
-      "min": 40
-    },
-    "servings": 8,
-    "tags": ["sweet", "dessert"],
-    "instructions": [
-      {
-        "id": "1",
-        "description": "Mix all ingredients and bake at 180°C for 40 minutes."
-      }
-    ]
-  },
-  {
-    "id": "5",
-    "title": "Pancakes",
-    "imageUrl": "https://images.unsplash.com/photo-1529042355636-0f06afe127a9?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "description": "Fluffy and light pancakes perfect for a brunch.",
-    "ingredients": [
-      {
-        "id": "1",
-        "quantity": 200,
-        "unit": "g",
-        "name": "flour"
-      },
-      {
-        "id": "2",
-        "quantity": 300,
-        "unit": "ml",
-        "name": "milk"
-      },
-      {
-        "id": "3",
-        "quantity": 2,
-        "unit": "pieces",
-        "name": "eggs"
-      },
-      {
-        "id": "4",
-        "quantity": 50,
-        "unit": "g",
-        "name": "sugar"
-      }
-    ],
-    "prepTime": {
-      "h": 0,
-      "min": 10
-    },
-    "cookingTime": {
-      "h": 0,
-      "min": 20
-    },
-    "servings": 4,
-    "tags": ["brunch", "breakfast"],
-    "instructions": [
-      {
-        "id": "1",
-        "description": "Mix all ingredients and cook pancakes on a hot griddle until golden brown."
-      }
-    ]
-  },
-  {
-    "id": "6",
-    "title": "Spicy Chili",
-    "imageUrl": "https://images.unsplash.com/photo-1485962398705-ef6a13c41e8f?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "description": "Hot and spicy chili perfect for a cold night.",
-    "ingredients": [
-      {
-        "id": "1",
+        "name": "tomato sauce",
         "quantity": 500,
-        "unit": "g",
-        "name": "ground beef"
-      },
-      {
-        "id": "2",
-        "quantity": 1,
-        "unit": "pieces",
-        "name": "onion"
+        "unit": "ml"
       },
       {
         "id": "3",
-        "quantity": 400,
-        "unit": "g",
-        "name": "tomatoes"
+        "name": "garlic cloves",
+        "quantity": 3,
+        "unit": "pieces"
       },
       {
         "id": "4",
-        "quantity": 200,
-        "unit": "g",
-        "name": "kidney beans"
-      },
-      {
-        "id": "5",
-        "quantity": 10,
-        "unit": "g",
-        "name": "chili powder"
-      }
-    ],
-    "prepTime": {
-      "h": 0,
-      "min": 15
-    },
-    "cookingTime": {
-      "h": 1,
-      "min": 30
-    },
-    "servings": 6,
-    "tags": ["hot", "spicy"],
-    "instructions": [
-      {
-        "id": "1",
-        "description": "Cook the ground beef with onions, then add tomatoes, beans, and chili powder. Simmer for 1.5 hours."
-      }
-    ]
-  },
-  {
-    "id": "7",
-    "title": "Greek Salad",
-    "imageUrl": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "description": "Refreshing cold salad with cucumbers, tomatoes, and feta cheese.",
-    "ingredients": [
-      {
-        "id": "1",
-        "quantity": 200,
-        "unit": "g",
-        "name": "cucumber"
-      },
-      {
-        "id": "2",
-        "quantity": 150,
-        "unit": "g",
-        "name": "tomatoes"
-      },
-      {
-        "id": "3",
-        "quantity": 100,
-        "unit": "g",
-        "name": "feta cheese"
-      },
-      {
-        "id": "4",
+        "name": "olive oil",
         "quantity": 50,
-        "unit": "ml",
-        "name": "olive oil"
+        "unit": "ml"
       }
     ],
-    "prepTime": {
-      "h": 0,
-      "min": 10
-    },
-    "cookingTime": {
-      "h": 0,
-      "min": 0
-    },
-    "servings": 2,
-    "tags": ["cold", "salad"],
     "instructions": [
       {
         "id": "1",
-        "description": "Chop the vegetables and mix with olive oil and feta cheese."
-      }
-    ]
-  },
-  {
-    "id": "8",
-    "title": "Fruit Salad",
-    "imageUrl": "https://images.unsplash.com/photo-1484980972926-edee96e0960d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "description": "A mix of fresh fruits perfect for a healthy snack.",
-    "ingredients": [
-      {
-        "id": "1",
-        "quantity": 100,
-        "unit": "g",
-        "name": "strawberries"
-      },
-      {
-        "id": "2",
-        "quantity": 100,
-        "unit": "g",
-        "name": "blueberries"
-      },
-      {
-        "id": "3",
-        "quantity": 100,
-        "unit": "g",
-        "name": "kiwi"
-      },
-      {
-        "id": "4",
-        "quantity": 100,
-        "unit": "g",
-        "name": "mango"
+        "description": "Cook spaghetti according to package instructions. In a separate pan, sauté garlic in olive oil, add tomato sauce, and simmer. Combine with spaghetti and serve."
       }
     ],
-    "prepTime": {
-      "h": 0,
-      "min": 10
-    },
-    "cookingTime": {
-      "h": 0,
-      "min": 0
-    },
-    "servings": 2,
-    "tags": ["fruits", "healthy"],
-    "instructions": [
-      {
-        "id": "1",
-        "description": "Chop all fruits and mix together."
-      }
-    ]
-  },
-  {
-    "id": "9",
-    "title": "Lemonade",
-    "imageUrl": "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=1884&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "description": "Refreshing homemade lemonade with fresh lemons.",
-    "ingredients": [
-      {
-        "id": "1",
-        "quantity": 4,
-        "unit": "pieces",
-        "name": "lemons"
-      },
-      {
-        "id": "2",
-        "quantity": 100,
-        "unit": "g",
-        "name": "sugar"
-      },
-      {
-        "id": "3",
-        "quantity": 1,
-        "unit": "l",
-        "name": "water"
-      }
-    ],
-    "prepTime": {
-      "h": 0,
-      "min": 10
-    },
-    "cookingTime": {
-      "h": 0,
-      "min": 0
-    },
+    "prepTime": 20,
     "servings": 4,
-    "tags": ["drinks", "refreshing"],
-    "instructions": [
-      {
-        "id": "1",
-        "description": "Mix lemon juice with water and sugar. Serve chilled."
-      }
-    ]
+    "tags": ["1", "3", "6", "11"],
+    "title": "Spaghetti Bolognese"
   },
   {
-    "id": "10",
-    "title": "Energy Balls",
-    "imageUrl": "https://images.unsplash.com/photo-1619683548293-c74defe8d5d2?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "description": "Healthy and easy-to-make energy balls with oats and honey.",
+    "category": "2",
+    "cookingTime": 15,
+    "description": "Quick and easy avocado toast with a sprinkle of sea salt.",
+    "difficulty": "easy",
+    "id": "2",
+    "imageUrl": "https://images.unsplash.com/photo-1612477491914-a2f46ef8586e?q=80&w=1782&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "ingredients": [
       {
         "id": "1",
-        "quantity": 200,
-        "unit": "g",
-        "name": "oats"
+        "name": "avocado",
+        "quantity": 1,
+        "unit": "pieces"
       },
       {
         "id": "2",
-        "quantity": 100,
-        "unit": "g",
-        "name": "peanut butter"
+        "name": "bread",
+        "quantity": 2,
+        "unit": "slices"
       },
       {
         "id": "3",
-        "quantity": 50,
-        "unit": "g",
-        "name": "honey"
-      },
-      {
-        "id": "4",
-        "quantity": 50,
-        "unit": "g",
-        "name": "chocolate chips"
+        "name": "sea salt",
+        "quantity": 1,
+        "unit": "pinch"
       }
     ],
-    "prepTime": {
-      "h": 0,
-      "min": 10
-    },
-    "cookingTime": {
-      "h": 0,
-      "min": 0
-    },
-    "servings": 12,
-    "tags": ["snacks", "healthy"],
     "instructions": [
       {
         "id": "1",
-        "description": "Mix all ingredients and form into balls. Chill in the refrigerator."
+        "description": "Toast the bread slices. Mash the avocado and spread it on the toast. Sprinkle with sea salt."
       }
-    ]
+    ],
+    "prepTime": 5,
+    "servings": 1,
+    "tags": ["4", "7"],
+    "title": "Avocado Toast"
+  },
+  {
+    "category": "3",
+    "cookingTime": 45,
+    "description": "Tender roast beef with a savory herb crust.",
+    "difficulty": "hard",
+    "id": "3",
+    "imageUrl": "https://images.unsplash.com/photo-1465014925804-7b9ede58d0d7?q=80&w=1676&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "ingredients": [
+      {
+        "id": "1",
+        "name": "beef roast",
+        "quantity": 1,
+        "unit": "kg"
+      },
+      {
+        "id": "2",
+        "name": "rosemary",
+        "quantity": 2,
+        "unit": "tablespoons"
+      },
+      {
+        "id": "3",
+        "name": "garlic cloves",
+        "quantity": 4,
+        "unit": "pieces"
+      },
+      {
+        "id": "4",
+        "name": "olive oil",
+        "quantity": 60,
+        "unit": "ml"
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Rub the beef roast with olive oil, rosemary, and garlic. Roast in the oven at 180°C for 45 minutes."
+      }
+    ],
+    "prepTime": 20,
+    "servings": 6,
+    "tags": ["5", "8", "12", "15"],
+    "title": "Herb-Crusted Roast Beef"
+  },
+  {
+    "category": "4",
+    "cookingTime": 35,
+    "description": "Creamy mushroom risotto with a touch of white wine.",
+    "difficulty": "medium",
+    "id": "4",
+    "imageUrl": "https://images.unsplash.com/photo-1523218345414-cd47aea19ba6?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "ingredients": [
+      {
+        "id": "1",
+        "name": "risotto rice",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "id": "2",
+        "name": "mushrooms",
+        "quantity": 300,
+        "unit": "g"
+      },
+      {
+        "id": "3",
+        "name": "white wine",
+        "quantity": 100,
+        "unit": "ml"
+      },
+      {
+        "id": "4",
+        "name": "parmesan cheese",
+        "quantity": 50,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Sauté mushrooms in olive oil, add risotto rice, and gradually add white wine and broth while stirring. Finish with parmesan cheese."
+      }
+    ],
+    "prepTime": 15,
+    "servings": 4,
+    "tags": ["6", "10", "14"],
+    "title": "Mushroom Risotto"
+  },
+  {
+    "category": "5",
+    "cookingTime": 20,
+    "description": "A fresh and tangy Greek salad with olives and feta cheese.",
+    "difficulty": "easy",
+    "id": "5",
+    "imageUrl": "https://images.unsplash.com/photo-1529042355636-0f06afe127a9?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "ingredients": [
+      {
+        "id": "1",
+        "name": "cucumber",
+        "quantity": 1,
+        "unit": "pieces"
+      },
+      {
+        "id": "2",
+        "name": "tomatoes",
+        "quantity": 2,
+        "unit": "pieces"
+      },
+      {
+        "id": "3",
+        "name": "feta cheese",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "id": "4",
+        "name": "olives",
+        "quantity": 50,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Chop cucumber and tomatoes. Combine with feta cheese and olives. Dress with olive oil and lemon juice."
+      }
+    ],
+    "prepTime": 10,
+    "servings": 2,
+    "tags": ["7", "9"],
+    "title": "Greek Salad"
+  },
+  {
+    "category": "6",
+    "cookingTime": 30,
+    "description": "Spicy chicken curry with coconut milk and a blend of spices.",
+    "difficulty": "hard",
+    "id": "6",
+    "imageUrl": "https://images.unsplash.com/photo-1485962398705-ef6a13c41e8f?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "ingredients": [
+      {
+        "id": "1",
+        "name": "chicken breast",
+        "quantity": 500,
+        "unit": "g"
+      },
+      {
+        "id": "2",
+        "name": "coconut milk",
+        "quantity": 200,
+        "unit": "ml"
+      },
+      {
+        "id": "3",
+        "name": "curry powder",
+        "quantity": 2,
+        "unit": "tablespoons"
+      },
+      {
+        "id": "4",
+        "name": "onions",
+        "quantity": 1,
+        "unit": "piece"
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Sauté onions, add chicken and curry powder, then pour in coconut milk and simmer until chicken is cooked."
+      }
+    ],
+    "prepTime": 15,
+    "servings": 4,
+    "tags": ["8", "12", "17"],
+    "title": "Spicy Chicken Curry"
+  },
+  {
+    "category": "7",
+    "cookingTime": 25,
+    "description": "Sweet and savory glazed salmon fillets with sesame seeds.",
+    "difficulty": "medium",
+    "id": "7",
+    "imageUrl": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "ingredients": [
+      {
+        "id": "1",
+        "name": "salmon fillets",
+        "quantity": 4,
+        "unit": "pieces"
+      },
+      {
+        "id": "2",
+        "name": "honey",
+        "quantity": 3,
+        "unit": "tablespoons"
+      },
+      {
+        "id": "3",
+        "name": "soy sauce",
+        "quantity": 2,
+        "unit": "tablespoons"
+      },
+      {
+        "id": "4",
+        "name": "sesame seeds",
+        "quantity": 1,
+        "unit": "tablespoon"
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Mix honey and soy sauce. Glaze salmon fillets with the mixture and bake at 180°C for 20 minutes. Sprinkle with sesame seeds before serving."
+      }
+    ],
+    "prepTime": 10,
+    "servings": 4,
+    "tags": ["9", "13", "16"],
+    "title": "Glazed Salmon"
+  },
+  {
+    "category": "8",
+    "cookingTime": 40,
+    "description": "Rich and creamy lasagna with layers of cheese and meat sauce.",
+    "difficulty": "godlike",
+    "id": "8",
+    "imageUrl": "https://images.unsplash.com/photo-1484980972926-edee96e0960d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "ingredients": [
+      {
+        "id": "1",
+        "name": "lasagna sheets",
+        "quantity": 12,
+        "unit": "sheets"
+      },
+      {
+        "id": "2",
+        "name": "ground beef",
+        "quantity": 500,
+        "unit": "g"
+      },
+      {
+        "id": "3",
+        "name": "mozzarella cheese",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "id": "4",
+        "name": "tomato sauce",
+        "quantity": 600,
+        "unit": "ml"
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Layer lasagna sheets with ground beef cooked in tomato sauce and mozzarella cheese. Bake at 180°C for 40 minutes."
+      }
+    ],
+    "prepTime": 20,
+    "servings": 6,
+    "tags": ["10", "14", "19"],
+    "title": "Classic Lasagna"
+  },
+  {
+    "category": "9",
+    "cookingTime": 30,
+    "description": "Refreshing fruit smoothie with a blend of tropical flavors.",
+    "difficulty": "easy",
+    "id": "9",
+    "imageUrl": "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=1884&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "ingredients": [
+      {
+        "id": "1",
+        "name": "banana",
+        "quantity": 1,
+        "unit": "piece"
+      },
+      {
+        "id": "2",
+        "name": "mango",
+        "quantity": 1,
+        "unit": "piece"
+      },
+      {
+        "id": "3",
+        "name": "pineapple juice",
+        "quantity": 250,
+        "unit": "ml"
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Blend banana, mango, and pineapple juice until smooth. Serve chilled."
+      }
+    ],
+    "prepTime": 10,
+    "servings": 2,
+    "tags": ["11", "15"],
+    "title": "Tropical Fruit Smoothie"
+  },
+  {
+    "category": "10",
+    "cookingTime": 50,
+    "description": "Decadent chocolate cake with a rich fudge frosting.",
+    "difficulty": "godlike",
+    "id": "10",
+    "imageUrl": "https://images.unsplash.com/photo-1619683548293-c74defe8d5d2?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "ingredients": [
+      {
+        "id": "1",
+        "name": "flour",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "id": "2",
+        "name": "cocoa powder",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "id": "3",
+        "name": "butter",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "id": "4",
+        "name": "sugar",
+        "quantity": 200,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Mix flour, cocoa powder, butter, and sugar. Bake at 180°C for 50 minutes. Frost with chocolate fudge."
+      }
+    ],
+    "prepTime": 20,
+    "servings": 8,
+    "tags": ["12", "18", "20"],
+    "title": "Chocolate Fudge Cake"
   }
 ]
