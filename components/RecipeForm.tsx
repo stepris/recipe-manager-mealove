@@ -4,10 +4,6 @@ import { useState } from 'react';
 import { EmptyRecipeType } from '@/types';
 import UpdateIngredient from '@/components/UpdateIngredient';
 
-/* const generateID = () => {
-  return crypto.randomUUID();
-}; */
-
 export default function RecipeForm() {
   const emptyRecipe: EmptyRecipeType = {
     category: '',
@@ -76,7 +72,7 @@ export default function RecipeForm() {
 
     const newRecipe = {
       ...formData,
-      id: generateID(),
+      id: crypto.randomUUID(),
     };
     console.log(newRecipe);
   };
@@ -196,7 +192,7 @@ export default function RecipeForm() {
 
         {/* Prep Time */}
         <StyledInputElement>
-          <StyledLabel htmlFor='prepTimeHours'>Prep Time</StyledLabel>
+          <StyledH2>Prep Time</StyledH2>
           <StyledElementGroup>
             <StyledInput
               type='number'
@@ -206,8 +202,8 @@ export default function RecipeForm() {
               value={formData.prepTime.h}
               onChange={handleChange}
             />
-            <StyledH3>h</StyledH3>
-            <StyledLabel htmlFor='prepTimeMins'></StyledLabel>
+            <StyledLabelSmall htmlFor='prepTimeHours'>h</StyledLabelSmall>
+
             <StyledInput
               type='number'
               id='prepTimeMins'
@@ -216,13 +212,13 @@ export default function RecipeForm() {
               value={formData.prepTime.min}
               onChange={handleChange}
             />
-            <StyledH3>min</StyledH3>
+            <StyledLabelSmall htmlFor='prepTimeMins'>min</StyledLabelSmall>
           </StyledElementGroup>
         </StyledInputElement>
 
         {/* Cooking time */}
         <StyledInputElement>
-          <StyledLabel htmlFor='cookingTimeHours'>Cooking time</StyledLabel>
+          <StyledH2>Cooking Time</StyledH2>
           <StyledElementGroup>
             <StyledInput
               type='number'
@@ -232,8 +228,8 @@ export default function RecipeForm() {
               value={formData.cookingTime.h}
               onChange={handleChange}
             />
-            <StyledH3>h</StyledH3>
-            <StyledLabel htmlFor='cookingTimeMins'></StyledLabel>
+            <StyledLabelSmall htmlFor='cookingTimeHours'>h</StyledLabelSmall>
+
             <StyledInput
               type='number'
               id='cookingTimeMins'
@@ -242,7 +238,7 @@ export default function RecipeForm() {
               value={formData.cookingTime.min}
               onChange={handleChange}
             />
-            <StyledH3>min</StyledH3>
+            <StyledLabelSmall htmlFor='cookingTimeMins'>min</StyledLabelSmall>
           </StyledElementGroup>
         </StyledInputElement>
 
@@ -324,6 +320,10 @@ const StyledFormText = styled.p`
 const StyledLabel = styled.label`
   font: var(--font-headline-2);
   padding-bottom: var(--spacing-2);
+`;
+
+const StyledLabelSmall = styled.label`
+  font: var(--font-headline-3);
 `;
 
 const StyledInput = styled.input`
