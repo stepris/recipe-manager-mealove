@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 export default function UpdateIngredient({ ingredient, onIngredientChange }) {
   const handleChange = (event) => {
     const { name, value } = event.target;
+
     const newIngredient = {
       ...ingredient,
       [name]: value,
@@ -15,7 +16,6 @@ export default function UpdateIngredient({ ingredient, onIngredientChange }) {
     <StyledCellWrapper id={ingredient.id} key={ingredient.id}>
       <StyledTableCell
         type='number'
-        /* name={`quantity${ingredient.id}`} */
         name='quantity'
         $isMedium
         value={ingredient.quantity}

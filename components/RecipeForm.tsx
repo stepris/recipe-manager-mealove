@@ -44,6 +44,22 @@ export default function RecipeForm() {
     }));
   };
 
+  const handleServingsChange = (event) => {
+    const { name, value } = event.target;
+
+    if (value === '') {
+      setFormData((currData) => ({
+        ...currData,
+        [name]: 1,
+      }));
+    } else {
+      setFormData((currData) => ({
+        ...currData,
+        [name]: parseInt(value),
+      }));
+    }
+  };
+
   const handleInstructionsChange = (event) => {
     const { value } = event.target;
 
@@ -135,7 +151,9 @@ export default function RecipeForm() {
               name='servings'
               $isMedium
               value={formData.servings}
-              onChange={handleChange}
+              onChange={handleServingsChange}
+              min={1}
+              max={99}
             />
             <StyledFormText>person(s).</StyledFormText>
           </StyledElementGroup>
