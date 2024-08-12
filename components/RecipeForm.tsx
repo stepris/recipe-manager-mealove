@@ -27,7 +27,7 @@ export default function RecipeForm() {
         description: '',
       },
     ],
-    prepTime: 135,
+    prepTime: 0,
     servings: 1,
     tags: [],
     title: '',
@@ -66,6 +66,10 @@ export default function RecipeForm() {
       );
       return { ...currData, ingredients: newIngredients };
     });
+  };
+
+  const handlePrepTimeChange = (newPrepTime) => {
+    setFormData((currData) => ({ ...currData, prepTime: newPrepTime }));
   };
 
   const handleSubmit = (event) => {
@@ -192,7 +196,10 @@ export default function RecipeForm() {
         </StyledInputElement>
 
         {/* Prep Time */}
-        <PrepTime prepTime={formData.prepTime} />
+        <PrepTime
+          prepTime={formData.prepTime}
+          onPrepTimeChange={handlePrepTimeChange}
+        />
 
         {/* Cooking time */}
         <StyledInputElement>

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export default function PrepTime({ prepTime }) {
+export default function PrepTime({ prepTime, onPrepTimeChange }) {
   let hours;
   let minutes;
   if (prepTime <= 59) {
@@ -10,6 +10,32 @@ export default function PrepTime({ prepTime }) {
     hours = Math.floor(prepTime / 60);
     minutes = prepTime % 60;
   }
+
+  const handleChangeHours = (event) => {
+    const { value } = event.target;
+    console.log(typeof value, value);
+    if (value === '') {
+      const sum = 0 * 60 + minutes;
+      onPrepTimeChange(sum);
+    } else {
+      const sum = parseInt(value) * 60 + minutes;
+      onPrepTimeChange(sum);
+    }
+  };
+
+  const handleChangeMinutes = (event) => {
+    const { value } = event.target;
+    if (value === '') {
+      const sum = hours * 60;
+      onPrepTimeChange(sum);
+    } else if (value > 59) {
+      const sum = hours * 60;
+      onPrepTimeChange(sum);
+    } else {
+      const sum = hours * 60 + parseInt(value);
+      onPrepTimeChange(sum);
+    }
+  };
 
   return (
     <StyledInputElement>
@@ -21,8 +47,10 @@ export default function PrepTime({ prepTime }) {
           name='prepTimeHours'
           $isMedium
           value={hours}
-          // onChange={}
+          onChange={handleChangeHours}
           min={0}
+          max={99}
+          maxLength={2}
         />
         <StyledLabelSmall htmlFor='prepTimeHours'>h</StyledLabelSmall>
 
@@ -32,9 +60,10 @@ export default function PrepTime({ prepTime }) {
           name='prepTimeMins'
           $isMedium
           value={minutes}
-          // onChange={}
+          onChange={handleChangeMinutes}
           min={0}
           max={59}
+          maxLength={2}
         />
         <StyledLabelSmall htmlFor='prepTimeMins'>min</StyledLabelSmall>
       </StyledElementGroup>
