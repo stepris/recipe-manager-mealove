@@ -342,5 +342,8 @@ video {
 
     /*Debug*/
     --debug: 1px solid green;
+
+    /* Effects */
+    --trans-1: 0.2s ease-in;
   }
 `;
