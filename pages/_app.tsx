@@ -1,7 +1,7 @@
 import useLocalStorageState from 'use-local-storage-state';
 import GlobalStyle from '../styles';
 import Layout from '@/components/Layout';
-import recipes from '@/lib/recipes.json';
+import recipesJson from '@/lib/recipes.json';
 import type { AppProps } from 'next/app';
 import { HandleToggleFavoriteFunction } from '@/types';
 
@@ -10,6 +10,12 @@ export default function App({ Component, pageProps }: AppProps) {
     'favoriteRecipesList',
     { defaultValue: [] }
   );
+
+  const [recipes, setRecipes] = useLocalStorageState('recipes', {
+    defaultValue: recipesJson,
+  });
+
+  console.log(recipes);
 
   const handleToggleFavorite: HandleToggleFavoriteFunction = (id) => {
     const favoriteSet = new Set(favoriteRecipesList);
