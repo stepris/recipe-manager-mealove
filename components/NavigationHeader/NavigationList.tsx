@@ -16,6 +16,11 @@ export default function NavigationList({ onToggleNav }: HeaderProps) {
             Favorites
           </StyledLink>
         </StyledListElement>
+        <StyledListElement>
+          <StyledLink href='/create' onClick={onToggleNav}>
+            Create Recipe
+          </StyledLink>
+        </StyledListElement>
       </StyledList>
     </nav>
   );
