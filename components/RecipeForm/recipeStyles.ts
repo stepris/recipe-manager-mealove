@@ -105,6 +105,14 @@ export const StyledTextArea = styled.textarea`
 
 export const StyledSubmitButton = styled.button`
   display: block;
+  padding: var(--spacing-2);
+  color: var(--color-neutral-1);
+  background-color: var(--color-primary-1);
+  font: var(--font-headline-2);
+  border-radius: var(--radius-s);
+  &:hover {
+    background-color: var(--color-primary-2);
+  }
 `;
 
 export const StyledCategoryContainer = styled.div`
