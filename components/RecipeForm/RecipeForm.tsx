@@ -1,6 +1,6 @@
 import tags from '@/lib/tags.json';
 import { ChangeEvent, FormEvent } from 'react';
-import { Recipe, Ingredient } from '@/types';
+import { Recipe, Ingredient, OnAddRecipeType } from '@/types';
 import IngredientInput from '@/components/RecipeForm/IngredientInput';
 import TimeInput from '@/components/RecipeForm/TimeInput';
 import {
@@ -48,7 +48,7 @@ const emptyRecipe: Recipe = {
   title: '',
 };
 
-export default function RecipeForm({ onAddRecipe }) {
+export default function RecipeForm({ onAddRecipe }: OnAddRecipeType) {
   const [formData, setFormData] = useLocalStorageState('formData', {
     defaultValue: emptyRecipe,
   });

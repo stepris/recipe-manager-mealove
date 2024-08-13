@@ -6,9 +6,13 @@ import {
   StyledLabelSmall,
 } from '@/components/RecipeForm/recipeStyles';
 import { ChangeEvent } from 'react';
-import { TimeInputPros } from '@/types';
+import { TimeInputProps } from '@/types';
 
-export default function TimeInput({ time, onTimeChange, what }: TimeInputPros) {
+export default function TimeInput({
+  time,
+  onTimeChange,
+  what,
+}: TimeInputProps) {
   let hours;
   let minutes;
   if (time <= 59) {

@@ -86,7 +86,7 @@ export interface StyledFormComponentProps {
   readonly $isLarge?: boolean;
 }
 
-export type TimeInputPros = {
+export type TimeInputProps = {
   time: number;
   onTimeChange: (newPrepTime: number) => void;
   what: 'prep' | 'cooking';
@@ -95,4 +95,8 @@ export type TimeInputPros = {
 export type IngredientInputProps = {
   ingredient: Ingredient;
   onIngredientChange: (newIngredient: Ingredient) => void;
+};
+
+export type OnAddRecipeType = {
+  onAddRecipe: (recipe: Recipe) => void;
 };

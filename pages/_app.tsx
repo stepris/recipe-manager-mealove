@@ -3,7 +3,7 @@ import GlobalStyle from '../styles';
 import Layout from '@/components/Layout';
 import recipesJson from '@/lib/recipes.json';
 import type { AppProps } from 'next/app';
-import { HandleToggleFavoriteFunction } from '@/types';
+import { HandleToggleFavoriteFunction, Recipe } from '@/types';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [favoriteRecipesList, setFavoriteRecipesList] = useLocalStorageState(
@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
     defaultValue: recipesJson,
   });
 
-  const handleAddRecipe = (recipe) => {
+  const handleAddRecipe = (recipe: Recipe) => {
     setRecipes((currData) => [recipe, ...currData]);
   };
 
@@ -36,7 +36,6 @@ export default function App({ Component, pageProps }: AppProps) {
   const favoriteRecipes = recipes.filter((recipe) => {
     return favoriteRecipesList.includes(recipe.id);
   });
-  console.log(recipes);
   return (
     <>
       <GlobalStyle />
