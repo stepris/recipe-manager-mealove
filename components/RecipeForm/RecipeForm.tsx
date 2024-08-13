@@ -137,6 +137,7 @@ export default function RecipeForm({ onAddRecipe }: OnAddRecipeType) {
     onAddRecipe(newRecipe);
 
     setFormData(emptyRecipe);
+    event.currentTarget.reset();
   };
 
   // This is for Edit-Recipe-Feature, later!
