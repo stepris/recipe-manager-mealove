@@ -1,7 +1,6 @@
-import styled, { css } from 'styled-components';
 import tags from '@/lib/tags.json';
-import { useState } from 'react';
-import { EmptyRecipeType } from '@/types';
+import { ChangeEvent, FormEvent, useState } from 'react';
+import { Recipe, Ingredient } from '@/types';
 import IngredientInput from '@/components/RecipeForm/IngredientInput';
 import TimeInput from '@/components/RecipeForm/TimeInput';
 import {
@@ -21,7 +20,7 @@ import {
   StyledSubmitButton,
 } from '@/components/RecipeForm/recipeStyles';
 
-const emptyRecipe: EmptyRecipeType = {
+const emptyRecipe: Recipe = {
   category: '',
   cookingTime: 0,
   description: '',
@@ -51,7 +50,9 @@ const emptyRecipe: EmptyRecipeType = {
 export default function RecipeForm() {
   const [formData, setFormData] = useState(emptyRecipe);
 
-  const handleChange = (event) => {
+  const handleChange = (
+    event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>
+  ) => {
     const { name, value } = event.target;
 
     setFormData((currData) => ({
@@ -60,7 +61,7 @@ export default function RecipeForm() {
     }));
   };
 
-  const handleServingsChange = (event) => {
+  const handleServingsChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
 
     if (value === '') {
@@ -76,7 +77,9 @@ export default function RecipeForm() {
     }
   };
 
-  const handleInstructionsChange = (event) => {
+  const handleInstructionsChange = (
+    event: ChangeEvent<HTMLTextAreaElement>
+  ) => {
     const { value } = event.target;
 
     setFormData((currData) => {
@@ -104,7 +107,7 @@ export default function RecipeForm() {
     });
   };
 
-  const handleIngredientChange = (newIngredient) => {
+  const handleIngredientChange = (newIngredient: Ingredient) => {
     setFormData((currData) => {
       const newIngredients = currData.ingredients.map((ingredient) =>
         ingredient.id === newIngredient.id ? newIngredient : ingredient
@@ -113,15 +116,15 @@ export default function RecipeForm() {
     });
   };
 
-  const handlePrepTimeChange = (newPrepTime) => {
+  const handlePrepTimeChange = (newPrepTime: number) => {
     setFormData((currData) => ({ ...currData, prepTime: newPrepTime }));
   };
 
-  const handleCookingTimeChange = (newCookingTime) => {
+  const handleCookingTimeChange = (newCookingTime: number) => {
     setFormData((currData) => ({ ...currData, cookingTime: newCookingTime }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const newRecipe = {

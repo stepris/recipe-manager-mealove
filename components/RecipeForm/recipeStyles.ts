@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { StyledFormComponentProps } from '@/types';
 
 export const StyledForm = styled.form`
   display: flex;
@@ -70,7 +71,7 @@ export const StyledTableCell = styled.input`
     `}
 `;
 
-export const StyledInput = styled.input`
+export const StyledInput = styled.input<StyledFormComponentProps>`
   height: 2rem;
   border: 1px solid var(--color-neutral-4-alpha25);
   border-radius: var(--radius-s);

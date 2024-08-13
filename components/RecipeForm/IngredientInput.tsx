@@ -4,9 +4,16 @@ import {
   StyledTableCell,
   StyledDropdown,
 } from '@/components/RecipeForm/recipeStyles';
+import { IngredientInputProps } from '@/types';
+import { ChangeEvent } from 'react';
 
-export default function IngredientInput({ ingredient, onIngredientChange }) {
-  const handleChange = (event) => {
+export default function IngredientInput({
+  ingredient,
+  onIngredientChange,
+}: IngredientInputProps) {
+  const handleChange = (
+    event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>
+  ) => {
     const { name, value } = event.target;
 
     const newIngredient = {

@@ -5,8 +5,10 @@ import {
   StyledInput,
   StyledLabelSmall,
 } from '@/components/RecipeForm/recipeStyles';
+import { ChangeEvent } from 'react';
+import { TimeInputPros } from '@/types';
 
-export default function TimeInput({ time, onTimeChange, what }) {
+export default function TimeInput({ time, onTimeChange, what }: TimeInputPros) {
   let hours;
   let minutes;
   if (time <= 59) {
@@ -17,7 +19,7 @@ export default function TimeInput({ time, onTimeChange, what }) {
     minutes = time % 60;
   }
 
-  const handleChangeHours = (event) => {
+  const handleChangeHours = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     if (value === '') {
       const sum = 0 * 60 + minutes;
@@ -28,12 +30,12 @@ export default function TimeInput({ time, onTimeChange, what }) {
     }
   };
 
-  const handleChangeMinutes = (event) => {
+  const handleChangeMinutes = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     if (value === '') {
       const sum = hours * 60;
       onTimeChange(sum);
-    } else if (value > 59) {
+    } else if (parseInt(value) > 59) {
       const sum = hours * 60;
       onTimeChange(sum);
     } else {
