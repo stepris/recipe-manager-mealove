@@ -140,11 +140,6 @@ export default function RecipeForm({ onAddRecipe }: OnAddRecipeType) {
     event.currentTarget.reset();
   };
 
-  // This is for Edit-Recipe-Feature, later!
-  // useEffect(() => {
-  //   setFormData(recipes[0]);
-  // }, []);
-
   return (
     <>
       <StyledForm onSubmit={handleSubmit}>
