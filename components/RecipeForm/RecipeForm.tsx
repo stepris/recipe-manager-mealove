@@ -1,5 +1,5 @@
 import tags from '@/lib/tags.json';
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent } from 'react';
 import { Recipe, Ingredient } from '@/types';
 import IngredientInput from '@/components/RecipeForm/IngredientInput';
 import TimeInput from '@/components/RecipeForm/TimeInput';
@@ -19,6 +19,7 @@ import {
   StyledCategoryElement,
   StyledSubmitButton,
 } from '@/components/RecipeForm/recipeStyles';
+import useLocalStorageState from 'use-local-storage-state';
 
 const emptyRecipe: Recipe = {
   category: '',
@@ -48,7 +49,9 @@ const emptyRecipe: Recipe = {
 };
 
 export default function RecipeForm() {
-  const [formData, setFormData] = useState(emptyRecipe);
+  const [formData, setFormData] = useLocalStorageState('formData', {
+    defaultValue: emptyRecipe,
+  });
 
   const handleChange = (
     event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>
@@ -131,10 +134,9 @@ export default function RecipeForm() {
       ...formData,
       id: crypto.randomUUID(),
     };
-    console.log(newRecipe);
-  };
 
-  console.log(formData);
+    setFormData(emptyRecipe);
+  };
 
   // This is for Edit-Recipe-Feature, later!
   // useEffect(() => {
