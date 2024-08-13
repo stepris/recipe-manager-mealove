@@ -15,7 +15,9 @@ export default function App({ Component, pageProps }: AppProps) {
     defaultValue: recipesJson,
   });
 
-  console.log(recipes);
+  const handleAddRecipe = (recipe) => {
+    setRecipes((currData) => [recipe, ...currData]);
+  };
 
   const handleToggleFavorite: HandleToggleFavoriteFunction = (id) => {
     const favoriteSet = new Set(favoriteRecipesList);
@@ -34,7 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const favoriteRecipes = recipes.filter((recipe) => {
     return favoriteRecipesList.includes(recipe.id);
   });
-
+  console.log(recipes);
   return (
     <>
       <GlobalStyle />
@@ -45,6 +47,7 @@ export default function App({ Component, pageProps }: AppProps) {
           onToggleFavorite={handleToggleFavorite}
           favoriteRecipes={favoriteRecipes}
           favoriteRecipesList={favoriteRecipesList}
+          onAddRecipe={handleAddRecipe}
         />
       </Layout>
     </>

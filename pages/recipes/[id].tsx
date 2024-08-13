@@ -1,12 +1,13 @@
 import RecipeDetails from '@/components/RecipeDetails';
 import { useRouter } from 'next/router';
-import recipes from '@/lib/recipes.json';
+// import recipes from '@/lib/recipes.json';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { RecipeDetailsPageProps } from '@/types';
 
 export default function RecipeDetailsPage({
   onToggleFavorite,
+  recipes,
   favoriteRecipesList,
 }: RecipeDetailsPageProps) {
   const router = useRouter();

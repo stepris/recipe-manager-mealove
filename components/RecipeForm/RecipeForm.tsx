@@ -27,7 +27,7 @@ const emptyRecipe: Recipe = {
   description: '',
   difficulty: 'easy',
   id: '1',
-  imageUrl: '/recipe-default-imgs/alexander-mils-pPhN8HFzkDE-unsplash',
+  imageUrl: '/recipe-default-imgs/alexander-mils-pPhN8HFzkDE-unsplash.jpg',
   ingredients: [
     {
       id: '1',
@@ -48,7 +48,7 @@ const emptyRecipe: Recipe = {
   title: '',
 };
 
-export default function RecipeForm() {
+export default function RecipeForm({ onAddRecipe }) {
   const [formData, setFormData] = useLocalStorageState('formData', {
     defaultValue: emptyRecipe,
   });
@@ -134,6 +134,7 @@ export default function RecipeForm() {
       ...formData,
       id: crypto.randomUUID(),
     };
+    onAddRecipe(newRecipe);
 
     setFormData(emptyRecipe);
   };
@@ -248,7 +249,7 @@ export default function RecipeForm() {
 
         {/* Main Category */}
         <StyledInputElement>
-          <StyledLabel htmlFor='categories'>Main Categories</StyledLabel>
+          <StyledLabel htmlFor='category'>Main Categories</StyledLabel>
           <StyledCategoryContainer>
             {tags.map((tag) => {
               return (
@@ -256,7 +257,7 @@ export default function RecipeForm() {
                   <label htmlFor={tag.name}>{tag.name}</label>
                   <input
                     type='radio'
-                    name='categories'
+                    name='category'
                     id={tag.name}
                     value={tag.name}
                     required
