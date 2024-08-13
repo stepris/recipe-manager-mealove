@@ -32,6 +32,7 @@ export default function IngredientInput({
         value={ingredient.quantity}
         onChange={handleChange}
         maxLength={5}
+        pattern='^\d*$'
       />
       <StyledDropdown id='unit' name='unit' onChange={handleChange}>
         {units.map((unit) => (
