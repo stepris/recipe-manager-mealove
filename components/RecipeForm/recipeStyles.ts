@@ -47,7 +47,7 @@ export const StyledCellWrapper = styled.div`
   grid-template-columns: 1.8fr 2fr 4fr;
 `;
 
-export const StyledTableCell = styled.input`
+export const StyledTableCell = styled.input<StyledFormComponentProps>`
   font: var(--font-input);
   height: 2rem;
   border: 1px solid var(--color-neutral-4-alpha25);
