@@ -3,6 +3,7 @@ import { ChangeEvent, FormEvent } from 'react';
 import { Recipe, Ingredient, OnAddRecipeType } from '@/types';
 import IngredientInput from '@/components/RecipeForm/IngredientInput';
 import TimeInput from '@/components/RecipeForm/TimeInput';
+import { useRouter } from 'next/router';
 import {
   StyledForm,
   StyledInputElement,
@@ -52,6 +53,8 @@ export default function RecipeForm({ onAddRecipe }: OnAddRecipeType) {
   const [formData, setFormData] = useLocalStorageState('formData', {
     defaultValue: emptyRecipe,
   });
+
+  const router = useRouter();
 
   const handleChange = (
     event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>
@@ -138,6 +141,7 @@ export default function RecipeForm({ onAddRecipe }: OnAddRecipeType) {
 
     setFormData(emptyRecipe);
     event.currentTarget.reset();
+    router.push(`/recipes/${newRecipe.id}`);
   };
 
   return (
