@@ -2,8 +2,24 @@ import styled, { css } from 'styled-components';
 import tags from '@/lib/tags.json';
 import { useState } from 'react';
 import { EmptyRecipeType } from '@/types';
-import UpdateIngredient from '@/components/UpdateIngredient';
-import TimeInput from '@/components/TimeInput';
+import IngredientInput from '@/components/RecipeForm/IngredientInput';
+import TimeInput from '@/components/RecipeForm/TimeInput';
+import {
+  StyledForm,
+  StyledInputElement,
+  StyledLabel,
+  StyledInput,
+  StyledElementGroup,
+  StyledFormText,
+  StyledH2,
+  StyledH3,
+  StyledCellWrapper,
+  StyledTextArea,
+  StyledDropdown,
+  StyledCategoryContainer,
+  StyledCategoryElement,
+  StyledSubmitButton,
+} from '@/components/RecipeForm/recipeStyles';
 
 export default function RecipeForm() {
   const emptyRecipe: EmptyRecipeType = {
@@ -16,7 +32,7 @@ export default function RecipeForm() {
     ingredients: [
       {
         id: '1',
-        quantity: '',
+        quantity: 0,
         unit: '',
         name: '',
       },
@@ -169,7 +185,7 @@ export default function RecipeForm() {
           </StyledCellWrapper>
           {formData.ingredients.map((ingredient) => {
             return (
-              <UpdateIngredient
+              <IngredientInput
                 key={ingredient.id}
                 ingredient={ingredient}
                 onIngredientChange={handleIngredientChange}
@@ -253,103 +269,3 @@ export default function RecipeForm() {
     </>
   );
 }
-
-const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-5);
-  padding: var(--spacing-5);
-`;
-
-const StyledInputElement = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const StyledElementGroup = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: var(--spacing-2);
-`;
-
-const StyledH2 = styled.h2`
-  font: var(--font-headline-2);
-  padding-bottom: var(--spacing-2);
-`;
-
-const StyledH3 = styled.h3`
-  font: var(--font-headline-3);
-`;
-
-const StyledFormText = styled.p`
-  font: var(--font-input);
-`;
-
-const StyledLabel = styled.label`
-  font: var(--font-headline-2);
-  padding-bottom: var(--spacing-2);
-`;
-
-const StyledLabelSmall = styled.label`
-  font: var(--font-headline-3);
-`;
-
-const StyledInput = styled.input`
-  height: 2rem;
-  border: 1px solid var(--color-neutral-4-alpha25);
-  border-radius: var(--radius-s);
-  text-align: center;
-  font: var(--font-input);
-  ${({ $isMedium }) =>
-    $isMedium &&
-    css`
-      width: 60px;
-    `}
-  ${({ $leftAlign }) =>
-    $leftAlign &&
-    css`
-      text-align: left;
-    `}
-`;
-
-const StyledTextArea = styled.textarea`
-  border: 1px solid var(--color-neutral-4-alpha25);
-  border-radius: var(--radius-s);
-`;
-
-const StyledCellWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1.8fr 2fr 4fr;
-`;
-
-const StyledDropdown = styled.select`
-  font: var(--font-input);
-  height: 2rem;
-  border: 1px solid var(--color-neutral-4-alpha25);
-  border-radius: var(--radius-s);
-  margin-top: var(--spacing-1);
-  width: 70px;
-`;
-
-const StyledCategoryContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: var(--spacing-1);
-`;
-
-const StyledCategoryElement = styled.div`
-  display: flex;
-  flex-direction: column-reverse;
-  text-align: center;
-  font: var(--font-headline-3);
-  background-color: var(--color-neutral-2);
-  border-radius: var(--radius-m);
-  height: 60px;
-  width: 60px;
-`;
-
-const StyledSubmitButton = styled.button`
-  display: block;
-`;

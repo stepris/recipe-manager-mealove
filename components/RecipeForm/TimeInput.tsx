@@ -1,4 +1,10 @@
-import styled, { css } from 'styled-components';
+import {
+  StyledInputElement,
+  StyledH2,
+  StyledElementGroup,
+  StyledInput,
+  StyledLabelSmall,
+} from '@/components/RecipeForm/recipeStyles';
 
 export default function TimeInput({ time, onTimeChange, what }) {
   let hours;
@@ -69,43 +75,3 @@ export default function TimeInput({ time, onTimeChange, what }) {
     </StyledInputElement>
   );
 }
-
-const StyledInputElement = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const StyledH2 = styled.h2`
-  font: var(--font-headline-2);
-  padding-bottom: var(--spacing-2);
-  text-transform: capitalize;
-`;
-
-const StyledElementGroup = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: var(--spacing-2);
-`;
-
-const StyledLabelSmall = styled.label`
-  font: var(--font-headline-3);
-`;
-
-const StyledInput = styled.input`
-  height: 2rem;
-  border: 1px solid var(--color-neutral-4-alpha25);
-  border-radius: var(--radius-s);
-  text-align: center;
-  font: var(--font-input);
-  ${({ $isMedium }) =>
-    $isMedium &&
-    css`
-      width: 60px;
-    `}
-  ${({ $leftAlign }) =>
-    $leftAlign &&
-    css`
-      text-align: left;
-    `}
-`;
