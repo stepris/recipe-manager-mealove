@@ -229,6 +229,7 @@ dialog {
 
 textarea {
   resize: vertical;
+  overflow-wrap: break-word;
 }
 
 input::placeholder,

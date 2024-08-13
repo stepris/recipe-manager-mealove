@@ -149,4 +149,5 @@ const StyledSpan = styled.span`
 const StyledInstructions = styled.p`
   color: var(--color-neutral-4);
   padding-top: var(--spacing-5);
+  overflow-wrap: break-word;
 `;

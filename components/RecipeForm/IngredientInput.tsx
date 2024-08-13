@@ -26,11 +26,12 @@ export default function IngredientInput({
   return (
     <StyledCellWrapper id={ingredient.id} key={ingredient.id}>
       <StyledTableCell
-        type='number'
+        type='text'
         name='quantity'
         $isMedium
         value={ingredient.quantity}
         onChange={handleChange}
+        maxLength={5}
       />
       <StyledDropdown id='unit' name='unit' onChange={handleChange}>
         {units.map((unit) => (
@@ -41,10 +42,12 @@ export default function IngredientInput({
       </StyledDropdown>
       <StyledTableCell
         name='name'
+        type='text'
         $isLarge
         $leftAlign
         placeholder='Ingredient Name'
         onChange={handleChange}
+        maxLength={20}
       />
     </StyledCellWrapper>
   );
