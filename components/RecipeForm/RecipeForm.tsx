@@ -21,34 +21,34 @@ import {
   StyledSubmitButton,
 } from '@/components/RecipeForm/recipeStyles';
 
-export default function RecipeForm() {
-  const emptyRecipe: EmptyRecipeType = {
-    category: '',
-    cookingTime: 0,
-    description: '',
-    difficulty: 'easy',
-    id: '1',
-    imageUrl: '/recipe-default-imgs/alexander-mils-pPhN8HFzkDE-unsplash',
-    ingredients: [
-      {
-        id: '1',
-        quantity: 0,
-        unit: '',
-        name: '',
-      },
-    ],
-    instructions: [
-      {
-        id: '1',
-        description: '',
-      },
-    ],
-    prepTime: 0,
-    servings: 1,
-    tags: [],
-    title: '',
-  };
+const emptyRecipe: EmptyRecipeType = {
+  category: '',
+  cookingTime: 0,
+  description: '',
+  difficulty: 'easy',
+  id: '1',
+  imageUrl: '/recipe-default-imgs/alexander-mils-pPhN8HFzkDE-unsplash',
+  ingredients: [
+    {
+      id: '1',
+      quantity: 0,
+      unit: '',
+      name: '',
+    },
+  ],
+  instructions: [
+    {
+      id: '1',
+      description: '',
+    },
+  ],
+  prepTime: 0,
+  servings: 1,
+  tags: [],
+  title: '',
+};
 
+export default function RecipeForm() {
   const [formData, setFormData] = useState(emptyRecipe);
 
   const handleChange = (event) => {
