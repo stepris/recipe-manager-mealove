@@ -99,7 +99,7 @@
         "id": "2",
         "name": "rosemary",
         "quantity": 2,
-        "unit": "tablespoons"
+        "unit": "tbsp"
       },
       {
         "id": "3",
@@ -237,7 +237,7 @@
         "id": "3",
         "name": "curry powder",
         "quantity": 2,
-        "unit": "tablespoons"
+        "unit": "tbsp"
       },
       {
         "id": "4",
@@ -275,13 +275,13 @@
         "id": "2",
         "name": "honey",
         "quantity": 3,
-        "unit": "tablespoons"
+        "unit": "tbsp"
       },
       {
         "id": "3",
         "name": "soy sauce",
         "quantity": 2,
-        "unit": "tablespoons"
+        "unit": "tbsp"
       },
       {
         "id": "4",
