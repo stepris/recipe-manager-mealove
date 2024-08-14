@@ -1,0 +1,72 @@
+[
+  {
+    "id": "1",
+    "name": "Meat",
+    "colorVarName": "--color-cat1-red",
+    "colorVarNameAlpha": "--color-cat1-red-alpha",
+    "iconPath": "/icons/categories/Brunch.svg"
+  },
+  {
+    "id": "2",
+    "name": "Fish",
+    "colorVarName": "--color-cat2-blue",
+    "colorVarNameAlpha": "--color-cat2-blue-alpha",
+    "iconPath": "/icons/categories/Fish.svg"
+  },
+  {
+    "id": "3",
+    "name": "Veggy",
+    "colorVarName": "--color-cat4-lime",
+    "colorVarNameAlpha": "--color-cat4-lime-alpha",
+    "iconPath": "/icons/categories/Veggy.svg"
+  },
+  {
+    "id": "4",
+    "name": "Sweet",
+    "colorVarName": "--color-cat4-lime",
+    "colorVarNameAlpha": "--color-cat4-lime-alpha",
+    "iconPath": "/icons/categories/Sweet.svg"
+  },
+  {
+    "id": "5",
+    "name": "Brunch",
+    "colorVarName": "--color-cat5-yellow",
+    "colorVarNameAlpha": "--color-cat5-yellow-alpha",
+    "iconPath": "/icons/categories/Brunch.svg"
+  },
+  {
+    "id": "6",
+    "name": "Hot",
+    "colorVarName": "--color-cat1-red",
+    "colorVarNameAlpha": "--color-cat1-red-alpha",
+    "iconPath": "/icons/categories/Hot.svg"
+  },
+  {
+    "id": "7",
+    "name": "Cold",
+    "colorVarName": "--color-cat2-blue",
+    "colorVarNameAlpha": "--color-cat2-blue-alpha",
+    "iconPath": "/icons/categories/Cold.svg"
+  },
+  {
+    "id": "8",
+    "name": "Fruits",
+    "colorVarName": "--color-cat4-lime",
+    "colorVarNameAlpha": "--color-cat4-lime-alpha",
+    "iconPath": "/icons/categories/Fruits.svg"
+  },
+  {
+    "id": "9",
+    "name": "Drinks",
+    "colorVarName": "--color-cat6-slate",
+    "colorVarNameAlpha": "--color-cat6-slate-alpha",
+    "iconPath": "/icons/categories/Drinks.svg"
+  },
+  {
+    "id": "10",
+    "name": "Snacks",
+    "colorVarName": "--color-cat7-orange",
+    "colorVarNameAlpha": "--color-cat7-orange-alpha",
+    "iconPath": "/icons/categories/Snacks.svg"
+  }
+]
