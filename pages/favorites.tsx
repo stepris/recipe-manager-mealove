@@ -14,7 +14,7 @@ export default function Favorites({
         <RecipeList
           recipes={favoriteRecipes || []}
           onToggleFavorite={onToggleFavorite}
-          favoriteRecipesList={favoriteRecipesList}
+          favoriteRecipesList={favoriteRecipesList || []}
         />
       ) : (
         <>
