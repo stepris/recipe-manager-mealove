@@ -6,25 +6,25 @@ export default function RecipesFilter() {
     <>
       <h1>Under construction...</h1>
       <Wrapper>
-        <Button variant='$submit' type={'button'}>
+        <Button variant='$submit' type='button' onClickBehavior='submit'>
           Submit Recipe
         </Button>
-        <Button variant='$edit' type={'button'}>
+        <Button variant='$edit' type='button' onClickBehavior='onClick'>
           Edit
         </Button>
-        <Button variant='$update' type={'button'}>
+        <Button variant='$update' type='button' onClickBehavior='onChange'>
           Update
         </Button>
-        <Button variant='$cancel' type={'button'}>
+        <Button variant='$cancel' type='button' onClickBehavior='onClick'>
           Cancel
         </Button>
-        <Button variant='$delete' type={'button'}>
+        <Button variant='$delete' type='button' onClickBehavior='onClick'>
           Delete
         </Button>
-        <Button variant='$yes' type={'button'}>
+        <Button variant='$yes' type='button' onClickBehavior='onClick'>
           Yes
         </Button>
-        <Button variant='$no' type={'button'}>
+        <Button variant='$no' type='button' onClickBehavior='onClick'>
           No
         </Button>
       </Wrapper>
