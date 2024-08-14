@@ -57,8 +57,8 @@ export type HeaderProps = {
 };
 
 export type AppBaseProps = {
-  favoriteRecipes?: Recipe[];
-  recipes?: Recipe[];
+  favoriteRecipes: Recipe[] | [];
+  recipes: Recipe[] | [];
   onToggleFavorite: (id: string) => {};
   favoriteRecipesList: string[];
 };
