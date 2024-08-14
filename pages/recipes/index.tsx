@@ -6,9 +6,13 @@ export default function RecipesFilter() {
     <>
       <h1>Under construction...</h1>
       <Wrapper>
-        <Button $submit>Submit Recipe</Button>
-        <Button>Edit</Button>
-        <Button>Update</Button>
+        <Button variant='$submit'>Submit Recipe</Button>
+        <Button variant='$edit'>Edit</Button>
+        <Button variant='$update'>Update</Button>
+        <Button variant='$cancel'>Cancel</Button>
+        <Button variant='$delete'>Delete</Button>
+        <Button variant='$yes'>Yes</Button>
+        <Button variant='$no'>No</Button>
       </Wrapper>
     </>
   );
