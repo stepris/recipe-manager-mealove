@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import Image from 'next/image';
-import { CategoryIconProps } from '@/types/CategoryIcon.types';
+import {
+  CategoryIconProps,
+  StyledIconButtonProps,
+} from '@/types/CategoryIcon.types';
 
 export default function CategoryIcon({ category }: CategoryIconProps) {
   const { iconPath, name, colorVarName } = category;
@@ -13,7 +16,7 @@ export default function CategoryIcon({ category }: CategoryIconProps) {
   );
 }
 
-const StyledIconButton = styled.button`
+const StyledIconButton = styled.button<StyledIconButtonProps>`
   background-color: var(--color-neutral-2);
   font: var(--font-category-icon);
   width: 50px;

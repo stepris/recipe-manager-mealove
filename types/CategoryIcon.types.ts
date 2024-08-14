@@ -9,3 +9,7 @@ export type Category = {
 export type CategoryIconProps = {
   category: Category;
 };
+
+export interface StyledIconButtonProps {
+  $colorVarName: string;
+}
