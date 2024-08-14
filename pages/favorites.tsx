@@ -12,7 +12,7 @@ export default function Favorites({
       <QuickLinks />
       {favoriteRecipesList.length !== 0 ? (
         <RecipeList
-          recipes={favoriteRecipes}
+          recipes={favoriteRecipes || []}
           onToggleFavorite={onToggleFavorite}
           favoriteRecipesList={favoriteRecipesList}
         />

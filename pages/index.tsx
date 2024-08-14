@@ -12,7 +12,7 @@ export default function HomePage({
       <QuickLinks />
       <RecipeList
         onToggleFavorite={onToggleFavorite}
-        recipes={recipes}
+        recipes={recipes || []}
         favoriteRecipesList={favoriteRecipesList}
       />
     </main>
