@@ -1,6 +1,7 @@
 import RecipePreview from '@/components/RecipePreview';
 import styled from 'styled-components';
 import { RecipeDetailsPageProps } from '@/types';
+import MainCategories from '@/components/MainCategories';
 
 export default function RecipeList({
   recipes,
@@ -9,6 +10,7 @@ export default function RecipeList({
 }: RecipeDetailsPageProps) {
   return (
     <section>
+      <MainCategories />
       <StyledRecipeList>
         {recipes.map((recipe) => {
           return (
