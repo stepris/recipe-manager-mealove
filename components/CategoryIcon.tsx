@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import Image from 'next/image';
+import { CategoryIconProps } from '@/types/CategoryIcon.types';
 
-export default function CategoryIcon({ category }) {
-  const { iconPath, name } = category;
+export default function CategoryIcon({ category }: CategoryIconProps) {
+  const { iconPath, name, colorVarName } = category;
 
   return (
     <StyledIconButton>
