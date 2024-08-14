@@ -5,8 +5,8 @@ export default function MainCategories() {
   console.log(categories);
   return (
     <div>
-      {categories.map((categorie) => (
-        <CategoryIcon />
+      {categories.map((category) => (
+        <CategoryIcon key={category.id} category={category} />
       ))}
     </div>
   );

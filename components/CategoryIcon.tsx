@@ -1,9 +1,17 @@
 import styled from 'styled-components';
+import Image from 'next/image';
 
-export default function CategoryIcon() {
-  return <StyledIcon>Test</StyledIcon>;
+export default function CategoryIcon({ category }) {
+  const { iconPath, name } = category;
+  console.log(iconPath);
+  return (
+    <StyledIconButton>
+      <span>{name}</span>
+      <Image alt={`${name} icon`} src={`${iconPath}`} width={30} height={30} />
+    </StyledIconButton>
+  );
 }
 
-const StyledIcon = styled.button`
+const StyledIconButton = styled.button`
   background-color: red;
 `;
