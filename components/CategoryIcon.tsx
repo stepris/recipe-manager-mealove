@@ -6,7 +6,7 @@ export default function CategoryIcon({ category }: CategoryIconProps) {
   const { iconPath, name, colorVarName } = category;
 
   return (
-    <StyledIconButton>
+    <StyledIconButton $colorVarName={colorVarName}>
       <Image alt={`${name} icon`} src={`${iconPath}`} width={25} height={25} />
       <span>{name}</span>
     </StyledIconButton>
@@ -23,4 +23,7 @@ const StyledIconButton = styled.button`
   justify-content: center;
   align-items: center;
   border-radius: var(--radius-m);
+  &:hover {
+    background-color: var(${(props) => props.$colorVarName});
+  }
 `;
