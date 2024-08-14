@@ -15,6 +15,7 @@
     "jsx": "preserve",
     "noImplicitAny": true,
     "noUnusedLocals": true,
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
     }

@@ -61,30 +61,8 @@ export interface ChildrenLayoutProps {
   children?: ReactNode;
 }
 
-export type Ingredient = {
-  id: string;
-  name: string;
-  quantity: number;
-  unit: string;
-};
-
-export interface StyledFormComponentProps {
-  readonly $leftAlign?: boolean;
-  readonly $isMedium?: boolean;
-  readonly $isLarge?: boolean;
-}
-
-export type TimeInputProps = {
-  time: number;
-  onTimeChange: (newPrepTime: number) => void;
-  what: 'prep' | 'cooking';
-};
-
-export type IngredientInputProps = {
-  ingredient: Ingredient;
-  onIngredientChange: (newIngredient: Ingredient) => void;
-};
-
 export type OnAddRecipeType = {
   onAddRecipe: (recipe: Recipe) => void;
 };
+
+export type OnEditRecipeType = (recipe: Recipe) => void;

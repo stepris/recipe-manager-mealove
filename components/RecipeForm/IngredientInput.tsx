@@ -4,16 +4,14 @@ import {
   StyledTableCell,
   StyledDropdown,
 } from '@/components/RecipeForm/recipeStyles';
-import { IngredientInputProps } from '@/types';
-import { ChangeEvent } from 'react';
+import { IngredientInputProps } from '@/types/IngridientInput.types';
+import { HandleChangeParams } from '@/types/RecipeForm.types';
 
 export default function IngredientInput({
   ingredient,
   onIngredientChange,
 }: IngredientInputProps) {
-  const handleChange = (
-    event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>
-  ) => {
+  const handleChange = (event: HandleChangeParams) => {
     const { name, value } = event.target;
 
     const newIngredient = {
@@ -34,7 +32,12 @@ export default function IngredientInput({
         maxLength={5}
         pattern='^\d*$'
       />
-      <StyledDropdown id='unit' name='unit' onChange={handleChange}>
+      <StyledDropdown
+        id='unit'
+        name='unit'
+        onChange={handleChange}
+        value={ingredient.unit}
+      >
         {units.map((unit) => (
           <option key={unit.id} value={unit.unit}>
             {unit.unit}
@@ -44,10 +47,11 @@ export default function IngredientInput({
       <StyledTableCell
         name='name'
         type='text'
-        $isLarge
-        $leftAlign
         placeholder='Ingredient Name'
         onChange={handleChange}
+        value={ingredient.name}
+        $isLarge
+        $leftAlign
         maxLength={20}
       />
     </StyledCellWrapper>

@@ -23,7 +23,7 @@
         "id": "3",
         "name": "garlic cloves",
         "quantity": 3,
-        "unit": "pieces"
+        "unit": "piece(s)"
       },
       {
         "id": "4",
@@ -55,25 +55,25 @@
         "id": "1",
         "name": "avocado",
         "quantity": 1,
-        "unit": "pieces"
+        "unit": "piece(s)"
       },
       {
         "id": "2",
         "name": "bread",
         "quantity": 2,
-        "unit": "slices"
+        "unit": "piece(s)"
       },
       {
         "id": "3",
         "name": "sea salt",
         "quantity": 1,
-        "unit": "pinch"
+        "unit": "tsp"
       }
     ],
     "instructions": [
       {
         "id": "1",
-        "description": "Toast the bread slices. Mash the avocado and spread it on the toast. Sprinkle with sea salt."
+        "description": "Toast the bread piece(s). Mash the avocado and spread it on the toast. Sprinkle with sea salt."
       }
     ],
     "prepTime": 5,
@@ -105,7 +105,7 @@
         "id": "3",
         "name": "garlic cloves",
         "quantity": 4,
-        "unit": "pieces"
+        "unit": "piece(s)"
       },
       {
         "id": "4",
@@ -181,13 +181,13 @@
         "id": "1",
         "name": "cucumber",
         "quantity": 1,
-        "unit": "pieces"
+        "unit": "piece(s)"
       },
       {
         "id": "2",
         "name": "tomatoes",
         "quantity": 2,
-        "unit": "pieces"
+        "unit": "piece(s)"
       },
       {
         "id": "3",
@@ -243,7 +243,7 @@
         "id": "4",
         "name": "onions",
         "quantity": 1,
-        "unit": "piece"
+        "unit": "piece(s)"
       }
     ],
     "instructions": [
@@ -269,7 +269,7 @@
         "id": "1",
         "name": "salmon fillets",
         "quantity": 4,
-        "unit": "pieces"
+        "unit": "piece(s)"
       },
       {
         "id": "2",
@@ -313,7 +313,7 @@
         "id": "1",
         "name": "lasagna sheets",
         "quantity": 12,
-        "unit": "sheets"
+        "unit": "piece(s)"
       },
       {
         "id": "2",
@@ -357,13 +357,13 @@
         "id": "1",
         "name": "banana",
         "quantity": 1,
-        "unit": "piece"
+        "unit": "piece(s)"
       },
       {
         "id": "2",
         "name": "mango",
         "quantity": 1,
-        "unit": "piece"
+        "unit": "piece(s)"
       },
       {
         "id": "3",

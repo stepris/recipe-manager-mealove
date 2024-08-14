@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { StyledFormComponentProps } from '@/types';
+import { StyledFormComponentProps } from '@/types/recipeStyles.types';
 
 export const StyledForm = styled.form`
   display: flex;
@@ -50,6 +50,7 @@ export const StyledCellWrapper = styled.div`
 export const StyledTableCell = styled.input<StyledFormComponentProps>`
   font: var(--font-input);
   height: 2rem;
+  padding-left: var(--spacing-1);
   border: 1px solid var(--color-neutral-4-alpha25);
   border-radius: var(--radius-s);
   margin-top: var(--spacing-1);
@@ -73,6 +74,7 @@ export const StyledTableCell = styled.input<StyledFormComponentProps>`
 
 export const StyledInput = styled.input<StyledFormComponentProps>`
   height: 2rem;
+  padding-left: var(--spacing-1);
   border: 1px solid var(--color-neutral-4-alpha25);
   border-radius: var(--radius-s);
   text-align: center;
@@ -90,15 +92,18 @@ export const StyledInput = styled.input<StyledFormComponentProps>`
 `;
 
 export const StyledDropdown = styled.select`
+  flex: 0 0 auto;
+  width: fit-content;
   font: var(--font-input);
   height: 2rem;
+  padding-left: var(--spacing-1);
   border: 1px solid var(--color-neutral-4-alpha25);
   border-radius: var(--radius-s);
   margin-top: var(--spacing-1);
-  width: 70px;
 `;
 
 export const StyledTextArea = styled.textarea`
+  padding: var(--spacing-1);
   border: 1px solid var(--color-neutral-4-alpha25);
   border-radius: var(--radius-s);
 `;
@@ -118,6 +123,9 @@ export const StyledSubmitButton = styled.button`
 export const StyledButtonWrapper = styled.div`
   display: inline-block;
   align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
 `;
 
 export const StyledCategoryContainer = styled.div`
