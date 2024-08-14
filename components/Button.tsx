@@ -1,9 +1,5 @@
 import styled, { css } from 'styled-components';
-import SaveIcon from '@/public/icons/buttons/ic_fluent_save_24_filled.svg';
-import EditIcon from '@/public/icons/buttons/ic_fluent_edit_24_filled.svg';
-import DismissIconSquare from '@/public/icons/buttons/ic_fluent_dismiss_square_24_filled.svg';
-import DismissIconCircle from '@/public/icons/buttons/ic_fluent_dismiss_circle_24_filled.svg';
-import CheckIcon from '@/public/icons/buttons/ic_fluent_checkmark_circle_24_filled.svg';
+import Image from 'next/image';
 
 export default function Button({ children, variant, type }) {
   return (
@@ -57,19 +53,62 @@ const buttonVariants = (variant) => {
 const buttonType = (type) => {
   switch (type) {
     case '$submit':
-      return <SaveIcon />;
+      return (
+        <Image
+          src='/icons/buttons/ic_fluent_save_24_filled.svg'
+          width={20}
+          height={20}
+          alt='submit'
+        />
+      );
     case '$edit':
-      return <SaveIcon />;
+      return (
+        <Image
+          src='/icons/buttons/ic_fluent_save_24_filled.svg'
+          width={20}
+          height={20}
+          alt='edit'
+        />
+      );
+
     case '$update':
-      return <EditIcon />;
+      return (
+        <Image
+          src='/icons/buttons/ic_fluent_save_24_filled.svg'
+          width={20}
+          height={20}
+          alt='update'
+        />
+      );
     case '$cancel':
-      return <DismissIconSquare />;
+      return (
+        <Image
+          src='/icons/buttons/ic_fluent_dismiss_square_24_filled.svg'
+          width={20}
+          height={20}
+          alt='cancel'
+        />
+      );
     case '$delete':
       return;
     case '$yes':
-      return <CheckIcon />;
+      return (
+        <Image
+          src='/icons/buttons/ic_fluent_checkmark_circle_24_filled.svg'
+          width={20}
+          height={20}
+          alt='yes'
+        />
+      );
     case '$no':
-      return <DismissIconCircle />;
+      return (
+        <Image
+          src='/icons/buttons/ic_fluent_dismiss_circle_24_filled.svg'
+          width={20}
+          height={20}
+          alt='no'
+        />
+      );
     default:
       return null;
   }
