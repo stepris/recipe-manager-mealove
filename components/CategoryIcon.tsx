@@ -1,3 +1,9 @@
+import styled from 'styled-components';
+
 export default function CategoryIcon() {
-  return <>Iam a Icon</>;
+  return <StyledIcon>Test</StyledIcon>;
 }
+
+const StyledIcon = styled.button`
+  background-color: red;
+`;
