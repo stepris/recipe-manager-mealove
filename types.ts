@@ -1,30 +1,26 @@
 import { ReactNode } from 'react';
 
 export type Recipe = {
-  id: string;
-  title: string;
-  imageUrl: string;
+  category: string;
+  cookingTime: number;
   description: string;
+  difficulty: string;
+  id: string;
+  imageUrl: string;
   ingredients: {
     id: string;
+    name: string;
     quantity: number;
     unit: string;
-    name: string;
   }[];
-  prepTime: {
-    h: number;
-    min: number;
-  };
-  cookingTime: {
-    h: number;
-    min: number;
-  };
-  servings: number;
-  tags: string[];
   instructions: {
     id: string;
     description: string;
   }[];
+  prepTime: number;
+  servings: number;
+  tags: string[];
+  title: string;
 };
 
 export interface LinkProps {
@@ -61,10 +57,10 @@ export type HeaderProps = {
 };
 
 export type AppBaseProps = {
-  favoriteRecipes?: Recipe[];
-  recipes?: Recipe[];
-  onToggleFavorite?: (id: string) => {};
-  favoriteRecipesList?: string[];
+  favoriteRecipes: Recipe[] | [];
+  recipes: Recipe[] | [];
+  onToggleFavorite: (id: string) => {};
+  favoriteRecipesList: string[];
 };
 
 export interface ChildrenLayoutProps {
@@ -75,4 +71,32 @@ export type RecipeDetailsPageProps = {
   recipes: Recipe[];
   onToggleFavorite: (id: string) => {};
   favoriteRecipesList: string[];
+};
+
+export type Ingredient = {
+  id: string;
+  name: string;
+  quantity: number;
+  unit: string;
+};
+
+export interface StyledFormComponentProps {
+  readonly $leftAlign?: boolean;
+  readonly $isMedium?: boolean;
+  readonly $isLarge?: boolean;
+}
+
+export type TimeInputProps = {
+  time: number;
+  onTimeChange: (newPrepTime: number) => void;
+  what: 'prep' | 'cooking';
+};
+
+export type IngredientInputProps = {
+  ingredient: Ingredient;
+  onIngredientChange: (newIngredient: Ingredient) => void;
+};
+
+export type OnAddRecipeType = {
+  onAddRecipe: (recipe: Recipe) => void;
 };
