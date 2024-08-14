@@ -23,8 +23,8 @@
   {
     "id": "4",
     "name": "Sweet",
-    "colorVarName": "--color-cat4-lime",
-    "colorVarNameAlpha": "--color-cat4-lime-alpha",
+    "colorVarName": "--color-cat3-purple",
+    "colorVarNameAlpha": "--color-cat3-purple-alpha",
     "iconPath": "/icons/categories/Sweet.svg"
   },
   {
