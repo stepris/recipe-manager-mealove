@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import SaveIcon from '@/public/icons/buttons/ic_fluent_save_24_filled.svg';
+import EditIcon from '@/public/icons/buttons/ic_fluent_edit_24_filled.svg';
 import DismissSquareIcon from '@/public/icons/buttons/ic_fluent_dismiss_square_24_filled.svg';
 import DismissCircleIcon from '@/public/icons/buttons/ic_fluent_dismiss_circle_24_filled.svg';
 import DeleteIcon from '@/public/icons/buttons/ic_fluent_delete_24_filled.svg';
@@ -17,7 +18,7 @@ export default function Button({
       case '$submit':
         return <SaveIcon />;
       case '$edit':
-        return <SaveIcon />;
+        return <EditIcon />;
       case '$update':
         return <SaveIcon />;
       case '$cancel':
@@ -34,7 +35,7 @@ export default function Button({
   };
   return (
     <StyledButton
-      variant={variant}
+      $variant={variant}
       onClick={onClickBehavior}
       type={type || 'button'}
     >
@@ -51,19 +52,22 @@ const StyledButton = styled.button<StyledButtonProps>`
   display: flex;
   align-items: center;
   border-radius: var(--radius-m);
-  min-height: 2rem;
-  padding: 0.3rem 0.6rem;
+  height: var(--spacing-8);
+  padding: var(--spacing-2);
+  padding-right: var(--spacing-3);
+  transition: all 0.1s ease-in-out;
+  filter: drop-shadow(0.2rem 0.2rem 0.2rem var(--color-neutral-3-alpha50));
 
   svg {
     path {
       fill: var(--color-neutral-1);
     }
-    height: 18px;
-    width: 18px;
+    height: 20px;
+    width: 20px;
   }
 
-  ${({ variant }) => {
-    switch (variant) {
+  ${({ $variant }) => {
+    switch ($variant) {
       case '$submit':
         return css`
           background-color: var(--color-primary-1);
@@ -101,20 +105,23 @@ const StyledButton = styled.button<StyledButtonProps>`
           background-color: var(--color-feedback-warning);
           gap: var(--spacing-1);
           &:hover {
-            background-color: var(--color-primary-2);
+            background-color: var(--color-feedback-warning-hover);
           }
         `;
       case '$yes':
         return css`
           background-color: var(--color-feedback-success);
           gap: var(--spacing-1);
+          &:hover {
+            background-color: var(--color-feedback-success-hover);
+          }
         `;
       case '$no':
         return css`
           background-color: var(--color-feedback-warning);
           gap: var(--spacing-1);
           &:hover {
-            background-color: var(--color-primary-2);
+            background-color: var(--color-feedback-warning-hover);
           }
         `;
     }

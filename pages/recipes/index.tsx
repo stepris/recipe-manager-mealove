@@ -6,7 +6,7 @@ export default function RecipesFilter() {
     <>
       <h1>Under construction...</h1>
       <Wrapper>
-        <Button variant='$submit' type='button' onClickBehavior='submit'>
+        <Button variant='$submit' type='button' onClickBehavior={'submit'}>
           Submit Recipe
         </Button>
         <Button variant='$edit' type='button' onClickBehavior='onClick'>

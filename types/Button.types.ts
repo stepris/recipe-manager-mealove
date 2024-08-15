@@ -17,5 +17,5 @@ export type ButtonTypeProps = {
 };
 
 export type StyledButtonProps = {
-  variant: ButtonVariant;
+  $variant: ButtonVariant;
 };
