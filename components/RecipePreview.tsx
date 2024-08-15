@@ -19,8 +19,6 @@ export default function RecipePreview({
     (categorie) => categorie.name === category
   )?.colorVarNameAlpha;
 
-  console.log(categories);
-
   return (
     <StyledWrapper>
       <FavoriteButton
