@@ -14,7 +14,7 @@ export type CategoryIconProps = {
 
 export interface StyledIconButtonProps {
   $colorVarName: string;
-  $activeFilter: string;
+  $activeFilter: string | null;
   $color: string;
   $name: string;
 }
