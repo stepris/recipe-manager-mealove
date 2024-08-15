@@ -3,6 +3,7 @@ import { ChangeEvent, FormEvent } from 'react';
 import { Recipe, Ingredient, OnAddRecipeType } from '@/types';
 import IngredientInput from '@/components/RecipeForm/IngredientInput';
 import TimeInput from '@/components/RecipeForm/TimeInput';
+import Button from '@/components/Button';
 import { useRouter } from 'next/router';
 import {
   StyledForm,
@@ -18,7 +19,7 @@ import {
   StyledDropdown,
   StyledCategoryContainer,
   StyledCategoryElement,
-  StyledSubmitButton,
+  StyledButtonWrapper,
 } from '@/components/RecipeForm/recipeStyles';
 import useLocalStorageState from 'use-local-storage-state';
 
@@ -268,9 +269,15 @@ export default function RecipeForm({ onAddRecipe }: OnAddRecipeType) {
             })}
           </StyledCategoryContainer>
         </StyledInputElement>
-        <StyledSubmitButton aria-label='submit new recipe'>
-          Submit
-        </StyledSubmitButton>
+        <StyledButtonWrapper>
+          <Button
+            variant='$submit'
+            type='submit'
+            aria-label='submit new recipe'
+          >
+            Submit Recipe
+          </Button>
+        </StyledButtonWrapper>
       </StyledForm>
     </>
   );

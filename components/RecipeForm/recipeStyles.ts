@@ -115,6 +115,11 @@ export const StyledSubmitButton = styled.button`
   }
 `;
 
+export const StyledButtonWrapper = styled.div`
+  display: inline-block;
+  align-self: center;
+`;
+
 export const StyledCategoryContainer = styled.div`
   display: flex;
   flex-direction: row;

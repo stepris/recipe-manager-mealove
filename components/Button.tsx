@@ -7,12 +7,7 @@ import DeleteIcon from '@/public/icons/buttons/ic_fluent_delete_24_filled.svg';
 import CheckIcon from '@/public/icons/buttons/ic_fluent_checkmark_circle_24_filled.svg';
 import { ButtonTypeProps, StyledButtonProps } from '@/types/Button.types';
 
-export default function Button({
-  children,
-  variant,
-  type,
-  onClickBehavior,
-}: ButtonTypeProps) {
+export default function Button({ children, variant, type }: ButtonTypeProps) {
   const buttonIcon = () => {
     switch (variant) {
       case '$submit':
@@ -34,11 +29,7 @@ export default function Button({
     }
   };
   return (
-    <StyledButton
-      $variant={variant}
-      onClick={onClickBehavior}
-      type={type || 'button'}
-    >
+    <StyledButton $variant={variant} type={type || 'button'}>
       {buttonIcon()}
       {children}
     </StyledButton>
@@ -51,6 +42,7 @@ const StyledButton = styled.button<StyledButtonProps>`
   text-transform: uppercase;
   display: flex;
   align-items: center;
+  justify-content: center;
   border-radius: var(--radius-m);
   height: var(--spacing-8);
   padding: var(--spacing-2);
