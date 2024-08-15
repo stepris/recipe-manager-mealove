@@ -18,6 +18,10 @@ export default function App({ Component, pageProps }: AppProps) {
     setRecipes((currData) => [recipe, ...currData]);
   };
 
+  const handleDeleteRecipe = (idToDelete) => {
+    setRecipes(recipes.filter((recipe) => recipe.id !== idToDelete));
+  };
+
   const handleToggleFavorite: HandleToggleFavoriteFunction = (id) => {
     const favoriteSet = new Set<string>(favoriteRecipesList);
     if (!id) {
@@ -46,6 +50,7 @@ export default function App({ Component, pageProps }: AppProps) {
           favoriteRecipes={favoriteRecipes}
           favoriteRecipesList={favoriteRecipesList}
           onAddRecipe={handleAddRecipe}
+          onDeleteRecipe={handleDeleteRecipe}
         />
       </Layout>
     </>
