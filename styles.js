@@ -291,7 +291,9 @@ video {
     --color-neutral-4-alpha25: #0c0a0940;
 
     --color-feedback-warning: #b91c1c;
+    --color-feedback-warning-hover: #e42020;
     --color-feedback-success: #65a30d;
+    --color-feedback-success-hover: #82c228;
     --color-information-rating: #f59e0b;
 
     --color-cat1-red: #fecaca;
