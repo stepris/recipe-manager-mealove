@@ -16,7 +16,7 @@ export default function CategoryIconButton({
     <StyledIconButton
       $colorVarName={colorVarName}
       onClick={() => onChangeFilter(name)}
-      $activeFilter={activeFilter}
+      $activeFilter={activeFilter === name}
       $color={colorVarName}
       $name={name}
     >
@@ -27,8 +27,8 @@ export default function CategoryIconButton({
 }
 
 const StyledIconButton = styled.button<StyledIconButtonProps>`
-  background-color: ${({ $activeFilter, $color, $name }) =>
-    $activeFilter === $name ? `var(${$color})` : 'var(--color-neutral-2)'};
+  background-color: ${({ $activeFilter, $color }) =>
+    $activeFilter ? `var(${$color})` : 'var(--color-neutral-2)'};
   font: var(--font-category-icon);
   width: 50px;
   height: 50px;
@@ -40,7 +40,7 @@ const StyledIconButton = styled.button<StyledIconButtonProps>`
   transition: all 0.1s ease-in-out;
   filter: drop-shadow(0.2rem 0.2rem 0.2rem var(--color-primary-2));
   &:hover {
-    background-color: var(${(props) => props.$colorVarName});
+    background-color: var(${({ $colorVarName }) => $colorVarName});
     transform: scale(1.1);
   }
 `;
