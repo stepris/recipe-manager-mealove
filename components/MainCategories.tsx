@@ -53,18 +53,7 @@ const StyledFilterGroup = styled.div<MainCategoriesStyledComponents>`
   width: 325px;
   transition: all 0.6s ease-in-out;
   overflow: hidden;
-
-  ${({ $isOpen }) =>
-    $isOpen &&
-    css`
-      max-height: 350px;
-    `}
-
-  ${({ $isOpen }) =>
-    !$isOpen &&
-    css`
-      max-height: 35px;
-    `}
+  max-height: ${({ $isOpen }) => ($isOpen ? '350px' : '35px')};
 `;
 
 const StyledUl = styled.ul<MainCategoriesStyledComponents>`

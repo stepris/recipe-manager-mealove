@@ -6,6 +6,6 @@ export type RecipePreviewProps = {
   isFavorite: boolean;
 };
 
-export interface StyledRecipeTitleProps {
+export type StyledRecipeTitleProps = {
   $recipeColor: string | undefined;
-}
+};

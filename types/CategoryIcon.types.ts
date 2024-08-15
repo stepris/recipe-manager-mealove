@@ -12,9 +12,9 @@ export type CategoryIconProps = {
   activeFilter: string | null;
 };
 
-export interface StyledIconButtonProps {
+export type StyledIconButtonProps = {
   $colorVarName: string;
-  $activeFilter: string | null;
+  $activeFilter: boolean;
   $color: string;
   $name: string;
-}
+};

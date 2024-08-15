@@ -3,6 +3,6 @@ export type MainCategoriesProps = {
   activeFilter: string | null;
 };
 
-export interface MainCategoriesStyledComponents {
+export type MainCategoriesStyledComponents = {
   $isOpen: boolean;
-}
+};
