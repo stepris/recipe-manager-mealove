@@ -4,7 +4,7 @@ import categories from '@/lib/categories.json';
 import { useState } from 'react';
 import Arrow from '@/public/icons/categories/Arrow.svg';
 
-export default function MainCategories() {
+export default function MainCategories({ onChangeFilter }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -18,7 +18,10 @@ export default function MainCategories() {
         <StyledUl $isOpen={isOpen}>
           {categories.map((category) => (
             <li key={category.id}>
-              <CategoryIcon category={category} />
+              <CategoryIcon
+                category={category}
+                onChangeFilter={onChangeFilter}
+              />
             </li>
           ))}
         </StyledUl>

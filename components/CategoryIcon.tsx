@@ -5,11 +5,17 @@ import {
   StyledIconButtonProps,
 } from '@/types/CategoryIcon.types';
 
-export default function CategoryIcon({ category }: CategoryIconProps) {
+export default function CategoryIcon({
+  category,
+  onChangeFilter,
+}: CategoryIconProps) {
   const { iconPath, name, colorVarName } = category;
 
   return (
-    <StyledIconButton $colorVarName={colorVarName}>
+    <StyledIconButton
+      $colorVarName={colorVarName}
+      onClick={() => onChangeFilter(name)}
+    >
       <Image alt={`${name} icon`} src={`${iconPath}`} width={25} height={25} />
       <span>{name}</span>
     </StyledIconButton>
