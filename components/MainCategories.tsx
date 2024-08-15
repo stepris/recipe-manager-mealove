@@ -3,8 +3,15 @@ import CategoryIcon from './CategoryIcon';
 import categories from '@/lib/categories.json';
 import { useState } from 'react';
 import Arrow from '@/public/icons/categories/Arrow.svg';
+import {
+  MainCategoriesProps,
+  MainCategoriesStyledComponents,
+} from '@/types/MainCategories.types';
 
-export default function MainCategories({ onChangeFilter, activeFilter }) {
+export default function MainCategories({
+  onChangeFilter,
+  activeFilter,
+}: MainCategoriesProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -37,7 +44,7 @@ const StyledWrapper = styled.div`
   justify-content: center;
 `;
 
-const StyledFilterGroup = styled.div`
+const StyledFilterGroup = styled.div<MainCategoriesStyledComponents>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,7 +67,7 @@ const StyledFilterGroup = styled.div`
     `}
 `;
 
-const StyledUl = styled.ul`
+const StyledUl = styled.ul<MainCategoriesStyledComponents>`
   display: grid;
   gap: var(--spacing-2);
   grid-template-columns: repeat(5, auto);

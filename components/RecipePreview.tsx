@@ -1,15 +1,26 @@
 import styled from 'styled-components';
 import Image from 'next/image';
-import { RecipePreviewProps } from '@/types';
+import {
+  RecipePreviewProps,
+  StyledRecipeTitleProps,
+} from '@/types/RecipePreview.types';
 import Link from 'next/link';
 import FavoriteButton from './FavoriteButton';
+import categories from '@/lib/categories.json';
 
 export default function RecipePreview({
   recipe,
   onToggleFavorite,
   isFavorite,
 }: RecipePreviewProps) {
-  const { id, title, imageUrl } = recipe;
+  const { id, title, imageUrl, category } = recipe;
+
+  const recipeColor = categories.find(
+    (categorie) => categorie.name === category
+  )?.colorVarNameAlpha;
+
+  console.log(categories);
+
   return (
     <StyledWrapper>
       <FavoriteButton
@@ -26,7 +37,9 @@ export default function RecipePreview({
               fill
             />
           </ImageWrapper>
-          <StyledRecipeTitle>{title}</StyledRecipeTitle>
+          <StyledRecipeTitle $recipeColor={recipeColor}>
+            {title}
+          </StyledRecipeTitle>
         </StyledRecipePreview>
       </Link>
     </StyledWrapper>
@@ -61,11 +74,11 @@ const StyledRecipePreview = styled.li`
   position: relative;
 `;
 
-const StyledRecipeTitle = styled.p`
+const StyledRecipeTitle = styled.p<StyledRecipeTitleProps>`
   font: var(--font-caption);
   position: absolute;
   text-transform: uppercase;
-  background-color: var(--color-cat4-lime-alpha);
+  background-color: var(${({ $recipeColor }) => $recipeColor});
   padding: var(--spacing-1);
   border-radius: var(--radius-s);
   text-align: center;

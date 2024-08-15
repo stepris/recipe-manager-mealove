@@ -8,8 +8,13 @@ export type Category = {
 
 export type CategoryIconProps = {
   category: Category;
+  onChangeFilter: (category: string) => void;
+  activeFilter: string;
 };
 
 export interface StyledIconButtonProps {
   $colorVarName: string;
+  $activeFilter: string;
+  $color: string;
+  $name: string;
 }
