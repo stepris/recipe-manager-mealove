@@ -1,10 +1,12 @@
-import { RecipeDetailsProps } from '@/types';
+import { RecipeDetailsProps } from '@/types/RecipeDetails.types';
 import styled from 'styled-components';
 import Image from 'next/image';
 import FavoriteButton from './FavoriteButton';
+import Button from './Button';
 
 export default function RecipeDetails({
   recipe,
+  onDeleteRecipe,
   onToggleFavorite,
   isFavorite,
 }: RecipeDetailsProps) {
@@ -62,6 +64,15 @@ export default function RecipeDetails({
         </StyledH3>
         <StyledInstructions>{description}</StyledInstructions>
       </StyledArticle>
+      <StyledButtonWrapper>
+        <Button
+          variant='$delete'
+          type='button'
+          onClick={() => onDeleteRecipe(id)}
+        >
+          Delete
+        </Button>
+      </StyledButtonWrapper>
     </>
   );
 }
@@ -150,4 +161,8 @@ const StyledInstructions = styled.p`
   color: var(--color-neutral-4);
   padding-top: var(--spacing-5);
   overflow-wrap: break-word;
+`;
+
+const StyledButtonWrapper = styled.div`
+  display: inline-flex;
 `;

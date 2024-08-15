@@ -13,6 +13,7 @@ export type ButtonTypeProps = {
   children?: ReactNode;
   variant: ButtonVariant;
   type: 'button' | 'submit' | 'reset';
+  onClick: () => void;
 };
 
 export type StyledButtonProps = {

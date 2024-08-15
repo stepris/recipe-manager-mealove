@@ -18,8 +18,9 @@ export default function App({ Component, pageProps }: AppProps) {
     setRecipes((currData) => [recipe, ...currData]);
   };
 
-  const handleDeleteRecipe = (idToDelete) => {
-    setRecipes(recipes.filter((recipe) => recipe.id !== idToDelete));
+  const handleDeleteRecipe = (id: string) => {
+    setRecipes(recipes.filter((recipe) => recipe.id !== id));
+    console.log('click');
   };
 
   const handleToggleFavorite: HandleToggleFavoriteFunction = (id) => {
