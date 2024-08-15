@@ -164,5 +164,7 @@ const StyledInstructions = styled.p`
 `;
 
 const StyledButtonWrapper = styled.div`
-  display: inline-flex;
+  display: flex;
+  justify-content: end;
+  padding-right: var(--spacing-5);
 `;
