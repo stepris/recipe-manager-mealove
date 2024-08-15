@@ -5,7 +5,7 @@ import {
   StyledIconButtonProps,
 } from '@/types/CategoryIcon.types';
 
-export default function CategoryIcon({
+export default function CategoryIconButton({
   category,
   onChangeFilter,
   activeFilter,

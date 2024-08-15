@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import CategoryIcon from './CategoryIcon';
+import CategoryIconButton from './CategoryIcon';
 import categories from '@/lib/categories.json';
 import { useState } from 'react';
 import Arrow from '@/public/icons/categories/Arrow.svg';
@@ -25,7 +25,7 @@ export default function MainCategories({
         <StyledUl $isOpen={isOpen}>
           {categories.map((category) => (
             <li key={category.id}>
-              <CategoryIcon
+              <CategoryIconButton
                 category={category}
                 onChangeFilter={onChangeFilter}
                 activeFilter={activeFilter}
