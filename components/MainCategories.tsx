@@ -18,7 +18,8 @@ export default function MainCategories({
     <StyledWrapper>
       <StyledFilterGroup $isOpen={isOpen}>
         <StyledToggleGroup onClick={() => setIsOpen(!isOpen)}>
-          <StyledH2>{isOpen ? 'Close Categories' : 'Open Categories'}</StyledH2>
+          {isOpen && <StyledH2>Close Categories</StyledH2>}
+          {!isOpen && <StyledH2>Open Categories</StyledH2>}
           <StyledArrowDown $isOpen={isOpen} />
           <StyledArrowUp $isOpen={isOpen} />
         </StyledToggleGroup>
