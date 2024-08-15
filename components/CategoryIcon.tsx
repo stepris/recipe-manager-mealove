@@ -8,6 +8,7 @@ import {
 export default function CategoryIcon({
   category,
   onChangeFilter,
+  activeFilter,
 }: CategoryIconProps) {
   const { iconPath, name, colorVarName } = category;
 
@@ -15,6 +16,9 @@ export default function CategoryIcon({
     <StyledIconButton
       $colorVarName={colorVarName}
       onClick={() => onChangeFilter(name)}
+      $activeFilter={activeFilter}
+      $color={colorVarName}
+      $name={name}
     >
       <Image alt={`${name} icon`} src={`${iconPath}`} width={25} height={25} />
       <span>{name}</span>
@@ -23,7 +27,8 @@ export default function CategoryIcon({
 }
 
 const StyledIconButton = styled.button<StyledIconButtonProps>`
-  background-color: var(--color-neutral-2);
+  background-color: ${({ $activeFilter, $color, $name }) =>
+    $activeFilter === $name ? `var(${$color})` : 'var(--color-neutral-2)'};
   font: var(--font-category-icon);
   width: 50px;
   height: 50px;

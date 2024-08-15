@@ -22,7 +22,10 @@ export default function RecipeList({
 
   return (
     <section>
-      <MainCategories onChangeFilter={handleChangeFilter} />
+      <MainCategories
+        onChangeFilter={handleChangeFilter}
+        activeFilter={activeFilter}
+      />
       <StyledRecipeList>
         {filteredRecipes.map((recipe) => {
           return (

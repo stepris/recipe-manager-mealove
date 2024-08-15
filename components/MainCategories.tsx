@@ -4,7 +4,7 @@ import categories from '@/lib/categories.json';
 import { useState } from 'react';
 import Arrow from '@/public/icons/categories/Arrow.svg';
 
-export default function MainCategories({ onChangeFilter }) {
+export default function MainCategories({ onChangeFilter, activeFilter }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -21,6 +21,7 @@ export default function MainCategories({ onChangeFilter }) {
               <CategoryIcon
                 category={category}
                 onChangeFilter={onChangeFilter}
+                activeFilter={activeFilter}
               />
             </li>
           ))}
