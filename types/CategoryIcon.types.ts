@@ -9,7 +9,7 @@ export type Category = {
 export type CategoryIconProps = {
   category: Category;
   onChangeFilter: (category: string) => void;
-  activeFilter: string;
+  activeFilter: string | null;
 };
 
 export interface StyledIconButtonProps {

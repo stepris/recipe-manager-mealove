@@ -1,6 +1,6 @@
 export type MainCategoriesProps = {
   onChangeFilter: (category: string) => void;
-  activeFilter: string;
+  activeFilter: string | null;
 };
 
 export interface MainCategoriesStyledComponents {

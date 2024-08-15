@@ -1,6 +1,6 @@
 import { Recipe } from '@/types';
 
-export type RecipeDetailsPageProps = {
+export type RecipeListPageProps = {
   recipes: Recipe[];
   onToggleFavorite: (id: string) => {};
   favoriteRecipesList: string[];

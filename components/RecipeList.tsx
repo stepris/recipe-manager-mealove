@@ -1,6 +1,6 @@
 import RecipePreview from '@/components/RecipePreview';
 import styled from 'styled-components';
-import { RecipeDetailsPageProps, Category } from '@/types/RecipeList.types';
+import { RecipeListPageProps, Category } from '@/types/RecipeList.types';
 import MainCategories from '@/components/MainCategories';
 import { useState } from 'react';
 
@@ -8,7 +8,7 @@ export default function RecipeList({
   recipes,
   onToggleFavorite,
   favoriteRecipesList,
-}: RecipeDetailsPageProps) {
+}: RecipeListPageProps) {
   const [activeFilter, setActiveFilter] = useState<Category>(null);
 
   const handleChangeFilter = (category: Category) =>
