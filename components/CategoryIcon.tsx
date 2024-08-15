@@ -26,7 +26,10 @@ const StyledIconButton = styled.button<StyledIconButtonProps>`
   justify-content: center;
   align-items: center;
   border-radius: var(--radius-m);
+  transition: all 0.1s ease-in-out;
+  filter: drop-shadow(0.2rem 0.2rem 0.2rem var(--color-primary-2));
   &:hover {
     background-color: var(${(props) => props.$colorVarName});
+    transform: scale(1.1);
   }
 `;

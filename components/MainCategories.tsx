@@ -49,7 +49,7 @@ const StyledFilterGroup = styled.div`
   ${({ $isOpen }) =>
     !$isOpen &&
     css`
-      max-height: 45px;
+      max-height: 35px;
     `}
 `;
 
@@ -86,6 +86,6 @@ const StyledToggleGroup = styled.div`
 const StyledH2 = styled.h2`
   font: var(--font-headline-2);
   color: var(--color-neutral-1);
-  padding-block: var(--spacing-2);
+  padding-block: var(--spacing-1);
   align-self: center;
 `;
