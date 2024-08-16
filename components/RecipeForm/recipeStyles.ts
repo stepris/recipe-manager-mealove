@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { StyledFormComponentProps } from '@/types/RecipeStyles.types';
+import { StyledFormComponentProps } from '@/types/recipeStyles.types';
 
 export const StyledForm = styled.form`
   display: flex;
