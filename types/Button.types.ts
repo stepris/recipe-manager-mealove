@@ -9,6 +9,8 @@ type ButtonVariant =
   | '$yes'
   | '$no';
 
+type onClickBehavior = MouseEventHandler<HTMLButtonElement>;
+
 export type ButtonTypeProps = {
   children?: ReactNode;
   variant: ButtonVariant;
@@ -21,5 +23,3 @@ export type StyledButtonProps = {
   $variant: ButtonVariant;
   onClickBehavior?: onClickBehavior;
 };
-
-type onClickBehavior = MouseEventHandler<HTMLButtonElement>;

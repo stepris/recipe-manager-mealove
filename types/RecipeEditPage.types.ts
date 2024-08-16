@@ -1,9 +1,7 @@
 import { Recipe } from '@/types';
 import { OnEditRecipeType } from '@/types';
 
-type RecipeEditPageProps = {
+export type RecipeEditPageProps = {
   recipes: Recipe[];
   onEditRecipe: OnEditRecipeType;
 };
-
-export type { RecipeEditPageProps };
