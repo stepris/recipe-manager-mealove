@@ -11,6 +11,8 @@ export default function App({ Component, pageProps }: AppProps) {
     string[]
   >('favoriteRecipesList', { defaultValue: [] });
 
+  console.log('hi');
+
   const [recipes, setRecipes] = useLocalStorageState('recipes', {
     defaultValue: recipesJson,
   });
