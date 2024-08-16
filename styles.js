@@ -339,7 +339,6 @@ video {
     --font-category-icon: normal 600 0.8rem var(--font-family);
     --font-recipe-name: normal 650 var(--font-size-base) var(--font-family);
 
-
     /* Letter Spacing */
     --letter-spacing-s: 0.1rem;
 
