@@ -35,9 +35,9 @@ export default function RecipePreview({
               fill
             />
           </ImageWrapper>
-          <StyledRecipeTitle $recipeColor={recipeColor}>
-            {title}
-          </StyledRecipeTitle>
+          <StyledRecipeTitleWrapper $recipeColor={recipeColor}>
+            <StyledRecipeTitle>{title}</StyledRecipeTitle>
+          </StyledRecipeTitleWrapper>
         </StyledRecipePreview>
       </Link>
     </StyledWrapper>
@@ -76,16 +76,20 @@ const StyledRecipePreview = styled.li`
 const StyledRecipeTitle = styled.p<StyledRecipeTitleProps>`
   font: var(--font-recipe-name);
   color: var(--color-neutral-4);
-  position: absolute;
   /* text-transform: uppercase; */
-  align-content: center;
-  background-color: var(${({ $recipeColor }) => $recipeColor});
   padding: var(--spacing-1);
-  border-bottom-left-radius: var(--radius-m);
-  border-bottom-right-radius: var(--radius-m);
   text-align: center;
   line-height: 1.1rem;
-  width: 100%;
-  height: 28%;
   overflow-wrap: break-word;
+`;
+
+const StyledRecipeTitleWrapper = styled.div`
+  position: absolute;
+  align-content: center;
+  background-color: var(${({ $recipeColor }) => $recipeColor});
+  border-bottom-left-radius: var(--radius-m);
+  border-bottom-right-radius: var(--radius-m);
+  width: 100%;
+  height: 30%;
+  backdrop-filter: blur(2px);
 `;
