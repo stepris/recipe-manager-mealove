@@ -1,6 +1,5 @@
 import { ChangeEvent } from 'react';
 import { OnEditRecipeType, Recipe } from '@/types';
-import { OnAddRecipeType } from '@/types';
 
 type HandleChangeParams =
   | ChangeEvent<HTMLInputElement>
