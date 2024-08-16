@@ -289,6 +289,8 @@ video {
     --color-neutral-1-alpha90: #f5f5f4cc;
     --color-neutral-3-alpha50: #1C191780;
     --color-neutral-4-alpha25: #0c0a0940;
+    --color-neutral-4-alpha80: #0c0a09b4;
+
 
     --color-feedback-warning: #b91c1c;
     --color-feedback-warning-hover: #e42020;

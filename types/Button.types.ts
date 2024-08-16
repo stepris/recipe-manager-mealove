@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { MouseEventHandler, ReactNode } from 'react';
 
 type ButtonVariant =
   | '$submit'
@@ -13,8 +13,12 @@ export type ButtonTypeProps = {
   children?: ReactNode;
   variant: ButtonVariant;
   type: 'button' | 'submit' | 'reset';
+  onClickBehavior?: onClickBehavior;
 };
 
 export type StyledButtonProps = {
   $variant: ButtonVariant;
+  onClickBehavior?: onClickBehavior;
 };
+
+type onClickBehavior = MouseEventHandler<HTMLButtonElement>;

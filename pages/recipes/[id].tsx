@@ -6,6 +6,7 @@ import { RecipeDetailsPageProps } from '@/types/RecipeDetails.types';
 
 export default function RecipeDetailsPage({
   onToggleFavorite,
+  onDeleteRecipe,
   recipes,
   favoriteRecipesList,
 }: RecipeDetailsPageProps) {
@@ -22,6 +23,7 @@ export default function RecipeDetailsPage({
         recipe={recipe}
         onToggleFavorite={onToggleFavorite}
         isFavorite={favoriteRecipesList.includes(recipe.id)}
+        onDeleteRecipe={onDeleteRecipe}
       />
     </>
   );

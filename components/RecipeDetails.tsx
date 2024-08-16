@@ -1,14 +1,23 @@
-import { RecipeDetailsProps } from '@/types';
+import { Modal, RecipeDetailsProps } from '@/types/RecipeDetails.types';
 import styled from 'styled-components';
 import Image from 'next/image';
 import FavoriteButton from './FavoriteButton';
+import Button from './Button';
+import { useState } from 'react';
+import ConfirmationModal from './ConfirmationModal';
 
 export default function RecipeDetails({
   recipe,
+  onDeleteRecipe,
   onToggleFavorite,
   isFavorite,
 }: RecipeDetailsProps) {
+  const [modalState, setModalState] = useState<Modal>(false);
+
   if (!recipe) return null;
+
+  const handleModalOpen = () => setModalState(true);
+  const handleModalClose = () => setModalState(false);
 
   const {
     id,
@@ -24,6 +33,13 @@ export default function RecipeDetails({
 
   return (
     <>
+      {modalState && (
+        <ConfirmationModal
+          recipeId={id}
+          onDeleteRecipe={onDeleteRecipe}
+          onModalClose={handleModalClose}
+        />
+      )}
       <StyledSection>
         <StyledHeader>
           <StyledTitle>{title}</StyledTitle>
@@ -62,6 +78,15 @@ export default function RecipeDetails({
         </StyledH3>
         <StyledInstructions>{description}</StyledInstructions>
       </StyledArticle>
+      <StyledButtonWrapper>
+        <Button
+          variant='$delete'
+          type='button'
+          onClickBehavior={handleModalOpen}
+        >
+          Delete
+        </Button>
+      </StyledButtonWrapper>
     </>
   );
 }
@@ -81,6 +106,8 @@ const StyledTitle = styled.h1`
   font: var(--font-headline-1);
   color: var(--color-neutral-4);
   padding: var(--spacing-5);
+  max-width: 85%;
+  overflow-wrap: break-word;
 `;
 
 const ImageWrapper = styled.div`
@@ -150,4 +177,10 @@ const StyledInstructions = styled.p`
   color: var(--color-neutral-4);
   padding-top: var(--spacing-5);
   overflow-wrap: break-word;
+`;
+
+const StyledButtonWrapper = styled.div`
+  display: flex;
+  justify-content: end;
+  padding-right: var(--spacing-5);
 `;
