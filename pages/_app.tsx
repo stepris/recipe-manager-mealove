@@ -24,7 +24,6 @@ export default function App({ Component, pageProps }: AppProps) {
   const handleDeleteRecipe = (id: string) => {
     setRecipes(recipes.filter((recipe) => recipe.id !== id));
     router.push('/');
-    console.log('click');
   };
 
   const handleToggleFavorite: HandleToggleFavoriteFunction = (id) => {
