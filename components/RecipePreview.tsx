@@ -50,6 +50,10 @@ const StyledWrapper = styled.div`
 
 const StyledImage = styled(Image)`
   object-fit: cover;
+  &:hover {
+    transform: scale(1.12);
+  }
+  transition: all 0.3s ease;
 `;
 
 const ImageWrapper = styled.div`
@@ -73,17 +77,16 @@ const StyledRecipePreview = styled.li`
   box-shadow: 0.1rem 0.1rem 0.4rem var(--color-neutral-4-alpha25);
 `;
 
-const StyledRecipeTitle = styled.p<StyledRecipeTitleProps>`
+const StyledRecipeTitle = styled.p`
   font: var(--font-recipe-name);
   color: var(--color-neutral-4);
-  /* text-transform: uppercase; */
   padding: var(--spacing-1);
   text-align: center;
   line-height: 1.1rem;
   overflow-wrap: break-word;
 `;
 
-const StyledRecipeTitleWrapper = styled.div`
+const StyledRecipeTitleWrapper = styled.div<StyledRecipeTitleProps>`
   position: absolute;
   align-content: center;
   background-color: var(${({ $recipeColor }) => $recipeColor});
