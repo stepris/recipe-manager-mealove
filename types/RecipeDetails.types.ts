@@ -12,12 +12,13 @@ export type RecipeDetailsProps = {
   onToggleFavorite: (id: string) => {};
   onDeleteRecipe: (id: string) => {};
   isFavorite: boolean;
-  onModalClose: () => void;
+  onModalClose?: () => void;
 };
 
 export type ConfirmationModalProps = {
   onModalClose: () => void;
   onDeleteRecipe: (id: string) => {};
+  recipeId: string;
 };
 
 export type Modal = boolean | null;

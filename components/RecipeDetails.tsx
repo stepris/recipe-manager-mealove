@@ -35,6 +35,7 @@ export default function RecipeDetails({
     <>
       {modalState && (
         <ConfirmationModal
+          recipeId={id}
           onDeleteRecipe={onDeleteRecipe}
           onModalClose={handleModalClose}
         />

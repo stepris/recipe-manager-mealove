@@ -5,6 +5,7 @@ import { ConfirmationModalProps } from '@/types/RecipeDetails.types';
 export default function ConfirmationModal({
   onDeleteRecipe,
   onModalClose,
+  recipeId,
 }: ConfirmationModalProps) {
   return (
     <StyledBackground>
@@ -13,7 +14,11 @@ export default function ConfirmationModal({
           Are you sure that you want to delete this recipe?
         </StyledMessage>
         <StyledButtonWrapper>
-          <Button variant='$yes' type='button' onClick={() => onDeleteRecipe}>
+          <Button
+            variant='$yes'
+            type='button'
+            onClick={() => onDeleteRecipe(recipeId)}
+          >
             Yes
           </Button>
           <Button variant='$no' type='button' onClick={onModalClose}>
