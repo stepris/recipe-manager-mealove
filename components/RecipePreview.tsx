@@ -50,6 +50,7 @@ const StyledWrapper = styled.div`
 
 const StyledImage = styled(Image)`
   object-fit: cover;
+  transform: scale(1.01);
   &:hover {
     transform: scale(1.12);
   }
