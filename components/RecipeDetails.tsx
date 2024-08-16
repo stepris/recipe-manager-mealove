@@ -102,6 +102,8 @@ const StyledTitle = styled.h1`
   font: var(--font-headline-1);
   color: var(--color-neutral-4);
   padding: var(--spacing-5);
+  max-width: 85%;
+  overflow-wrap: break-word;
 `;
 
 const ImageWrapper = styled.div`
