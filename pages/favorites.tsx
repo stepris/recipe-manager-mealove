@@ -1,5 +1,6 @@
 import QuickLinks from '@/components/QuickLinks';
 import RecipeList from '@/components/RecipeList';
+import NoFavorite from '@/components/NoFavorite';
 import { AppBaseProps } from '@/types';
 
 export default function Favorites({
@@ -17,13 +18,7 @@ export default function Favorites({
           favoriteRecipesList={favoriteRecipesList || []}
         />
       ) : (
-        <>
-          <p>Sorry :( There are no recipes in your favorite-list.</p>
-          <p>
-            You can add recipes by clicking the heart icon in the right upper
-            corner.
-          </p>
-        </>
+        <NoFavorite />
       )}
     </>
   );
