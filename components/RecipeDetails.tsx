@@ -79,7 +79,11 @@ export default function RecipeDetails({
         <StyledInstructions>{description}</StyledInstructions>
       </StyledArticle>
       <StyledButtonWrapper>
-        <Button variant='$delete' type='button' onClick={handleModalOpen}>
+        <Button
+          variant='$delete'
+          type='button'
+          onClickBehavior={handleModalOpen}
+        >
           Delete
         </Button>
       </StyledButtonWrapper>

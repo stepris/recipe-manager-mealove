@@ -17,11 +17,11 @@ export default function ConfirmationModal({
           <Button
             variant='$yes'
             type='button'
-            onClick={() => onDeleteRecipe(recipeId)}
+            onClickBehavior={() => onDeleteRecipe(recipeId)}
           >
             Yes
           </Button>
-          <Button variant='$no' type='button' onClick={onModalClose}>
+          <Button variant='$no' type='button' onClickBehavior={onModalClose}>
             No
           </Button>
         </StyledButtonWrapper>

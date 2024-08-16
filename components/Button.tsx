@@ -11,7 +11,7 @@ export default function Button({
   children,
   variant,
   type,
-  onClick,
+  onClickBehavior,
 }: ButtonTypeProps) {
   const buttonIcon = () => {
     switch (variant) {
@@ -34,7 +34,11 @@ export default function Button({
     }
   };
   return (
-    <StyledButton $variant={variant} type={type || 'button'} onClick={onClick}>
+    <StyledButton
+      $variant={variant}
+      type={type || 'button'}
+      onClick={onClickBehavior}
+    >
       {buttonIcon()}
       {children}
     </StyledButton>
