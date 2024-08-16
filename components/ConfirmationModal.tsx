@@ -35,8 +35,9 @@ const StyledBackground = styled.div`
   justify-content: center;
   align-items: center;
   position: fixed;
-  z-index: 3;
+  z-index: 2;
   background-color: var(--color-neutral-3-alpha50);
+  backdrop-filter: blur(3px);
 `;
 const StyledMessageContainer = styled.div`
   display: flex;
@@ -46,7 +47,7 @@ const StyledMessageContainer = styled.div`
   height: 15rem;
   width: 20rem;
   position: fixed;
-  background-color: var(--color-neutral-3-alpha50);
+  background-color: var(--color-neutral-4-alpha80);
   border: 2px solid var(--color-neutral-1);
   border-radius: var(--radius-m);
 `;

@@ -19,3 +19,5 @@ export type ConfirmationModalProps = {
   onModalClose: () => void;
   onDeleteRecipe: (id: string) => {};
 };
+
+export type Modal = boolean | null;
