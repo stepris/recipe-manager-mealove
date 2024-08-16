@@ -82,4 +82,5 @@ const StyledRecipeTitle = styled.p<StyledRecipeTitleProps>`
   text-align: center;
   width: 90%;
   bottom: var(--spacing-1);
+  overflow-wrap: break-word;
 `;
