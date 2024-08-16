@@ -70,17 +70,22 @@ const StyledRecipePreview = styled.li`
   align-items: center;
   justify-content: flex-end;
   position: relative;
+  box-shadow: 0.1rem 0.1rem 0.4rem var(--color-neutral-4-alpha25);
 `;
 
 const StyledRecipeTitle = styled.p<StyledRecipeTitleProps>`
-  font: var(--font-caption);
+  font: var(--font-recipe-name);
+  color: var(--color-neutral-4);
   position: absolute;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
+  align-content: center;
   background-color: var(${({ $recipeColor }) => $recipeColor});
   padding: var(--spacing-1);
-  border-radius: var(--radius-s);
+  border-bottom-left-radius: var(--radius-m);
+  border-bottom-right-radius: var(--radius-m);
   text-align: center;
-  width: 90%;
-  bottom: var(--spacing-1);
+  line-height: 1.1rem;
+  width: 100%;
+  height: 28%;
   overflow-wrap: break-word;
 `;
