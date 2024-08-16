@@ -1,16 +1,33 @@
 import RecipePreview from '@/components/RecipePreview';
 import styled from 'styled-components';
-import { RecipeDetailsPageProps } from '@/types';
+import { RecipeListPageProps, Category } from '@/types/RecipeList.types';
+import MainCategories from '@/components/MainCategories';
+import { useState } from 'react';
 
 export default function RecipeList({
   recipes,
   onToggleFavorite,
   favoriteRecipesList,
-}: RecipeDetailsPageProps) {
+}: RecipeListPageProps) {
+  const [activeFilter, setActiveFilter] = useState<Category>(null);
+
+  const handleChangeFilter = (category: Category) =>
+    setActiveFilter((prevFilter: Category) =>
+      prevFilter === category ? null : category
+    );
+
+  const filteredRecipes = activeFilter
+    ? recipes.filter((recipe) => recipe.category === activeFilter)
+    : recipes;
+
   return (
     <section>
+      <MainCategories
+        onChangeFilter={handleChangeFilter}
+        activeFilter={activeFilter}
+      />
       <StyledRecipeList>
-        {recipes.map((recipe) => {
+        {filteredRecipes.map((recipe) => {
           return (
             <RecipePreview
               key={recipe.id}

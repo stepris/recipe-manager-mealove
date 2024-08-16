@@ -2,7 +2,7 @@ import RecipeDetails from '@/components/RecipeDetails';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { RecipeDetailsPageProps } from '@/types';
+import { RecipeDetailsPageProps } from '@/types/RecipeDetails.types';
 
 export default function RecipeDetailsPage({
   onToggleFavorite,

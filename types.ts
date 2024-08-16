@@ -44,12 +44,6 @@ export type RecipeDetailsProps = {
   isFavorite: boolean;
 };
 
-export type RecipePreviewProps = {
-  recipe: Recipe;
-  onToggleFavorite: (id: string) => {};
-  isFavorite: boolean;
-};
-
 export type HandleToggleFavoriteFunction = (id: string) => void;
 
 export type HeaderProps = {
@@ -66,12 +60,6 @@ export type AppBaseProps = {
 export interface ChildrenLayoutProps {
   children?: ReactNode;
 }
-
-export type RecipeDetailsPageProps = {
-  recipes: Recipe[];
-  onToggleFavorite: (id: string) => {};
-  favoriteRecipesList: string[];
-};
 
 export type Ingredient = {
   id: string;

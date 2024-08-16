@@ -1,6 +1,6 @@
 [
   {
-    "category": "1",
+    "category": "Veggy",
     "cookingTime": 25,
     "description": "Classic spaghetti with a rich tomato sauce and herbs.",
     "difficulty": "medium",
@@ -44,7 +44,7 @@
     "title": "Spaghetti Bolognese"
   },
   {
-    "category": "2",
+    "category": "Veggy",
     "cookingTime": 15,
     "description": "Quick and easy avocado toast with a sprinkle of sea salt.",
     "difficulty": "easy",
@@ -82,7 +82,7 @@
     "title": "Avocado Toast"
   },
   {
-    "category": "3",
+    "category": "Meat",
     "cookingTime": 45,
     "description": "Tender roast beef with a savory herb crust.",
     "difficulty": "hard",
@@ -126,7 +126,7 @@
     "title": "Herb-Crusted Roast Beef"
   },
   {
-    "category": "4",
+    "category": "Veggy",
     "cookingTime": 35,
     "description": "Creamy mushroom risotto with a touch of white wine.",
     "difficulty": "medium",
@@ -170,7 +170,7 @@
     "title": "Mushroom Risotto"
   },
   {
-    "category": "5",
+    "category": "Veggy",
     "cookingTime": 20,
     "description": "A fresh and tangy Greek salad with olives and feta cheese.",
     "difficulty": "easy",
@@ -214,7 +214,7 @@
     "title": "Greek Salad"
   },
   {
-    "category": "6",
+    "category": "Meat",
     "cookingTime": 30,
     "description": "Spicy chicken curry with coconut milk and a blend of spices.",
     "difficulty": "hard",
@@ -258,7 +258,7 @@
     "title": "Spicy Chicken Curry"
   },
   {
-    "category": "7",
+    "category": "Fish",
     "cookingTime": 25,
     "description": "Sweet and savory glazed salmon fillets with sesame seeds.",
     "difficulty": "medium",
@@ -302,7 +302,7 @@
     "title": "Glazed Salmon"
   },
   {
-    "category": "8",
+    "category": "Hot",
     "cookingTime": 40,
     "description": "Rich and creamy lasagna with layers of cheese and meat sauce.",
     "difficulty": "godlike",
@@ -346,7 +346,7 @@
     "title": "Classic Lasagna"
   },
   {
-    "category": "9",
+    "category": "Fruits",
     "cookingTime": 30,
     "description": "Refreshing fruit smoothie with a blend of tropical flavors.",
     "difficulty": "easy",
@@ -384,7 +384,7 @@
     "title": "Tropical Fruit Smoothie"
   },
   {
-    "category": "10",
+    "category": "Sweet",
     "cookingTime": 50,
     "description": "Decadent chocolate cake with a rich fudge frosting.",
     "difficulty": "godlike",
