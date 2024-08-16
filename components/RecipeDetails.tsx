@@ -12,12 +12,12 @@ export default function RecipeDetails({
   onToggleFavorite,
   isFavorite,
 }: RecipeDetailsProps) {
-  const [modalState, seModalState] = useState<Modal>(false);
+  const [modalState, setModalState] = useState<Modal>(false);
 
   if (!recipe) return null;
 
-  const handleModalOpen = () => seModalState(true);
-  const handleModalClose = () => seModalState(false);
+  const handleModalOpen = () => setModalState(true);
+  const handleModalClose = () => setModalState(false);
 
   const {
     id,
