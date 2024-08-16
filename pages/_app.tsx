@@ -4,6 +4,7 @@ import Layout from '@/components/Layout';
 import recipesJson from '@/lib/recipes.json';
 import type { AppProps } from 'next/app';
 import { HandleToggleFavoriteFunction, Recipe } from '@/types';
+import { useRouter } from 'next/router';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [favoriteRecipesList, setFavoriteRecipesList] = useLocalStorageState<
@@ -14,12 +15,15 @@ export default function App({ Component, pageProps }: AppProps) {
     defaultValue: recipesJson,
   });
 
+  const router = useRouter();
+
   const handleAddRecipe = (recipe: Recipe) => {
     setRecipes((currData) => [recipe, ...currData]);
   };
 
   const handleDeleteRecipe = (id: string) => {
     setRecipes(recipes.filter((recipe) => recipe.id !== id));
+    router.push('/');
     console.log('click');
   };
 

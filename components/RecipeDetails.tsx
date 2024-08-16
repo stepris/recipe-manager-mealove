@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import FavoriteButton from './FavoriteButton';
 import Button from './Button';
+import { useState } from 'react';
+import ConfirmationModal from './ConfirmationModal';
 
 export default function RecipeDetails({
   recipe,
@@ -11,6 +13,11 @@ export default function RecipeDetails({
   isFavorite,
 }: RecipeDetailsProps) {
   if (!recipe) return null;
+
+  const [modalState, seModalState] = useState(false);
+
+  const handleModalOpen = () => seModalState(true);
+  const handleModalClose = () => seModalState(false);
 
   const {
     id,
@@ -26,6 +33,12 @@ export default function RecipeDetails({
 
   return (
     <>
+      {modalState && (
+        <ConfirmationModal
+          onDeleteRecipe={onDeleteRecipe}
+          onModalClose={handleModalClose}
+        />
+      )}
       <StyledSection>
         <StyledHeader>
           <StyledTitle>{title}</StyledTitle>
@@ -65,11 +78,7 @@ export default function RecipeDetails({
         <StyledInstructions>{description}</StyledInstructions>
       </StyledArticle>
       <StyledButtonWrapper>
-        <Button
-          variant='$delete'
-          type='button'
-          onClick={() => onDeleteRecipe(id)}
-        >
+        <Button variant='$delete' type='button' onClick={handleModalOpen}>
           Delete
         </Button>
       </StyledButtonWrapper>
