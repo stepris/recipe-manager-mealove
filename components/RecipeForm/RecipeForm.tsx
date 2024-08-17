@@ -131,7 +131,7 @@ export default function RecipeForm({
         ...currData.ingredients,
         {
           id: crypto.randomUUID(),
-          quantity: 0,
+          quantity: '',
           unit: '',
           name: '',
         },

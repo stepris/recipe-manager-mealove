@@ -15,6 +15,6 @@ export type RecipeFormProps = {
 export type Ingredient = {
   id: string;
   name: string;
-  quantity: number;
+  quantity: string;
   unit: string;
 };
