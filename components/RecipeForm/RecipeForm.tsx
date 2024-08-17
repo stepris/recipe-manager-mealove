@@ -2,7 +2,6 @@ import { ChangeEvent, FormEvent, useEffect } from 'react';
 import { Recipe } from '@/types';
 import IngredientInput from '@/components/RecipeForm/IngredientInput';
 import TimeInput from '@/components/RecipeForm/TimeInput';
-import Button from '@/components/Button';
 import categories from '@/lib/categories.json';
 import {
   RecipeFormProps,
@@ -24,9 +23,9 @@ import {
   StyledDropdown,
   StyledCategoryContainer,
   StyledCategoryElement,
-  StyledButtonWrapper,
 } from '@/components/RecipeForm/recipeStyles';
 import useLocalStorageState from 'use-local-storage-state';
+import FormButtons from '@/components/RecipeForm/FormButtons';
 
 const emptyRecipe: Recipe = {
   category: '',
@@ -86,8 +85,8 @@ export default function RecipeForm({
   const handleChange = (event: HandleChangeParams) => {
     const { name, value } = event.target;
 
-    setRecipeData((existingRecipeData) => ({
-      ...existingRecipeData,
+    setRecipeData((currData) => ({
+      ...currData,
       [name]: value,
     }));
   };
@@ -99,13 +98,13 @@ export default function RecipeForm({
     const { name, value } = event.target;
 
     if (value === '') {
-      setRecipeData((existingRecipeData) => ({
-        ...existingRecipeData,
+      setRecipeData((currData) => ({
+        ...currData,
         [name]: 1,
       }));
     } else {
-      setRecipeData((existingRecipeData) => ({
-        ...existingRecipeData,
+      setRecipeData((currData) => ({
+        ...currData,
         [name]: parseInt(value),
       }));
     }
@@ -115,11 +114,11 @@ export default function RecipeForm({
    * Handles changes to individual ingredient fields
    */
   const handleIngredientChange = (newIngredient: Ingredient) => {
-    setRecipeData((existingRecipeData) => {
-      const newIngredients = existingRecipeData.ingredients.map((ingredient) =>
+    setRecipeData((currData) => {
+      const newIngredients = currData.ingredients.map((ingredient) =>
         ingredient.id === newIngredient.id ? newIngredient : ingredient
       );
-      return { ...existingRecipeData, ingredients: newIngredients };
+      return { ...currData, ingredients: newIngredients };
     });
   };
 
@@ -127,9 +126,9 @@ export default function RecipeForm({
    * Adds a new empty ingredient to the ingredients array
    */
   const handleAddIngredient = () => {
-    setRecipeData((existingRecipeData) => {
+    setRecipeData((currData) => {
       const newIngredients = [
-        ...existingRecipeData.ingredients,
+        ...currData.ingredients,
         {
           id: crypto.randomUUID(),
           quantity: 0,
@@ -137,7 +136,7 @@ export default function RecipeForm({
           name: '',
         },
       ];
-      return { ...existingRecipeData, ingredients: newIngredients };
+      return { ...currData, ingredients: newIngredients };
     });
   };
 
@@ -149,11 +148,11 @@ export default function RecipeForm({
   ) => {
     const { value } = event.target;
 
-    setRecipeData((existingRecipeData) => {
-      const newInstructions = [...existingRecipeData.instructions];
+    setRecipeData((currData) => {
+      const newInstructions = [...currData.instructions];
       newInstructions[0] = { ...newInstructions[0], description: value };
       return {
-        ...existingRecipeData,
+        ...currData,
         instructions: newInstructions,
       };
     });
@@ -163,8 +162,8 @@ export default function RecipeForm({
    * Handles changes to the preparation time inputs
    */
   const handlePrepTimeChange = (newPrepTime: number) => {
-    setRecipeData((existingRecipeData) => ({
-      ...existingRecipeData,
+    setRecipeData((currData) => ({
+      ...currData,
       prepTime: newPrepTime,
     }));
   };
@@ -173,8 +172,8 @@ export default function RecipeForm({
    * Handles changes to the cooking time inputs
    */
   const handleCookingTimeChange = (newCookingTime: number) => {
-    setRecipeData((existingRecipeData) => ({
-      ...existingRecipeData,
+    setRecipeData((currData) => ({
+      ...currData,
       cookingTime: newCookingTime,
     }));
   };
@@ -216,39 +215,6 @@ export default function RecipeForm({
     // setRecipeData(recipe)
     // setRecipeData(emptyRecipe);
     router.push(`/recipes/${recipeData.id}`);
-  };
-
-  /****************************************
-   * SUBSECTION: Conditional Buttons
-   ****************************************/
-
-  const renderButtons = () => {
-    let buttons;
-
-    if (isEditMode) {
-      buttons = (
-        <>
-          <Button type='submit' variant='$update'>
-            Update
-          </Button>
-          <Button
-            type='button'
-            variant='$cancel'
-            onClickBehavior={handleCancel}
-          >
-            Cancel
-          </Button>
-        </>
-      );
-    } else {
-      buttons = (
-        <Button variant='$submit' type='submit' aria-label='submit new recipe'>
-          Submit Recipe
-        </Button>
-      );
-    }
-
-    return buttons;
   };
 
   return (
@@ -382,7 +348,7 @@ export default function RecipeForm({
         </StyledInputElement>
 
         {/* Action Buttons */}
-        <StyledButtonWrapper>{renderButtons()}</StyledButtonWrapper>
+        <FormButtons isEditMode={isEditMode} onCancel={handleCancel} />
       </StyledForm>
     </>
   );

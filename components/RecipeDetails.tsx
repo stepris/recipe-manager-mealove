@@ -178,6 +178,5 @@ const StyledInstructions = styled.p`
 
 const StyledButtonWrapper = styled.div`
   display: flex;
-  justify-content: end;
-  padding-right: var(--spacing-5);
+  justify-content: center;
 `;

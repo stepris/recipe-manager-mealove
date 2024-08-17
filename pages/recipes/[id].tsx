@@ -33,7 +33,7 @@ export default function RecipeDetailsPage({
       />
       <ButtonWrapper>
         <Button type='button' variant='$edit' onClickBehavior={handleEdit}>
-          Edit recipe
+          Edit
         </Button>
       </ButtonWrapper>
     </>
@@ -47,7 +47,7 @@ const StyledLink = styled(Link)`
 
 const ButtonWrapper = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   row-gap: var(--spacing-2);
   padding: var(--spacing-6);
 `;

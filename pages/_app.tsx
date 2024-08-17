@@ -26,17 +26,10 @@ export default function App({ Component, pageProps }: AppProps) {
     router.push('/');
   };
 
-  const handleEditRecipe = (recipeToUpdate: Recipe) => {
-    setRecipes((recipes) => {
-      return recipes.map((recipe) => {
-        if (recipe.id === recipeToUpdate.id) {
-          return recipeToUpdate;
-        } else {
-          return recipe;
-        }
-      });
-    });
-  };
+  const handleEditRecipe = (currData: Recipe) =>
+    setRecipes((recipes) =>
+      recipes.map((recipe) => (recipe.id === currData.id ? currData : recipe))
+    );
 
   const handleToggleFavorite: HandleToggleFavoriteFunction = (id) => {
     const favoriteSet = new Set<string>(favoriteRecipesList);
