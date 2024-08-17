@@ -37,7 +37,7 @@ const emptyRecipe: Recipe = {
   ingredients: [
     {
       id: '1',
-      quantity: 0,
+      quantity: '',
       unit: '',
       name: '',
     },
