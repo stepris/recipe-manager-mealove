@@ -35,9 +35,9 @@ export default function RecipePreview({
               fill
             />
           </ImageWrapper>
-          <StyledRecipeTitle $recipeColor={recipeColor}>
-            {title}
-          </StyledRecipeTitle>
+          <StyledRecipeTitleWrapper $recipeColor={recipeColor}>
+            <StyledRecipeTitle>{title}</StyledRecipeTitle>
+          </StyledRecipeTitleWrapper>
         </StyledRecipePreview>
       </Link>
     </StyledWrapper>
@@ -50,6 +50,11 @@ const StyledWrapper = styled.div`
 
 const StyledImage = styled(Image)`
   object-fit: cover;
+  transform: scale(1.01);
+  &:hover {
+    transform: scale(1.12);
+  }
+  transition: all 0.3s ease;
 `;
 
 const ImageWrapper = styled.div`
@@ -70,17 +75,25 @@ const StyledRecipePreview = styled.li`
   align-items: center;
   justify-content: flex-end;
   position: relative;
+  box-shadow: 0.1rem 0.1rem 0.4rem var(--color-neutral-4-alpha25);
 `;
 
-const StyledRecipeTitle = styled.p<StyledRecipeTitleProps>`
-  font: var(--font-caption);
-  position: absolute;
-  text-transform: uppercase;
-  background-color: var(${({ $recipeColor }) => $recipeColor});
+const StyledRecipeTitle = styled.p`
+  font: var(--font-recipe-name);
+  color: var(--color-neutral-4);
   padding: var(--spacing-1);
-  border-radius: var(--radius-s);
   text-align: center;
-  width: 90%;
-  bottom: var(--spacing-1);
+  line-height: 1.1rem;
   overflow-wrap: break-word;
+`;
+
+const StyledRecipeTitleWrapper = styled.div<StyledRecipeTitleProps>`
+  position: absolute;
+  align-content: center;
+  background-color: var(${({ $recipeColor }) => $recipeColor});
+  border-bottom-left-radius: var(--radius-m);
+  border-bottom-right-radius: var(--radius-m);
+  width: 100%;
+  height: 30%;
+  backdrop-filter: blur(2px);
 `;
