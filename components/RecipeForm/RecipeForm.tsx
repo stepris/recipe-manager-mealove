@@ -1,9 +1,13 @@
-import tags from '@/lib/tags.json';
-import { ChangeEvent, FormEvent } from 'react';
-import { Recipe, Ingredient, OnAddRecipeType } from '@/types';
+import { ChangeEvent, FormEvent, useEffect } from 'react';
+import { Recipe } from '@/types';
 import IngredientInput from '@/components/RecipeForm/IngredientInput';
 import TimeInput from '@/components/RecipeForm/TimeInput';
-import Button from '@/components/Button';
+import categories from '@/lib/categories.json';
+import {
+  RecipeFormProps,
+  HandleChangeParams,
+  Ingredient,
+} from '@/types/RecipeForm.types';
 import { useRouter } from 'next/router';
 import {
   StyledForm,
@@ -19,9 +23,9 @@ import {
   StyledDropdown,
   StyledCategoryContainer,
   StyledCategoryElement,
-  StyledButtonWrapper,
 } from '@/components/RecipeForm/recipeStyles';
 import useLocalStorageState from 'use-local-storage-state';
+import FormButtons from '@/components/RecipeForm/FormButtons';
 
 const emptyRecipe: Recipe = {
   category: '',
@@ -33,7 +37,7 @@ const emptyRecipe: Recipe = {
   ingredients: [
     {
       id: '1',
-      quantity: 0,
+      quantity: '',
       unit: '',
       name: '',
     },
@@ -50,46 +54,101 @@ const emptyRecipe: Recipe = {
   title: '',
 };
 
-export default function RecipeForm({ onAddRecipe }: OnAddRecipeType) {
-  const [formData, setFormData] = useLocalStorageState('formData', {
+export default function RecipeForm({
+  onAddRecipe,
+  onEditRecipe,
+  isEditMode,
+  recipe,
+}: RecipeFormProps) {
+  const [recipeData, setRecipeData] = useLocalStorageState('recipeData', {
     defaultValue: emptyRecipe,
   });
 
+  useEffect(() => {
+    if (isEditMode && recipe) {
+      setRecipeData(recipe);
+    } else {
+      setRecipeData(emptyRecipe);
+    }
+  }, [recipe, setRecipeData, isEditMode]);
+
   const router = useRouter();
 
-  const handleChange = (
-    event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>
-  ) => {
+  /****************************************
+   * SUBSECTION: Event Handlers
+   ****************************************/
+
+  /**
+   * Direct key/value changes of the recipeData object.
+   * Handles changes to text and select inputs (name & main category)
+   */
+  const handleChange = (event: HandleChangeParams) => {
     const { name, value } = event.target;
 
-    setFormData((currData) => ({
+    setRecipeData((currData) => ({
       ...currData,
       [name]: value,
     }));
   };
 
+  /**
+   * Handles changes to the servings input field
+   */
   const handleServingsChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
 
     if (value === '') {
-      setFormData((currData) => ({
+      setRecipeData((currData) => ({
         ...currData,
         [name]: 1,
       }));
     } else {
-      setFormData((currData) => ({
+      setRecipeData((currData) => ({
         ...currData,
         [name]: parseInt(value),
       }));
     }
   };
 
+  /**
+   * Handles changes to individual ingredient fields
+   */
+  const handleIngredientChange = (newIngredient: Ingredient) => {
+    setRecipeData((currData) => {
+      const newIngredients = currData.ingredients.map((ingredient) =>
+        ingredient.id === newIngredient.id ? newIngredient : ingredient
+      );
+      return { ...currData, ingredients: newIngredients };
+    });
+  };
+
+  /**
+   * Adds a new empty ingredient to the ingredients array
+   */
+  const handleAddIngredient = () => {
+    setRecipeData((currData) => {
+      const newIngredients = [
+        ...currData.ingredients,
+        {
+          id: crypto.randomUUID(),
+          quantity: '',
+          unit: '',
+          name: '',
+        },
+      ];
+      return { ...currData, ingredients: newIngredients };
+    });
+  };
+
+  /**
+   * Handles changes to the recipe instructions textarea
+   */
   const handleInstructionsChange = (
     event: ChangeEvent<HTMLTextAreaElement>
   ) => {
     const { value } = event.target;
 
-    setFormData((currData) => {
+    setRecipeData((currData) => {
       const newInstructions = [...currData.instructions];
       newInstructions[0] = { ...newInstructions[0], description: value };
       return {
@@ -99,55 +158,70 @@ export default function RecipeForm({ onAddRecipe }: OnAddRecipeType) {
     });
   };
 
-  const handleAddIngredient = () => {
-    setFormData((currData) => {
-      const newIngredients = [
-        ...currData.ingredients,
-        {
-          id: crypto.randomUUID(),
-          quantity: 0,
-          unit: '',
-          name: '',
-        },
-      ];
-      return { ...currData, ingredients: newIngredients };
-    });
-  };
-
-  const handleIngredientChange = (newIngredient: Ingredient) => {
-    setFormData((currData) => {
-      const newIngredients = currData.ingredients.map((ingredient) =>
-        ingredient.id === newIngredient.id ? newIngredient : ingredient
-      );
-      return { ...currData, ingredients: newIngredients };
-    });
-  };
-
+  /**
+   * Handles changes to the preparation time inputs
+   */
   const handlePrepTimeChange = (newPrepTime: number) => {
-    setFormData((currData) => ({ ...currData, prepTime: newPrepTime }));
+    setRecipeData((currData) => ({
+      ...currData,
+      prepTime: newPrepTime,
+    }));
   };
 
+  /**
+   * Handles changes to the cooking time inputs
+   */
   const handleCookingTimeChange = (newCookingTime: number) => {
-    setFormData((currData) => ({ ...currData, cookingTime: newCookingTime }));
+    setRecipeData((currData) => ({
+      ...currData,
+      cookingTime: newCookingTime,
+    }));
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  /**
+   * Submits the form, creates a new recipe, and resets the form
+   */
+  const handleCreationSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const newRecipe = {
-      ...formData,
+      ...recipeData,
       id: crypto.randomUUID(),
     };
-    onAddRecipe(newRecipe);
 
-    setFormData(emptyRecipe);
+    onAddRecipe?.(newRecipe);
+
+    setRecipeData(emptyRecipe);
     event.currentTarget.reset();
     router.push(`/recipes/${newRecipe.id}`);
   };
 
+  /**
+   * Submits the form, edits the stored recipe and resets the form
+   */
+  const handleEditSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    onEditRecipe?.(recipeData);
+
+    event.currentTarget.reset();
+    router.push(`/recipes/${recipeData.id}`);
+  };
+
+  /**
+   * Cancels the editing process and routes back to DetailsPage
+   */
+  const handleCancel = () => {
+    // setRecipeData(recipe)
+    // setRecipeData(emptyRecipe);
+    router.push(`/recipes/${recipeData.id}`);
+  };
+
   return (
     <>
-      <StyledForm onSubmit={handleSubmit}>
+      <StyledForm
+        onSubmit={isEditMode ? handleEditSubmit : handleCreationSubmit}
+      >
         {/* Title */}
         <StyledInputElement>
           <StyledLabel htmlFor='title'>Recipe Name</StyledLabel>
@@ -155,15 +229,16 @@ export default function RecipeForm({ onAddRecipe }: OnAddRecipeType) {
             type='text'
             id='title'
             name='title'
+            value={recipeData.title}
+            onChange={handleChange}
+            maxLength={40}
             required
             $leftAlign
-            value={formData.title}
-            onChange={handleChange}
             placeholder='Type your Recipe Name here'
           />
         </StyledInputElement>
 
-        {/* Portions */}
+        {/* Servings */}
         <StyledInputElement>
           <StyledLabel htmlFor='servings'>Servings</StyledLabel>
           <StyledElementGroup>
@@ -173,7 +248,7 @@ export default function RecipeForm({ onAddRecipe }: OnAddRecipeType) {
               id='servings'
               name='servings'
               $isMedium
-              value={formData.servings}
+              value={recipeData.servings}
               onChange={handleServingsChange}
               min={1}
               max={99}
@@ -182,7 +257,7 @@ export default function RecipeForm({ onAddRecipe }: OnAddRecipeType) {
           </StyledElementGroup>
         </StyledInputElement>
 
-        {/* Ingredients and quantities */}
+        {/* Ingredients And Quantities */}
         <StyledInputElement>
           <StyledH2>Ingredients and quantities</StyledH2>
           <StyledCellWrapper>
@@ -190,7 +265,7 @@ export default function RecipeForm({ onAddRecipe }: OnAddRecipeType) {
             <StyledH3>Unit</StyledH3>
             <StyledH3>Ingredient</StyledH3>
           </StyledCellWrapper>
-          {formData.ingredients.map((ingredient) => {
+          {recipeData.ingredients.map((ingredient) => {
             return (
               <IngredientInput
                 key={ingredient.id}
@@ -214,21 +289,21 @@ export default function RecipeForm({ onAddRecipe }: OnAddRecipeType) {
             cols={10}
             minLength={1}
             required
-            value={formData.instructions[0].description}
+            value={recipeData.instructions[0].description}
             onChange={handleInstructionsChange}
           />
         </StyledInputElement>
 
         {/* Prep Time */}
         <TimeInput
-          time={formData.prepTime}
+          time={recipeData.prepTime}
           onTimeChange={handlePrepTimeChange}
           what='prep'
         />
 
-        {/* Cooking time */}
+        {/* Cooking Time */}
         <TimeInput
-          time={formData.cookingTime}
+          time={recipeData.cookingTime}
           onTimeChange={handleCookingTimeChange}
           what='cooking'
         />
@@ -240,6 +315,7 @@ export default function RecipeForm({ onAddRecipe }: OnAddRecipeType) {
             id='difficulty'
             name='difficulty'
             onChange={handleChange}
+            value={recipeData.difficulty}
           >
             <option value='easy'>easy</option>
             <option value='medium'>medium</option>
@@ -252,15 +328,16 @@ export default function RecipeForm({ onAddRecipe }: OnAddRecipeType) {
         <StyledInputElement>
           <StyledLabel htmlFor='category'>Main Categories</StyledLabel>
           <StyledCategoryContainer>
-            {tags.map((tag) => {
+            {categories.map((category) => {
               return (
-                <StyledCategoryElement key={tag.id}>
-                  <label htmlFor={tag.name}>{tag.name}</label>
+                <StyledCategoryElement key={category.id}>
+                  <label htmlFor={category.name}>{category.name}</label>
                   <input
                     type='radio'
                     name='category'
-                    id={tag.name}
-                    value={tag.name}
+                    id={category.name}
+                    value={category.name}
+                    checked={category.name === recipeData.category}
                     required
                     onChange={handleChange}
                   />
@@ -269,15 +346,9 @@ export default function RecipeForm({ onAddRecipe }: OnAddRecipeType) {
             })}
           </StyledCategoryContainer>
         </StyledInputElement>
-        <StyledButtonWrapper>
-          <Button
-            variant='$submit'
-            type='submit'
-            aria-label='submit new recipe'
-          >
-            Submit Recipe
-          </Button>
-        </StyledButtonWrapper>
+
+        {/* Action Buttons */}
+        <FormButtons isEditMode={isEditMode} onCancel={handleCancel} />
       </StyledForm>
     </>
   );

@@ -10,25 +10,25 @@
       {
         "id": "1",
         "name": "spaghetti",
-        "quantity": 250,
+        "quantity": "250",
         "unit": "g"
       },
       {
         "id": "2",
         "name": "tomato sauce",
-        "quantity": 500,
+        "quantity": "500",
         "unit": "ml"
       },
       {
         "id": "3",
         "name": "garlic cloves",
-        "quantity": 3,
-        "unit": "pieces"
+        "quantity": "3",
+        "unit": "piece(s)"
       },
       {
         "id": "4",
         "name": "olive oil",
-        "quantity": 50,
+        "quantity": "50",
         "unit": "ml"
       }
     ],
@@ -54,26 +54,26 @@
       {
         "id": "1",
         "name": "avocado",
-        "quantity": 1,
-        "unit": "pieces"
+        "quantity": "1",
+        "unit": "piece(s)"
       },
       {
         "id": "2",
         "name": "bread",
-        "quantity": 2,
-        "unit": "slices"
+        "quantity": "2",
+        "unit": "piece(s)"
       },
       {
         "id": "3",
         "name": "sea salt",
-        "quantity": 1,
-        "unit": "pinch"
+        "quantity": "1",
+        "unit": "tsp"
       }
     ],
     "instructions": [
       {
         "id": "1",
-        "description": "Toast the bread slices. Mash the avocado and spread it on the toast. Sprinkle with sea salt."
+        "description": "Toast the bread piece(s). Mash the avocado and spread it on the toast. Sprinkle with sea salt."
       }
     ],
     "prepTime": 5,
@@ -92,25 +92,25 @@
       {
         "id": "1",
         "name": "beef roast",
-        "quantity": 1,
+        "quantity": "1",
         "unit": "kg"
       },
       {
         "id": "2",
         "name": "rosemary",
-        "quantity": 2,
+        "quantity": "2",
         "unit": "tbsp"
       },
       {
         "id": "3",
         "name": "garlic cloves",
-        "quantity": 4,
-        "unit": "pieces"
+        "quantity": "4",
+        "unit": "piece(s)"
       },
       {
         "id": "4",
         "name": "olive oil",
-        "quantity": 60,
+        "quantity": "60",
         "unit": "ml"
       }
     ],
@@ -136,25 +136,25 @@
       {
         "id": "1",
         "name": "risotto rice",
-        "quantity": 200,
+        "quantity": "200",
         "unit": "g"
       },
       {
         "id": "2",
         "name": "mushrooms",
-        "quantity": 300,
+        "quantity": "300",
         "unit": "g"
       },
       {
         "id": "3",
         "name": "white wine",
-        "quantity": 100,
+        "quantity": "100",
         "unit": "ml"
       },
       {
         "id": "4",
         "name": "parmesan cheese",
-        "quantity": 50,
+        "quantity": "50",
         "unit": "g"
       }
     ],
@@ -180,25 +180,25 @@
       {
         "id": "1",
         "name": "cucumber",
-        "quantity": 1,
-        "unit": "pieces"
+        "quantity": "1",
+        "unit": "piece(s)"
       },
       {
         "id": "2",
         "name": "tomatoes",
-        "quantity": 2,
-        "unit": "pieces"
+        "quantity": "2",
+        "unit": "piece(s)"
       },
       {
         "id": "3",
         "name": "feta cheese",
-        "quantity": 100,
+        "quantity": "100",
         "unit": "g"
       },
       {
         "id": "4",
         "name": "olives",
-        "quantity": 50,
+        "quantity": "50",
         "unit": "g"
       }
     ],
@@ -224,26 +224,26 @@
       {
         "id": "1",
         "name": "chicken breast",
-        "quantity": 500,
+        "quantity": "500",
         "unit": "g"
       },
       {
         "id": "2",
         "name": "coconut milk",
-        "quantity": 200,
+        "quantity": "200",
         "unit": "ml"
       },
       {
         "id": "3",
         "name": "curry powder",
-        "quantity": 2,
+        "quantity": "2",
         "unit": "tbsp"
       },
       {
         "id": "4",
         "name": "onions",
-        "quantity": 1,
-        "unit": "piece"
+        "quantity": "1",
+        "unit": "piece(s)"
       }
     ],
     "instructions": [
@@ -268,25 +268,25 @@
       {
         "id": "1",
         "name": "salmon fillets",
-        "quantity": 4,
-        "unit": "pieces"
+        "quantity": "4",
+        "unit": "piece(s)"
       },
       {
         "id": "2",
         "name": "honey",
-        "quantity": 3,
+        "quantity": "3",
         "unit": "tbsp"
       },
       {
         "id": "3",
         "name": "soy sauce",
-        "quantity": 2,
+        "quantity": "2",
         "unit": "tbsp"
       },
       {
         "id": "4",
         "name": "sesame seeds",
-        "quantity": 1,
+        "quantity": "1",
         "unit": "tbsp"
       }
     ],
@@ -312,25 +312,25 @@
       {
         "id": "1",
         "name": "lasagna sheets",
-        "quantity": 12,
-        "unit": "sheets"
+        "quantity": "12",
+        "unit": "piece(s)"
       },
       {
         "id": "2",
         "name": "ground beef",
-        "quantity": 500,
+        "quantity": "500",
         "unit": "g"
       },
       {
         "id": "3",
         "name": "mozzarella cheese",
-        "quantity": 200,
+        "quantity": "200",
         "unit": "g"
       },
       {
         "id": "4",
         "name": "tomato sauce",
-        "quantity": 600,
+        "quantity": "600",
         "unit": "ml"
       }
     ],
@@ -356,19 +356,19 @@
       {
         "id": "1",
         "name": "banana",
-        "quantity": 1,
-        "unit": "piece"
+        "quantity": "1",
+        "unit": "piece(s)"
       },
       {
         "id": "2",
         "name": "mango",
-        "quantity": 1,
-        "unit": "piece"
+        "quantity": "1",
+        "unit": "piece(s)"
       },
       {
         "id": "3",
         "name": "pineapple juice",
-        "quantity": 250,
+        "quantity": "250",
         "unit": "ml"
       }
     ],
@@ -394,25 +394,25 @@
       {
         "id": "1",
         "name": "flour",
-        "quantity": 200,
+        "quantity": "200",
         "unit": "g"
       },
       {
         "id": "2",
         "name": "cocoa powder",
-        "quantity": 100,
+        "quantity": "100",
         "unit": "g"
       },
       {
         "id": "3",
         "name": "butter",
-        "quantity": 150,
+        "quantity": "150",
         "unit": "g"
       },
       {
         "id": "4",
         "name": "sugar",
-        "quantity": 200,
+        "quantity": "200",
         "unit": "g"
       }
     ],

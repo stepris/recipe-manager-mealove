@@ -26,6 +26,11 @@ export default function App({ Component, pageProps }: AppProps) {
     router.push('/');
   };
 
+  const handleEditRecipe = (currData: Recipe) =>
+    setRecipes((recipes) =>
+      recipes.map((recipe) => (recipe.id === currData.id ? currData : recipe))
+    );
+
   const handleToggleFavorite: HandleToggleFavoriteFunction = (id) => {
     const favoriteSet = new Set<string>(favoriteRecipesList);
     if (!id) {
@@ -43,6 +48,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const favoriteRecipes = recipes.filter((recipe) => {
     return favoriteRecipesList.includes(recipe.id);
   });
+
   return (
     <>
       <GlobalStyle />
@@ -55,6 +61,7 @@ export default function App({ Component, pageProps }: AppProps) {
           favoriteRecipesList={favoriteRecipesList}
           onAddRecipe={handleAddRecipe}
           onDeleteRecipe={handleDeleteRecipe}
+          onEditRecipe={handleEditRecipe}
         />
       </Layout>
     </>

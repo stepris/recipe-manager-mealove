@@ -6,7 +6,7 @@ import {
   StyledLabelSmall,
 } from '@/components/RecipeForm/recipeStyles';
 import { ChangeEvent } from 'react';
-import { TimeInputProps } from '@/types';
+import { TimeInputProps } from '@/types/TimeInput.types';
 
 export default function TimeInput({
   time,

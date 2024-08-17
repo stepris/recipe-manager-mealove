@@ -14,8 +14,6 @@ export default function RecipeDetails({
 }: RecipeDetailsProps) {
   const [modalState, setModalState] = useState<Modal>(false);
 
-  if (!recipe) return null;
-
   const handleModalOpen = () => setModalState(true);
   const handleModalClose = () => setModalState(false);
 
@@ -28,8 +26,7 @@ export default function RecipeDetails({
     cookingTime,
     instructions,
   } = recipe;
-
-  const description = instructions[0].description;
+  if (!recipe) return null;
 
   return (
     <>
@@ -76,7 +73,7 @@ export default function RecipeDetails({
         <StyledH3>
           Cooking Time: <StyledSpan>{cookingTime} Minutes</StyledSpan>
         </StyledH3>
-        <StyledInstructions>{description}</StyledInstructions>
+        <StyledInstructions>{instructions[0].description}</StyledInstructions>
       </StyledArticle>
       <StyledButtonWrapper>
         <Button
@@ -181,6 +178,5 @@ const StyledInstructions = styled.p`
 
 const StyledButtonWrapper = styled.div`
   display: flex;
-  justify-content: end;
-  padding-right: var(--spacing-5);
+  justify-content: center;
 `;
