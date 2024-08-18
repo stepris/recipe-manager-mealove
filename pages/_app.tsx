@@ -9,7 +9,12 @@ import useSWR from 'swr';
 const fetcher = (...args) => fetch(...args).then((response) => response.json());
 
 export default function App({ Component, pageProps }: AppProps) {
-  const { data: recipes, error, isLoading } = useSWR('/api/recipes', fetcher);
+  const {
+    data: recipes,
+    error,
+    isLoading,
+    mutate,
+  } = useSWR('/api/recipes', fetcher);
 
   const [favoriteRecipesList, setFavoriteRecipesList] = useLocalStorageState<
     string[]
@@ -27,9 +32,23 @@ export default function App({ Component, pageProps }: AppProps) {
     console.log('recipes da', recipes);
   }
 
-  const handleAddRecipe = (recipe: Recipe) => {
-    setRecipes((currData) => [recipe, ...currData]);
-  };
+  // const handleAddRecipe = (recipe: Recipe) => {
+  //   setRecipes((currData) => [recipe, ...currData]);
+  // };
+
+  async function handleAddRecipe(recipe: Recipe) {
+    const response = await fetch('/api/recipes', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(recipe),
+    });
+    if (response.ok) {
+      mutate();
+      router.push(`/`);
+    }
+  }
 
   const handleDeleteRecipe = (id: string) => {
     setRecipes(recipes.filter((recipe) => recipe.id !== id));

@@ -186,7 +186,7 @@ export default function RecipeForm({
 
     const newRecipe = {
       ...recipeData,
-      id: crypto.randomUUID(),
+      // id: crypto.randomUUID(),
     };
 
     onAddRecipe?.(newRecipe);
@@ -205,7 +205,6 @@ export default function RecipeForm({
     onEditRecipe?.(recipeData);
 
     event.currentTarget.reset();
-    router.push(`/recipes/${recipeData.id}`);
   };
 
   /**
