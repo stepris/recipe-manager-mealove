@@ -18,7 +18,7 @@ export default function RecipeDetails({
   const handleModalClose = () => setModalState(false);
 
   const {
-    id,
+    _id: id,
     title,
     imageUrl,
     ingredients,
