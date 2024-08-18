@@ -14,7 +14,7 @@ export default function RecipeDetailsPage({
 }: RecipeDetailsPageProps) {
   const router = useRouter();
   const { id } = router.query;
-  const recipe = recipes.find((recipe) => recipe.id === id);
+  const recipe = recipes.find((recipe) => recipe._id === id);
 
   if (!recipe) return;
 
@@ -28,7 +28,7 @@ export default function RecipeDetailsPage({
       <RecipeDetails
         recipe={recipe}
         onToggleFavorite={onToggleFavorite}
-        isFavorite={favoriteRecipesList.includes(recipe.id)}
+        isFavorite={favoriteRecipesList.includes(recipe._id)}
         onDeleteRecipe={onDeleteRecipe}
       />
       <ButtonWrapper>

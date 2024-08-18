@@ -30,10 +30,10 @@ export default function RecipeList({
         {filteredRecipes.map((recipe) => {
           return (
             <RecipePreview
-              key={recipe.id}
+              key={recipe._id}
               recipe={recipe}
               onToggleFavorite={onToggleFavorite}
-              isFavorite={favoriteRecipesList.includes(recipe.id)}
+              isFavorite={favoriteRecipesList.includes(recipe._id)}
             />
           );
         })}
