@@ -6,22 +6,34 @@ import type { AppProps } from 'next/app';
 import { HandleToggleFavoriteFunction, Recipe } from '@/types';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
+import { useEffect } from 'react';
 
 const fetcher = (...args) => fetch(...args).then((response) => response.json());
 
 export default function App({ Component, pageProps }: AppProps) {
-  const { data, error, isLoading } = useSWR('/api/recipes', fetcher);
-  console.log(data);
+  const { data: recipes, error, isLoading } = useSWR('/api/recipes', fetcher);
 
   const [favoriteRecipesList, setFavoriteRecipesList] = useLocalStorageState<
     string[]
   >('favoriteRecipesList', { defaultValue: [] });
 
-  const [recipes, setRecipes] = useLocalStorageState('recipes', {
-    defaultValue: recipesJson,
-  });
+  // const [recipes, setRecipes] = useLocalStorageState('recipes', {
+  //   defaultValue: data,
+  // });
 
   const router = useRouter();
+
+  console.log(recipes);
+
+  // useEffect(() => {
+  //   setRecipes(data);
+  // }, [data]);
+
+  if (!recipes) {
+    return null;
+  } else {
+    console.log('recipes da', recipes);
+  }
 
   const handleAddRecipe = (recipe: Recipe) => {
     setRecipes((currData) => [recipe, ...currData]);
@@ -51,8 +63,10 @@ export default function App({ Component, pageProps }: AppProps) {
     }
   };
 
+  console.log(recipes);
+
   const favoriteRecipes = recipes.filter((recipe) => {
-    return favoriteRecipesList.includes(recipe.id);
+    return favoriteRecipesList.includes(recipe._id);
   });
 
   return (
