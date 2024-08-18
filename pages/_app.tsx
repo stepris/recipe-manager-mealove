@@ -1,12 +1,10 @@
 import useLocalStorageState from 'use-local-storage-state';
 import GlobalStyle from '../styles';
 import Layout from '@/components/Layout';
-import recipesJson from '@/lib/recipes.json';
 import type { AppProps } from 'next/app';
 import { HandleToggleFavoriteFunction, Recipe } from '@/types';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
-import { useEffect } from 'react';
 
 const fetcher = (...args) => fetch(...args).then((response) => response.json());
 
@@ -22,12 +20,6 @@ export default function App({ Component, pageProps }: AppProps) {
   // });
 
   const router = useRouter();
-
-  console.log(recipes);
-
-  // useEffect(() => {
-  //   setRecipes(data);
-  // }, [data]);
 
   if (!recipes) {
     return null;
@@ -62,8 +54,6 @@ export default function App({ Component, pageProps }: AppProps) {
       setFavoriteRecipesList(Array.from(favoriteSet));
     }
   };
-
-  console.log(recipes);
 
   const favoriteRecipes = recipes.filter((recipe) => {
     return favoriteRecipesList.includes(recipe._id);
