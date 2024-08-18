@@ -5,8 +5,14 @@ import recipesJson from '@/lib/recipes.json';
 import type { AppProps } from 'next/app';
 import { HandleToggleFavoriteFunction, Recipe } from '@/types';
 import { useRouter } from 'next/router';
+import useSWR from 'swr';
+
+const fetcher = (...args) => fetch(...args).then((response) => response.json());
 
 export default function App({ Component, pageProps }: AppProps) {
+  const { data, error, isLoading } = useSWR('/api/recipes', fetcher);
+  console.log(data);
+
   const [favoriteRecipesList, setFavoriteRecipesList] = useLocalStorageState<
     string[]
   >('favoriteRecipesList', { defaultValue: [] });
