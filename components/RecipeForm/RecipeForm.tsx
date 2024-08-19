@@ -212,7 +212,7 @@ export default function RecipeForm({
   const handleCancel = () => {
     // setRecipeData(recipe)
     // setRecipeData(emptyRecipe);
-    router.push(`/recipes/${recipeData.id}`);
+    router.push(`/recipes/${recipeData._id}`);
   };
 
   return (

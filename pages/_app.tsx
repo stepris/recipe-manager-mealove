@@ -28,6 +28,8 @@ export default function App({ Component, pageProps }: AppProps) {
 
   const router = useRouter();
 
+  if (error) return <div>failed to load</div>;
+  if (isLoading) return <div>loading...</div>;
   if (!recipes) return null;
 
   // const handleAddRecipe = (recipe: Recipe) => {
@@ -78,6 +80,7 @@ export default function App({ Component, pageProps }: AppProps) {
     });
     if (response.ok) {
       mutate();
+      router.back();
     }
   }
 
