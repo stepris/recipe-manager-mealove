@@ -7,6 +7,8 @@ export default function ConfirmationModal({
   onModalClose,
   recipeId,
 }: ConfirmationModalProps) {
+  if (!recipeId) return null;
+
   return (
     <StyledBackground>
       <StyledMessageContainer>

@@ -6,6 +6,7 @@ export type Recipe = {
   description: string;
   difficulty: string;
   _id?: string;
+  id?: string;
   imageUrl: string;
   ingredients: {
     id: string;

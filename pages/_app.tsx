@@ -6,7 +6,9 @@ import { HandleToggleFavoriteFunction, Recipe } from '@/types';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
 
-const fetcher = (...args) => fetch(...args).then((response) => response.json());
+/* const fetcher = (...args) => fetch(...args).then((response) => response.json()); */
+const fetcher = (...args: [RequestInfo, RequestInit?]): Promise<Recipe[]> =>
+  fetch(...args).then((response) => response.json());
 
 export default function App({ Component, pageProps }: AppProps) {
   const {
@@ -26,11 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   const router = useRouter();
 
-  if (!recipes) {
-    return null;
-  } else {
-    console.log('recipes da', recipes);
-  }
+  if (!recipes) return null;
 
   // const handleAddRecipe = (recipe: Recipe) => {
   //   setRecipes((currData) => [recipe, ...currData]);
@@ -98,6 +96,7 @@ export default function App({ Component, pageProps }: AppProps) {
   };
 
   const favoriteRecipes = recipes.filter((recipe) => {
+    if (!recipe._id) return null;
     return favoriteRecipesList.includes(recipe._id);
   });
 

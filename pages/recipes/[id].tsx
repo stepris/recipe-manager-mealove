@@ -16,7 +16,7 @@ export default function RecipeDetailsPage({
   const { id } = router.query;
   const recipe = recipes.find((recipe) => recipe._id === id);
 
-  if (!recipe) return;
+  if (!recipe || !recipe._id) return null;
 
   const handleEdit = () => {
     router.push(`/recipes/${id}/edit`);

@@ -15,6 +15,8 @@ export default function RecipePreview({
 }: RecipePreviewProps) {
   const { _id: id, title, imageUrl, category } = recipe;
 
+  if (!id) return null;
+
   const recipeColor = categories.find(
     (categorie) => categorie.name === category
   )?.colorVarNameAlpha;
