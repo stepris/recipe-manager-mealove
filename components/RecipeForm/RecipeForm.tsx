@@ -181,18 +181,31 @@ export default function RecipeForm({
   /**
    * Submits the form, creates a new recipe, and resets the form
    */
-  const handleCreationSubmit = (event: FormEvent<HTMLFormElement>) => {
+  async function handleCreationSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    /**
+     * Create Form Data for Image
+     */
+    const formData = new FormData(event.target);
+    const response = await fetch('/api/upload', {
+      method: 'POST',
+      body: formData,
+    });
+    /**
+     * Get HTTPS Image Url from Cloudinary
+     */
+    const { secure_url } = await response.json();
 
     const newRecipe = {
       ...recipeData,
+      imageUrl: secure_url,
     };
-
     onAddRecipe?.(newRecipe);
 
     setRecipeData(emptyRecipe);
+
     event.currentTarget.reset();
-  };
+  }
 
   /**
    * Submits the form, edits the stored recipe and resets the form
@@ -343,7 +356,13 @@ export default function RecipeForm({
         </StyledInputElement>
 
         {/* Image Upload */}
-        <ImageUpload />
+        <input
+          type='file'
+          id='imageUpload'
+          name='imageUpload'
+          accept='image/*'
+        />
+        <label htmlFor='imageUpload'>Image Upload</label>
         {/* Action Buttons */}
         <FormButtons isEditMode={isEditMode} onCancel={handleCancel} />
       </StyledForm>
