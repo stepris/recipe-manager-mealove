@@ -32,7 +32,6 @@ const emptyRecipe: Recipe = {
   cookingTime: 0,
   description: '',
   difficulty: 'easy',
-  id: '1',
   imageUrl: '/recipe-default-imgs/alexander-mils-pPhN8HFzkDE-unsplash.jpg',
   ingredients: [
     {
