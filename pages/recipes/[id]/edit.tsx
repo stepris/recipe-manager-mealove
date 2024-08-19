@@ -8,7 +8,7 @@ export default function RecipeEditPage({
 }: RecipeEditPageProps) {
   const router = useRouter();
   const { id } = router.query;
-  const recipe = recipes.find((recipe) => recipe.id === id);
+  const recipe = recipes.find((recipe) => recipe._id === id);
 
   if (!recipe) return;
 

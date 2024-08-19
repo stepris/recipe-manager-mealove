@@ -12,5 +12,16 @@ export default async function handler(request, response) {
       return response.status(404).json({ status: 'Not Found' });
     }
     response.status(200).json(recipe);
+  } else if (request.method === 'PUT') {
+    try {
+      const recipeData = request.body;
+      await Recipe.findByIdAndUpdate(id, recipeData);
+      return response.status(200).json({ status: `Recipe ${id} updated!` });
+    } catch (error) {
+      console.log(error);
+      response.status(400).json({ error: error.message });
+    }
+  } else {
+    return response.status(405).json({ message: 'Method not allowed' });
   }
 }

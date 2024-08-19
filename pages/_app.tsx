@@ -55,10 +55,23 @@ export default function App({ Component, pageProps }: AppProps) {
     router.push('/');
   };
 
-  const handleEditRecipe = (currData: Recipe) =>
-    setRecipes((recipes) =>
-      recipes.map((recipe) => (recipe.id === currData.id ? currData : recipe))
-    );
+  // const handleEditRecipe = (currData: Recipe) =>
+  //   setRecipes((recipes) =>
+  //     recipes.map((recipe) => (recipe._id === currData._id ? currData : recipe))
+  //   );
+
+  async function handleEditRecipe(updatedRecipe: Recipe) {
+    const response = await fetch(`/api/recipes/${updatedRecipe._id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updatedRecipe),
+    });
+    if (response.ok) {
+      mutate();
+    }
+  }
 
   const handleToggleFavorite: HandleToggleFavoriteFunction = (id) => {
     const favoriteSet = new Set<string>(favoriteRecipesList);
