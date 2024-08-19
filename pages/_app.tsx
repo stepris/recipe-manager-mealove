@@ -50,10 +50,20 @@ export default function App({ Component, pageProps }: AppProps) {
     }
   }
 
-  const handleDeleteRecipe = (id: string) => {
-    setRecipes(recipes.filter((recipe) => recipe.id !== id));
-    router.push('/');
-  };
+  // const handleDeleteRecipe = (id: string) => {
+  //   setRecipes(recipes.filter((recipe) => recipe.id !== id));
+  //   router.push('/');
+  // };
+
+  async function handleDeleteRecipe(id: string) {
+    const respone = await fetch(`/api/recipes/${id}`, {
+      method: 'Delete',
+    });
+    if (respone.ok) {
+      mutate();
+      router.push('/');
+    }
+  }
 
   // const handleEditRecipe = (currData: Recipe) =>
   //   setRecipes((recipes) =>

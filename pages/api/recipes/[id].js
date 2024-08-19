@@ -18,7 +18,15 @@ export default async function handler(request, response) {
       await Recipe.findByIdAndUpdate(id, recipeData);
       return response.status(200).json({ status: `Recipe ${id} updated!` });
     } catch (error) {
-      console.log(error);
+      response.status(400).json({ error: error.message });
+    }
+  } else if (request.method === 'DELETE') {
+    try {
+      await Recipe.findByIdAndDelete(id);
+      return response
+        .status(200)
+        .json({ message: `${id} Deleted Successfully!` });
+    } catch (error) {
       response.status(400).json({ error: error.message });
     }
   } else {
