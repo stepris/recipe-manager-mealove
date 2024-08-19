@@ -1,8 +1,9 @@
 export default function ImageUpload() {
   return (
-    <input>
-      <label></label>
-    </input>
-    <button>upload image</button>
+    <>
+      <input type='file' id='imageUpload' />
+      <label htmlFor='imageUpload'></label>
+      <button>upload image</button>
+    </>
   );
 }

@@ -1,6 +1,7 @@
 import { ChangeEvent, FormEvent, useEffect } from 'react';
 import { Recipe } from '@/types';
 import IngredientInput from '@/components/RecipeForm/IngredientInput';
+import ImageUpload from './ImageUpload';
 import TimeInput from '@/components/RecipeForm/TimeInput';
 import categories from '@/lib/categories.json';
 import {
@@ -341,6 +342,8 @@ export default function RecipeForm({
           </StyledCategoryContainer>
         </StyledInputElement>
 
+        {/* Image Upload */}
+        <ImageUpload />
         {/* Action Buttons */}
         <FormButtons isEditMode={isEditMode} onCancel={handleCancel} />
       </StyledForm>
