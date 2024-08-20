@@ -3,53 +3,21 @@ import GlobalStyle from '../styles';
 import Layout from '@/components/Layout';
 import type { AppProps } from 'next/app';
 import { HandleToggleFavoriteFunction, Recipe } from '@/types';
-import { useRouter } from 'next/router';
 import useSWR, { SWRConfig } from 'swr';
 
 const fetcher = (...args: [RequestInfo, RequestInit?]): Promise<Recipe[]> =>
   fetch(...args).then((response) => response.json());
 
 export default function App({ Component, pageProps }: AppProps) {
-  const {
-    data: recipes,
-    error,
-    isLoading,
-    mutate,
-  } = useSWR('/api/recipes', fetcher);
+  const { data: recipes, error, isLoading } = useSWR('/api/recipes', fetcher);
 
   const [favoriteRecipesList, setFavoriteRecipesList] = useLocalStorageState<
     string[]
   >('favoriteRecipesList', { defaultValue: [] });
 
-  const router = useRouter();
-
   if (error) return <div>failed to load</div>;
   if (isLoading) return <div>loading...</div>;
   if (!recipes) return null;
-
-  async function handleDeleteRecipe(id: string) {
-    const respone = await fetch(`/api/recipes/${id}`, {
-      method: 'Delete',
-    });
-    if (respone.ok) {
-      mutate();
-      router.push('/');
-    }
-  }
-
-  async function handleEditRecipe(updatedRecipe: Recipe) {
-    const response = await fetch(`/api/recipes/${updatedRecipe._id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(updatedRecipe),
-    });
-    if (response.ok) {
-      mutate();
-      router.back();
-    }
-  }
 
   const handleToggleFavorite: HandleToggleFavoriteFunction = (id) => {
     const favoriteSet = new Set<string>(favoriteRecipesList);
@@ -77,7 +45,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <SWRConfig
           value={{
             fetcher,
-            /* refreshInterval: 1000, */
           }}
         >
           <Component
@@ -86,8 +53,6 @@ export default function App({ Component, pageProps }: AppProps) {
             onToggleFavorite={handleToggleFavorite}
             favoriteRecipes={favoriteRecipes}
             favoriteRecipesList={favoriteRecipesList}
-            onDeleteRecipe={handleDeleteRecipe}
-            onEditRecipe={handleEditRecipe}
           />
         </SWRConfig>
       </Layout>
