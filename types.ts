@@ -61,9 +61,9 @@ export type AppBaseProps = {
 export interface ChildrenLayoutProps {
   children?: ReactNode;
 }
-
-export type OnAddRecipeType = {
+/* TODO */
+/* export type OnAddRecipeType = {
   onAddRecipe: (recipe: Recipe) => void;
-};
+}; */
 
 export type OnEditRecipeType = (recipe: Recipe) => void;

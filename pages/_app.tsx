@@ -4,7 +4,7 @@ import Layout from '@/components/Layout';
 import type { AppProps } from 'next/app';
 import { HandleToggleFavoriteFunction, Recipe } from '@/types';
 import { useRouter } from 'next/router';
-import useSWR from 'swr';
+import useSWR, { SWRConfig } from 'swr';
 
 const fetcher = (...args: [RequestInfo, RequestInit?]): Promise<Recipe[]> =>
   fetch(...args).then((response) => response.json());
@@ -26,20 +26,6 @@ export default function App({ Component, pageProps }: AppProps) {
   if (error) return <div>failed to load</div>;
   if (isLoading) return <div>loading...</div>;
   if (!recipes) return null;
-
-  async function handleAddRecipe(recipe: Recipe) {
-    const response = await fetch('/api/recipes', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(recipe),
-    });
-    if (response.ok) {
-      mutate();
-      router.push(`/`);
-    }
-  }
 
   async function handleDeleteRecipe(id: string) {
     const respone = await fetch(`/api/recipes/${id}`, {
@@ -88,16 +74,22 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <GlobalStyle />
       <Layout>
-        <Component
-          {...pageProps}
-          recipes={recipes}
-          onToggleFavorite={handleToggleFavorite}
-          favoriteRecipes={favoriteRecipes}
-          favoriteRecipesList={favoriteRecipesList}
-          onAddRecipe={handleAddRecipe}
-          onDeleteRecipe={handleDeleteRecipe}
-          onEditRecipe={handleEditRecipe}
-        />
+        <SWRConfig
+          value={{
+            fetcher,
+            /* refreshInterval: 1000, */
+          }}
+        >
+          <Component
+            {...pageProps}
+            recipes={recipes}
+            onToggleFavorite={handleToggleFavorite}
+            favoriteRecipes={favoriteRecipes}
+            favoriteRecipesList={favoriteRecipesList}
+            onDeleteRecipe={handleDeleteRecipe}
+            onEditRecipe={handleEditRecipe}
+          />
+        </SWRConfig>
       </Layout>
     </>
   );
