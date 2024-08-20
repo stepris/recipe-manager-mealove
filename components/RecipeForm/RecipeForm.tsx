@@ -191,7 +191,6 @@ export default function RecipeForm({
 
     setRecipeData(emptyRecipe);
     event.currentTarget.reset();
-    router.push(`/recipes/${newRecipe.id}`);
   };
 
   /**
@@ -209,8 +208,6 @@ export default function RecipeForm({
    * Cancels the editing process and routes back to DetailsPage
    */
   const handleCancel = () => {
-    // setRecipeData(recipe)
-    // setRecipeData(emptyRecipe);
     router.push(`/recipes/${recipeData._id}`);
   };
 

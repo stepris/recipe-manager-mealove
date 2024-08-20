@@ -10,9 +10,11 @@ export default async function handler(request, response) {
   } else if (request.method === 'POST') {
     try {
       const recipeData = request.body;
-      await Recipe.create(recipeData);
+      const newRecipe = await Recipe.create(recipeData);
 
-      response.status(201).json({ status: 'Recipe created' });
+      response
+        .status(201)
+        .json({ status: 'Recipe created', newId: newRecipe._id });
     } catch (error) {
       response.status(400).json({ error: error.message });
     }

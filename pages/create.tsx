@@ -20,8 +20,9 @@ export default function Create() {
       body: JSON.stringify(recipe),
     });
     if (response.ok) {
+      const newRecipe = await response.json();
       mutate();
-      router.push(`/`);
+      router.push(`/recipes/${newRecipe.newId}`);
     }
   }
 
