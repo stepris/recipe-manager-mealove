@@ -154,6 +154,7 @@ export const StyledImageUpladContainer = styled.div`
   border: 2px dashed var(--color-primary-1);
   border-radius: var(--radius-s);
   padding: 20px;
+  cursor: pointer;
 `;
 
 export const StyledCloudIcon = styled(UploadCloud)`

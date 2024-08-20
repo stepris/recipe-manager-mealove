@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useEffect } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { Recipe } from '@/types';
 import IngredientInput from '@/components/RecipeForm/IngredientInput';
 import TimeInput from '@/components/RecipeForm/TimeInput';
@@ -31,6 +31,7 @@ import {
 } from '@/components/RecipeForm/recipeStyles';
 import useLocalStorageState from 'use-local-storage-state';
 import FormButtons from '@/components/RecipeForm/FormButtons';
+import Image from 'next/image';
 
 const emptyRecipe: Recipe = {
   category: '',
@@ -67,6 +68,8 @@ export default function RecipeForm({
   const [recipeData, setRecipeData] = useLocalStorageState('recipeData', {
     defaultValue: emptyRecipe,
   });
+
+  const [image, setImage] = useState('');
 
   useEffect(() => {
     if (isEditMode && recipe) {
@@ -229,6 +232,19 @@ export default function RecipeForm({
     router.push(`/recipes/${recipeData._id}`);
   };
 
+  /**
+   * Handle Image Upload Display
+   */
+  const handleImageUploadChange = (file) => {
+    const input = file.currentTarget;
+    const reader = new FileReader();
+    reader.onload = () => {
+      const dataURL = reader.result;
+      setImage({ name: input.files[0].name, src: dataURL });
+    };
+    reader.readAsDataURL(input.files[0]);
+  };
+
   return (
     <>
       <StyledForm
@@ -363,13 +379,14 @@ export default function RecipeForm({
         <StyledInputElement>
           <StyledH2>Image Upload</StyledH2>
           <StyledImageDropArea htmlFor='imageUpload'>
-            <StyledImageUpladContainer>
+            <StyledImageUpladContainer id='imageView'>
               <input
                 type='file'
                 id='imageUpload'
                 name='imageUpload'
                 accept='image/*'
                 hidden
+                onChange={handleImageUploadChange}
               />
               <StyledCloudIcon />
               <StyledUploadText>Choose image to Upload</StyledUploadText>
@@ -377,6 +394,7 @@ export default function RecipeForm({
                 Or drag and drop the image here
               </StyledUploadSpan>
             </StyledImageUpladContainer>
+            <Image src={image.src} alt='image' height='250' width='250' />
           </StyledImageDropArea>
         </StyledInputElement>
         {/* Action Buttons */}
