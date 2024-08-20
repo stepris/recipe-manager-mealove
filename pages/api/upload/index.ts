@@ -53,7 +53,7 @@ export default async function handler(
 
   // Parse the form
   try {
-    const [fields, files] = (await form.parse(req)) as [Fields, Files];
+    const [_, files] = (await form.parse(req)) as [Fields, Files];
 
     // Ensure that 'imageUpload' is present and it's an array
     const file = (files.imageUpload as File[])[0];
