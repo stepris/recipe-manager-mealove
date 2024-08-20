@@ -29,7 +29,6 @@ import {
   StyledUploadSpan,
   StyledImageDropArea,
   StyledImagePreview,
-  StyledImageDeleteButton,
   StyledImageDeleteButtonWrapper,
 } from '@/components/RecipeForm/recipeStyles';
 import useLocalStorageState from 'use-local-storage-state';

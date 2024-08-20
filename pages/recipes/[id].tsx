@@ -10,7 +10,6 @@ import Button from '@/components/Button';
 
 export default function RecipeDetailsPage({
   onToggleFavorite,
-  /* recipes, */
   favoriteRecipesList,
 }: RecipeDetailsPageProps) {
   const { data: recipes, error, isLoading, mutate } = useSWR('/api/recipes');
