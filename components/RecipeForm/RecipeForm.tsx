@@ -185,7 +185,6 @@ export default function RecipeForm({
 
     const newRecipe = {
       ...recipeData,
-      // id: crypto.randomUUID(),
     };
 
     onAddRecipe?.(newRecipe);
