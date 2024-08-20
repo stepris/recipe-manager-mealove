@@ -1,4 +1,4 @@
-import dbConnect from '@/db/connect.js';
+import dbConnect from '@/db/connect.ts';
 import Recipe from '@/db/models/Recipe';
 import { NextApiRequest, NextApiResponse } from 'next';
 
