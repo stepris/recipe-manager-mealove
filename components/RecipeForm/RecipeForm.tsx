@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useState, useRef } from 'react';
 import { Recipe } from '@/types';
 import IngredientInput from '@/components/RecipeForm/IngredientInput';
 import TimeInput from '@/components/RecipeForm/TimeInput';
@@ -72,7 +72,9 @@ export default function RecipeForm({
     defaultValue: emptyRecipe,
   });
 
-  const [image, setImage] = useState('');
+  const [image, setImage] = useState(null);
+
+  const fileInputRef = useRef(null);
 
   useEffect(() => {
     if (isEditMode && recipe) {
@@ -238,14 +240,23 @@ export default function RecipeForm({
   /**
    * Handle Image Upload Display
    */
-  const handleImageUploadChange = (file) => {
-    const input = file.currentTarget;
-    const reader = new FileReader();
-    reader.onload = () => {
-      const dataURL = reader.result;
-      setImage({ name: input.files[0].name, src: dataURL });
-    };
-    reader.readAsDataURL(input.files[0]);
+  const handleImageUploadChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const dataURL = reader.result;
+        setImage({ name: file.name, src: dataURL });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleOnClickImageDelete = () => {
+    setImage(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = null;
+    }
   };
 
   return (
@@ -393,6 +404,7 @@ export default function RecipeForm({
                 name='imageUpload'
                 accept='image/*'
                 hidden
+                ref={fileInputRef}
                 onChange={handleImageUploadChange}
               />
 
@@ -413,18 +425,18 @@ export default function RecipeForm({
                 </>
               )}
             </StyledImageUpladContainer>
-            <StyledImageDeleteButtonWrapper>
-              {image && (
-                <Button
-                  type='button'
-                  variant='$delete'
-                  onClickBehavior={() => setImage('')}
-                >
-                  Image
-                </Button>
-              )}
-            </StyledImageDeleteButtonWrapper>
           </StyledImageDropArea>
+          <StyledImageDeleteButtonWrapper>
+            {image && (
+              <Button
+                type='button'
+                variant='$delete'
+                onClickBehavior={handleOnClickImageDelete}
+              >
+                Image
+              </Button>
+            )}
+          </StyledImageDeleteButtonWrapper>
         </StyledInputElement>
         {/* Action Buttons */}
         <FormButtons isEditMode={isEditMode} onCancel={handleCancel} />
