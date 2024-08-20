@@ -215,8 +215,6 @@ export default function RecipeForm({
     onAddRecipe?.(newRecipe);
 
     setRecipeData(emptyRecipe);
-
-    event.currentTarget.reset();
   }
 
   /**
