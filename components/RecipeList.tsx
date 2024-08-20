@@ -11,6 +11,8 @@ export default function RecipeList({
 }: RecipeListPageProps) {
   const [activeFilter, setActiveFilter] = useState<Category>(null);
 
+  if (!recipes) return null;
+
   const handleChangeFilter = (category: Category) =>
     setActiveFilter((prevFilter: Category) =>
       prevFilter === category ? null : category
@@ -28,12 +30,13 @@ export default function RecipeList({
       />
       <StyledRecipeList>
         {filteredRecipes.map((recipe) => {
+          if (!recipe._id) return null;
           return (
             <RecipePreview
-              key={recipe.id}
+              key={recipe._id}
               recipe={recipe}
               onToggleFavorite={onToggleFavorite}
-              isFavorite={favoriteRecipesList.includes(recipe.id)}
+              isFavorite={favoriteRecipesList.includes(recipe._id)}
             />
           );
         })}

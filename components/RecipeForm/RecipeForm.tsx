@@ -32,7 +32,6 @@ const emptyRecipe: Recipe = {
   cookingTime: 0,
   description: '',
   difficulty: 'easy',
-  id: '1',
   imageUrl: '/recipe-default-imgs/alexander-mils-pPhN8HFzkDE-unsplash.jpg',
   ingredients: [
     {
@@ -186,14 +185,12 @@ export default function RecipeForm({
 
     const newRecipe = {
       ...recipeData,
-      id: crypto.randomUUID(),
     };
 
     onAddRecipe?.(newRecipe);
 
     setRecipeData(emptyRecipe);
     event.currentTarget.reset();
-    router.push(`/recipes/${newRecipe.id}`);
   };
 
   /**
@@ -205,16 +202,13 @@ export default function RecipeForm({
     onEditRecipe?.(recipeData);
 
     event.currentTarget.reset();
-    router.push(`/recipes/${recipeData.id}`);
   };
 
   /**
    * Cancels the editing process and routes back to DetailsPage
    */
   const handleCancel = () => {
-    // setRecipeData(recipe)
-    // setRecipeData(emptyRecipe);
-    router.push(`/recipes/${recipeData.id}`);
+    router.push(`/recipes/${recipeData._id}`);
   };
 
   return (

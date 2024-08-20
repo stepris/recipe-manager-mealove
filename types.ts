@@ -5,7 +5,7 @@ export type Recipe = {
   cookingTime: number;
   description: string;
   difficulty: string;
-  id: string;
+  _id?: string;
   imageUrl: string;
   ingredients: {
     id: string;
@@ -60,9 +60,5 @@ export type AppBaseProps = {
 export interface ChildrenLayoutProps {
   children?: ReactNode;
 }
-
-export type OnAddRecipeType = {
-  onAddRecipe: (recipe: Recipe) => void;
-};
 
 export type OnEditRecipeType = (recipe: Recipe) => void;

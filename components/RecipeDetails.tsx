@@ -1,4 +1,4 @@
-import { Modal, RecipeDetailsProps } from '@/types/RecipeDetails.types';
+import { RecipeDetailsProps } from '@/types/RecipeDetails.types';
 import styled from 'styled-components';
 import Image from 'next/image';
 import FavoriteButton from './FavoriteButton';
@@ -12,13 +12,13 @@ export default function RecipeDetails({
   onToggleFavorite,
   isFavorite,
 }: RecipeDetailsProps) {
-  const [modalState, setModalState] = useState<Modal>(false);
+  const [modalState, setModalState] = useState<boolean>(false);
 
   const handleModalOpen = () => setModalState(true);
   const handleModalClose = () => setModalState(false);
 
   const {
-    id,
+    _id: id,
     title,
     imageUrl,
     ingredients,

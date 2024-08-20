@@ -1,22 +1,38 @@
 import RecipeDetails from '@/components/RecipeDetails';
 import { useRouter } from 'next/router';
+import useSWR from 'swr';
 import Link from 'next/link';
 import styled from 'styled-components';
+import { Recipe } from '@/types';
 import { RecipeDetailsPageProps } from '@/types/RecipeDetails.types';
 
 import Button from '@/components/Button';
 
 export default function RecipeDetailsPage({
   onToggleFavorite,
-  onDeleteRecipe,
-  recipes,
+  /* recipes, */
   favoriteRecipesList,
 }: RecipeDetailsPageProps) {
+  const { data: recipes, error, isLoading, mutate } = useSWR('/api/recipes');
   const router = useRouter();
   const { id } = router.query;
-  const recipe = recipes.find((recipe) => recipe.id === id);
+  const recipe = recipes.find((recipe: Recipe) => recipe._id === id);
 
-  if (!recipe) return;
+  if (error) return <div>failed to load</div>;
+  if (isLoading) return <div>loading...</div>;
+  if (!recipes) return null;
+
+  if (!recipe || !recipe._id) return null;
+
+  async function handleDeleteRecipe(id: string) {
+    const respone = await fetch(`/api/recipes/${id}`, {
+      method: 'Delete',
+    });
+    if (respone.ok) {
+      mutate();
+      router.push('/');
+    }
+  }
 
   const handleEdit = () => {
     router.push(`/recipes/${id}/edit`);
@@ -28,8 +44,8 @@ export default function RecipeDetailsPage({
       <RecipeDetails
         recipe={recipe}
         onToggleFavorite={onToggleFavorite}
-        isFavorite={favoriteRecipesList.includes(recipe.id)}
-        onDeleteRecipe={onDeleteRecipe}
+        isFavorite={favoriteRecipesList.includes(recipe._id)}
+        onDeleteRecipe={handleDeleteRecipe}
       />
       <ButtonWrapper>
         <Button type='button' variant='$edit' onClickBehavior={handleEdit}>

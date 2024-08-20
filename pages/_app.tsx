@@ -1,35 +1,23 @@
 import useLocalStorageState from 'use-local-storage-state';
 import GlobalStyle from '../styles';
 import Layout from '@/components/Layout';
-import recipesJson from '@/lib/recipes.json';
 import type { AppProps } from 'next/app';
 import { HandleToggleFavoriteFunction, Recipe } from '@/types';
-import { useRouter } from 'next/router';
+import useSWR, { SWRConfig } from 'swr';
+
+const fetcher = (...args: [RequestInfo, RequestInit?]): Promise<Recipe[]> =>
+  fetch(...args).then((response) => response.json());
 
 export default function App({ Component, pageProps }: AppProps) {
+  const { data: recipes, error, isLoading } = useSWR('/api/recipes', fetcher);
+
   const [favoriteRecipesList, setFavoriteRecipesList] = useLocalStorageState<
     string[]
   >('favoriteRecipesList', { defaultValue: [] });
 
-  const [recipes, setRecipes] = useLocalStorageState('recipes', {
-    defaultValue: recipesJson,
-  });
-
-  const router = useRouter();
-
-  const handleAddRecipe = (recipe: Recipe) => {
-    setRecipes((currData) => [recipe, ...currData]);
-  };
-
-  const handleDeleteRecipe = (id: string) => {
-    setRecipes(recipes.filter((recipe) => recipe.id !== id));
-    router.push('/');
-  };
-
-  const handleEditRecipe = (currData: Recipe) =>
-    setRecipes((recipes) =>
-      recipes.map((recipe) => (recipe.id === currData.id ? currData : recipe))
-    );
+  if (error) return <div>failed to load</div>;
+  if (isLoading) return <div>loading...</div>;
+  if (!recipes) return null;
 
   const handleToggleFavorite: HandleToggleFavoriteFunction = (id) => {
     const favoriteSet = new Set<string>(favoriteRecipesList);
@@ -46,23 +34,27 @@ export default function App({ Component, pageProps }: AppProps) {
   };
 
   const favoriteRecipes = recipes.filter((recipe) => {
-    return favoriteRecipesList.includes(recipe.id);
+    if (!recipe._id) return null;
+    return favoriteRecipesList.includes(recipe._id);
   });
 
   return (
     <>
       <GlobalStyle />
       <Layout>
-        <Component
-          {...pageProps}
-          recipes={recipes}
-          onToggleFavorite={handleToggleFavorite}
-          favoriteRecipes={favoriteRecipes}
-          favoriteRecipesList={favoriteRecipesList}
-          onAddRecipe={handleAddRecipe}
-          onDeleteRecipe={handleDeleteRecipe}
-          onEditRecipe={handleEditRecipe}
-        />
+        <SWRConfig
+          value={{
+            fetcher,
+          }}
+        >
+          <Component
+            {...pageProps}
+            recipes={recipes}
+            onToggleFavorite={handleToggleFavorite}
+            favoriteRecipes={favoriteRecipes}
+            favoriteRecipesList={favoriteRecipesList}
+          />
+        </SWRConfig>
       </Layout>
     </>
   );

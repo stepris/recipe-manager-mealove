@@ -13,7 +13,9 @@ export default function RecipePreview({
   onToggleFavorite,
   isFavorite,
 }: RecipePreviewProps) {
-  const { id, title, imageUrl, category } = recipe;
+  const { _id: id, title, imageUrl, category } = recipe;
+
+  if (!id) return null;
 
   const recipeColor = categories.find(
     (categorie) => categorie.name === category

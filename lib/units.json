@@ -7,6 +7,6 @@
   { "id": "6", "unit": "tsp" },
   { "id": "7", "unit": "tbsp" },
   { "id": "8", "unit": "piece(s)" },
-  { "id": "9", "unit": "cub" },
+  { "id": "9", "unit": "cup" },
   { "id": "10", "unit": "bottle" }
 ]
