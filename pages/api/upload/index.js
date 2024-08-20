@@ -19,7 +19,6 @@ export default async function handler(request, response) {
     response.status(400).json({ message: 'Method not allowed' });
     return;
   }
-  console.log('post handler beginn');
   // we initialize formidable with an empty options object
   const form = formidable({});
 

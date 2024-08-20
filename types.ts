@@ -55,6 +55,7 @@ export type AppBaseProps = {
   recipes: Recipe[] | [];
   onToggleFavorite: (id: string) => {};
   favoriteRecipesList: string[];
+  isLoading: boolean;
 };
 
 export interface ChildrenLayoutProps {

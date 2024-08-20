@@ -252,7 +252,6 @@ export default function RecipeForm({
   const handleOnClickImageDelete = () => {
     setImage(null);
     if (fileInputRef.current) {
-      console.log(fileInputRef.current.value);
       fileInputRef.current.value = '';
     }
   };

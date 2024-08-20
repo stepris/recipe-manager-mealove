@@ -5,7 +5,6 @@ import {
 } from '@/types/recipeStyles.types';
 import UploadCloud from '@/public/icons/UploadCloud.svg';
 import Image from 'next/image';
-import Button from '@/components/Button';
 
 export const StyledForm = styled.form`
   display: flex;

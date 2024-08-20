@@ -9,7 +9,6 @@ export default function HomePage({
   favoriteRecipesList,
   isLoading,
 }: AppBaseProps) {
-  console.log(isLoading);
   return (
     <main>
       <QuickLinks />
