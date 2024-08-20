@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components';
 import { StyledFormComponentProps } from '@/types/recipeStyles.types';
 import UploadCloud from '@/public/icons/UploadCloud.svg';
+import Image from 'next/image';
+import Button from '@/components/Button';
 
 export const StyledForm = styled.form`
   display: flex;
@@ -177,3 +179,15 @@ export const StyledUploadSpan = styled.span`
 `;
 
 export const StyledImageDropArea = styled.label``;
+
+export const StyledImagePreview = styled(Image)`
+  box-shadow: 3px 3px 4px var(--color-neutral-3-alpha50);
+`;
+
+export const StyledImageDeleteButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: var(--spacing-3);
+  padding-bottom: var(--spacing-5);
+`;

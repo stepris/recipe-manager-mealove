@@ -28,10 +28,13 @@ import {
   StyledUploadText,
   StyledUploadSpan,
   StyledImageDropArea,
+  StyledImagePreview,
+  StyledImageDeleteButton,
+  StyledImageDeleteButtonWrapper,
 } from '@/components/RecipeForm/recipeStyles';
 import useLocalStorageState from 'use-local-storage-state';
 import FormButtons from '@/components/RecipeForm/FormButtons';
-import Image from 'next/image';
+import Button from '@/components/Button';
 
 const emptyRecipe: Recipe = {
   category: '',
@@ -377,7 +380,11 @@ export default function RecipeForm({
 
         {/* Image Upload */}
         <StyledInputElement>
-          <StyledH2>Image Upload</StyledH2>
+          {image ? (
+            <StyledH2>Swap Image by clicking it</StyledH2>
+          ) : (
+            <StyledH2>Image Upload</StyledH2>
+          )}
           <StyledImageDropArea htmlFor='imageUpload'>
             <StyledImageUpladContainer id='imageView'>
               <input
@@ -388,13 +395,35 @@ export default function RecipeForm({
                 hidden
                 onChange={handleImageUploadChange}
               />
-              <StyledCloudIcon />
-              <StyledUploadText>Choose image to Upload</StyledUploadText>
-              <StyledUploadSpan>
-                Or drag and drop the image here
-              </StyledUploadSpan>
+
+              {image ? (
+                <StyledImagePreview
+                  src={image.src}
+                  alt='image'
+                  width='350'
+                  height='0'
+                />
+              ) : (
+                <>
+                  <StyledCloudIcon />
+                  <StyledUploadText>Choose image to Upload</StyledUploadText>
+                  <StyledUploadSpan>
+                    Or drag and drop the image here
+                  </StyledUploadSpan>
+                </>
+              )}
             </StyledImageUpladContainer>
-            <Image src={image.src} alt='image' height='250' width='250' />
+            <StyledImageDeleteButtonWrapper>
+              {image && (
+                <Button
+                  type='button'
+                  variant='$delete'
+                  onClickBehavior={() => setImage('')}
+                >
+                  Image
+                </Button>
+              )}
+            </StyledImageDeleteButtonWrapper>
           </StyledImageDropArea>
         </StyledInputElement>
         {/* Action Buttons */}
