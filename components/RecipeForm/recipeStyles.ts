@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { StyledFormComponentProps } from '@/types/recipeStyles.types';
+import UploadCloud from '@/public/icons/UploadCloud.svg';
 
 export const StyledForm = styled.form`
   display: flex;
@@ -145,3 +146,33 @@ export const StyledCategoryElement = styled.div`
   height: 60px;
   width: 60px;
 `;
+
+export const StyledImageUpladContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px dashed var(--color-primary-1);
+  border-radius: var(--radius-s);
+  padding: 20px;
+`;
+
+export const StyledCloudIcon = styled(UploadCloud)`
+  width: 75px;
+  color: var(--color-primary-1);
+`;
+
+export const StyledUploadText = styled.p`
+  background-color: var(--color-primary-1);
+  padding: var(--spacing-1);
+  border-radius: var(--radius-m);
+  font: var(--font-input);
+  color: var(--color-neutral-1);
+`;
+
+export const StyledUploadSpan = styled.span`
+  font: var(--font-input);
+  color: var(--color-neutral-4);
+  padding-top: var(--spacing-2);
+`;
+
+export const StyledImageDropArea = styled.label``;

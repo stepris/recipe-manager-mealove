@@ -1,7 +1,6 @@
 import { ChangeEvent, FormEvent, useEffect } from 'react';
 import { Recipe } from '@/types';
 import IngredientInput from '@/components/RecipeForm/IngredientInput';
-import ImageUpload from './ImageUpload';
 import TimeInput from '@/components/RecipeForm/TimeInput';
 import categories from '@/lib/categories.json';
 import {
@@ -24,6 +23,11 @@ import {
   StyledDropdown,
   StyledCategoryContainer,
   StyledCategoryElement,
+  StyledImageUpladContainer,
+  StyledCloudIcon,
+  StyledUploadText,
+  StyledUploadSpan,
+  StyledImageDropArea,
 } from '@/components/RecipeForm/recipeStyles';
 import useLocalStorageState from 'use-local-storage-state';
 import FormButtons from '@/components/RecipeForm/FormButtons';
@@ -356,13 +360,25 @@ export default function RecipeForm({
         </StyledInputElement>
 
         {/* Image Upload */}
-        <input
-          type='file'
-          id='imageUpload'
-          name='imageUpload'
-          accept='image/*'
-        />
-        <label htmlFor='imageUpload'>Image Upload</label>
+        <StyledInputElement>
+          <StyledH2>Image Upload</StyledH2>
+          <StyledImageDropArea htmlFor='imageUpload'>
+            <StyledImageUpladContainer>
+              <input
+                type='file'
+                id='imageUpload'
+                name='imageUpload'
+                accept='image/*'
+                hidden
+              />
+              <StyledCloudIcon />
+              <StyledUploadText>Choose image to Upload</StyledUploadText>
+              <StyledUploadSpan>
+                Or drag and drop the image here
+              </StyledUploadSpan>
+            </StyledImageUpladContainer>
+          </StyledImageDropArea>
+        </StyledInputElement>
         {/* Action Buttons */}
         <FormButtons isEditMode={isEditMode} onCancel={handleCancel} />
       </StyledForm>
