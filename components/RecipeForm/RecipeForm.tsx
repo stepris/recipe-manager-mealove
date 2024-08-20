@@ -7,6 +7,7 @@ import {
   RecipeFormProps,
   HandleChangeParams,
   Ingredient,
+  ImageData,
 } from '@/types/RecipeForm.types';
 import { useRouter } from 'next/router';
 import {
@@ -71,9 +72,9 @@ export default function RecipeForm({
     defaultValue: emptyRecipe,
   });
 
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState<ImageData | null>(null);
 
-  const fileInputRef = useRef(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (isEditMode && recipe) {
@@ -197,7 +198,7 @@ export default function RecipeForm({
     /**
      * Create Form Data for Image
      */
-    const formData = new FormData(event.target);
+    const formData = new FormData(event.currentTarget);
     const response = await fetch('/api/upload', {
       method: 'POST',
       body: formData,
@@ -237,8 +238,8 @@ export default function RecipeForm({
   /**
    * Handle Image Upload Display
    */
-  const handleImageUploadChange = (event) => {
-    const file = event.target.files[0];
+  const handleImageUploadChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
     if (file) {
       const reader = new FileReader();
       reader.onload = () => {
@@ -248,11 +249,11 @@ export default function RecipeForm({
       reader.readAsDataURL(file);
     }
   };
-
   const handleOnClickImageDelete = () => {
     setImage(null);
     if (fileInputRef.current) {
-      fileInputRef.current.value = null;
+      console.log(fileInputRef.current.value);
+      fileInputRef.current.value = '';
     }
   };
 
@@ -407,7 +408,7 @@ export default function RecipeForm({
 
               {image ? (
                 <StyledImagePreview
-                  src={image.src}
+                  src={image?.src}
                   alt='image'
                   width='350'
                   height='0'

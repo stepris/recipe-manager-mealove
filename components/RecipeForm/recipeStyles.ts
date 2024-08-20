@@ -1,5 +1,8 @@
 import styled, { css } from 'styled-components';
-import { StyledFormComponentProps } from '@/types/recipeStyles.types';
+import {
+  StyledFormComponentProps,
+  StyledImagePreviewProps,
+} from '@/types/recipeStyles.types';
 import UploadCloud from '@/public/icons/UploadCloud.svg';
 import Image from 'next/image';
 import Button from '@/components/Button';
@@ -180,7 +183,7 @@ export const StyledUploadSpan = styled.span`
 
 export const StyledImageDropArea = styled.label``;
 
-export const StyledImagePreview = styled(Image)`
+export const StyledImagePreview = styled(Image)<StyledImagePreviewProps>`
   box-shadow: 3px 3px 4px var(--color-neutral-3-alpha50);
 `;
 
