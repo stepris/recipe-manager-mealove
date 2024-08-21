@@ -8,7 +8,10 @@ export default function HomePage({
   onToggleFavorite,
   favoriteRecipesList,
   isLoading,
+  session,
 }: AppBaseProps) {
+  console.log(session);
+
   return (
     <main>
       <QuickLinks />
