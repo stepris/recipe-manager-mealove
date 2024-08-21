@@ -11,7 +11,8 @@ export default function HomePage({
   isLoading,
 }: AppBaseProps) {
   const { data: session } = useSession();
-  console.log(session?.user);
+
+  console.log(session);
 
   return (
     <main>
