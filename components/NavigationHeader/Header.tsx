@@ -20,13 +20,16 @@ export default function Header({ onToggleNav }: HeaderProps) {
       </Link>
       <StyledUserIconWrapper>
         <Link href='/login'>
-          <Image
-            src={userImage}
-            height='0'
-            width='25'
-            alt={session?.user.name}
-          />
-          <StyledUserIcon />
+          {session ? (
+            <StyledUserImage
+              src={userImage}
+              height='0'
+              width='30'
+              alt={session?.user.name}
+            />
+          ) : (
+            <StyledUserIcon />
+          )}
         </Link>
       </StyledUserIconWrapper>
     </StyledHeader>
@@ -62,4 +65,14 @@ const StyledUserIcon = styled(UserIcon)`
   outline: 2px solid var(--color-neutral-1);
   border-radius: 50%;
   display: block;
+  &:hover {
+    fill: var(--color-neutral-2);
+    outline: 2px solid var(--color-neutral-2);
+`;
+
+const StyledUserImage = styled(Image)`
+  border-radius: 50%;
+  &:hover {
+    border: 2px solid var(--color-neutral-1);
+  }
 `;

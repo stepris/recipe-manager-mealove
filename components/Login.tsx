@@ -7,20 +7,26 @@ export default function Login() {
   if (session) {
     return (
       <StyledWrapper>
-        <p>You are currently signed in as {session.user.name}</p>
-        <StyledLoginButton onClick={() => signOut()}>
-          Sign out
-        </StyledLoginButton>
+        <p>
+          You are currently signed in as <br />
+          <StyledSpan>{session.user.name}</StyledSpan>
+        </p>
+        <StyledButton onClick={() => signOut()}>Sign out</StyledButton>
       </StyledWrapper>
     );
   }
   return (
     <StyledWrapper>
-      <p>Please login to use more features</p>
-      <StyledLoginButton onClick={() => signIn()}>Sign in</StyledLoginButton>
+      <p>Please login to use more features.</p>
+      <StyledButton onClick={() => signIn()}>Sign in</StyledButton>
     </StyledWrapper>
   );
 }
+
+const StyledSpan = styled.span`
+  font: var(--font-headline-2);
+  color: var(--color-primary-1);
+`;
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -32,7 +38,7 @@ const StyledWrapper = styled.div`
   gap: var(--spacing-5);
 `;
 
-const StyledLoginButton = styled.button`
+const StyledButton = styled.button`
   font: var(--font-caption);
   background-color: var(--color-primary-1);
   color: var(--color-neutral-1);
