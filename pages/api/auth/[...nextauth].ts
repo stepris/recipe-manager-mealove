@@ -10,6 +10,18 @@ export const authOptions = {
     }),
     // ...add more providers here
   ],
+  callbacks: {
+    async jwt({ token, account, profile }) {
+      if (account && profile) {
+        token.userId = profile.id; // GitHub-User-ID zum JWT hinzufügen
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      session.user.id = token.userId; // GitHub-User-ID zur Session hinzufügen
+      return session;
+    },
+  },
 };
 
 export default NextAuth(authOptions);
