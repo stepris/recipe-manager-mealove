@@ -35,8 +35,10 @@ import {
 import useLocalStorageState from 'use-local-storage-state';
 import FormButtons from '@/components/RecipeForm/FormButtons';
 import Button from '@/components/Button';
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 const emptyRecipe: Recipe = {
+  authorId: '',
   category: '',
   cookingTime: 0,
   description: '',
@@ -81,6 +83,10 @@ export default function RecipeForm({
   const [isDragOver, setIsDragOver] = useState<DragOver>(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const { data: session } = useSession();
+  const userId = session?.user.id;
+  console.log(userId);
 
   useEffect(() => {
     if (isEditMode && recipe) {
@@ -217,6 +223,7 @@ export default function RecipeForm({
     const newRecipe = {
       ...recipeData,
       imageUrl: secure_url,
+      authorId: userId,
     };
     onAddRecipe?.(newRecipe);
 
@@ -253,7 +260,6 @@ export default function RecipeForm({
       };
       onEditRecipe?.(updatedRecipe);
     }
-
   }
 
   /**

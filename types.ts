@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
 export type Recipe = {
+  authorId: string;
   category: string;
   cookingTime: number;
   description: string;
