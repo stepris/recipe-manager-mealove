@@ -4,6 +4,7 @@ import Layout from '@/components/Layout';
 import type { AppProps } from 'next/app';
 import { HandleToggleFavoriteFunction, Recipe } from '@/types';
 import useSWR, { SWRConfig } from 'swr';
+import IsLoading from '@/components/IsLoading';
 
 const fetcher = (...args: [RequestInfo, RequestInit?]): Promise<Recipe[]> =>
   fetch(...args).then((response) => response.json());
@@ -16,7 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
   >('favoriteRecipesList', { defaultValue: [] });
 
   if (error) return <div>failed to load</div>;
-  if (isLoading) return <div>loading...</div>;
+  if (isLoading) return <IsLoading />;
   if (!recipes) return null;
 
   const handleToggleFavorite: HandleToggleFavoriteFunction = (id) => {
@@ -53,6 +54,7 @@ export default function App({ Component, pageProps }: AppProps) {
             onToggleFavorite={handleToggleFavorite}
             favoriteRecipes={favoriteRecipes}
             favoriteRecipesList={favoriteRecipesList}
+            isLoading={isLoading}
           />
         </SWRConfig>
       </Layout>

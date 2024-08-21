@@ -1,5 +1,11 @@
 import styled, { css } from 'styled-components';
-import { StyledFormComponentProps } from '@/types/recipeStyles.types';
+import {
+  StyledFormComponentProps,
+  StyledImagePreviewProps,
+  StyledImageUpladContainerProps,
+} from '@/types/recipeStyles.types';
+import UploadCloud from '@/public/icons/UploadCloud.svg';
+import Image from 'next/image';
 
 export const StyledForm = styled.form`
   display: flex;
@@ -144,4 +150,49 @@ export const StyledCategoryElement = styled.div`
   border-radius: var(--radius-m);
   height: 60px;
   width: 60px;
+`;
+
+export const StyledImageUpladContainer = styled.div<StyledImageUpladContainerProps>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px dashed var(--color-primary-1);
+  border-radius: var(--radius-s);
+  padding: 20px;
+  cursor: pointer;
+  background-color: ${({ $isDragOver }) =>
+    $isDragOver ? 'var(--color-neutral-2)' : 'none'};
+`;
+
+export const StyledCloudIcon = styled(UploadCloud)`
+  width: 75px;
+  color: var(--color-primary-1);
+`;
+
+export const StyledUploadText = styled.p`
+  background-color: var(--color-primary-1);
+  padding: var(--spacing-1);
+  border-radius: var(--radius-m);
+  font: var(--font-input);
+  color: var(--color-neutral-1);
+`;
+
+export const StyledUploadSpan = styled.span`
+  font: var(--font-input);
+  color: var(--color-neutral-4);
+  padding-top: var(--spacing-2);
+`;
+
+export const StyledImageDropArea = styled.label``;
+
+export const StyledImagePreview = styled(Image)<StyledImagePreviewProps>`
+  box-shadow: 3px 3px 4px var(--color-neutral-3-alpha50);
+`;
+
+export const StyledImageDeleteButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: var(--spacing-3);
+  padding-bottom: var(--spacing-5);
 `;

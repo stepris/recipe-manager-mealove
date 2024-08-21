@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useEffect } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useState, useRef } from 'react';
 import { Recipe } from '@/types';
 import IngredientInput from '@/components/RecipeForm/IngredientInput';
 import TimeInput from '@/components/RecipeForm/TimeInput';
@@ -7,6 +7,7 @@ import {
   RecipeFormProps,
   HandleChangeParams,
   Ingredient,
+  DragOver,
 } from '@/types/RecipeForm.types';
 import { useRouter } from 'next/router';
 import {
@@ -23,9 +24,17 @@ import {
   StyledDropdown,
   StyledCategoryContainer,
   StyledCategoryElement,
+  StyledImageUpladContainer,
+  StyledCloudIcon,
+  StyledUploadText,
+  StyledUploadSpan,
+  StyledImageDropArea,
+  StyledImagePreview,
+  StyledImageDeleteButtonWrapper,
 } from '@/components/RecipeForm/recipeStyles';
 import useLocalStorageState from 'use-local-storage-state';
 import FormButtons from '@/components/RecipeForm/FormButtons';
+import Button from '@/components/Button';
 
 const emptyRecipe: Recipe = {
   category: '',
@@ -62,6 +71,16 @@ export default function RecipeForm({
   const [recipeData, setRecipeData] = useLocalStorageState('recipeData', {
     defaultValue: emptyRecipe,
   });
+
+  const [image, setImage] = useState(
+    recipe?.imageUrl ? { src: recipe.imageUrl, name: '' } : null
+  );
+
+  const [isImageChanged, setIsImageChanged] = useState(false);
+
+  const [isDragOver, setIsDragOver] = useState<DragOver>(false);
+
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (isEditMode && recipe) {
@@ -180,35 +199,119 @@ export default function RecipeForm({
   /**
    * Submits the form, creates a new recipe, and resets the form
    */
-  const handleCreationSubmit = (event: FormEvent<HTMLFormElement>) => {
+  async function handleCreationSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    /**
+     * Create Form Data for Image
+     */
+    const formData = new FormData(event.currentTarget);
+    const response = await fetch('/api/upload', {
+      method: 'POST',
+      body: formData,
+    });
+    /**
+     * Get HTTPS Image Url from Cloudinary
+     */
+    const { secure_url } = await response.json();
 
     const newRecipe = {
       ...recipeData,
+      imageUrl: secure_url,
     };
-
     onAddRecipe?.(newRecipe);
 
     setRecipeData(emptyRecipe);
-    event.currentTarget.reset();
-  };
+  }
 
   /**
    * Submits the form, edits the stored recipe and resets the form
    */
-  const handleEditSubmit = (event: FormEvent<HTMLFormElement>) => {
+  async function handleEditSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    /**
+     * Create Form Data for Image
+     */
+    if (isImageChanged) {
+      const formData = new FormData(event.currentTarget);
+      const response = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+      /**
+       * Get HTTPS Image Url from Cloudinary
+       */
+      const { secure_url } = await response.json();
 
-    onEditRecipe?.(recipeData);
+      const updatedRecipe = {
+        ...recipeData,
+        imageUrl: secure_url,
+      };
+      onEditRecipe?.(updatedRecipe);
+    } else {
+      const updatedRecipe = {
+        ...recipeData,
+      };
+      onEditRecipe?.(updatedRecipe);
+    }
 
-    event.currentTarget.reset();
-  };
+  }
 
   /**
    * Cancels the editing process and routes back to DetailsPage
    */
   const handleCancel = () => {
     router.push(`/recipes/${recipeData._id}`);
+  };
+
+  /**
+   * Handle Image Upload Display
+   */
+  const handleImageUploadChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const dataURL = reader.result as string;
+        setImage({ name: file.name, src: dataURL });
+        setIsImageChanged(true);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleOnClickImageDelete = () => {
+    setImage(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+      setIsImageChanged(true);
+    }
+  };
+  /**
+   * Handle Image Drop and pass image to input field
+   */
+  const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    setIsDragOver(false);
+
+    const file = event.dataTransfer.files?.[0];
+    if (file) {
+      const dataTransfer = new DataTransfer();
+      dataTransfer.items.add(file);
+      if (fileInputRef.current) {
+        fileInputRef.current.files = dataTransfer.files;
+        const changeEvent = new Event('change', { bubbles: true });
+        fileInputRef.current.dispatchEvent(changeEvent);
+      }
+    }
+  };
+
+  const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    setIsDragOver(true);
+  };
+
+  const handleDragLeave = () => {
+    setIsDragOver(false);
   };
 
   return (
@@ -341,6 +444,61 @@ export default function RecipeForm({
           </StyledCategoryContainer>
         </StyledInputElement>
 
+        {/* Image Upload */}
+        <StyledInputElement>
+          {image ? (
+            <StyledH2>Swap Image by clicking it</StyledH2>
+          ) : (
+            <StyledH2>Image Upload</StyledH2>
+          )}
+          <StyledImageDropArea htmlFor='imageUpload'>
+            <StyledImageUpladContainer
+              id='imageView'
+              onDrop={handleDrop}
+              onDragOver={handleDragOver}
+              onDragLeave={handleDragLeave}
+              $isDragOver={isDragOver}
+            >
+              <input
+                type='file'
+                id='imageUpload'
+                name='imageUpload'
+                accept='image/*'
+                hidden
+                ref={fileInputRef}
+                onChange={handleImageUploadChange}
+              />
+
+              {image ? (
+                <StyledImagePreview
+                  src={image?.src}
+                  alt='image'
+                  width='350'
+                  height='0'
+                />
+              ) : (
+                <>
+                  <StyledCloudIcon />
+                  <StyledUploadText>Choose image to Upload</StyledUploadText>
+                  <StyledUploadSpan>
+                    Or drag and drop the image here
+                  </StyledUploadSpan>
+                </>
+              )}
+            </StyledImageUpladContainer>
+          </StyledImageDropArea>
+          <StyledImageDeleteButtonWrapper>
+            {image && (
+              <Button
+                type='button'
+                variant='$delete'
+                onClickBehavior={handleOnClickImageDelete}
+              >
+                Image
+              </Button>
+            )}
+          </StyledImageDeleteButtonWrapper>
+        </StyledInputElement>
         {/* Action Buttons */}
         <FormButtons isEditMode={isEditMode} onCancel={handleCancel} />
       </StyledForm>

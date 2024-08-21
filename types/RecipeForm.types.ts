@@ -18,3 +18,10 @@ export type Ingredient = {
   quantity: string;
   unit: string;
 };
+
+export type ImageData = {
+  name: string;
+  src: string | ArrayBuffer | null;
+};
+
+export type DragOver = boolean;
