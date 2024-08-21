@@ -159,6 +159,8 @@ export const StyledImageUpladContainer = styled.div`
   border-radius: var(--radius-s);
   padding: 20px;
   cursor: pointer;
+  background-color: ${({ $isDragOver }) =>
+    $isDragOver ? 'var(--color-neutral-2)' : 'none'};
 `;
 
 export const StyledCloudIcon = styled(UploadCloud)`

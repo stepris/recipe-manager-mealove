@@ -429,6 +429,7 @@ export default function RecipeForm({
               onDrop={handleDrop}
               onDragOver={handleDragOver}
               onDragLeave={handleDragLeave}
+              $isDragOver={isDragOver}
             >
               <input
                 type='file'
