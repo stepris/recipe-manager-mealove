@@ -76,6 +76,8 @@ export default function RecipeForm({
     recipe?.imageUrl ? { src: recipe.imageUrl, name: '' } : null
   );
 
+  const [isImageChanged, setIsImageChanged] = useState(false);
+
   const [isDragOver, setIsDragOver] = useState<DragOver>(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -229,24 +231,28 @@ export default function RecipeForm({
     /**
      * Create Form Data for Image
      */
+    if (isImageChanged) {
+      const formData = new FormData(event.currentTarget);
+      const response = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+      /**
+       * Get HTTPS Image Url from Cloudinary
+       */
+      const { secure_url } = await response.json();
 
-    const formData = new FormData(event.currentTarget);
-
-    const response = await fetch('/api/upload', {
-      method: 'POST',
-      body: formData,
-    });
-    /**
-     * Get HTTPS Image Url from Cloudinary
-     */
-    const { secure_url } = await response.json();
-
-    const updatedRecipe = {
-      ...recipeData,
-      imageUrl: secure_url,
-    };
-
-    onEditRecipe?.(updatedRecipe);
+      const updatedRecipe = {
+        ...recipeData,
+        imageUrl: secure_url,
+      };
+      onEditRecipe?.(updatedRecipe);
+    } else {
+      const updatedRecipe = {
+        ...recipeData,
+      };
+      onEditRecipe?.(updatedRecipe);
+    }
 
     // event.currentTarget.reset();
   }
@@ -268,6 +274,7 @@ export default function RecipeForm({
       reader.onload = () => {
         const dataURL = reader.result as string;
         setImage({ name: file.name, src: dataURL });
+        setIsImageChanged(true);
       };
       reader.readAsDataURL(file);
     }
@@ -277,6 +284,7 @@ export default function RecipeForm({
     setImage(null);
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
+      setIsImageChanged(true);
     }
   };
   /**
