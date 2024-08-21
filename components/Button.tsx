@@ -55,7 +55,6 @@ const StyledButton = styled.button<StyledButtonProps>`
   border-radius: var(--radius-m);
   height: var(--spacing-8);
   padding: var(--spacing-2);
-  /* padding-right: var(--spacing-3); */
   transition: all 0.1s ease-in-out;
   filter: drop-shadow(0.2rem 0.2rem 0.2rem var(--color-neutral-3-alpha50));
 
