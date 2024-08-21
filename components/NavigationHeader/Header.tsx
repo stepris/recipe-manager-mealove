@@ -3,8 +3,15 @@ import UserIcon from '@/public/icons/ic_fluent_person_24_filled.svg';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { HeaderProps } from '@/types';
+import { useSession } from 'next-auth/react';
+import Image from 'next/image';
 
 export default function Header({ onToggleNav }: HeaderProps) {
+  const { data: session } = useSession();
+  const userImage = session?.user?.image;
+
+  console.log(userImage);
+
   return (
     <StyledHeader>
       <NavigationIcon onToggleNav={onToggleNav} />
@@ -13,6 +20,12 @@ export default function Header({ onToggleNav }: HeaderProps) {
       </Link>
       <StyledUserIconWrapper>
         <Link href='/login'>
+          <Image
+            src={userImage}
+            height='0'
+            width='25'
+            alt={session?.user.name}
+          />
           <StyledUserIcon />
         </Link>
       </StyledUserIconWrapper>
