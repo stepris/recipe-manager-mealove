@@ -242,7 +242,6 @@ export default function RecipeForm({
    */
   const handleImageUploadChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
-    console.log(file);
     if (file) {
       const reader = new FileReader();
       reader.onload = () => {
@@ -259,8 +258,26 @@ export default function RecipeForm({
       fileInputRef.current.value = '';
     }
   };
+  /**
+   * Handle Image Drop and pass image to input field
+   */
+  const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    setIsDragOver(false);
 
-  const handleDragOver = (event) => {
+    const file = event.dataTransfer.files?.[0];
+    if (file) {
+      const dataTransfer = new DataTransfer();
+      dataTransfer.items.add(file);
+      if (fileInputRef.current) {
+        fileInputRef.current.files = dataTransfer.files;
+        const changeEvent = new Event('change', { bubbles: true });
+        fileInputRef.current.dispatchEvent(changeEvent);
+      }
+    }
+  };
+
+  const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
     setIsDragOver(true);
   };
@@ -268,23 +285,6 @@ export default function RecipeForm({
   const handleDragLeave = () => {
     setIsDragOver(false);
   };
-
-  const handleDrop = (event: ChangeEvent<HTMLInputElement>) => {
-    event.preventDefault();
-    setIsDragOver(false);
-
-    const file = event.dataTransfer.files?.[0];
-    console.log(file);
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        const dataURL = reader.result;
-        setImage({ name: file.name, src: dataURL });
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-  console.log(image);
 
   return (
     <>
