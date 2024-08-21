@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import {
   StyledFormComponentProps,
   StyledImagePreviewProps,
+  StyledImageUpladContainerProps,
 } from '@/types/recipeStyles.types';
 import UploadCloud from '@/public/icons/UploadCloud.svg';
 import Image from 'next/image';
@@ -151,7 +152,7 @@ export const StyledCategoryElement = styled.div`
   width: 60px;
 `;
 
-export const StyledImageUpladContainer = styled.div`
+export const StyledImageUpladContainer = styled.div<StyledImageUpladContainerProps>`
   display: flex;
   flex-direction: column;
   align-items: center;

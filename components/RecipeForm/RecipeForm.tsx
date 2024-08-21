@@ -8,6 +8,7 @@ import {
   HandleChangeParams,
   Ingredient,
   ImageData,
+  DragOver,
 } from '@/types/RecipeForm.types';
 import { useRouter } from 'next/router';
 import {
@@ -74,7 +75,7 @@ export default function RecipeForm({
 
   const [image, setImage] = useState<ImageData | null>(null);
 
-  const [isDragOver, setIsDragOver] = useState(false);
+  const [isDragOver, setIsDragOver] = useState<DragOver>(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 

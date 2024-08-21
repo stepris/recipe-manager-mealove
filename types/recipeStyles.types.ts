@@ -10,3 +10,7 @@ export type StyledImagePreviewProps = {
   width: string;
   height: string;
 };
+
+export type StyledImageUpladContainerProps = {
+  $isDragOver: boolean;
+};
