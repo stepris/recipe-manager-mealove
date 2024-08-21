@@ -86,7 +86,6 @@ export default function RecipeForm({
 
   const { data: session } = useSession();
   const userId = session?.user.id;
-  console.log(userId);
 
   useEffect(() => {
     if (isEditMode && recipe) {
