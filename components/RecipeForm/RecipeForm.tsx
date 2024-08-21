@@ -224,13 +224,32 @@ export default function RecipeForm({
   /**
    * Submits the form, edits the stored recipe and resets the form
    */
-  const handleEditSubmit = (event: FormEvent<HTMLFormElement>) => {
+  async function handleEditSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    /**
+     * Create Form Data for Image
+     */
 
-    onEditRecipe?.(recipeData);
+    const formData = new FormData(event.currentTarget);
 
-    event.currentTarget.reset();
-  };
+    const response = await fetch('/api/upload', {
+      method: 'POST',
+      body: formData,
+    });
+    /**
+     * Get HTTPS Image Url from Cloudinary
+     */
+    const { secure_url } = await response.json();
+
+    const updatedRecipe = {
+      ...recipeData,
+      imageUrl: secure_url,
+    };
+
+    onEditRecipe?.(updatedRecipe);
+
+    // event.currentTarget.reset();
+  }
 
   /**
    * Cancels the editing process and routes back to DetailsPage
