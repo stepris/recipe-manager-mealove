@@ -74,6 +74,8 @@ export default function RecipeForm({
 
   const [image, setImage] = useState<ImageData | null>(null);
 
+  const [isDragOver, setIsDragOver] = useState(false);
+
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -240,6 +242,7 @@ export default function RecipeForm({
    */
   const handleImageUploadChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
+    console.log(file);
     if (file) {
       const reader = new FileReader();
       reader.onload = () => {
@@ -249,12 +252,39 @@ export default function RecipeForm({
       reader.readAsDataURL(file);
     }
   };
+
   const handleOnClickImageDelete = () => {
     setImage(null);
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
     }
   };
+
+  const handleDragOver = (event) => {
+    event.preventDefault();
+    setIsDragOver(true);
+  };
+
+  const handleDragLeave = () => {
+    setIsDragOver(false);
+  };
+
+  const handleDrop = (event: ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
+    setIsDragOver(false);
+
+    const file = event.dataTransfer.files?.[0];
+    console.log(file);
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const dataURL = reader.result;
+        setImage({ name: file.name, src: dataURL });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+  console.log(image);
 
   return (
     <>
@@ -394,7 +424,12 @@ export default function RecipeForm({
             <StyledH2>Image Upload</StyledH2>
           )}
           <StyledImageDropArea htmlFor='imageUpload'>
-            <StyledImageUpladContainer id='imageView'>
+            <StyledImageUpladContainer
+              id='imageView'
+              onDrop={handleDrop}
+              onDragOver={handleDragOver}
+              onDragLeave={handleDragLeave}
+            >
               <input
                 type='file'
                 id='imageUpload'
