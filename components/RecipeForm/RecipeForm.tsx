@@ -7,7 +7,6 @@ import {
   RecipeFormProps,
   HandleChangeParams,
   Ingredient,
-  ImageData,
   DragOver,
 } from '@/types/RecipeForm.types';
 import { useRouter } from 'next/router';
@@ -80,8 +79,6 @@ export default function RecipeForm({
   const [isDragOver, setIsDragOver] = useState<DragOver>(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
-
-  console.log(image);
 
   useEffect(() => {
     if (isEditMode && recipe) {
@@ -250,7 +247,7 @@ export default function RecipeForm({
     if (file) {
       const reader = new FileReader();
       reader.onload = () => {
-        const dataURL = reader.result;
+        const dataURL = reader.result as string;
         setImage({ name: file.name, src: dataURL });
       };
       reader.readAsDataURL(file);
