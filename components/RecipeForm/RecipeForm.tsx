@@ -73,11 +73,15 @@ export default function RecipeForm({
     defaultValue: emptyRecipe,
   });
 
-  const [image, setImage] = useState<ImageData | null>(null);
+  const [image, setImage] = useState(
+    recipe?.imageUrl ? { src: recipe.imageUrl, name: '' } : null
+  );
 
   const [isDragOver, setIsDragOver] = useState<DragOver>(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  console.log(image);
 
   useEffect(() => {
     if (isEditMode && recipe) {
