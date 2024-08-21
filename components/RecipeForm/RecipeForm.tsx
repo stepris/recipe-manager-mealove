@@ -8,6 +8,7 @@ import {
   HandleChangeParams,
   Ingredient,
   ImageData,
+  DragOver,
 } from '@/types/RecipeForm.types';
 import { useRouter } from 'next/router';
 import {
@@ -73,6 +74,8 @@ export default function RecipeForm({
   });
 
   const [image, setImage] = useState<ImageData | null>(null);
+
+  const [isDragOver, setIsDragOver] = useState<DragOver>(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -249,11 +252,39 @@ export default function RecipeForm({
       reader.readAsDataURL(file);
     }
   };
+
   const handleOnClickImageDelete = () => {
     setImage(null);
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
     }
+  };
+  /**
+   * Handle Image Drop and pass image to input field
+   */
+  const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    setIsDragOver(false);
+
+    const file = event.dataTransfer.files?.[0];
+    if (file) {
+      const dataTransfer = new DataTransfer();
+      dataTransfer.items.add(file);
+      if (fileInputRef.current) {
+        fileInputRef.current.files = dataTransfer.files;
+        const changeEvent = new Event('change', { bubbles: true });
+        fileInputRef.current.dispatchEvent(changeEvent);
+      }
+    }
+  };
+
+  const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    setIsDragOver(true);
+  };
+
+  const handleDragLeave = () => {
+    setIsDragOver(false);
   };
 
   return (
@@ -394,7 +425,13 @@ export default function RecipeForm({
             <StyledH2>Image Upload</StyledH2>
           )}
           <StyledImageDropArea htmlFor='imageUpload'>
-            <StyledImageUpladContainer id='imageView'>
+            <StyledImageUpladContainer
+              id='imageView'
+              onDrop={handleDrop}
+              onDragOver={handleDragOver}
+              onDragLeave={handleDragLeave}
+              $isDragOver={isDragOver}
+            >
               <input
                 type='file'
                 id='imageUpload'
