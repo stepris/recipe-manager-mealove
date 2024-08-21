@@ -13,6 +13,7 @@ export default function RecipeDetailsPage({
   onToggleFavorite,
   favoriteRecipesList,
 }: RecipeDetailsPageProps) {
+  const { data: session } = useSession();
   const { data: recipes, error, isLoading, mutate } = useSWR('/api/recipes');
   const router = useRouter();
   const { id } = router.query;
@@ -38,12 +39,8 @@ export default function RecipeDetailsPage({
     router.push(`/recipes/${id}/edit`);
   };
 
-  const { data: session } = useSession();
   const userId = session?.user.id;
   const isUsersRecipe = recipe.authorId === userId;
-  console.log(userId);
-  console.log(recipe.authorId);
-  console.log(isUsersRecipe);
 
   return (
     <>

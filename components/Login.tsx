@@ -5,8 +5,6 @@ export default function Login() {
   const { data: session } = useSession();
 
   if (session) {
-    console.log(session);
-
     return (
       <StyledWrapper>
         <p>You are currently signed in as {session.user.name}</p>

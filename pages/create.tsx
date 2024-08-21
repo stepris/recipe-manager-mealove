@@ -1,11 +1,15 @@
+import Login from '@/components/Login';
 import RecipeForm from '@/components/RecipeForm/RecipeForm';
 import { Recipe } from '@/types';
+import { log } from 'console';
+import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
 
 export default function Create() {
   const { data: recipes, error, isLoading, mutate } = useSWR('/api/recipes');
   const router = useRouter();
+  const { data: session } = useSession();
 
   if (error) return <div>failed to load</div>;
   if (isLoading) return <div>loading...</div>;
@@ -26,5 +30,5 @@ export default function Create() {
     }
   }
 
-  return <RecipeForm onAddRecipe={handleAddRecipe} />;
+  return session ? <RecipeForm onAddRecipe={handleAddRecipe} /> : <Login />;
 }

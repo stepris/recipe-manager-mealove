@@ -43,7 +43,7 @@ const emptyRecipe: Recipe = {
   cookingTime: 0,
   description: '',
   difficulty: 'easy',
-  imageUrl: '/recipe-default-imgs/alexander-mils-pPhN8HFzkDE-unsplash.jpg',
+  imageUrl: '',
   ingredients: [
     {
       id: '1',
@@ -63,6 +63,9 @@ const emptyRecipe: Recipe = {
   tags: [],
   title: '',
 };
+
+const placeHolderImage =
+  'https://res.cloudinary.com/drydaf8cb/image/upload/v1724094689/recipes/f0342e5fd52275d618d0b7401.png';
 
 export default function RecipeForm({
   onAddRecipe,
@@ -221,7 +224,7 @@ export default function RecipeForm({
 
     const newRecipe = {
       ...recipeData,
-      imageUrl: secure_url,
+      imageUrl: !secure_url ? placeHolderImage : secure_url,
       authorId: userId,
     };
     onAddRecipe?.(newRecipe);

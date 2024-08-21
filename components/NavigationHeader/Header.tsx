@@ -11,9 +11,11 @@ export default function Header({ onToggleNav }: HeaderProps) {
       <Link href='/'>
         <StyledAppTitle>meaLove</StyledAppTitle>
       </Link>
-      <Link href='/login'>
-        <StyledUserIcon />
-      </Link>
+      <StyledUserIconWrapper>
+        <Link href='/login'>
+          <StyledUserIcon />
+        </Link>
+      </StyledUserIconWrapper>
     </StyledHeader>
   );
 }
@@ -34,11 +36,17 @@ const StyledAppTitle = styled.h2`
   letter-spacing: var(--letter-spacing-s);
 `;
 
+const StyledUserIconWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  flex-basis: 100%;
+`;
+
 const StyledUserIcon = styled(UserIcon)`
   height: 25px;
   width: 25px;
   fill: var(--color-neutral-1);
-  justify-self: flex-end;
   outline: 2px solid var(--color-neutral-1);
   border-radius: 50%;
+  display: block;
 `;
