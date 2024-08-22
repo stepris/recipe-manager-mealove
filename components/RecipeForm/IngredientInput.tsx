@@ -52,7 +52,7 @@ export default function IngredientInput({
         value={ingredient.name}
         $isLarge
         $leftAlign
-        maxLength={20}
+        maxLength={40}
       />
     </StyledCellWrapper>
   );

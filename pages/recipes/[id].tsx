@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { Recipe } from '@/types';
 import { RecipeDetailsPageProps } from '@/types/RecipeDetails.types';
 import { useSession } from 'next-auth/react';
+import ArrowBack from '@/public/icons/ArrowBack.svg';
 
 import Button from '@/components/Button';
 
@@ -44,7 +45,11 @@ export default function RecipeDetailsPage({
 
   return (
     <>
-      <StyledLink href='/'>Back to recipe list</StyledLink>
+      <ArrowWrapper>
+        <StyledLink href='/'>
+          <StyledBackArrow />
+        </StyledLink>
+      </ArrowWrapper>
       <RecipeDetails
         recipe={recipe}
         onToggleFavorite={onToggleFavorite}
@@ -72,4 +77,20 @@ const ButtonWrapper = styled.div`
   justify-content: center;
   row-gap: var(--spacing-2);
   padding: var(--spacing-6);
+`;
+
+const StyledBackArrow = styled(ArrowBack)`
+  width: 40px;
+  height: 40px;
+  color: var(--color-primary-1);
+  padding-block: var(--spacing-1);
+  &:hover {
+    color: var(--color-primary-2);
+  }
+`;
+
+const ArrowWrapper = styled.div`
+  display: flex;
+  padding-inline: var(--spacing-4);
+  padding-block: var(--spacing-1);
 `;

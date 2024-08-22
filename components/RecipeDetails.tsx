@@ -28,6 +28,8 @@ export default function RecipeDetails({
     cookingTime,
     instructions,
     authorId,
+    difficulty,
+    category,
   } = recipe;
   if (!recipe) return null;
 
@@ -43,6 +45,7 @@ export default function RecipeDetails({
           onModalClose={handleModalClose}
         />
       )}
+
       <StyledSection>
         <StyledHeader>
           <StyledTitle>{title}</StyledTitle>
@@ -52,6 +55,15 @@ export default function RecipeDetails({
             isFavorite={isFavorite}
           />
         </StyledHeader>
+        <StyledInfos>
+          <StyledH3>
+            Difficulty: <StyledSpan>{difficulty}</StyledSpan>
+          </StyledH3>
+
+          <StyledH3>
+            Category: <StyledSpan>{category}</StyledSpan>
+          </StyledH3>
+        </StyledInfos>
         <ImageWrapper>
           <StyledImage
             src={imageUrl}
@@ -79,6 +91,9 @@ export default function RecipeDetails({
         <StyledH3>
           Cooking Time: <StyledSpan>{cookingTime} Minutes</StyledSpan>
         </StyledH3>
+        <StyledH3>
+          Total Time: <StyledSpan>{cookingTime + prepTime} Minutes</StyledSpan>
+        </StyledH3>
         <StyledInstructions>{instructions[0].description}</StyledInstructions>
       </StyledArticle>
       {isUsersRecipe && (
@@ -105,12 +120,20 @@ const StyledHeader = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding-right: var(--spacing-3);
+`;
+
+const StyledInfos = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--spacing-4);
+  padding-inline: var(--spacing-5);
 `;
 
 const StyledTitle = styled.h1`
   font: var(--font-headline-1);
   color: var(--color-neutral-4);
-  padding: var(--spacing-5);
+  padding: var(--spacing-2) var(--spacing-5);
   max-width: 85%;
   overflow-wrap: break-word;
 `;
@@ -133,12 +156,13 @@ const StyledTable = styled.div`
 
 const StyledRow = styled.div`
   display: grid;
-  grid-template-columns: 3fr 2fr 8fr;
+  grid-template-columns: 3fr 3fr 9fr;
   gap: var(--spacing-2);
   background-color: var(--color-row-1);
   padding: 5px;
   margin-bottom: 2px;
   border-radius: 5px;
+  overflow-wrap: anywhere;
   &:nth-child(even) {
     background-color: var(--color-row-2);
   }
@@ -176,6 +200,7 @@ const StyledH3 = styled.h3`
 
 const StyledSpan = styled.span`
   color: var(--color-primary-2);
+  text-transform: capitalize;
 `;
 
 const StyledInstructions = styled.p`
