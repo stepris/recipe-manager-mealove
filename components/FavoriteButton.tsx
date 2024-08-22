@@ -46,5 +46,8 @@ const StyledButton = styled.button<FavoriteButtonLinkProps>`
       position: static;
       height: 50px;
       width: 50px;
+      &:hover {
+        background-color: var(--color-neutral-1);
+      }
     `}
 `;
