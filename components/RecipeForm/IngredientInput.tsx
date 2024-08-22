@@ -12,6 +12,7 @@ import { StyledDeleteIconWrapper } from '@/components/RecipeForm/recipeStyles';
 export default function IngredientInput({
   ingredient,
   onIngredientChange,
+  onIngredientDelete,
 }: IngredientInputProps) {
   const handleChange = (event: HandleChangeParams) => {
     const { name, value } = event.target;
@@ -56,7 +57,10 @@ export default function IngredientInput({
         $leftAlign
         maxLength={20}
       />
-      <StyledDeleteIconWrapper type='button'>
+      <StyledDeleteIconWrapper
+        type='button'
+        onClick={() => onIngredientDelete(ingredient.id)}
+      >
         <DeleteIcon fill={'var(--color-primary-2)'} />
       </StyledDeleteIconWrapper>
     </StyledCellWrapper>

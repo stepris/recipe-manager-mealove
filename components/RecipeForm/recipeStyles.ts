@@ -101,6 +101,7 @@ export const StyledAddIngredientButton = styled.button`
   align-self: center;
   padding: 2px;
   padding-top: var(--spacing-1);
+  margin-top: 3px;
   &:hover {
     color: var(--color-primary-2);
   }

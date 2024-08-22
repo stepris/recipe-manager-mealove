@@ -171,6 +171,18 @@ export default function RecipeForm({
   };
 
   /**
+   * Removes an ingredient from the ingredients array
+   */
+  const handleIngredientDelete = (ingredientIdToDelete: string) => {
+    setRecipeData((currData) => {
+      const updatedIngredients = currData.ingredients.filter(
+        (ingredient) => ingredient.id !== ingredientIdToDelete
+      );
+      return { ...currData, ingredients: updatedIngredients };
+    });
+  };
+
+  /**
    * Handles changes to the recipe instructions textarea
    */
   const handleInstructionsChange = (
@@ -298,6 +310,7 @@ export default function RecipeForm({
       setIsImageChanged(true);
     }
   };
+
   /**
    * Handle Image Drop and pass image to input field
    */
@@ -380,6 +393,7 @@ export default function RecipeForm({
                 key={ingredient.id}
                 ingredient={ingredient}
                 onIngredientChange={handleIngredientChange}
+                onIngredientDelete={handleIngredientDelete}
               />
             );
           })}
