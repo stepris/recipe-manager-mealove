@@ -26,7 +26,7 @@ const StyledButton = styled.button<FavoriteButtonLinkProps>`
   padding: var(--spacing-1);
   position: absolute;
   z-index: 1;
-  right: var(--spacing-2);
+  right: var(--spacing-1);
   top: var(--spacing-1);
   svg {
     path {
@@ -35,11 +35,19 @@ const StyledButton = styled.button<FavoriteButtonLinkProps>`
       stroke: var(--color-primary-1);
     }
   }
+  &:hover {
+    outline: 2px solid var(--color-primary-1);
+    transition: all 0.1s ease-in-out;
+    filter: drop-shadow(0.1rem 0.1rem 0.1rem var(--color-neutral-3-alpha50));
+  }
   ${({ $isDetailPage }) =>
     $isDetailPage &&
     css`
       position: static;
       height: 50px;
       width: 50px;
+      &:hover {
+        background-color: var(--color-neutral-1);
+      }
     `}
 `;

@@ -1,0 +1,1318 @@
+[
+  {
+    "authorId": "104954403375770508609",
+    "category": "Veggy",
+    "cookingTime": 10,
+    "description": "Cremige Käsespätzle mit Zwiebeln, perfekt mit Salat.",
+    "difficulty": "medium",
+    "imageUrl": "https://res.cloudinary.com/drydaf8cb/image/upload/v1724050662/recipes/lykvrakrpne9nuqgmpdv.png",
+    "ingredients": [
+      {
+        "id": "1",
+        "name": "Spätzle",
+        "quantity": "500",
+        "unit": "g"
+      },
+      {
+        "id": "2",
+        "name": "Zwiebel",
+        "quantity": "1",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "3",
+        "name": "Sahne",
+        "quantity": "50",
+        "unit": "ml"
+      },
+      {
+        "id": "4",
+        "name": "Milch",
+        "quantity": "100",
+        "unit": "ml"
+      },
+      {
+        "id": "5",
+        "name": "Öl",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "id": "6",
+        "name": "Emmentaler, gerieben",
+        "quantity": "50",
+        "unit": "g"
+      },
+      {
+        "id": "7",
+        "name": "Salz und Pfeffer",
+        "quantity": "",
+        "unit": ""
+      },
+      {
+        "id": "8",
+        "name": "Brühepulver",
+        "quantity": "",
+        "unit": ""
+      },
+      {
+        "id": "9",
+        "name": "feine Petersilie",
+        "quantity": "1",
+        "unit": "piece(s)"
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Gib die frischen Spätzle in sprudelndes Wasser und lass sie etwa 2 Minuten kochen, bis sie an die Oberfläche steigen. Anschließend die Spätzle herausnehmen, mit kaltem Wasser abschrecken und zur Seite stellen.\n\nDie Zwiebel schälen und fein hacken. Erhitze 1 EL Öl in einem Topf, gib die Zwiebelwürfel hinzu und dünste sie, bis sie glasig sind. Milch und Sahne dazugießen, aufkochen lassen und mit Salz, Pfeffer sowie Brühepulver nach Belieben abschmecken. Danach den Käse einrühren und schmelzen lassen. Schließlich die Spätzle untermischen und gut verrühren. Zum Schluss die Petersilie unterheben.\n\nEin frischer Salat passt hervorragend dazu."
+      }
+    ],
+    "prepTime": 5,
+    "servings": 2,
+    "tags": [],
+    "title": "Cremige Käsespätzle"
+  },
+  {
+    "authorId": "104954403375770508609",
+    "category": "Fish",
+    "cookingTime": 15,
+    "description": "In Olivenöl gebratene Gambas mit Knoblauch.",
+    "difficulty": "easy",
+    "imageUrl": "https://res.cloudinary.com/drydaf8cb/image/upload/v1724050665/recipes/gsfe03mwomwejnvllhva.png",
+    "ingredients": [
+      {
+        "id": "1",
+        "name": "Olivenöl",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "id": "2",
+        "name": "Knoblauchzehen",
+        "quantity": "6",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "3",
+        "name": "Gambas",
+        "quantity": "24",
+        "unit": "piece(s)"
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Schneide die Knoblauchzehen in Scheiben. Erhitze das Olivenöl in der Pfanne und brate den Knoblauch darin an, bis er goldgelb ist. Gib die Gambas mitsamt Schale in die Pfanne und brate sie bei niedriger Hitze für etwa 5 Minuten pro Seite, bis die Schalen leicht rosa sind und das Fleisch fest und weiß wird."
+      }
+    ],
+    "prepTime": 15,
+    "servings": 4,
+    "tags": [],
+    "title": "Gambas mit Knoblauch"
+  },
+  {
+    "authorId": "104954403375770508609",
+    "category": "Veggy",
+    "cookingTime": 15,
+    "description": "Mediterrane Gnocchipfanne mit Zucchini, Tomaten und Parmesan.",
+    "difficulty": "easy",
+    "imageUrl": "https://res.cloudinary.com/drydaf8cb/image/upload/v1724050663/recipes/kenu4rpogmbjnavrqenn.png",
+    "ingredients": [
+      {
+        "id": "1",
+        "name": "Gnocchi",
+        "quantity": "300",
+        "unit": "g"
+      },
+      {
+        "id": "2",
+        "name": "Zucchini",
+        "quantity": "2",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "3",
+        "name": "Öl",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "id": "4",
+        "name": "Kirschtomaten",
+        "quantity": "6",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "5",
+        "name": "Gemüsebrühe",
+        "quantity": "",
+        "unit": ""
+      },
+      {
+        "id": "6",
+        "name": "Parmesan",
+        "quantity": "20",
+        "unit": "g"
+      },
+      {
+        "id": "7",
+        "name": "Salz",
+        "quantity": "",
+        "unit": ""
+      },
+      {
+        "id": "8",
+        "name": "Pfeffer",
+        "quantity": "",
+        "unit": ""
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Setze zuerst einen Topf mit Wasser auf, gib Salz hinzu und koche die Gnocchi nach Packungsanweisung.\n\nSchneide die Zucchini in Halbmonde und die Tomaten in Scheiben oder Würfel, je nach Größe. Brate die Zucchini in Öl, bis sie schön gebräunt sind, und würze sie dann mit Salz und Pfeffer. Reduziere die Hitze auf mittlere Stufe und rühre die Tomaten unter.\n\nHeb die Gnocchi mit einer Schaumkelle aus dem Wasser und gib sie zum Gemüse in die Pfanne.\n\nNimm etwa 200 ml vom Gnocchi-Kochwasser, rühre die Gemüsebrühe ein und gib die Mischung in die Pfanne. Lass alles aufkochen und etwas eindicken, bevor du Parmesan darüber reibst und das Gericht mit Salz und Pfeffer abschmeckst.\n\nTipp: Dieses Gericht lässt sich gut für den nächsten Arbeitstag vorkochen."
+      }
+    ],
+    "prepTime": 15,
+    "servings": 2,
+    "tags": [],
+    "title": "Gnocchipfanne"
+  },
+  {
+    "authorId": "104954403375770508609",
+    "category": "Veggy",
+    "cookingTime": 80,
+    "description": "Knusprige Mozzarella-Champignon-Pizza mit frischem Basilikum.",
+    "difficulty": "medium",
+    "imageUrl": "https://res.cloudinary.com/drydaf8cb/image/upload/v1724050668/recipes/carba2wqrs1ljawywgww.png",
+    "ingredients": [
+      {
+        "id": "1",
+        "name": "Wasser",
+        "quantity": "250",
+        "unit": "ml"
+      },
+      {
+        "id": "2",
+        "name": "Mehl",
+        "quantity": "450",
+        "unit": "g"
+      },
+      {
+        "id": "3",
+        "name": "Zucker",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "id": "4",
+        "name": "Trockenhefe",
+        "quantity": "1",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "5",
+        "name": "Olivenöl",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "id": "6",
+        "name": "Tomaten",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "id": "7",
+        "name": "Knoblauch",
+        "quantity": "1",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "9",
+        "name": "Frischer Oregano",
+        "quantity": "1",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "10",
+        "name": "Salz",
+        "quantity": "",
+        "unit": ""
+      },
+      {
+        "id": "11",
+        "name": "Pfeffer",
+        "quantity": "",
+        "unit": ""
+      },
+      {
+        "id": "12",
+        "name": "Mozzarella",
+        "quantity": "3",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "13",
+        "name": "Champignons",
+        "quantity": "10",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "14",
+        "name": "Basilikum",
+        "quantity": "1",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "15",
+        "name": "Öl, zum Braten",
+        "quantity": "",
+        "unit": ""
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Für den Teig alle trockenen Zutaten mischen, dann mit Öl und Wasser verkneten und eine Stunde gehen lassen. Nach dem Gehen den Teig nochmals durchkneten und mit Mehl bearbeiten, bis er nicht mehr klebt.\n\nFür die Soße die Tomaten grob zerkleinern, um eine rustikale Textur zu erhalten, und in einem Topf aufkochen lassen. Die Zwiebel würfeln und zusammen mit dem gepressten Knoblauch hinzufügen. Oregano hacken und dazugeben. Mit Salz und Pfeffer abschmecken und köcheln lassen, bis die gewünschte Konsistenz erreicht ist.\n\nDen Teig ausrollen, in einer Pfanne bei mittlerer Hitze anbraten und leicht aufgehen lassen. Die vorgebackenen Teigfladen auf ein Backblech mit Backpapier legen, mit der Soße bestreichen, Mozzarella darüberbröseln und mit den in Scheiben geschnittenen Champignons belegen.\n\nIm auf 230°C vorgeheizten Ofen etwa 20 Minuten backen.\n\nVor dem Servieren mit frischen Basilikumblättern garnieren.\n\nTipp: Auch als Vorspeise geeignet, wenn man den Teig auf ein Drittel der Größe pro Pizza reduziert."
+      }
+    ],
+    "prepTime": 30,
+    "servings": 3,
+    "tags": [],
+    "title": "Champignon-Pizza"
+  },
+  {
+    "authorId": "104954403375770508609",
+    "category": "Sweet",
+    "cookingTime": 45,
+    "description": "Ein klassischer Rhabarber-Crumble, knusprig und perfekt mit Sahne, Pudding oder Eis.",
+    "difficulty": "medium",
+    "imageUrl": "https://res.cloudinary.com/drydaf8cb/image/upload/v1724050664/recipes/mcmdaenulhplz37ypw9c.png",
+    "ingredients": [
+      {
+        "id": "1",
+        "name": "Rhabarber",
+        "quantity": "400",
+        "unit": "g"
+      },
+      {
+        "id": "2",
+        "name": "Selbst aufgehendes Mehl",
+        "quantity": "150",
+        "unit": "g"
+      },
+      {
+        "id": "3",
+        "name": "gesalzene Butter",
+        "quantity": "100",
+        "unit": "g"
+      },
+      {
+        "id": "4",
+        "name": "Zucker",
+        "quantity": "120",
+        "unit": "g"
+      },
+      {
+        "id": "5",
+        "name": "Vanille Extrakt",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "id": "6",
+        "name": "Haferflocken",
+        "quantity": "40",
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Heize den Ofen auf Gasstufe 6, 200°C oder 180°C Umluft vor. Wasche den Rhabarber, schneide die Enden ab und schneide ihn in 4 cm lange Stücke. Verteile den Rhabarber gleichmäßig in einer 1,2-Liter-Auflaufform und bestreue ihn mit der Hälfte des Zuckers.\n\nVermische die Butter mit dem Mehl, bis die Mischung groben Semmelbröseln ähnelt. Füge Vanille, Zucker und Haferflocken hinzu und rühre, bis eine krümelige Masse entsteht. Verteile das Crumble gleichmäßig über den Rhabarber.\n\nStelle die Auflaufform auf ein Backblech, um auslaufende Säfte aufzufangen, und backe den Crumble 45 Minuten lang, bis der Rhabarber zart ist. Decke die Oberseite mit Alufolie ab, wenn sie zu schnell bräunt. Serviere den Crumble warm mit Pudding, Sahne oder Eis.\n\nEinfrieren und Auftauen:\nDer fertig gebackene Crumble kann eingefroren werden. Lasse ihn vollständig abkühlen, wickle ihn gut in Frischhaltefolie und Alufolie, beschrifte ihn und friere ihn für bis zu 3 Monate ein. Zum Auftauen über Nacht im Kühlschrank lassen, dann in einem vorgeheizten Ofen bei Gasstufe 5, 190°C oder 170°C Umluft für 40 Minuten wieder aufwärmen – entferne die Folie in den letzten 10 Minuten, um das Crumble erneut knusprig zu machen."
+      }
+    ],
+    "prepTime": 15,
+    "servings": 4,
+    "tags": [],
+    "title": "Rhabarber-Crumble"
+  },
+  {
+    "authorId": "104954403375770508609",
+    "category": "Sweet",
+    "cookingTime": 150,
+    "description": "Cremiger Käsekuchen, belegt mit frischen Erdbeeren und Tortenguss.",
+    "difficulty": "medium",
+    "imageUrl": "https://res.cloudinary.com/drydaf8cb/image/upload/v1724050664/recipes/dmvatakhaowt66lx0jj7.png",
+    "ingredients": [
+      {
+        "id": "1",
+        "name": "Butter",
+        "quantity": "75",
+        "unit": "g"
+      },
+      {
+        "id": "2",
+        "name": "Quark",
+        "quantity": "500",
+        "unit": "g"
+      },
+      {
+        "id": "3",
+        "name": "Zucker",
+        "quantity": "100",
+        "unit": "g"
+      },
+      {
+        "id": "4",
+        "name": "Ei",
+        "quantity": "2",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "5",
+        "name": "Vanille Zucker",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "id": "6",
+        "name": "Grieß",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "id": "7",
+        "name": "Pudding Pulver",
+        "quantity": "1",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "8",
+        "name": "Zitrone",
+        "quantity": "1",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "9",
+        "name": "Erdbeeren",
+        "quantity": "500",
+        "unit": "g"
+      },
+      {
+        "id": "10",
+        "name": "roter Tortenguss",
+        "quantity": "1",
+        "unit": "piece(s)"
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "In einer Schüssel alle Zutaten, einschließlich Zitronenabrieb und -saft, gut verrühren. Den Teig in eine gefettete 20-cm-Springform geben und im vorgeheizten Backofen bei 180 Grad Ober-/Unterhitze für 60 Minuten backen. Schalte den Ofen 10 Minuten vor Ende der Backzeit aus und lasse den Kuchen im Ofen langsam abkühlen. (Nach etwa 30 Minuten nehme ich den Kuchen aus dem Ofen und lasse ihn in der Form weiter abkühlen.)\n\nWährenddessen die Erdbeeren waschen, den Stielansatz entfernen, halbieren und je nach Geschmack etwas Zucker darüberstreuen. Sobald der Kuchen abgekühlt ist, die Erdbeeren darauf verteilen und den bereits gekochten und abgekühlten Tortenguss darübergeben. Mit etwas Schlagsahne servieren."
+      }
+    ],
+    "prepTime": 30,
+    "servings": 1,
+    "tags": [],
+    "title": "Käsekuchen mit Erdbeeren"
+  },
+  {
+    "authorId": "104954403375770508609",
+    "category": "Sweet",
+    "cookingTime": 60,
+    "description": "Russischer Zupfkuchen mit cremiger Quarkfüllung und knusprigem Schokoladenteig.",
+    "difficulty": "medium",
+    "imageUrl": "https://res.cloudinary.com/drydaf8cb/image/upload/v1724050664/recipes/lxps73kynv3hujyfiso2.png",
+    "ingredients": [
+      {
+        "id": "1",
+        "name": "Zucker",
+        "quantity": "180",
+        "unit": "g"
+      },
+      {
+        "id": "2",
+        "name": "Mehl",
+        "quantity": "300",
+        "unit": "g"
+      },
+      {
+        "id": "3",
+        "name": "Butter",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "id": "4",
+        "name": "Ei",
+        "quantity": "2",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "5",
+        "name": "Kakaopulver",
+        "quantity": "45",
+        "unit": "g"
+      },
+      {
+        "id": "6",
+        "name": "Backpulver",
+        "quantity": "1",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "7",
+        "name": "Füllung: Zucker",
+        "quantity": "150",
+        "unit": "g"
+      },
+      {
+        "id": "8",
+        "name": "Füllung: EI",
+        "quantity": "3",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "9",
+        "name": "Füllung: Quark",
+        "quantity": "500",
+        "unit": "g"
+      },
+      {
+        "id": "10",
+        "name": "Füllung: Sahne, süß",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "id": "11",
+        "name": "Füllung: Vanillezucker",
+        "quantity": "1",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "12",
+        "name": "Salz",
+        "quantity": "",
+        "unit": ""
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Mehl und Backpulver in einer großen Schüssel mischen, Zucker und gesiebten Kakao hinzufügen. Butter und Eier einarbeiten und alles gründlich kneten. Etwa 1/4 des Teiges beiseitelegen, den restlichen Teig in eine Springform füllen und den Rand gut auskleiden.\n\nFür die Füllung die Butter cremig rühren, dann Quark, süße Sahne, Eier und die restlichen Zutaten hinzufügen und gut vermengen. Die Mischung in die Springform geben. Den beiseitegelegten Teig in kleine Stücke zupfen und gleichmäßig auf der Füllung verteilen.\n\nDen Kuchen bei 180 °C Ober-/Unterhitze etwa eine Stunde backen."
+      }
+    ],
+    "prepTime": 35,
+    "servings": 1,
+    "tags": [],
+    "title": "Russischer Zupfkuchen"
+  },
+  {
+    "authorId": "104954403375770508609",
+    "category": "Fish",
+    "cookingTime": 80,
+    "description": "Frische Bowl mit Lachs, Reis, Avocado und Wakamesalat.",
+    "difficulty": "medium",
+    "imageUrl": "https://res.cloudinary.com/drydaf8cb/image/upload/v1724050665/recipes/ke3lczngeibgjvtqujai.png",
+    "ingredients": [
+      {
+        "id": "1",
+        "name": "Lachs",
+        "quantity": "275",
+        "unit": "g"
+      },
+      {
+        "id": "2",
+        "name": "Reis, natur",
+        "quantity": "175",
+        "unit": "g"
+      },
+      {
+        "id": "3",
+        "name": "Ingwer",
+        "quantity": "1",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "4",
+        "name": "Sojasauce",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "id": "5",
+        "name": "Sesamöl",
+        "quantity": "5",
+        "unit": "tbsp"
+      },
+      {
+        "id": "6",
+        "name": "Limettensaft",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "id": "7",
+        "name": "Avocado",
+        "quantity": "1",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "8",
+        "name": "Wakame",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "id": "9",
+        "name": "Lauchzwiebeln",
+        "quantity": "2",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "10",
+        "name": "Feldsalat",
+        "quantity": "2",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "11",
+        "name": "Ei",
+        "quantity": "2",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "12",
+        "name": "Sesam",
+        "quantity": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Koche den Reis (idealerweise Naturreis oder eine Mischung) nach Anleitung, lasse ihn abkühlen und stelle ihn beiseite.\n\nSchneide den Lachs in kleine Würfel und gib ihn in eine Schüssel. Bereite ein Dressing aus Sojasauce, Sesamöl, Limettensaft, Limettenabrieb und Ingwer zu und gieße es über den Lachs. Lasse den Lachs etwa 30 Minuten bis 1 Stunde im Kühlschrank marinieren und rühre zwischendurch um.\n\nSchäle die Avocado, entferne den Kern und schneide das Fruchtfleisch in Scheiben. Beträufle es mit etwas Limettensaft, um Verfärbungen zu vermeiden. Schneide die Lauchzwiebeln in Ringe und koche die Eier hart. Lasse sie etwas abkühlen, schäle und viertle sie. Verlese, wasche und lasse den Feldsalat abtropfen.\n\nVerteile den Reis mittig auf zwei Schüsseln. Lege den marinierten Lachs auf den Reis und füge den Wakamesalat hinzu. Arrangiere die Avocado, Lauchzwiebeln, Eier und Feldsalat dekorativ um den Lachs. Träufle die restliche Marinade über den Feldsalat und bestreue alles mit Sesam. Wer möchte, kann zusätzlich Pfeffer und frische Chilis hinzufügen.\n\nTipps: Für den Wakamesalat siehe mein Rezept für japanischen Algensalat oder verwende einen fertigen Salat."
+      }
+    ],
+    "prepTime": 45,
+    "servings": 2,
+    "tags": [],
+    "title": "Bowl mit Lachs und Avocado"
+  },
+  {
+    "authorId": "104954403375770508609",
+    "category": "Meat",
+    "cookingTime": 15,
+    "description": "Herzhaftes Udon-Nudelgericht mit misomarinierter Pute, Pilzen und Ei.",
+    "difficulty": "medium",
+    "imageUrl": "https://res.cloudinary.com/drydaf8cb/image/upload/v1724050666/recipes/ifbnnjauc8wcjgwcrj4i.png",
+    "ingredients": [
+      {
+        "id": "1",
+        "name": "Udon Nudeln",
+        "quantity": "250",
+        "unit": "g"
+      },
+      {
+        "id": "2",
+        "name": "Putenschnitzel",
+        "quantity": "250",
+        "unit": "g"
+      },
+      {
+        "id": "3",
+        "name": "Misopaste",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "id": "4",
+        "name": "Champignons",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "id": "5",
+        "name": "Hühnerbrühepulver",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "id": "6",
+        "name": "Wasser",
+        "quantity": "750",
+        "unit": "ml"
+      },
+      {
+        "id": "7",
+        "name": "Ei",
+        "quantity": "2",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "8",
+        "name": "Frühlingszwiebel",
+        "quantity": "1",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "9",
+        "name": "Chili, groß, rot",
+        "quantity": "1",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "10",
+        "name": "Sesam, schwarz",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "id": "11",
+        "name": "Woköl",
+        "quantity": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Schneide die Putenschnitzel in dünne Streifen, vermische sie mit der Misopaste und 1 EL Öl und lasse sie mindestens 15 Minuten marinieren.\n\nKoche die Eier 10 Minuten in kochendem Wasser, schrecke sie mit kaltem Wasser ab, schäle sie und halbiere sie.\n\nSchneide die Pilze in dünne Streifen, die Frühlingszwiebel in Ringe und die Chilischote in Scheiben.\n\nWenn du Trockennudeln verwendest, breche die Udon-Nudeln in der Mitte durch und koche sie 5 Minuten. Bei vakuumierten Nudeln entfällt dieser Schritt.\n\nErhitze 3 EL Woköl in einem großen Topf und brate die Pilze bei hoher Hitze goldbraun an, um den Umami-Geschmack zu intensivieren. Schiebe die Pilze an den Rand des Topfes und brate in der Mitte die Putenstreifen ebenfalls scharf an, bis sie Röstaromen entwickeln. Löse das Hühnerbrühepulver in 750 ml heißem Wasser auf und gieße es über die Pilz-Puten-Mischung. Lasse das Ganze 3 Minuten leicht köcheln und füge dann die Nudeln hinzu, um sie kurz zu erwärmen.\n\nRichte das Gericht auf tiefen Tellern an, füge die Eierhälften hinzu und garniere mit Frühlingszwiebeln, Chili und Sesamkörnern."
+      }
+    ],
+    "prepTime": 10,
+    "servings": 2,
+    "tags": [],
+    "title": "Udon-Nudeln mit Miso-Pute"
+  },
+  {
+    "authorId": "104954403375770508609",
+    "category": "Veggy",
+    "cookingTime": 20,
+    "description": "Ein international beliebter Snack aus dem Arabischen",
+    "difficulty": "medium",
+    "imageUrl": "https://res.cloudinary.com/drydaf8cb/image/upload/v1724063917/recipes/ofocicmgg5ll2snowxyn.jpg",
+    "ingredients": [
+      {
+        "id": "1",
+        "name": "getrocknete Kichererbsen",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "id": "2",
+        "name": "Wasser",
+        "quantity": "600",
+        "unit": "ml"
+      },
+      {
+        "id": "3",
+        "name": "frische Petersilie",
+        "quantity": "30",
+        "unit": "g"
+      },
+      {
+        "id": "4",
+        "name": "Mehl",
+        "quantity": "20",
+        "unit": "g"
+      },
+      {
+        "id": "5",
+        "name": "Knoblauch",
+        "quantity": "4",
+        "unit": "pieces"
+      },
+      {
+        "id": "6",
+        "name": "Mehl",
+        "quantity": "20",
+        "unit": "g"
+      },
+      {
+        "id": "7",
+        "name": "Zwiebeln",
+        "quantity": "2",
+        "unit": "pieces"
+      },
+      {
+        "id": "8",
+        "name": "Selerie",
+        "quantity": "1",
+        "unit": "piece"
+      },
+      {
+        "id": "9",
+        "name": "Chili",
+        "quantity": "1",
+        "unit": "piece"
+      },
+      {
+        "id": "10",
+        "name": "Koriander, gemahlen",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "id": "11",
+        "name": "Kreuzkümmel, gemahlen",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "id": "12",
+        "name": "Pfeffer schwarz",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "id": "13",
+        "name": "Salz",
+        "quantity": "1.5",
+        "unit": "tsp"
+      },
+      {
+        "id": "14",
+        "name": "Backpulver",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "id": "15",
+        "name": "Bratöl",
+        "quantity": "",
+        "unit": ""
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Die getrockneten Kichererbsen in 600ml Wasser mindestens 12 Stunden einweichen und quellen lassen. Danach in einem Sieb gründlich abwaschen und abtropfen lassen. Im Anschluss werden die Kichererbsen gehäckselt/püriert oder gestampft (je nach gewünschter Konsistenz). Alle übrigen Zutaten können bereits vorbereitet und sehr fein gehackt werden. Dieses Rezept ist stark abhänging von der Feinheit der bearbeiteten Zutaten und führt je nach Anwenung zu unterschiedlichen Ergebnissen. Eines kann ich aus meiner Erfahrung sagen: 'desto gröber die einzelnen Zutaten, desto saftiger das Ergebnis'. Wenn am Ende alle Zutaten zu frein sind, wird das Ergebnis etwas zu trocken. Darum mein Vorschlag: Die Zutaten nur grob hacken und nicht mixen/pürieren. Zum Schluss werden alle Zutaten zu einer Masse vermengt bzw. gut durchgemischt und dann für mindestens 30 min in den Kühlschrank gestellt (je länger desto besser). Danach können wir die Masse gut formen (z.B mit zwei Esslöffeln zu einer Art Nockenform). Die geformten kalten Falafel geben wir dann in das heiße Fritieröl und fritieren sie von beiden Seiten mehrere Minuten."
+      }
+    ],
+    "prepTime": 25,
+    "servings": 4,
+    "tags": [],
+    "title": "Falafel"
+  },
+  {
+    "authorId": "104954403375770508609",
+    "category": "Veggy",
+    "cookingTime": 50,
+    "description": "Eine leicht scharfe standard Tomatensoße mit süßer Note",
+    "difficulty": "easy",
+    "imageUrl": "https://res.cloudinary.com/drydaf8cb/image/upload/v1724063975/recipes/xktkmhkjnsddytdvbubi.jpg",
+    "ingredients": [
+      {
+        "id": "1",
+        "quantity": "1",
+        "unit": "piece(s)",
+        "name": "Stangenselerie"
+      },
+      {
+        "id": "fdac0d00-9d9e-41e1-863d-a89c37e5899a",
+        "quantity": "2",
+        "unit": "piece(s)",
+        "name": "Schalotten"
+      },
+      {
+        "id": "818dd158-06cc-49bb-9a68-d8bd48a41d13",
+        "quantity": "4",
+        "unit": "tbsp",
+        "name": "Olivenöl"
+      },
+      {
+        "id": "6f84edd9-5ef0-4668-8a34-4e1c8c04f6ba",
+        "quantity": "3",
+        "unit": "piece(s)",
+        "name": "Knoblauchzehen"
+      },
+      {
+        "id": "b2b0805d-276e-48c1-8356-aded511e3496",
+        "quantity": "",
+        "unit": "",
+        "name": "heller Essig"
+      },
+      {
+        "id": "5ea648af-c7fa-4298-843b-dfcdf561cb7f",
+        "quantity": "2",
+        "unit": "tsp",
+        "name": "Tomatenmark"
+      },
+      {
+        "id": "03738ce1-af01-4a7d-8e4a-29730ff66647",
+        "quantity": "1",
+        "unit": "piece(s)",
+        "name": "Chili"
+      },
+      {
+        "id": "b36633ae-f14b-4bed-8240-f4d2981251d8",
+        "quantity": "400",
+        "unit": "g",
+        "name": "Tomaten"
+      },
+      {
+        "id": "0be668a6-8ba1-4045-a999-afd80e72d11d",
+        "quantity": "250",
+        "unit": "ml",
+        "name": "Gemüsebrühe"
+      },
+      {
+        "id": "9ccfe287-ecb1-496f-920d-48aedaf8accf",
+        "quantity": "1",
+        "unit": "piece(s)",
+        "name": "Karotte"
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Schalotten, Knoblauch und die Chilischote fein schneiden oder hacken. Karotte und Stangenselerie in kleine würfel schneiden oder hacken. \nDas Öl in einer Pfanne erhitzen und die Schalotten darin bei mittlerer Hitze glasig anbraten. Den Knoblauch dazu geben und bei hoher Hitze kurz mit braten, jedoch nicht anbrennen lassen.\nAlles mit ca. zwei bis vier Esslöffeln von dem hellen Essig ablöschen und kurz köcheln lassen. \nDanach die Chili und das Tomatenmark dazu geben und ca. 2 min. anbraten. \nZum Schluss die Tomaten und die Gemüsebrühe dazugeben und kurz aufkochen lassen. Danach noch ca. 30 min - 1 Stunde bei sehr geringer Hitze einkochen. Idealerweise eine Simmerplatte verwenden, damit nichts anbrennt. \n\nIch benutze für meine Pastasoßen immer San Marzano Tomaten aus der Dose oder frische. Sie eignen sich sehr gut wegen ihrer leichten süße. \n\n Dazu passt Pasta aller Art oder Gnoccis"
+      }
+    ],
+    "prepTime": 15,
+    "servings": 2,
+    "tags": [],
+    "title": "Pasta mit Tomatensoße"
+  },
+  {
+    "authorId": "104954403375770508609",
+    "category": "Veggy",
+    "cookingTime": 40,
+    "description": "Aus der Indonesischen Küche. Scharf und leicht süßlich.",
+    "difficulty": "easy",
+    "imageUrl": "https://res.cloudinary.com/drydaf8cb/image/upload/v1724065298/recipes/ik0svpup7byfpgpy0mk9.png",
+    "ingredients": [
+      {
+        "id": "1",
+        "quantity": "1",
+        "unit": "piece(s)",
+        "name": "große Aubergine"
+      },
+      {
+        "id": "6a88b687-a214-49ed-b9fb-bde9b6e888a4",
+        "quantity": "2",
+        "unit": "piece(s)",
+        "name": "Schalotten"
+      },
+      {
+        "id": "6bb01575-9d8b-47eb-a502-0c906a829392",
+        "quantity": "4",
+        "unit": "piece(s)",
+        "name": "Knoblauchzehen"
+      },
+      {
+        "id": "cfaca618-6c51-4b42-bd2e-62e214085317",
+        "quantity": "1",
+        "unit": "tsp",
+        "name": "Gemüsebrühe"
+      },
+      {
+        "id": "07bec184-8b73-43d0-b119-4bd00becf3e5",
+        "quantity": "1",
+        "unit": "piece(s)",
+        "name": "Zitronengras"
+      },
+      {
+        "id": "e6bf5cbc-0922-4002-9287-ddd6f252b76d",
+        "quantity": "2",
+        "unit": "piece(s)",
+        "name": "rote Chilis"
+      },
+      {
+        "id": "f522aeac-33c9-41f0-8188-c9dcd27abe24",
+        "quantity": "150",
+        "unit": "ml",
+        "name": "Wasser"
+      },
+      {
+        "id": "e0b60c09-4a82-410c-a8fa-6e5f49289894",
+        "quantity": "2",
+        "unit": "piece(s)",
+        "name": "Tomaten"
+      },
+      {
+        "id": "fb83efb2-c0c4-45d3-96ab-bfcf4494ff1a",
+        "quantity": "1",
+        "unit": "tbsp",
+        "name": "Kokosblütenzucker"
+      },
+      {
+        "id": "a0a42726-4c2b-48b8-bcaf-0f9a5d6a9ec6",
+        "quantity": "2",
+        "unit": "tbsp",
+        "name": "Ketjap manis"
+      },
+      {
+        "id": "699ad1e3-f76a-433a-96db-58d96fd3804d",
+        "quantity": "10",
+        "unit": "tbsp",
+        "name": "Sesamöl"
+      },
+      {
+        "id": "0cff8e95-0c46-4275-87d4-83c6bc287bdc",
+        "quantity": "4",
+        "unit": "piece(s)",
+        "name": "Limettenblätter"
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Die Aubergine in Würfel von ca. 2x2 cm schneiden. \n\nÖl in eine Pfanne oder Wok geben und die Auberginenwürfel darin 3-5 min anbraten. Aus der Pfanne holen und beiseite stellen.\n\nSchalotten, Knoblauch, Chilis und Zitronengras klein schneiden. Die Tomaten ebenfalls würfeln und alles (außer der Aubergine) ebenfalls in ca. 5 EL Öl anbraten. Nach dem anbraten mit einem Pürierstab oder Mixer zu einer feinen Soße mixen und wieder in die Pfanne geben. \n\nNun kommen die Auberginenwürfel und die restlichen Zutaten dazu.\n \nKetjap manis ist eine indonesische süße Sojasoße. Alternativ kann auch eine andere süße Soyasoße verwendet werden. \n\nAlles zusammen noch ca. 30 min auf geringer Flamme einkochen lassen. Im Idealfall mit einer Simmerplatte und etwas länger.\n\nDazu passt am besten weißer Reis."
+      }
+    ],
+    "prepTime": 15,
+    "servings": 2,
+    "tags": [],
+    "title": "Aubergine in Tomatensoße"
+  },
+  {
+    "authorId": "104954403375770508609",
+    "category": "Veggy",
+    "cookingTime": 35,
+    "description": "A simple and delicious One-Pot",
+    "difficulty": "easy",
+    "imageUrl": "https://res.cloudinary.com/drydaf8cb/image/upload/v1724064004/recipes/xnx878ypvaiepchpxlzf.jpg",
+    "ingredients": [
+      {
+        "id": "1",
+        "name": "quinoa",
+        "quantity": "100",
+        "unit": "g"
+      },
+      {
+        "id": "2",
+        "name": "onion",
+        "quantity": "1",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "3",
+        "name": "garlic cloves",
+        "quantity": "1",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "4",
+        "name": "sweet potato",
+        "quantity": "1",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "5",
+        "name": "baby spinach",
+        "quantity": "100",
+        "unit": "g"
+      },
+      {
+        "id": "6",
+        "name": "avocado",
+        "quantity": "1",
+        "unit": "piece(s)"
+      },
+      {
+        "id": "7",
+        "name": "olive oil",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "id": "8",
+        "name": "vegetable stock",
+        "quantity": "250",
+        "unit": "ml"
+      },
+      {
+        "id": "9",
+        "name": "feta",
+        "quantity": "100",
+        "unit": "g"
+      },
+      {
+        "id": "10",
+        "name": "salt & pepper",
+        "quantity": "",
+        "unit": ""
+      },
+      {
+        "id": "11",
+        "name": "nutmeg",
+        "quantity": "100",
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Finely dice the onion, chop the garlic clove and peel and dice the sweet potato. Cut the spinach into strips. Peel and dice the avocado. Heat the olive oil in a pan and sauté the diced onion with the garlic. Add the quinoa, diced sweet potato and vegetable stock. Season with salt, pepper and nutmeg. Bring to the boil, cover and simmer for approx. 20 minutes until all the liquid has disappeared. Stir occasionally and add water if necessary. Now fold in the spinach and avocado cubes and serve with crumbled feta."
+      }
+    ],
+    "prepTime": 20,
+    "servings": 2,
+    "tags": [],
+    "title": "One Pot Quinoa"
+  },
+  {
+    "authorId": "104954403375770508609",
+    "category": "Veggy",
+    "cookingTime": 30,
+    "description": "Eine einfache und schnelle Art seine Zucchhini aus dem Garten in ein schmackhaftes Gericht zu verwandeln.",
+    "difficulty": "easy",
+    "imageUrl": "https://res.cloudinary.com/drydaf8cb/image/upload/v1724063998/recipes/lpfophm9gmhdkpmdgrcr.jpg",
+    "ingredients": [
+      {
+        "id": "1",
+        "quantity": "5",
+        "unit": "piece(s)",
+        "name": "Zucchini"
+      },
+      {
+        "id": "70e225bc-45a8-42a2-9adf-4ec949372e73",
+        "quantity": "2",
+        "unit": "piece(s)",
+        "name": "Schalotten"
+      },
+      {
+        "id": "570f0a0d-5730-4127-bf55-d4b96f4f4c22",
+        "quantity": "4",
+        "unit": "piece(s)",
+        "name": "Knoblauchzehen"
+      },
+      {
+        "id": "dbd5c72c-2a55-47e2-b5bf-ad93c47323d7",
+        "quantity": "3",
+        "unit": "tbsp",
+        "name": "Olivenöl"
+      },
+      {
+        "id": "d6f7524e-6879-4b34-9c5e-addac75f3021",
+        "quantity": "1",
+        "unit": "tsp",
+        "name": "roter Pfeffer"
+      },
+      {
+        "id": "fae6a5c1-626e-4c1e-a56c-45977bbb17da",
+        "quantity": "2",
+        "unit": "tsp",
+        "name": "grobes Meersalz"
+      },
+      {
+        "id": "f20400b9-aade-45c9-bd77-3af627b2b885",
+        "quantity": "",
+        "unit": "",
+        "name": "schwarzer Pfeffer"
+      },
+      {
+        "id": "f8fbd9ff-e527-4975-a6b8-7d3fd3ed99c6",
+        "quantity": "340",
+        "unit": "g",
+        "name": "Pasta"
+      },
+      {
+        "id": "38704d2b-e1ce-4416-8b75-e4184850de65",
+        "quantity": "1",
+        "unit": "piece(s)",
+        "name": "Zitrone"
+      },
+      {
+        "id": "74d1b81a-490e-495c-ba3f-f611a0557b09",
+        "quantity": "1",
+        "unit": "cup",
+        "name": "Basilikumblätter"
+      },
+      {
+        "id": "552b5e0b-3af1-4991-8bc3-f3af69796dbd",
+        "quantity": "",
+        "unit": "",
+        "name": "Salz"
+      },
+      {
+        "id": "472f139c-2765-4a77-850a-6d12772d20d4",
+        "quantity": "200",
+        "unit": "ml",
+        "name": "Sahne"
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Ein sauberes Küchentuch in eine große Schüssel legen (oder auf ein großes Schneidebrett). Die Zucchini mit den großen Löchern einer Küchenreibe direkt in das Handtuch reiben und zwischendurch immerwieder mit etwas Salz bestreuen.\nDie Schalotten schälen und ebenfalls mit den großen Löchern der Reibe in das Handtuch reiben. 4 große Knoblauchzehen schälen und über die kleinen Löcher der Reibe in das Handtuch reiben. Alles mit den Händen gut vermengen.\n\nDie vier Enden des Handtuchs zusammenfassen und über einer Schüssel (oder dem Waschbecken) mit aller Kraft ausdrücken, um das Wasser aus den Zucchini zu ziehen. So lange auspressen, bis keine Flüssigkeit mehr herauszuholen ist.\n\nDas Wasser für die Pasta aufsetzen.\n\nDas Olivenöl in einem mittelgroßen Topf oder einer großen Pfanne geben und bei mittlerer Hitze auf Temperatur bringen. Etwas von dem zerstoßenen roten Pfeffer hinzugeben und unter Rühren braten, bis er duftet. Die Zucchinimischung und das grobe Meersalz hinzufügen und umrühren. Großzügig mit frisch gemahlenem schwarzen Pfeffer würzen. Unter gelegentlichem Rühren braten, bis die Zucchinimischung marmeladig und dickflüssig ist und anfängt, am Topfboden zu kleben (ca. 15-20 Minuten).\n\nNun können wir die Pasta kochen. Sobald das aufgesetzte Wasser kocht, ausreichend Salzen und die Pasta dazugeben und bissfest kochen (die Pasta wird später noch zusammen mit der Zucchinimasse etwas köcheln). Spaghetti oder Linguine eignen sich für dieses Gericht sehr gut.\n\nEtwas von der Schale der Zitrone mit einer feinen Reibe in eine kleine Schüssel geben und den Saft dazu auspressen.   Die Basilikumblätter waschen, abtropfen und grob in kleine Stücke reißen.\n\nSobald die Pasta fertig ist ca. 2 Tassen vom Kochwasser abschöpfen und beiseite stellen. Mit einer Zange die Nudeln in den Topf mit dem Zucchini geben - es ist in Ordnung, wenn etwas Wasser daran kleben bleibt. Die Hitze auf mittlere bis niedrige Stufe reduzieren, eine halbe Tasse des Kochwassers sowie die hälfte der Sahne hinzufügen und umrühren.\n\nSobald die Soße sehr dick wird weiteres Kochwasser hinzufügen und weiter köcheln lassen. Den Vorgang wiederholen um die gewünschte Konsistenz zu erreichen. \n\nDie Pasta vom Herd nehmen, den Zitronensaft mit der geriebenen Schale und den Basilikum dazugeben. Mit Salz und Pfeffer abschmecken. \n\nMit weiteren Basilikum und Parmesan servieren."
+      }
+    ],
+    "prepTime": 20,
+    "servings": 4,
+    "tags": [],
+    "title": "Zitronen Zuchini Pasta"
+  },
+  {
+    "authorId": "104954403375770508609",
+    "category": "Veggy",
+    "cookingTime": 5,
+    "description": "Ein typische indonesische Beilage zu Reisgerichten",
+    "difficulty": "easy",
+    "imageUrl": "https://res.cloudinary.com/drydaf8cb/image/upload/v1724068452/recipes/wz6dufzk5qcuolx6grhi.jpg",
+    "ingredients": [
+      {
+        "id": "1",
+        "quantity": "1",
+        "unit": "piece(s)",
+        "name": "Gurke"
+      },
+      {
+        "id": "706763ef-cd47-4700-851d-9696463b15a9",
+        "quantity": "50",
+        "unit": "ml",
+        "name": "Reisessig"
+      },
+      {
+        "id": "ebe4898a-d188-4824-830f-5fd45c478ef4",
+        "quantity": "2",
+        "unit": "tbsp",
+        "name": "Zucker"
+      },
+      {
+        "id": "000f4b3b-1460-47ca-aa5a-4ace7a305041",
+        "quantity": "1",
+        "unit": "tsp",
+        "name": "Salz"
+      },
+      {
+        "id": "84d51fdb-dad7-4125-bc17-ba4162d3893a",
+        "quantity": "3",
+        "unit": "piece(s)",
+        "name": "Schalotten"
+      },
+      {
+        "id": "9363c6d2-e271-4e47-ac2d-106b21ce0fe5",
+        "quantity": "2",
+        "unit": "tbsp",
+        "name": "Wasser"
+      },
+      {
+        "id": "77063ac3-8ffc-4da5-976e-e6b6ca6bc447",
+        "quantity": "1",
+        "unit": "piece(s)",
+        "name": "rote Chili"
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Die Gurke der Länge nach halbieren und mit einem Löffel die Samenkerne entfernen. Anschließend die beiden Hälften in dünne Scheiben schneiden.\n\nDie Schalotten schälen und ebenfalls in dünne Scheiben schneiden. \n\nDen Essig, Wasser, Zucker, Salz und die Schalotten kurz in einem kleinen Topf aufkochen und abkühlen etwas abkühlen lassen. \n\nDie Chili in feine Ringe schneiden und mit den Gurken mischen. Danach den Essigsud darüber gießen und vermischen. Alles zusammen im Kühlschrank einziehen lassen. \n\nEignet sich prima als Beilage zu Reisgerichten wie Rendang oder der Auberginen Tomatensoße."
+      }
+    ],
+    "prepTime": 5,
+    "servings": 2,
+    "tags": [],
+    "title": "Gurkensalat süß-sauer"
+  },
+  {
+    "authorId": "104954403375770508609",
+    "category": "Meat",
+    "cookingTime": 180,
+    "description": "Ein indonesischer Schmorgericht mit Rindfleisch und Kokoscreme",
+    "difficulty": "easy",
+    "imageUrl": "https://res.cloudinary.com/drydaf8cb/image/upload/v1724063959/recipes/hnqqevbyrcxw8fu7p2ev.jpg",
+    "ingredients": [
+      {
+        "id": "1",
+        "quantity": "500",
+        "unit": "g",
+        "name": "mageres Rindfleisch"
+      },
+      {
+        "id": "0787c895-9192-47a4-906b-4146da6693c7",
+        "quantity": "250",
+        "unit": "g",
+        "name": "Kokoscreme"
+      },
+      {
+        "id": "1d5dabf4-00fc-4d72-97cd-8fa8177a0fc3",
+        "quantity": "1",
+        "unit": "piece(s)",
+        "name": "Zitronengras"
+      },
+      {
+        "id": "95528fac-31c4-4d0f-a259-f8a7ad8dfa49",
+        "quantity": "2",
+        "unit": "tsp",
+        "name": "Galgant"
+      },
+      {
+        "id": "3ee8e52d-7193-4792-bf73-daad3868db1e",
+        "quantity": "4",
+        "unit": "tsp",
+        "name": "Kurkuma"
+      },
+      {
+        "id": "ffe18377-37da-4838-92e9-76020fdc3c2c",
+        "quantity": "2",
+        "unit": "tsp",
+        "name": "Ingwer (fein gehakt)"
+      },
+      {
+        "id": "0384c647-6ef1-4cba-9da4-e094741c6ae0",
+        "quantity": "3",
+        "unit": "piece(s)",
+        "name": "asiatischer Lorbeer"
+      },
+      {
+        "id": "5a71cc99-be8d-4cfa-a08a-5b6892cf22f9",
+        "quantity": "6",
+        "unit": "piece(s)",
+        "name": "Limettenblätter"
+      },
+      {
+        "id": "95cd3178-1e36-49b3-b8ac-ddcd1c72630b",
+        "quantity": "1",
+        "unit": "tbsp",
+        "name": "Sambal Oelek"
+      },
+      {
+        "id": "01d1aa2b-e0fc-48a2-b2e8-64dd9c85420a",
+        "quantity": "1",
+        "unit": "piece(s)",
+        "name": "Zwiebel"
+      },
+      {
+        "id": "9d1770b7-5747-461c-8d11-d36fac43a279",
+        "quantity": "2",
+        "unit": "piece(s)",
+        "name": "Knoblauchzehen"
+      },
+      {
+        "id": "e874fff9-fe3d-4834-941d-d5c54da1163e",
+        "quantity": "1",
+        "unit": "piece(s)",
+        "name": "Zitrone"
+      },
+      {
+        "id": "ddb30bbf-020b-4f47-ac75-b9a951938e60",
+        "quantity": "500",
+        "unit": "ml",
+        "name": "Gemüsebrühe"
+      },
+      {
+        "id": "255b53e1-a25d-4f79-8466-c1c264b6fdb2",
+        "quantity": "4",
+        "unit": "tbsp",
+        "name": "Kokosöl"
+      }
+    ],
+    "instructions": [
+      {
+        "id": "1",
+        "description": "Das Rindfleisch in Würfel von ca. 3x3 cm schneiden.\n\nDie Zwiebel klein schneiden und den Knoblauch, Ingwer und das Zitronengras sehr fein hacken.\n\nDas Kokosöl in einer Pfanne oder einem Wok erhitzen und die Zwiebeln kurz anbraten. Dann den Ingwer und den Knoblauch hinzufügen und kurz mit braten. Danach den die Kokoscreme beimengen und schmilzen lassen.\n\nGalgant, Kurkuma, Zitronengras, Sambal Oelek hinzufügen und alles bei mittlerer Hitze kurz anbraten. \n\nMit der Gemüsebrühe ablöschen und wieder zum kochen bringen. \n\nAnschließend das Rindfleisch, Limettenblätter und den Lorbeer dazugeben. Alles gut umrühren und bei geschlossenem Deckel wenige Minuten kochen lassen. \n\nDanach alles für längere Zeit (ca. 3 Stunden) bei sehr geringer Hitze und offenem Deckel simmern lassen bis der Großteil der Flüßigkeit verdampft ist. Zwischendurch immer wieder umrühren.\nEventuell noch etwas Wasser oder Gemüsebrühe nach gießen.\n\nDas Fleisch sollte am Ende zart sein und quasi zerfallen wenn man mit der Gabel  darauf drückt.  Die soße dagegen ist im Idealfall sehr dick und enthält sehr wenig Flüssigkeit.\n\nDazu passt sehr gut Reis und der \"Gurkensalat süß-sauer\"\n\nDurch das ersetzen des Rindfleisches mit Jackfruit bekommt man eine vegane variante. Diese ist von der Konsistenz sehr ähnlich und ist in der Kochzeit deutlich schneller. "
+      }
+    ],
+    "prepTime": 10,
+    "servings": 4,
+    "tags": [],
+    "title": "Schmorrind in Kokoscreme"
+  }
+]
