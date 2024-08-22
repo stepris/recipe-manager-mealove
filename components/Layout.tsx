@@ -16,16 +16,14 @@ export default function Layout({ children }: ChildrenLayoutProps) {
   };
 
   return (
-    <>
-      <StyledWrapper>
-        <Header onToggleNav={handleToggleNav} onCloseNav={handleCloseNav} />
-        {showNav ? (
-          <NavigationList onToggleNav={handleToggleNav} />
-        ) : (
-          <div>{children}</div>
-        )}
-      </StyledWrapper>
-    </>
+    <StyledWrapper>
+      <Header onToggleNav={handleToggleNav} onCloseNav={handleCloseNav} />
+      {showNav ? (
+        <NavigationList onToggleNav={handleToggleNav} />
+      ) : (
+        <div>{children}</div>
+      )}
+    </StyledWrapper>
   );
 }
 

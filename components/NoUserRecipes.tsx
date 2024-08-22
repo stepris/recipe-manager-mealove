@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 
 export default function NoUserRecipes() {
@@ -9,7 +10,9 @@ export default function NoUserRecipes() {
           You have not created any recipes yet.
         </StyledSpan>
       </StyledParagraph>
-      <StyledParagraph>You can create recipes here.</StyledParagraph>
+      <StyledParagraph>
+        You can create recipes <StyledLink href='/create'>here</StyledLink>.
+      </StyledParagraph>
     </StyledArticle>
   );
 }
@@ -32,4 +35,12 @@ const StyledParagraph = styled.p`
 const StyledSpan = styled.span`
   font: var(--font-headline-1);
   color: var(--color-primary-1);
+`;
+
+const StyledLink = styled(Link)`
+  color: var(--color-primary-1);
+  font: var(--font-headline-2);
+  &:hover {
+    color: var(--color-primary-2);
+  }
 `;
