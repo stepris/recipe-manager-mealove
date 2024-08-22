@@ -46,7 +46,7 @@ export default function RecipePreview({
   );
 }
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.li`
   position: relative;
 `;
 
@@ -67,7 +67,7 @@ const ImageWrapper = styled.div`
   border-radius: var(--radius-m);
 `;
 
-const StyledRecipePreview = styled.li`
+const StyledRecipePreview = styled.div`
   background-color: grey;
   width: 150px;
   height: 150px;

@@ -47,8 +47,11 @@ export default function RecipeList({
 
 const StyledRecipeList = styled.ul`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: var(--spacing-5);
-  padding: var(--spacing-5) 0;
+  padding: var(--spacing-5);
+  @media (max-width: 375px) {
+    justify-content: center;
+  }
 `;
