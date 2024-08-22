@@ -26,7 +26,7 @@ const StyledButton = styled.button<FavoriteButtonLinkProps>`
   padding: var(--spacing-1);
   position: absolute;
   z-index: 1;
-  right: var(--spacing-2);
+  right: var(--spacing-1);
   top: var(--spacing-1);
   svg {
     path {
