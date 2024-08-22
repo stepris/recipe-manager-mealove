@@ -35,13 +35,15 @@ import {
 import useLocalStorageState from 'use-local-storage-state';
 import FormButtons from '@/components/RecipeForm/FormButtons';
 import Button from '@/components/Button';
+import { useSession } from 'next-auth/react';
 
 const emptyRecipe: Recipe = {
+  authorId: '',
   category: '',
   cookingTime: 0,
   description: '',
   difficulty: 'easy',
-  imageUrl: '/recipe-default-imgs/alexander-mils-pPhN8HFzkDE-unsplash.jpg',
+  imageUrl: '',
   ingredients: [
     {
       id: '1',
@@ -62,6 +64,9 @@ const emptyRecipe: Recipe = {
   title: '',
 };
 
+const placeHolderImage =
+  'https://res.cloudinary.com/drydaf8cb/image/upload/v1724094689/recipes/f0342e5fd52275d618d0b7401.png';
+
 export default function RecipeForm({
   onAddRecipe,
   onEditRecipe,
@@ -81,6 +86,9 @@ export default function RecipeForm({
   const [isDragOver, setIsDragOver] = useState<DragOver>(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const { data: session } = useSession();
+  const userId = session?.user?.id ?? null;
 
   useEffect(() => {
     if (isEditMode && recipe) {
@@ -216,7 +224,8 @@ export default function RecipeForm({
 
     const newRecipe = {
       ...recipeData,
-      imageUrl: secure_url,
+      imageUrl: !secure_url ? placeHolderImage : secure_url,
+      authorId: userId as string,
     };
     onAddRecipe?.(newRecipe);
 
@@ -253,7 +262,6 @@ export default function RecipeForm({
       };
       onEditRecipe?.(updatedRecipe);
     }
-
   }
 
   /**

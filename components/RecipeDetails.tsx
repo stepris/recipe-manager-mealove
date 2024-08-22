@@ -5,6 +5,7 @@ import FavoriteButton from './FavoriteButton';
 import Button from './Button';
 import { useState } from 'react';
 import ConfirmationModal from './ConfirmationModal';
+import { useSession } from 'next-auth/react';
 
 export default function RecipeDetails({
   recipe,
@@ -13,6 +14,7 @@ export default function RecipeDetails({
   isFavorite,
 }: RecipeDetailsProps) {
   const [modalState, setModalState] = useState<boolean>(false);
+  const { data: session } = useSession();
 
   const handleModalOpen = () => setModalState(true);
   const handleModalClose = () => setModalState(false);
@@ -25,8 +27,12 @@ export default function RecipeDetails({
     prepTime,
     cookingTime,
     instructions,
+    authorId,
   } = recipe;
   if (!recipe) return null;
+
+  const userId = session?.user?.id;
+  const isUsersRecipe = authorId === userId;
 
   return (
     <>
@@ -75,15 +81,17 @@ export default function RecipeDetails({
         </StyledH3>
         <StyledInstructions>{instructions[0].description}</StyledInstructions>
       </StyledArticle>
-      <StyledButtonWrapper>
-        <Button
-          variant='$delete'
-          type='button'
-          onClickBehavior={handleModalOpen}
-        >
-          Delete
-        </Button>
-      </StyledButtonWrapper>
+      {isUsersRecipe && (
+        <StyledButtonWrapper>
+          <Button
+            variant='$delete'
+            type='button'
+            onClickBehavior={handleModalOpen}
+          >
+            Delete
+          </Button>
+        </StyledButtonWrapper>
+      )}
     </>
   );
 }

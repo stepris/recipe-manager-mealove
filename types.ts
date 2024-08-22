@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
 export type Recipe = {
+  authorId: string;
   category: string;
   cookingTime: number;
   description: string;
@@ -47,6 +48,15 @@ export type RecipeDetailsProps = {
 export type HandleToggleFavoriteFunction = (id: string) => void;
 
 export type HeaderProps = {
+  onToggleNav: () => void;
+  onCloseNav: () => void;
+};
+
+export type NavigationIconProps = {
+  onToggleNav: () => void;
+};
+
+export type NavigationListProps = {
   onToggleNav: () => void;
 };
 

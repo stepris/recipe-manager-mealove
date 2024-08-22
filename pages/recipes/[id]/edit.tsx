@@ -2,9 +2,12 @@ import RecipeForm from '@/components/RecipeForm/RecipeForm';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import { Recipe } from '@/types';
+import { useSession } from 'next-auth/react';
+import Image from 'next/image';
 
 export default function RecipeEditPage() {
   const { data: recipes, error, isLoading, mutate } = useSWR('/api/recipes');
+  const { data: session } = useSession();
 
   async function handleEditRecipe(updatedRecipe: Recipe) {
     const response = await fetch(`/api/recipes/${updatedRecipe._id}`, {
@@ -28,9 +31,25 @@ export default function RecipeEditPage() {
   if (isLoading) return <div>loading...</div>;
   if (!recipes) return null;
 
+  const userId = session?.user?.id ?? null;
+  const isUsersRecipe = userId ? recipe.authorId === userId : false;
+
   return (
     <>
-      <RecipeForm isEditMode recipe={recipe} onEditRecipe={handleEditRecipe} />
+      {isUsersRecipe ? (
+        <RecipeForm
+          isEditMode
+          recipe={recipe}
+          onEditRecipe={handleEditRecipe}
+        />
+      ) : (
+        <Image
+          src='https://res.cloudinary.com/drydaf8cb/image/upload/v1724259970/v5o1jjvtesvdt4au5dvq.jpg'
+          width='375'
+          height='0'
+          alt='ah ah ah jurassic park easter egg'
+        />
+      )}
     </>
   );
 }

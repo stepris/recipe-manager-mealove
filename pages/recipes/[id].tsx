@@ -5,6 +5,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { Recipe } from '@/types';
 import { RecipeDetailsPageProps } from '@/types/RecipeDetails.types';
+import { useSession } from 'next-auth/react';
 
 import Button from '@/components/Button';
 
@@ -12,6 +13,7 @@ export default function RecipeDetailsPage({
   onToggleFavorite,
   favoriteRecipesList,
 }: RecipeDetailsPageProps) {
+  const { data: session } = useSession();
   const { data: recipes, error, isLoading, mutate } = useSWR('/api/recipes');
   const router = useRouter();
   const { id } = router.query;
@@ -37,6 +39,9 @@ export default function RecipeDetailsPage({
     router.push(`/recipes/${id}/edit`);
   };
 
+  const userId = session?.user?.id ?? null;
+  const isUsersRecipe = userId ? recipe.authorId === userId : false;
+
   return (
     <>
       <StyledLink href='/'>Back to recipe list</StyledLink>
@@ -46,11 +51,13 @@ export default function RecipeDetailsPage({
         isFavorite={favoriteRecipesList.includes(recipe._id)}
         onDeleteRecipe={handleDeleteRecipe}
       />
-      <ButtonWrapper>
-        <Button type='button' variant='$edit' onClickBehavior={handleEdit}>
-          Edit
-        </Button>
-      </ButtonWrapper>
+      {isUsersRecipe && (
+        <ButtonWrapper>
+          <Button type='button' variant='$edit' onClickBehavior={handleEdit}>
+            Edit
+          </Button>
+        </ButtonWrapper>
+      )}
     </>
   );
 }

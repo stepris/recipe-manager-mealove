@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const recipeSchema = new Schema({
+  authorId: String,
   category: { type: String, required: true },
   cookingTime: Number,
   description: String,

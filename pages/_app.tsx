@@ -5,11 +5,15 @@ import type { AppProps } from 'next/app';
 import { HandleToggleFavoriteFunction, Recipe } from '@/types';
 import useSWR, { SWRConfig } from 'swr';
 import IsLoading from '@/components/IsLoading';
+import { SessionProvider } from 'next-auth/react';
 
 const fetcher = (...args: [RequestInfo, RequestInit?]): Promise<Recipe[]> =>
   fetch(...args).then((response) => response.json());
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppProps) {
   const { data: recipes, error, isLoading } = useSWR('/api/recipes', fetcher);
 
   const [favoriteRecipesList, setFavoriteRecipesList] = useLocalStorageState<
@@ -40,7 +44,7 @@ export default function App({ Component, pageProps }: AppProps) {
   });
 
   return (
-    <>
+    <SessionProvider session={session}>
       <GlobalStyle />
       <Layout>
         <SWRConfig
@@ -58,6 +62,6 @@ export default function App({ Component, pageProps }: AppProps) {
           />
         </SWRConfig>
       </Layout>
-    </>
+    </SessionProvider>
   );
 }
