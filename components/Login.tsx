@@ -9,7 +9,7 @@ export default function Login() {
       <StyledWrapper>
         <p>
           You are currently signed in as <br />
-          <StyledSpan>{session.user.name}</StyledSpan>
+          <StyledSpan>{session?.user?.name}</StyledSpan>
         </p>
         <StyledButton onClick={() => signOut()}>Sign out</StyledButton>
       </StyledWrapper>

@@ -1,7 +1,6 @@
 import Login from '@/components/Login';
 import RecipeForm from '@/components/RecipeForm/RecipeForm';
 import { Recipe } from '@/types';
-import { log } from 'console';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';

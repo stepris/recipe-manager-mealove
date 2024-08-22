@@ -5,7 +5,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { Recipe } from '@/types';
 import { RecipeDetailsPageProps } from '@/types/RecipeDetails.types';
-import { useSession, signIn, signOut } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 
 import Button from '@/components/Button';
 
@@ -39,8 +39,8 @@ export default function RecipeDetailsPage({
     router.push(`/recipes/${id}/edit`);
   };
 
-  const userId = session?.user.id;
-  const isUsersRecipe = recipe.authorId === userId;
+  const userId = session?.user?.id ?? null;
+  const isUsersRecipe = userId ? recipe.authorId === userId : false;
 
   return (
     <>

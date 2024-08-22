@@ -10,8 +10,6 @@ export default function Header({ onToggleNav }: HeaderProps) {
   const { data: session } = useSession();
   const userImage = session?.user?.image;
 
-  console.log(userImage);
-
   return (
     <StyledHeader>
       <NavigationIcon onToggleNav={onToggleNav} />
@@ -22,10 +20,10 @@ export default function Header({ onToggleNav }: HeaderProps) {
         <Link href='/login'>
           {session ? (
             <StyledUserImage
-              src={userImage}
+              src={userImage || ''}
               height='0'
               width='30'
-              alt={session?.user.name}
+              alt={session?.user?.name || ''}
             />
           ) : (
             <StyledUserIcon />
@@ -68,6 +66,7 @@ const StyledUserIcon = styled(UserIcon)`
   &:hover {
     fill: var(--color-neutral-2);
     outline: 2px solid var(--color-neutral-2);
+  }
 `;
 
 const StyledUserImage = styled(Image)`

@@ -35,7 +35,7 @@ import {
 import useLocalStorageState from 'use-local-storage-state';
 import FormButtons from '@/components/RecipeForm/FormButtons';
 import Button from '@/components/Button';
-import { useSession, signIn, signOut } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 
 const emptyRecipe: Recipe = {
   authorId: '',
@@ -88,7 +88,7 @@ export default function RecipeForm({
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const { data: session } = useSession();
-  const userId = session?.user.id;
+  const userId = session?.user?.id ?? null;
 
   useEffect(() => {
     if (isEditMode && recipe) {
@@ -225,7 +225,7 @@ export default function RecipeForm({
     const newRecipe = {
       ...recipeData,
       imageUrl: !secure_url ? placeHolderImage : secure_url,
-      authorId: userId,
+      authorId: userId as string,
     };
     onAddRecipe?.(newRecipe);
 

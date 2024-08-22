@@ -2,11 +2,12 @@ import RecipeForm from '@/components/RecipeForm/RecipeForm';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import { Recipe } from '@/types';
-import { useSession, signIn, signOut } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 
 export default function RecipeEditPage() {
   const { data: recipes, error, isLoading, mutate } = useSWR('/api/recipes');
+  const { data: session } = useSession();
 
   async function handleEditRecipe(updatedRecipe: Recipe) {
     const response = await fetch(`/api/recipes/${updatedRecipe._id}`, {
@@ -30,9 +31,8 @@ export default function RecipeEditPage() {
   if (isLoading) return <div>loading...</div>;
   if (!recipes) return null;
 
-  const { data: session } = useSession();
-  const userId = session?.user.id;
-  const isUsersRecipe = recipe.authorId === userId;
+  const userId = session?.user?.id ?? null;
+  const isUsersRecipe = userId ? recipe.authorId === userId : false;
 
   return (
     <>
