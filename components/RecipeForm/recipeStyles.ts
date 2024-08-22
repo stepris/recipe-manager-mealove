@@ -95,9 +95,15 @@ export const StyledTableCell = styled.input<StyledFormComponentProps>`
 `;
 
 export const StyledAddIngredientButton = styled.button`
-  display: block;
+  width: 30px;
+  height: 30px;
+  color: var(--color-primary-1);
   align-self: center;
-  margin-top: 8px;
+  padding: 2px;
+  padding-top: var(--spacing-1);
+  &:hover {
+    color: var(--color-primary-2);
+  }
 `;
 
 export const StyledDeleteIconWrapper = styled.button`
