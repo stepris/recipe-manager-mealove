@@ -28,6 +28,8 @@ export default function RecipeDetails({
     cookingTime,
     instructions,
     authorId,
+    difficulty,
+    category,
   } = recipe;
   if (!recipe) return null;
 
@@ -52,6 +54,15 @@ export default function RecipeDetails({
             isFavorite={isFavorite}
           />
         </StyledHeader>
+        <StyledInfos>
+          <StyledH3>
+            Difficulty: <StyledSpan>{difficulty}</StyledSpan>
+          </StyledH3>
+
+          <StyledH3>
+            Category: <StyledSpan>{category}</StyledSpan>
+          </StyledH3>
+        </StyledInfos>
         <ImageWrapper>
           <StyledImage
             src={imageUrl}
@@ -107,10 +118,17 @@ const StyledHeader = styled.div`
   align-items: center;
 `;
 
+const StyledInfos = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--spacing-4);
+  padding-inline: var(--spacing-5);
+`;
+
 const StyledTitle = styled.h1`
   font: var(--font-headline-1);
   color: var(--color-neutral-4);
-  padding: var(--spacing-5);
+  padding: var(--spacing-2) var(--spacing-5);
   max-width: 85%;
   overflow-wrap: break-word;
 `;
@@ -176,6 +194,7 @@ const StyledH3 = styled.h3`
 
 const StyledSpan = styled.span`
   color: var(--color-primary-2);
+  text-transform: capitalize;
 `;
 
 const StyledInstructions = styled.p`
