@@ -154,12 +154,13 @@ const StyledTable = styled.div`
 
 const StyledRow = styled.div`
   display: grid;
-  grid-template-columns: 3fr 2fr 8fr;
+  grid-template-columns: 3fr 3fr 9fr;
   gap: var(--spacing-2);
   background-color: var(--color-row-1);
   padding: 5px;
   margin-bottom: 2px;
   border-radius: 5px;
+  overflow-wrap: anywhere;
   &:nth-child(even) {
     background-color: var(--color-row-2);
   }
