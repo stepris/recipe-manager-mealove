@@ -6,10 +6,13 @@ import {
 } from '@/components/RecipeForm/recipeStyles';
 import { IngredientInputProps } from '@/types/IngridientInput.types';
 import { HandleChangeParams } from '@/types/RecipeForm.types';
+import DeleteIcon from '@/public/icons/buttons/ic_fluent_delete_24_regular.svg';
+import { StyledDeleteIngredientButton } from '@/components/RecipeForm/recipeStyles';
 
 export default function IngredientInput({
   ingredient,
   onIngredientChange,
+  onIngredientDelete,
 }: IngredientInputProps) {
   const handleChange = (event: HandleChangeParams) => {
     const { name, value } = event.target;
@@ -54,6 +57,12 @@ export default function IngredientInput({
         $leftAlign
         maxLength={40}
       />
+      <StyledDeleteIngredientButton
+        type='button'
+        onClick={() => onIngredientDelete(ingredient.id)}
+      >
+        <DeleteIcon fill={'var(--color-primary-2)'} />
+      </StyledDeleteIngredientButton>
     </StyledCellWrapper>
   );
 }

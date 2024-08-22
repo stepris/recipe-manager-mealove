@@ -18,7 +18,9 @@ import {
   StyledElementGroup,
   StyledFormText,
   StyledH2,
-  StyledH3,
+  StyledH3Unit,
+  StyledH3Quantity,
+  StyledH3Ingredient,
   StyledCellWrapper,
   StyledTextArea,
   StyledDropdown,
@@ -31,11 +33,13 @@ import {
   StyledImageDropArea,
   StyledImagePreview,
   StyledImageDeleteButtonWrapper,
+  StyledAddIngredientButton,
 } from '@/components/RecipeForm/recipeStyles';
 import useLocalStorageState from 'use-local-storage-state';
 import FormButtons from '@/components/RecipeForm/FormButtons';
 import Button from '@/components/Button';
 import { useSession } from 'next-auth/react';
+import AddIcon from '@/public/icons/buttons/PlusIcon.svg';
 
 const emptyRecipe: Recipe = {
   authorId: '',
@@ -167,6 +171,18 @@ export default function RecipeForm({
   };
 
   /**
+   * Removes an ingredient from the ingredients array
+   */
+  const handleIngredientDelete = (ingredientIdToDelete: string) => {
+    setRecipeData((currData) => {
+      const updatedIngredients = currData.ingredients.filter(
+        (ingredient) => ingredient.id !== ingredientIdToDelete
+      );
+      return { ...currData, ingredients: updatedIngredients };
+    });
+  };
+
+  /**
    * Handles changes to the recipe instructions textarea
    */
   const handleInstructionsChange = (
@@ -294,6 +310,7 @@ export default function RecipeForm({
       setIsImageChanged(true);
     }
   };
+
   /**
    * Handle Image Drop and pass image to input field
    */
@@ -366,9 +383,9 @@ export default function RecipeForm({
         <StyledInputElement>
           <StyledH2>Ingredients and quantities</StyledH2>
           <StyledCellWrapper>
-            <StyledH3>Quantity</StyledH3>
-            <StyledH3>Unit</StyledH3>
-            <StyledH3>Ingredient</StyledH3>
+            <StyledH3Quantity>Qty.</StyledH3Quantity>
+            <StyledH3Unit>Unit</StyledH3Unit>
+            <StyledH3Ingredient>Ingredient</StyledH3Ingredient>
           </StyledCellWrapper>
           {recipeData.ingredients.map((ingredient) => {
             return (
@@ -376,12 +393,16 @@ export default function RecipeForm({
                 key={ingredient.id}
                 ingredient={ingredient}
                 onIngredientChange={handleIngredientChange}
+                onIngredientDelete={handleIngredientDelete}
               />
             );
           })}
-          <button type='button' onClick={handleAddIngredient}>
-            +
-          </button>
+          <StyledAddIngredientButton
+            type='button'
+            onClick={handleAddIngredient}
+          >
+            <AddIcon />
+          </StyledAddIngredientButton>
         </StyledInputElement>
 
         {/* Recipe preparation */}
