@@ -336,7 +336,7 @@ export default function RecipeForm({
             name='title'
             value={recipeData.title}
             onChange={handleChange}
-            maxLength={40}
+            maxLength={26}
             required
             $leftAlign
             placeholder='Type your Recipe Name here'
