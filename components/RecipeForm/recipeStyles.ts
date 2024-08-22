@@ -107,7 +107,7 @@ export const StyledAddIngredientButton = styled.button`
   }
 `;
 
-export const StyledDeleteIconWrapper = styled.button`
+export const StyledDeleteIngredientButton = styled.button`
   display: flex;
   place-items: center;
   width: 30px;
