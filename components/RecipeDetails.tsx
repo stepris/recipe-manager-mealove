@@ -45,6 +45,7 @@ export default function RecipeDetails({
           onModalClose={handleModalClose}
         />
       )}
+
       <StyledSection>
         <StyledHeader>
           <StyledTitle>{title}</StyledTitle>
