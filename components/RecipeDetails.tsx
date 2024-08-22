@@ -120,6 +120,7 @@ const StyledHeader = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding-right: var(--spacing-3);
 `;
 
 const StyledInfos = styled.div`
