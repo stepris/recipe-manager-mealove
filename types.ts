@@ -49,6 +49,11 @@ export type HandleToggleFavoriteFunction = (id: string) => void;
 
 export type HeaderProps = {
   onToggleNav: () => void;
+  onCloseNav: () => void;
+};
+
+export type NavigationIconProps = {
+  onToggleNav: () => void;
 };
 
 export type AppBaseProps = {

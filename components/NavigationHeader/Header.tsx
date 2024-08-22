@@ -6,7 +6,7 @@ import { HeaderProps } from '@/types';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 
-export default function Header({ onToggleNav }: HeaderProps) {
+export default function Header({ onToggleNav, onCloseNav }: HeaderProps) {
   const { data: session } = useSession();
   const userImage = session?.user?.image;
 
@@ -14,7 +14,7 @@ export default function Header({ onToggleNav }: HeaderProps) {
     <StyledHeader>
       <NavigationIcon onToggleNav={onToggleNav} />
       <Link href='/'>
-        <StyledAppTitle>meaLove</StyledAppTitle>
+        <StyledAppTitle onClick={onCloseNav}>meaLove</StyledAppTitle>
       </Link>
       <StyledUserIconWrapper>
         <Link href='/login'>

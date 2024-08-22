@@ -12,15 +12,21 @@ export default function NavigationList({ onToggleNav }: HeaderProps) {
           </StyledLink>
         </StyledListElement>
         <StyledListElement>
-          <StyledLink href='/favorites' onClick={onToggleNav}>
-            Favorites
-          </StyledLink>
-        </StyledListElement>
-        <StyledListElement>
           <StyledLink href='/create' onClick={onToggleNav}>
             Create Recipe
           </StyledLink>
         </StyledListElement>
+        <StyledListElement>
+          <StyledLink href='/myrecipes' onClick={onToggleNav}>
+            My Recipes
+          </StyledLink>
+        </StyledListElement>
+        <StyledListElement>
+          <StyledLink href='/favorites' onClick={onToggleNav}>
+            Favorites
+          </StyledLink>
+        </StyledListElement>
+        <NavSpacer />
       </StyledList>
     </nav>
   );
@@ -50,4 +56,9 @@ const StyledLink = styled(Link)`
   display: block;
   height: 100%;
   align-content: center;
+`;
+
+const NavSpacer = styled.div`
+  background-color: var(--color-primary-1);
+  flex-grow: 10;
 `;

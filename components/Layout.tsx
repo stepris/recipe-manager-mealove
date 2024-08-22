@@ -11,10 +11,14 @@ export default function Layout({ children }: ChildrenLayoutProps) {
     setShowNav(!showNav);
   };
 
+  const handleCloseNav = () => {
+    setShowNav(false);
+  };
+
   return (
     <>
       <StyledWrapper>
-        <Header onToggleNav={handleToggleNav} />
+        <Header onToggleNav={handleToggleNav} onCloseNav={handleCloseNav} />
         {showNav ? (
           <NavigationList onToggleNav={handleToggleNav} />
         ) : (

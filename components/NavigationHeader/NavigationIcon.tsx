@@ -1,8 +1,8 @@
 import FilledNavigation from '@/public/icons/ic_fluent_navigation_24_filled.svg';
 import styled from 'styled-components';
-import { HeaderProps } from '@/types';
+import { NavigationIconProps } from '@/types';
 
-export default function NavigationIcon({ onToggleNav }: HeaderProps) {
+export default function NavigationIcon({ onToggleNav }: NavigationIconProps) {
   return (
     <button type='button' onClick={onToggleNav} aria-label='Toggle Navigation'>
       <StyledFilledNavigationIcon />
