@@ -56,6 +56,10 @@ export type NavigationIconProps = {
   onToggleNav: () => void;
 };
 
+export type NavigationListProps = {
+  onToggleNav: () => void;
+};
+
 export type AppBaseProps = {
   favoriteRecipes: Recipe[] | [];
   recipes: Recipe[] | [];

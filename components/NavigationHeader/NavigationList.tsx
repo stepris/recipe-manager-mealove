@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import { HeaderProps } from '@/types';
+import { NavigationListProps } from '@/types';
 
-export default function NavigationList({ onToggleNav }: HeaderProps) {
+export default function NavigationList({ onToggleNav }: NavigationListProps) {
   return (
     <nav>
       <StyledList>
