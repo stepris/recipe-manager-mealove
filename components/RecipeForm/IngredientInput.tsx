@@ -6,6 +6,8 @@ import {
 } from '@/components/RecipeForm/recipeStyles';
 import { IngredientInputProps } from '@/types/IngridientInput.types';
 import { HandleChangeParams } from '@/types/RecipeForm.types';
+import DeleteIcon from '@/public/icons/buttons/ic_fluent_delete_24_regular.svg';
+import { StyledDeleteIconWrapper } from '@/components/RecipeForm/recipeStyles';
 
 export default function IngredientInput({
   ingredient,
@@ -54,6 +56,9 @@ export default function IngredientInput({
         $leftAlign
         maxLength={20}
       />
+      <StyledDeleteIconWrapper type='button'>
+        <DeleteIcon fill={'var(--color-primary-2)'} />
+      </StyledDeleteIconWrapper>
     </StyledCellWrapper>
   );
 }

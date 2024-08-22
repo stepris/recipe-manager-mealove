@@ -35,6 +35,19 @@ export const StyledH3 = styled.h3`
   font: var(--font-headline-3);
 `;
 
+export const StyledH3Quantity = styled(StyledH3)`
+  width: 52px;
+`;
+
+export const StyledH3Unit = styled(StyledH3)`
+  width: 63px;
+`;
+
+export const StyledH3Ingredient = styled(StyledH3)`
+  width: 100%;
+  text-align: left;
+`;
+
 export const StyledFormText = styled.p`
   font: var(--font-input);
 `;
@@ -50,13 +63,16 @@ export const StyledLabelSmall = styled.label`
 
 export const StyledCellWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1.8fr 2fr 4fr;
+  grid-template-columns: 1fr 1.5fr 4fr 0.5fr;
+  gap: 3px;
+  align-items: center;
 `;
 
 export const StyledTableCell = styled.input<StyledFormComponentProps>`
   font: var(--font-input);
   height: 2rem;
   padding-left: var(--spacing-1);
+  padding-right: var(--spacing-1);
   border: 1px solid var(--color-neutral-4-alpha25);
   border-radius: var(--radius-s);
   margin-top: var(--spacing-1);
@@ -64,18 +80,47 @@ export const StyledTableCell = styled.input<StyledFormComponentProps>`
   ${({ $isMedium }) =>
     $isMedium &&
     css`
-      width: 60px;
+      width: 52px;
     `}
   ${({ $isLarge }) =>
     $isLarge &&
     css`
       width: 100%;
     `}
-      ${({ $leftAlign }) =>
+  ${({ $leftAlign }) =>
     $leftAlign &&
     css`
       text-align: left;
     `}
+`;
+
+export const StyledAddIconWrapper = styled.div`
+  display: flex;
+  place-items: center;
+  cursor: pointer;
+`;
+
+export const StyledDeleteIconWrapper = styled.button`
+  display: flex;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background-color: transparent;
+  padding: 4px;
+  margin-top: var(--spacing-1);
+  margin-left: 1px;
+  &:hover {
+    box-shadow: 0 0 1px 1px var(--color-neutral-2);
+  }
+  &:focus {
+    box-shadow: 0 0 1px 1px var(--color-neutral-2);
+  }
+  &:active {
+    transform: scale(0.95);
+    background-color: var(--color-neutral-1-alpha90);
+  }
 `;
 
 export const StyledInput = styled.input<StyledFormComponentProps>`
@@ -98,8 +143,9 @@ export const StyledInput = styled.input<StyledFormComponentProps>`
 `;
 
 export const StyledDropdown = styled.select`
-  flex: 0 0 auto;
-  width: fit-content;
+  /* Either or width is fine here */
+  /* width: fit-content; */
+  width: 100%;
   font: var(--font-input);
   height: 2rem;
   padding-left: var(--spacing-1);

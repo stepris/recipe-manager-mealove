@@ -18,7 +18,9 @@ import {
   StyledElementGroup,
   StyledFormText,
   StyledH2,
-  StyledH3,
+  StyledH3Unit,
+  StyledH3Quantity,
+  StyledH3Ingredient,
   StyledCellWrapper,
   StyledTextArea,
   StyledDropdown,
@@ -36,6 +38,7 @@ import useLocalStorageState from 'use-local-storage-state';
 import FormButtons from '@/components/RecipeForm/FormButtons';
 import Button from '@/components/Button';
 import { useSession } from 'next-auth/react';
+import AddIngredientButton from '@/public/icons/buttons/PlusIcon.svg';
 
 const emptyRecipe: Recipe = {
   authorId: '',
@@ -366,9 +369,9 @@ export default function RecipeForm({
         <StyledInputElement>
           <StyledH2>Ingredients and quantities</StyledH2>
           <StyledCellWrapper>
-            <StyledH3>Quantity</StyledH3>
-            <StyledH3>Unit</StyledH3>
-            <StyledH3>Ingredient</StyledH3>
+            <StyledH3Quantity>Qty.</StyledH3Quantity>
+            <StyledH3Unit>Unit</StyledH3Unit>
+            <StyledH3Ingredient>Ingredient</StyledH3Ingredient>
           </StyledCellWrapper>
           {recipeData.ingredients.map((ingredient) => {
             return (
@@ -382,6 +385,7 @@ export default function RecipeForm({
           <button type='button' onClick={handleAddIngredient}>
             +
           </button>
+          <AddIngredientButton />
         </StyledInputElement>
 
         {/* Recipe preparation */}
