@@ -90,6 +90,9 @@ export default function RecipeDetails({
         <StyledH3>
           Cooking Time: <StyledSpan>{cookingTime} Minutes</StyledSpan>
         </StyledH3>
+        <StyledH3>
+          Total Time: <StyledSpan>{cookingTime + prepTime} Minutes</StyledSpan>
+        </StyledH3>
         <StyledInstructions>{instructions[0].description}</StyledInstructions>
       </StyledArticle>
       {isUsersRecipe && (
