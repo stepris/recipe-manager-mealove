@@ -33,12 +33,13 @@ import {
   StyledImageDropArea,
   StyledImagePreview,
   StyledImageDeleteButtonWrapper,
+  StyledAddIngredientButton,
 } from '@/components/RecipeForm/recipeStyles';
 import useLocalStorageState from 'use-local-storage-state';
 import FormButtons from '@/components/RecipeForm/FormButtons';
 import Button from '@/components/Button';
 import { useSession } from 'next-auth/react';
-import AddIngredientButton from '@/public/icons/buttons/PlusIcon.svg';
+import AddIcon from '@/public/icons/buttons/PlusIcon.svg';
 
 const emptyRecipe: Recipe = {
   authorId: '',
@@ -382,10 +383,12 @@ export default function RecipeForm({
               />
             );
           })}
-          <button type='button' onClick={handleAddIngredient}>
-            +
-          </button>
-          <AddIngredientButton />
+          <StyledAddIngredientButton
+            type='button'
+            onClick={handleAddIngredient}
+          >
+            <AddIcon />
+          </StyledAddIngredientButton>
         </StyledInputElement>
 
         {/* Recipe preparation */}

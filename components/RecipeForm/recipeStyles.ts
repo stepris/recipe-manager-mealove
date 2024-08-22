@@ -94,10 +94,10 @@ export const StyledTableCell = styled.input<StyledFormComponentProps>`
     `}
 `;
 
-export const StyledAddIconWrapper = styled.div`
-  display: flex;
-  place-items: center;
-  cursor: pointer;
+export const StyledAddIngredientButton = styled.button`
+  display: block;
+  align-self: center;
+  margin-top: 8px;
 `;
 
 export const StyledDeleteIconWrapper = styled.button`
@@ -112,14 +112,15 @@ export const StyledDeleteIconWrapper = styled.button`
   margin-top: var(--spacing-1);
   margin-left: 1px;
   &:hover {
-    box-shadow: 0 0 1px 1px var(--color-neutral-2);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 0 4px 2px var(--color-neutral-2);
   }
   &:focus {
-    box-shadow: 0 0 1px 1px var(--color-neutral-2);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 0 4px 2px var(--color-neutral-2);
   }
   &:active {
     transform: scale(0.95);
     background-color: var(--color-neutral-1-alpha90);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 6px 3px var(--color-neutral-2);
   }
 `;
 
