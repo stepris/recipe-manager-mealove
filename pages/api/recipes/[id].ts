@@ -29,8 +29,7 @@ export default async function handler(
     // Check if author id is session user id and if fetch recipe
     try {
       const recipeData = request.body;
-
-      if (!recipeData.authorId || !id) {
+      if (!recipeData.authorId || !session?.user?.id) {
         return response.status(400).json({ message: 'Invalid Request' });
       }
 
@@ -57,7 +56,23 @@ export default async function handler(
   }
 
   if (request.method === 'DELETE') {
+    // Check if Session
+    if (!session) {
+      return response.status(401).json({ message: 'Unauthorized' });
+    }
+    // Get the recipe by ID and check if the recipe Owner is equal to the Session User Id
     try {
+      const existingRecipe = await Recipe.findById(id);
+
+      if (!existingRecipe) {
+        return response.status(404).json({ message: 'Recipe not found' });
+      }
+      console.log(existingRecipe);
+
+      if (!existingRecipe.authorId || !session?.user?.id) {
+        return response.status(400).json({ message: 'Invalid Request' });
+      }
+      // Delete Recipe
       await Recipe.findByIdAndDelete(id);
       return response
         .status(200)
