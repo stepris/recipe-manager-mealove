@@ -67,7 +67,6 @@ export default async function handler(
       if (!existingRecipe) {
         return response.status(404).json({ message: 'Recipe not found' });
       }
-      console.log(existingRecipe);
 
       if (!existingRecipe.authorId || !session?.user?.id) {
         return response.status(400).json({ message: 'Invalid Request' });
