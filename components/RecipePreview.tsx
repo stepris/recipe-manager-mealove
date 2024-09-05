@@ -48,6 +48,11 @@ export default function RecipePreview({
 
 const StyledWrapper = styled.li`
   position: relative;
+  @media (min-width: 1024px) {
+    &:nth-child(5n + 3) {
+      grid-column: span 2;
+    }
+  }
 `;
 
 const StyledImage = styled(Image)`
@@ -80,21 +85,18 @@ const StyledRecipePreview = styled.div`
   box-shadow: 0.1rem 0.1rem 0.4rem var(--color-neutral-4-alpha25);
 
   @media (min-width: 375px) {
-    height: 200px;
+    width: 100%;
+    height: 150px;
   }
 
   @media (min-width: 640px) {
     width: 100%;
-    /* height: 200px; */
-    max-height: 400px;
+    height: 225px;
   }
 
   @media (min-width: 1024px) {
     width: 100%;
     height: 300px;
-    &:nth-child(3n) {
-      grid-column: span 2;
-    }
   }
 `;
 
