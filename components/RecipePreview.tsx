@@ -23,12 +23,12 @@ export default function RecipePreview({
 
   return (
     <StyledWrapper>
-      <FavoriteButton
-        onToggleFavorite={() => onToggleFavorite(id)}
-        isFavorite={isFavorite}
-      />
       <Link href={`/recipes/${id}`}>
         <StyledRecipePreview>
+          <FavoriteButton
+            onToggleFavorite={() => onToggleFavorite(id)}
+            isFavorite={isFavorite}
+          />
           <ImageWrapper>
             <StyledImage
               src={imageUrl}
@@ -62,8 +62,8 @@ const StyledImage = styled(Image)`
 const ImageWrapper = styled.div`
   position: relative;
   overflow: hidden;
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: 100%;
   border-radius: var(--radius-m);
 `;
 
@@ -78,6 +78,24 @@ const StyledRecipePreview = styled.div`
   justify-content: flex-end;
   position: relative;
   box-shadow: 0.1rem 0.1rem 0.4rem var(--color-neutral-4-alpha25);
+
+  @media (min-width: 375px) {
+    height: 200px;
+  }
+
+  @media (min-width: 640px) {
+    width: 100%;
+    /* height: 200px; */
+    max-height: 400px;
+  }
+
+  @media (min-width: 1024px) {
+    width: 100%;
+    height: 300px;
+    &:nth-child(3n) {
+      grid-column: span 2;
+    }
+  }
 `;
 
 const StyledRecipeTitle = styled.p`

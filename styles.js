@@ -32,7 +32,7 @@ body {
   margin: 0 auto;
   line-height: inherit;
   padding: 0;
-  max-width: 375px;
+  /* max-width: 375px; */
   background-color: var(--color-neutral-2);
 }
 
