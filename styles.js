@@ -356,3 +356,16 @@ video {
   --trans-1: 0.2s ease-in;
 }
 `;
+
+/* Media Queries */
+const breakpoints = {
+  small: '375px',
+  medium: '640px',
+  large: '1024px',
+};
+
+export const media = {
+  small: `(min-width: ${breakpoints.small})`,
+  medium: `(min-width: ${breakpoints.medium})`,
+  large: `(min-width: ${breakpoints.large})`,
+};

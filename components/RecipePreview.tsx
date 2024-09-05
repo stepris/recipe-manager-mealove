@@ -7,6 +7,7 @@ import {
 import Link from 'next/link';
 import FavoriteButton from './FavoriteButton';
 import categories from '@/lib/categories.json';
+import { media } from '@/styles';
 
 export default function RecipePreview({
   recipe,
@@ -84,17 +85,17 @@ const StyledRecipePreview = styled.div`
   position: relative;
   box-shadow: 0.1rem 0.1rem 0.4rem var(--color-neutral-4-alpha25);
 
-  @media (min-width: 375px) {
+  @media ${media.small} {
     width: 100%;
     height: 150px;
   }
 
-  @media (min-width: 640px) {
+  @media ${media.medium} {
     width: 100%;
     height: 225px;
   }
 
-  @media (min-width: 1024px) {
+  @media ${media.large} {
     width: 100%;
     height: 300px;
   }
