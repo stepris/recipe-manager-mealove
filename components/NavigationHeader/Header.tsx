@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { HeaderProps } from '@/types';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
+import { media } from '@/styles';
 
 export default function Header({ onToggleNav, onCloseNav }: HeaderProps) {
   const { data: session } = useSession();
@@ -21,8 +22,8 @@ export default function Header({ onToggleNav, onCloseNav }: HeaderProps) {
           {session ? (
             <StyledUserImage
               src={userImage || ''}
-              height='0'
-              width='30'
+              height='100'
+              width='100'
               alt={session?.user?.name || ''}
             />
           ) : (
@@ -43,6 +44,9 @@ const StyledHeader = styled.header`
   gap: var(--spacing-3);
   padding-inline: var(--spacing-5);
   margin-bottom: var(--spacing-1);
+  @media ${media.medium} {
+    min-height: var(--spacing-15);
+  }
 `;
 
 const StyledAppTitle = styled.h2`
@@ -67,11 +71,21 @@ const StyledUserIcon = styled(UserIcon)`
     fill: var(--color-neutral-2);
     outline: 2px solid var(--color-neutral-2);
   }
+  @media ${media.medium} {
+    height: 50px;
+    width: 50px;
+  }
 `;
 
 const StyledUserImage = styled(Image)`
   border-radius: 50%;
+  height: 30px;
+  width: 30px;
   &:hover {
     border: 2px solid var(--color-neutral-1);
+  }
+  @media ${media.medium} {
+    height: 50px;
+    width: 50px;
   }
 `;
