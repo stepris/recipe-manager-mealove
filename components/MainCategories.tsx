@@ -52,7 +52,8 @@ const StyledFilterGroup = styled.div<MainCategoriesStyledComponents>`
   justify-content: center;
   background-color: var(--color-primary-1);
   border-radius: var(--radius-m);
-  width: 325px;
+  width: 100%;
+  margin-inline: var(--spacing-5);
   transition: all 0.6s ease-in-out;
   overflow: hidden;
   max-height: ${({ $isOpen }) => ($isOpen ? '350px' : '35px')};

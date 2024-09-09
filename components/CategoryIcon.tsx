@@ -4,6 +4,7 @@ import {
   CategoryIconProps,
   StyledIconButtonProps,
 } from '@/types/CategoryIcon.types';
+import { media } from '@/styles';
 
 export default function CategoryIconButton({
   category,
@@ -37,6 +38,8 @@ const StyledIconButton = styled.button<StyledIconButtonProps>`
   font: var(--font-category-icon);
   width: 50px;
   height: 50px;
+  max-width: 75px;
+  max-height: 75px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,9 +51,25 @@ const StyledIconButton = styled.button<StyledIconButtonProps>`
     background-color: var(${({ $colorVarName }) => $colorVarName});
     transform: scale(1.1);
   }
+  @media ${media.mediumPlus} {
+    width: 60px;
+    height: 60px;
+  }
+  @media ${media.large} {
+    width: 75px;
+    height: 75px;
+  }
 `;
 
 const StyledIcon = styled(Image)`
   width: 25px;
   height: 25px;
+  @media ${media.mediumPlus} {
+    width: 35px;
+    height: 35px;
+  }
+  @media ${media.large} {
+    width: 40px;
+    height: 40px;
+  }
 `;

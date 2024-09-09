@@ -366,11 +366,13 @@ video {
 const breakpoints = {
   small: '375px',
   medium: '640px',
+  mediumPlus: '768px',
   large: '1024px',
 };
 
 export const media = {
   small: `(min-width: ${breakpoints.small})`,
   medium: `(min-width: ${breakpoints.medium})`,
+  mediumPlus: `(min-width: ${breakpoints.mediumPlus})`,
   large: `(min-width: ${breakpoints.large})`,
 };
