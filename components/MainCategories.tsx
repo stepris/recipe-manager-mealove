@@ -61,6 +61,9 @@ const StyledFilterGroup = styled.div<MainCategoriesStyledComponents>`
     width: 100%;
     margin-inline: var(--spacing-5);
   }
+  @media ${media.large} {
+    max-height: 500px;
+  }
 `;
 
 const StyledUl = styled.ul<MainCategoriesStyledComponents>`
@@ -85,9 +88,16 @@ const StyledUl = styled.ul<MainCategoriesStyledComponents>`
       opacity: 0;
       padding-block: 0;
     `}
+
     @media ${media.medium} {
     grid-template-columns: repeat(10, auto);
     gap: var(--spacing-1);
+
+    @media ${media.large} {
+      opacity: 1;
+      max-height: 500px;
+      padding-block: var(--spacing-3);
+    }
   }
 `;
 
@@ -115,11 +125,19 @@ const StyledArrowDown = styled(Arrow)`
   transform: rotate(90deg);
   top: 2px;
   opacity: ${({ $isOpen }) => ($isOpen ? '0' : '1')};
+  @media ${media.large} {
+    display: none;
+    opacity: 1;
+  }
 `;
+
 const StyledArrowUp = styled(StyledArrowDown)`
   transform: rotate(-90deg);
   top: 10px;
   opacity: ${({ $isOpen }) => (!$isOpen ? '0' : '1')};
+  @media ${media.large} {
+    display: none;
+  }
 `;
 
 const StyledH2 = styled.h2`
@@ -127,4 +145,8 @@ const StyledH2 = styled.h2`
   color: var(--color-neutral-1);
   padding-block: var(--spacing-1);
   align-self: center;
+
+  @media ${media.large} {
+    display: none;
+  }
 `;

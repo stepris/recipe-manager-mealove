@@ -6,17 +6,28 @@ import { HeaderProps } from '@/types';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { media } from '@/styles';
+import { useMediaQuery } from 'react-responsive';
+import NavigationList from './NavigationList';
 
 export default function Header({ onToggleNav, onCloseNav }: HeaderProps) {
   const { data: session } = useSession();
   const userImage = session?.user?.image;
 
+  const isLargeScreen = useMediaQuery({ query: '(min-width: 1024px)' });
+  const isMediumScreen = useMediaQuery({
+    query: '(min-width: 375px) and (max-width: 1023px)',
+  });
+
+  // console.log(isLargeScreen);
+
   return (
     <StyledHeader>
-      <NavigationIcon onToggleNav={onToggleNav} />
+      {isMediumScreen && <NavigationIcon onToggleNav={onToggleNav} />}
       <Link href='/'>
         <StyledAppTitle onClick={onCloseNav}>meaLove</StyledAppTitle>
       </Link>
+      {isLargeScreen && <NavigationList isLargeScreen={isLargeScreen} />}
+
       <StyledUserIconWrapper>
         <Link href='/login'>
           {session ? (
@@ -47,6 +58,10 @@ const StyledHeader = styled.header`
   @media ${media.medium} {
     min-height: var(--spacing-15);
   }
+  @media ${media.large} {
+    justify-content: space-between;
+    height: 150px;
+  }
 `;
 
 const StyledAppTitle = styled.h2`
@@ -58,6 +73,10 @@ const StyledUserIconWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   flex-basis: 100%;
+  @media ${media.large} {
+    justify-content: space-between;
+    flex-basis: 0%;
+  }
 `;
 
 const StyledUserIcon = styled(UserIcon)`
@@ -75,6 +94,10 @@ const StyledUserIcon = styled(UserIcon)`
     height: 50px;
     width: 50px;
   }
+  @media ${media.large} {
+    height: 60px;
+    width: 60px;
+  }
 `;
 
 const StyledUserImage = styled(Image)`
@@ -87,5 +110,9 @@ const StyledUserImage = styled(Image)`
   @media ${media.medium} {
     height: 50px;
     width: 50px;
+  }
+  @media ${media.large} {
+    height: 60px;
+    width: 60px;
   }
 `;
