@@ -7,6 +7,7 @@ import {
   MainCategoriesProps,
   MainCategoriesStyledComponents,
 } from '@/types/MainCategories.types';
+import { media } from '@/styles';
 
 export default function MainCategories({
   onChangeFilter,
@@ -55,6 +56,10 @@ const StyledFilterGroup = styled.div<MainCategoriesStyledComponents>`
   transition: all 0.6s ease-in-out;
   overflow: hidden;
   max-height: ${({ $isOpen }) => ($isOpen ? '350px' : '35px')};
+  @media ${media.medium} {
+    width: 100%;
+    margin-inline: var(--spacing-5);
+  }
 `;
 
 const StyledUl = styled.ul<MainCategoriesStyledComponents>`
@@ -79,6 +84,10 @@ const StyledUl = styled.ul<MainCategoriesStyledComponents>`
       opacity: 0;
       padding-block: 0;
     `}
+    @media ${media.medium} {
+    grid-template-columns: repeat(10, auto);
+    gap: var(--spacing-1);
+  }
 `;
 
 const StyledToggleGroup = styled.div`

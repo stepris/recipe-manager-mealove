@@ -20,7 +20,12 @@ export default function CategoryIconButton({
       $color={colorVarName}
       $name={name}
     >
-      <Image alt={`${name} icon`} src={`${iconPath}`} width={25} height={25} />
+      <StyledIcon
+        alt={`${name} icon`}
+        src={`${iconPath}`}
+        width={0}
+        height={0}
+      />
       <span>{name}</span>
     </StyledIconButton>
   );
@@ -43,4 +48,9 @@ const StyledIconButton = styled.button<StyledIconButtonProps>`
     background-color: var(${({ $colorVarName }) => $colorVarName});
     transform: scale(1.1);
   }
+`;
+
+const StyledIcon = styled(Image)`
+  width: 25px;
+  height: 25px;
 `;
