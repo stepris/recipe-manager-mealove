@@ -18,15 +18,13 @@ export default function Header({ onToggleNav, onCloseNav }: HeaderProps) {
     query: '(min-width: 375px) and (max-width: 1023px)',
   });
 
-  // console.log(isLargeScreen);
-
   return (
     <StyledHeader>
       {isMediumScreen && <NavigationIcon onToggleNav={onToggleNav} />}
       <Link href='/'>
         <StyledAppTitle onClick={onCloseNav}>meaLove</StyledAppTitle>
       </Link>
-      {isLargeScreen && <NavigationList isLargeScreen={isLargeScreen} />}
+      {isLargeScreen && <NavigationList />}
 
       <StyledUserIconWrapper>
         <Link href='/login'>
