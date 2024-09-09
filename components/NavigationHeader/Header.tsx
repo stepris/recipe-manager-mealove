@@ -72,8 +72,7 @@ const StyledUserIconWrapper = styled.div`
   justify-content: flex-end;
   flex-basis: 100%;
   @media ${media.large} {
-    justify-content: space-between;
-    flex-basis: 0%;
+    flex-basis: auto;
   }
 `;
 
