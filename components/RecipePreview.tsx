@@ -50,7 +50,7 @@ export default function RecipePreview({
 const StyledWrapper = styled.li`
   position: relative;
   @media ${media.large} {
-    &:nth-child(5n + 3) {
+    &:nth-child(5n) {
       grid-column: span 2;
     }
   }
