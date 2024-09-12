@@ -44,6 +44,10 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+
+  @media ${media.large} {
+    padding-top: var(--spacing-3);
+  }
 `;
 
 const StyledFilterGroup = styled.div<MainCategoriesStyledComponents>`
