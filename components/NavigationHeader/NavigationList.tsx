@@ -2,10 +2,8 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import { NavigationListProps } from '@/types';
 import { media } from '@/styles';
-import { useMediaQuery } from 'react-responsive';
 
 export default function NavigationList({ onToggleNav }: NavigationListProps) {
-  const isLargeScreen = useMediaQuery({ query: '(min-width: 1024px)' });
   return (
     <nav>
       <StyledList>
@@ -29,7 +27,7 @@ export default function NavigationList({ onToggleNav }: NavigationListProps) {
             Favorites
           </StyledLink>
         </StyledListElement>
-        {!isLargeScreen && <NavSpacer />}
+        <NavSpacer />
       </StyledList>
     </nav>
   );
@@ -78,4 +76,7 @@ const StyledLink = styled(Link)`
 const NavSpacer = styled.div`
   background-color: var(--color-primary-1);
   flex-grow: 10;
+  @media ${media.large} {
+    display: none;
+  }
 `;

@@ -6,25 +6,25 @@ import { HeaderProps } from '@/types';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { media } from '@/styles';
-import { useMediaQuery } from 'react-responsive';
 import NavigationList from './NavigationList';
 
 export default function Header({ onToggleNav, onCloseNav }: HeaderProps) {
   const { data: session } = useSession();
   const userImage = session?.user?.image;
 
-  const isLargeScreen = useMediaQuery({ query: '(min-width: 1024px)' });
-  const isMediumScreen = useMediaQuery({
-    query: '(min-width: 375px) and (max-width: 1023px)',
-  });
-
   return (
     <StyledHeader>
-      {isMediumScreen && <NavigationIcon onToggleNav={onToggleNav} />}
+      <NavigationIconWrapper>
+        <NavigationIcon onToggleNav={onToggleNav} />
+      </NavigationIconWrapper>
+
       <Link href='/'>
         <StyledAppTitle onClick={onCloseNav}>meaLove</StyledAppTitle>
       </Link>
-      {isLargeScreen && <NavigationList />}
+
+      <NavigationListWrapper>
+        <NavigationList />
+      </NavigationListWrapper>
 
       <StyledUserIconWrapper>
         <Link href='/login'>
@@ -111,5 +111,21 @@ const StyledUserImage = styled(Image)`
   @media ${media.large} {
     height: 60px;
     width: 60px;
+  }
+`;
+
+const NavigationIconWrapper = styled.div`
+  display: block;
+
+  @media ${media.large} {
+    display: none;
+  }
+`;
+
+const NavigationListWrapper = styled.div`
+  display: none;
+
+  @media ${media.large} {
+    display: block;
   }
 `;
