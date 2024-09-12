@@ -6,6 +6,7 @@ import Button from './Button';
 import { useState } from 'react';
 import ConfirmationModal from './ConfirmationModal';
 import { useSession } from 'next-auth/react';
+import { media } from '@/styles';
 
 export default function RecipeDetails({
   recipe,
@@ -46,24 +47,24 @@ export default function RecipeDetails({
         />
       )}
 
-      <StyledSection>
-        <StyledHeader>
-          <StyledTitle>{title}</StyledTitle>
-          <FavoriteButton
-            $isDetailPage
-            onToggleFavorite={() => onToggleFavorite(id)}
-            isFavorite={isFavorite}
-          />
-        </StyledHeader>
-        <StyledInfos>
-          <StyledH3>
-            Difficulty: <StyledSpan>{difficulty}</StyledSpan>
-          </StyledH3>
+      <StyledHeader>
+        <StyledTitle>{title}</StyledTitle>
+        <FavoriteButton
+          $isDetailPage
+          onToggleFavorite={() => onToggleFavorite(id)}
+          isFavorite={isFavorite}
+        />
+      </StyledHeader>
+      <StyledInfos>
+        <StyledH3>
+          Difficulty: <StyledSpan>{difficulty}</StyledSpan>
+        </StyledH3>
 
-          <StyledH3>
-            Category: <StyledSpan>{category}</StyledSpan>
-          </StyledH3>
-        </StyledInfos>
+        <StyledH3>
+          Category: <StyledSpan>{category}</StyledSpan>
+        </StyledH3>
+      </StyledInfos>
+      <StyledSection>
         <ImageWrapper>
           <StyledImage
             src={imageUrl}
@@ -72,16 +73,16 @@ export default function RecipeDetails({
             fill
           />
         </ImageWrapper>
+        <StyledTable>
+          {ingredients.map((ingredient) => (
+            <StyledRow key={ingredient.id}>
+              <StyledCellLeft>{ingredient.quantity}</StyledCellLeft>
+              <StyledCellMiddle>{ingredient.unit}</StyledCellMiddle>
+              <StyledCellRight>{ingredient.name}</StyledCellRight>
+            </StyledRow>
+          ))}
+        </StyledTable>
       </StyledSection>
-      <StyledTable>
-        {ingredients.map((ingredient) => (
-          <StyledRow key={ingredient.id}>
-            <StyledCellLeft>{ingredient.quantity}</StyledCellLeft>
-            <StyledCellMiddle>{ingredient.unit}</StyledCellMiddle>
-            <StyledCellRight>{ingredient.name}</StyledCellRight>
-          </StyledRow>
-        ))}
-      </StyledTable>
 
       <StyledArticle>
         <StyledH2>Instructions</StyledH2>
@@ -112,9 +113,14 @@ export default function RecipeDetails({
 }
 
 const StyledSection = styled.section`
-  padding-bottom: var(--spacing-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5);
+  @media ${media.mediumPlus} {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
-
 const StyledHeader = styled.div`
   display: flex;
   flex-direction: row;
@@ -143,6 +149,11 @@ const ImageWrapper = styled.div`
   overflow: hidden;
   width: 100%;
   height: 225px;
+  @media ${media.mediumPlus} {
+    width: 50%;
+    height: auto;
+    min-height: 225px;
+  }
 `;
 
 const StyledImage = styled(Image)`
@@ -152,6 +163,10 @@ const StyledImage = styled(Image)`
 const StyledTable = styled.div`
   background-color: var(--color-primary-1);
   padding: var(--spacing-3) var(--spacing-5);
+
+  @media ${media.mediumPlus} {
+    width: 50%;
+  }
 `;
 
 const StyledRow = styled.div`
@@ -207,6 +222,10 @@ const StyledInstructions = styled.p`
   color: var(--color-neutral-4);
   padding-top: var(--spacing-5);
   overflow-wrap: break-word;
+  display: block;
+  word-wrap: break-word;
+  max-width: 55rem;
+  white-space: normal;
 `;
 
 const StyledButtonWrapper = styled.div`
