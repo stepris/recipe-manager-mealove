@@ -368,6 +368,7 @@ const breakpoints = {
   medium: '640px',
   mediumPlus: '768px',
   large: '1024px',
+  max: '1280px',
 };
 
 export const media = {
@@ -375,4 +376,5 @@ export const media = {
   medium: `(min-width: ${breakpoints.medium})`,
   mediumPlus: `(min-width: ${breakpoints.mediumPlus})`,
   large: `(min-width: ${breakpoints.large})`,
+  max: `(min-width: ${breakpoints.max})`,
 };
