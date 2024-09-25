@@ -32,7 +32,7 @@ body {
   margin: 0 auto;
   line-height: inherit;
   padding: 0;
-  max-width: 375px;
+  /* max-width: 375px; */
   background-color: var(--color-neutral-2);
 }
 
@@ -345,6 +345,11 @@ video {
   --spacing-8: 40px;
   --spacing-9: 45px;
   --spacing-10: 50px;
+  --spacing-11: 55px;
+  --spacing-12: 60px;
+  --spacing-13: 65px;
+  --spacing-14: 70px;
+  --spacing-15: 75px;
 
   /*Debug*/
   --debug-1: 1px solid green;
@@ -356,3 +361,20 @@ video {
   --trans-1: 0.2s ease-in;
 }
 `;
+
+/* Media Queries */
+const breakpoints = {
+  small: '375px',
+  medium: '640px',
+  mediumPlus: '768px',
+  large: '1024px',
+  max: '1280px',
+};
+
+export const media = {
+  small: `(min-width: ${breakpoints.small})`,
+  medium: `(min-width: ${breakpoints.medium})`,
+  mediumPlus: `(min-width: ${breakpoints.mediumPlus})`,
+  large: `(min-width: ${breakpoints.large})`,
+  max: `(min-width: ${breakpoints.max})`,
+};

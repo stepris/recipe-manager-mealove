@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import NavigationList from './NavigationHeader/NavigationList';
 import { useState } from 'react';
 import { ChildrenLayoutProps } from '@/types';
+import { media } from '@/styles';
 
 export default function Layout({ children }: ChildrenLayoutProps) {
   const [showNav, setShowNav] = useState(false);
@@ -30,4 +31,8 @@ export default function Layout({ children }: ChildrenLayoutProps) {
 const StyledWrapper = styled.div`
   background-color: var(--color-neutral-1);
   min-height: 100vh;
+  @media ${media.max} {
+    width: 1280px;
+    margin: 0 auto;
+  }
 `;

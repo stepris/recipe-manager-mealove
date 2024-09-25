@@ -80,7 +80,7 @@ export const StyledTableCell = styled.input<StyledFormComponentProps>`
   ${({ $isMedium }) =>
     $isMedium &&
     css`
-      width: 52px;
+      width: 100%;
     `}
   ${({ $isLarge }) =>
     $isLarge &&

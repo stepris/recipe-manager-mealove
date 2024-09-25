@@ -7,6 +7,7 @@ import {
 import Link from 'next/link';
 import FavoriteButton from './FavoriteButton';
 import categories from '@/lib/categories.json';
+import { media } from '@/styles';
 
 export default function RecipePreview({
   recipe,
@@ -23,12 +24,12 @@ export default function RecipePreview({
 
   return (
     <StyledWrapper>
-      <FavoriteButton
-        onToggleFavorite={() => onToggleFavorite(id)}
-        isFavorite={isFavorite}
-      />
       <Link href={`/recipes/${id}`}>
         <StyledRecipePreview>
+          <FavoriteButton
+            onToggleFavorite={() => onToggleFavorite(id)}
+            isFavorite={isFavorite}
+          />
           <ImageWrapper>
             <StyledImage
               src={imageUrl}
@@ -48,6 +49,11 @@ export default function RecipePreview({
 
 const StyledWrapper = styled.li`
   position: relative;
+  @media ${media.large} {
+    &:nth-child(5n) {
+      grid-column: span 2;
+    }
+  }
 `;
 
 const StyledImage = styled(Image)`
@@ -62,8 +68,8 @@ const StyledImage = styled(Image)`
 const ImageWrapper = styled.div`
   position: relative;
   overflow: hidden;
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: 100%;
   border-radius: var(--radius-m);
 `;
 
@@ -78,6 +84,21 @@ const StyledRecipePreview = styled.div`
   justify-content: flex-end;
   position: relative;
   box-shadow: 0.1rem 0.1rem 0.4rem var(--color-neutral-4-alpha25);
+
+  @media ${media.small} {
+    width: 100%;
+    height: 150px;
+  }
+
+  @media ${media.medium} {
+    width: 100%;
+    height: 225px;
+  }
+
+  @media ${media.large} {
+    width: 100%;
+    height: 300px;
+  }
 `;
 
 const StyledRecipeTitle = styled.p`
@@ -87,6 +108,10 @@ const StyledRecipeTitle = styled.p`
   text-align: center;
   line-height: 1.1rem;
   overflow-wrap: break-word;
+
+  @media ${media.large} {
+    font-size: var(--font-size-l);
+  }
 `;
 
 const StyledRecipeTitleWrapper = styled.div<StyledRecipeTitleProps>`

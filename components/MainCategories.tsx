@@ -7,6 +7,7 @@ import {
   MainCategoriesProps,
   MainCategoriesStyledComponents,
 } from '@/types/MainCategories.types';
+import { media } from '@/styles';
 
 export default function MainCategories({
   onChangeFilter,
@@ -43,6 +44,10 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+
+  @media ${media.large} {
+    padding-top: var(--spacing-3);
+  }
 `;
 
 const StyledFilterGroup = styled.div<MainCategoriesStyledComponents>`
@@ -51,10 +56,18 @@ const StyledFilterGroup = styled.div<MainCategoriesStyledComponents>`
   justify-content: center;
   background-color: var(--color-primary-1);
   border-radius: var(--radius-m);
-  width: 325px;
+  width: 100%;
+  margin-inline: var(--spacing-5);
   transition: all 0.6s ease-in-out;
   overflow: hidden;
   max-height: ${({ $isOpen }) => ($isOpen ? '350px' : '35px')};
+  @media ${media.medium} {
+    width: 100%;
+    margin-inline: var(--spacing-5);
+  }
+  @media ${media.large} {
+    max-height: 500px;
+  }
 `;
 
 const StyledUl = styled.ul<MainCategoriesStyledComponents>`
@@ -79,6 +92,17 @@ const StyledUl = styled.ul<MainCategoriesStyledComponents>`
       opacity: 0;
       padding-block: 0;
     `}
+
+    @media ${media.medium} {
+    grid-template-columns: repeat(10, auto);
+    gap: var(--spacing-1);
+
+    @media ${media.large} {
+      opacity: 1;
+      max-height: 500px;
+      padding-block: var(--spacing-3);
+    }
+  }
 `;
 
 const StyledToggleGroup = styled.div`
@@ -105,11 +129,19 @@ const StyledArrowDown = styled(Arrow)`
   transform: rotate(90deg);
   top: 2px;
   opacity: ${({ $isOpen }) => ($isOpen ? '0' : '1')};
+  @media ${media.large} {
+    display: none;
+    opacity: 1;
+  }
 `;
+
 const StyledArrowUp = styled(StyledArrowDown)`
   transform: rotate(-90deg);
   top: 10px;
   opacity: ${({ $isOpen }) => (!$isOpen ? '0' : '1')};
+  @media ${media.large} {
+    display: none;
+  }
 `;
 
 const StyledH2 = styled.h2`
@@ -117,4 +149,8 @@ const StyledH2 = styled.h2`
   color: var(--color-neutral-1);
   padding-block: var(--spacing-1);
   align-self: center;
+
+  @media ${media.large} {
+    display: none;
+  }
 `;

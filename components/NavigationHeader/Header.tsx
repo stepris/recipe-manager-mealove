@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { HeaderProps } from '@/types';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
+import { media } from '@/styles';
+import NavigationList from './NavigationList';
 
 export default function Header({ onToggleNav, onCloseNav }: HeaderProps) {
   const { data: session } = useSession();
@@ -12,17 +14,25 @@ export default function Header({ onToggleNav, onCloseNav }: HeaderProps) {
 
   return (
     <StyledHeader>
-      <NavigationIcon onToggleNav={onToggleNav} />
+      <NavigationIconWrapper>
+        <NavigationIcon onToggleNav={onToggleNav} />
+      </NavigationIconWrapper>
+
       <Link href='/'>
         <StyledAppTitle onClick={onCloseNav}>meaLove</StyledAppTitle>
       </Link>
+
+      <NavigationListWrapper>
+        <NavigationList />
+      </NavigationListWrapper>
+
       <StyledUserIconWrapper>
         <Link href='/login'>
           {session ? (
             <StyledUserImage
               src={userImage || ''}
-              height='0'
-              width='30'
+              height='100'
+              width='100'
               alt={session?.user?.name || ''}
             />
           ) : (
@@ -43,17 +53,31 @@ const StyledHeader = styled.header`
   gap: var(--spacing-3);
   padding-inline: var(--spacing-5);
   margin-bottom: var(--spacing-1);
+  @media ${media.medium} {
+    min-height: var(--spacing-15);
+  }
+  @media ${media.large} {
+    justify-content: space-between;
+    height: 150px;
+  }
 `;
 
 const StyledAppTitle = styled.h2`
   font: var(--font-nav);
   letter-spacing: var(--letter-spacing-s);
+
+  @media ${media.large} {
+    font-size: var(--font-size-xxxl);
+  }
 `;
 
 const StyledUserIconWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   flex-basis: 100%;
+  @media ${media.large} {
+    flex-basis: auto;
+  }
 `;
 
 const StyledUserIcon = styled(UserIcon)`
@@ -67,11 +91,45 @@ const StyledUserIcon = styled(UserIcon)`
     fill: var(--color-neutral-2);
     outline: 2px solid var(--color-neutral-2);
   }
+  @media ${media.medium} {
+    height: 50px;
+    width: 50px;
+  }
+  @media ${media.large} {
+    height: 60px;
+    width: 60px;
+  }
 `;
 
 const StyledUserImage = styled(Image)`
   border-radius: 50%;
+  height: 30px;
+  width: 30px;
   &:hover {
     border: 2px solid var(--color-neutral-1);
+  }
+  @media ${media.medium} {
+    height: 50px;
+    width: 50px;
+  }
+  @media ${media.large} {
+    height: 60px;
+    width: 60px;
+  }
+`;
+
+const NavigationIconWrapper = styled.div`
+  display: block;
+  height: 30px;
+  @media ${media.large} {
+    display: none;
+  }
+`;
+
+const NavigationListWrapper = styled.div`
+  display: none;
+
+  @media ${media.large} {
+    display: block;
   }
 `;

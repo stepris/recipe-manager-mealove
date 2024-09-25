@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { RecipeListPageProps, Category } from '@/types/RecipeList.types';
 import MainCategories from '@/components/MainCategories';
 import { useState } from 'react';
+import { media } from '@/styles';
 
 export default function RecipeList({
   recipes,
@@ -51,7 +52,19 @@ const StyledRecipeList = styled.ul`
   flex-wrap: wrap;
   gap: var(--spacing-5);
   padding: var(--spacing-5);
-  @media (max-width: 375px) {
-    justify-content: center;
+  justify-content: center;
+
+  @media ${media.small} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media ${media.medium} {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media ${media.large} {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
   }
 `;

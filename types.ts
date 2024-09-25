@@ -57,7 +57,7 @@ export type NavigationIconProps = {
 };
 
 export type NavigationListProps = {
-  onToggleNav: () => void;
+  onToggleNav?: () => void;
 };
 
 export type AppBaseProps = {

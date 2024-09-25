@@ -10,7 +10,11 @@ export default function FavoriteButton({
   return (
     <StyledButton
       $isDetailPage={$isDetailPage}
-      onClick={onToggleFavorite}
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        onToggleFavorite();
+      }}
       $isFavorite={isFavorite}
     >
       <FilledHeart />
