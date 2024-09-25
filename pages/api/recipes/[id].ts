@@ -71,6 +71,11 @@ export default async function handler(
       if (!existingRecipe.authorId || !session?.user?.id) {
         return response.status(400).json({ message: 'Invalid Request' });
       }
+      // Check if author id is session user id and if delete recipe
+      if (existingRecipe.authorId !== session.user?.id) {
+        return response.status(403).json({ message: 'Forbidden' });
+      }
+
       // Delete Recipe
       await Recipe.findByIdAndDelete(id);
       return response
