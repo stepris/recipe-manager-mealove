@@ -108,6 +108,10 @@ const StyledRecipeTitle = styled.p`
   text-align: center;
   line-height: 1.1rem;
   overflow-wrap: break-word;
+
+  @media ${media.large} {
+    font-size: var(--font-size-l);
+  }
 `;
 
 const StyledRecipeTitleWrapper = styled.div<StyledRecipeTitleProps>`

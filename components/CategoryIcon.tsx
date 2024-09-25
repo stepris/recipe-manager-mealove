@@ -58,6 +58,7 @@ const StyledIconButton = styled.button<StyledIconButtonProps>`
   @media ${media.large} {
     width: 75px;
     height: 75px;
+    font-size: var(--font-size-m);
   }
 `;
 

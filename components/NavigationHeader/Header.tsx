@@ -65,6 +65,10 @@ const StyledHeader = styled.header`
 const StyledAppTitle = styled.h2`
   font: var(--font-nav);
   letter-spacing: var(--letter-spacing-s);
+
+  @media ${media.large} {
+    font-size: var(--font-size-xxxl);
+  }
 `;
 
 const StyledUserIconWrapper = styled.div`
@@ -116,7 +120,7 @@ const StyledUserImage = styled(Image)`
 
 const NavigationIconWrapper = styled.div`
   display: block;
-
+  height: 30px;
   @media ${media.large} {
     display: none;
   }
