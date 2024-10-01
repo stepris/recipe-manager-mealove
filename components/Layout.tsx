@@ -4,6 +4,7 @@ import NavigationList from './NavigationHeader/NavigationList';
 import { useState } from 'react';
 import { ChildrenLayoutProps } from '@/types';
 import { media } from '@/styles';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function Layout({ children }: ChildrenLayoutProps) {
   const [showNav, setShowNav] = useState(false);
@@ -18,6 +19,7 @@ export default function Layout({ children }: ChildrenLayoutProps) {
 
   return (
     <StyledWrapper>
+      <Analytics />
       <Header onToggleNav={handleToggleNav} onCloseNav={handleCloseNav} />
       {showNav ? (
         <NavigationList onToggleNav={handleToggleNav} />
